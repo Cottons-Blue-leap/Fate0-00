@@ -1,16 +1,19 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useProfile } from '../context/ProfileContext';
 import { sfxButtonClick, sfxTextInput } from '../logic/soundEngine';
 import { getMaxDays } from '@fate0/shared';
+
+const PRIVACY_SEEN_KEY = 'fate0_privacy_seen';
 
 export default function ProfilePage() {
   const { t } = useTranslation();
   const { profile, setProfile } = useProfile();
   const navigate = useNavigate();
 
+  const [showPrivacy, setShowPrivacy] = useState(() => !localStorage.getItem(PRIVACY_SEEN_KEY));
   const [name, setName] = useState(profile?.name || '');
   const [birthYear, setBirthYear] = useState(profile?.birthYear || 2000);
   const [birthMonth, setBirthMonth] = useState(profile?.birthMonth || 1);
@@ -163,6 +166,72 @@ export default function ProfilePage() {
           {t('profile.skip')}
         </motion.button>
       </motion.div>
+
+      {/* First-visit privacy notice */}
+      <AnimatePresence>
+        {showPrivacy && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            style={{
+              position: 'fixed', inset: 0,
+              background: 'rgba(10, 5, 20, 0.85)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              zIndex: 9999, padding: '1.5rem',
+            }}
+          >
+            <motion.div
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 30, opacity: 0 }}
+              transition={{ delay: 0.1 }}
+              style={{
+                maxWidth: '360px', width: '100%',
+                textAlign: 'center', padding: '2rem 1.5rem',
+                background: 'linear-gradient(135deg, rgba(26,10,46,0.95), rgba(46,10,10,0.95))',
+                borderRadius: '16px',
+                border: '1px solid rgba(155, 89, 182, 0.2)',
+              }}
+            >
+              <div style={{ fontSize: '36px', marginBottom: '16px' }}>🔮</div>
+              <p style={{
+                fontSize: '15px', lineHeight: '1.8',
+                color: 'rgba(255,255,255,0.75)',
+                marginBottom: '24px',
+              }}>
+                {t('privacy.notice', '입력하신 정보는 오직 운세를 점치는 데에만 사용되며, 이 기기 밖으로 전송되지 않습니다.')}
+              </p>
+              <p style={{
+                fontSize: '12px', lineHeight: '1.6',
+                color: 'rgba(255,255,255,0.35)',
+                marginBottom: '24px',
+              }}>
+                {t('privacy.detail', '모든 데이터는 브라우저에만 저장되며, 언제든 삭제할 수 있습니다.')}
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  localStorage.setItem(PRIVACY_SEEN_KEY, '1');
+                  setShowPrivacy(false);
+                }}
+                style={{
+                  padding: '12px 32px',
+                  background: 'linear-gradient(135deg, rgba(155,89,182,0.4), rgba(231,76,60,0.4))',
+                  border: '1px solid rgba(255,255,255,0.15)',
+                  borderRadius: '10px',
+                  color: '#e0d0f0', fontSize: '15px',
+                  fontFamily: "'Noto Serif KR', serif",
+                  cursor: 'pointer',
+                }}
+              >
+                {t('privacy.confirm', '알겠습니다')}
+              </motion.button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }

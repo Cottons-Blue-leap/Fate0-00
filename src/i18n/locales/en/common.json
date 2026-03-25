@@ -240,6 +240,11 @@
     "skip": "Skip for now",
     "defaultName": "Traveler"
   },
+  "privacy": {
+    "notice": "Your information is used solely for fortune-telling and is never transmitted outside this device.",
+    "detail": "All data is stored only in your browser and can be deleted at any time.",
+    "confirm": "Understood"
+  },
   "share": {
     "button": "Share result"
   },
