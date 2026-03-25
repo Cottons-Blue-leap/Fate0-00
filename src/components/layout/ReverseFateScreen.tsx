@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useReverse } from '../../logic/reverseEngine';
@@ -184,23 +184,15 @@ export default function ReverseFateScreen({ fortuneType, onComplete, onCancel }:
               {t('reverseFate.ritual')}
             </div>
 
-            <div style={{
-              width: 'min(300px, calc(100vw - 40px))', height: '200px', borderRadius: '12px',
-              background: 'rgba(212,175,55,0.05)', border: '1px solid rgba(212,175,55,0.2)',
-              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-              marginBottom: '16px',
-            }}>
-              <motion.div
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 1, repeat: Infinity }}
-                style={{ fontSize: '48px', color: '#ffd700', fontWeight: 700, fontFamily: 'monospace' }}
-              >
-                {seconds}
-              </motion.div>
-              <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.3)', marginTop: '8px' }}>
-                {t('reverseFate.adArea')}
-              </div>
-            </div>
+            <motion.div
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ duration: 1, repeat: Infinity }}
+              style={{ fontSize: '48px', color: '#ffd700', fontWeight: 700, fontFamily: 'monospace', marginBottom: '16px' }}
+            >
+              {seconds}
+            </motion.div>
+
+            <AdBanner />
 
             <div style={{ width: 'min(300px, calc(100vw - 40px))', height: '4px', background: 'rgba(255,255,255,0.1)', borderRadius: '2px', overflow: 'hidden' }}>
               <motion.div
@@ -233,5 +225,51 @@ export default function ReverseFateScreen({ fortuneType, onComplete, onCancel }:
         )}
       </AnimatePresence>
     </motion.div>
+  );
+}
+
+function AdBanner() {
+  const adRef = useRef<HTMLModElement>(null);
+  const pushed = useRef(false);
+
+  useEffect(() => {
+    if (Capacitor.isNativePlatform()) return;
+    if (pushed.current) return;
+    try {
+      const adsbygoogle = (window as unknown as Record<string, unknown[]>)['adsbygoogle'];
+      if (adsbygoogle && adRef.current) {
+        adsbygoogle.push({});
+        pushed.current = true;
+      }
+    } catch {
+      // AdSense not loaded or not approved yet
+    }
+  }, []);
+
+  if (Capacitor.isNativePlatform()) return null;
+
+  return (
+    <div style={{
+      width: 'min(300px, calc(100vw - 40px))',
+      minHeight: '250px',
+      borderRadius: '12px',
+      background: 'rgba(212,175,55,0.05)',
+      border: '1px solid rgba(212,175,55,0.2)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginBottom: '16px',
+      overflow: 'hidden',
+    }}>
+      <ins
+        ref={adRef}
+        className="adsbygoogle"
+        style={{ display: 'block', width: '100%', height: '250px' }}
+        data-ad-client="ca-pub-7470197967254770"
+        data-ad-slot="auto"
+        data-ad-format="rectangle"
+        data-full-width-responsive="false"
+      />
+    </div>
   );
 }
