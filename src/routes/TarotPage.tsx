@@ -476,7 +476,7 @@ export default function TarotPage() {
               <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={handleDrawAdvice} style={btn('gold')}>
                 {t('tarot.drawAdvice')}
               </motion.button>
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); reset(); }} style={btn('dim')}>
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); if (hasUsedToday('tarot')) { setShowReverse(true); } else { reset(); } }} style={btn('dim')}>
                 {t('tarot.newReading')}
               </motion.button>
               <ShareButton targetRef={resultRef} theme="west" />
@@ -504,7 +504,7 @@ export default function TarotPage() {
             <div style={{ color: 'var(--text-muted)', fontSize: '14px', lineHeight: '1.8', marginBottom: '24px' }}>
               {t('tarot.adviceMessage')}
             </div>
-            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); reset(); }} style={btn('purple')}>
+            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); if (hasUsedToday('tarot')) { setShowReverse(true); } else { reset(); } }} style={btn('purple')}>
               {t('tarot.newReading')}
             </motion.button>
           </motion.div>
@@ -513,7 +513,7 @@ export default function TarotPage() {
       {showReverse && (
         <ReverseFateScreen
           fortuneType="tarot"
-          onComplete={() => { setShowReverse(false); setLimitReached(false); }}
+          onComplete={() => { setShowReverse(false); setLimitReached(false); reset(); }}
           onCancel={() => setShowReverse(false)}
         />
       )}
