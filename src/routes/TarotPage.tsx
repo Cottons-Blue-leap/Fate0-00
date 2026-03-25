@@ -64,6 +64,11 @@ export default function TarotPage() {
   const [breathPhase, setBreathPhase] = useState<'in' | 'hold' | 'out'>('in');
   const resultRef = useRef<HTMLDivElement>(null);
 
+  // Guard: reset to safe step if restored step requires missing data
+  useEffect(() => {
+    if (step === 'advice' && !adviceCard) { setStep('prepare'); }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   // Breathing guide
   useEffect(() => {
     if (step !== 'prepare') return;
@@ -516,14 +521,7 @@ export default function TarotPage() {
           onComplete={() => {
             setShowReverse(false);
             setLimitReached(false);
-            resetStep();
-            resetQuestion();
-            resetSpread();
-            resetCards();
-            resetShuffleCount();
-            setAdviceCard(null);
-            // Force step to prepare after a tick to ensure state is settled
-            setTimeout(() => setStep('prepare'), 50);
+            reset();
           }}
           onCancel={() => setShowReverse(false)}
         />

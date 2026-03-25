@@ -48,6 +48,13 @@ export default function OmikujiPage() {
   const [keepChoice, setKeepChoice] = useState<'keep' | 'tie' | null>(null);
   const resultRef = useRef<HTMLDivElement>(null);
 
+  // Guard: reset to purify if restored step requires computation data
+  useEffect(() => {
+    const needsResult = step === 'waka' || step === 'reading' || step === 'fate';
+    if (needsResult && stickNum === 0) { setStep('purify'); }
+    // Prayer mid-step: just let it restart from pray (bow1 is default)
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   // Shake detection for omikuji
   const { requestPermission, permissionGranted, permissionAsked, isAvailable: shakeAvailable } = useShakeDetection(
     () => { if (step === 'shake' && !shaking) handleShake(); },
@@ -557,7 +564,7 @@ export default function OmikujiPage() {
       {showReverse && (
         <ReverseFateScreen
           fortuneType="omikuji"
-          onComplete={() => { setShowReverse(false); setLimitReached(false); }}
+          onComplete={() => { setShowReverse(false); setLimitReached(false); setStep('purify'); setPurifyStep(0); setClapCount(0); setBowCount(0); setPrayPhase('bow1'); setQuestion(''); setRankIdx(0); setStickNum(0); setKeepChoice(null); }}
           onCancel={() => setShowReverse(false)}
         />
       )}

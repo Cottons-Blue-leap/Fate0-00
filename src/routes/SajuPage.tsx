@@ -38,6 +38,11 @@ export default function SajuPage() {
   const maxDays = getMaxDays(year, month);
   if (day > maxDays) setDay(maxDays);
 
+  // Guard: reset to input if restored step requires reading data
+  useEffect(() => {
+    if (step !== 'input' && !reading) { setStep('input'); }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   const handleSubmit = () => {
     const r = getSajuReading(year, month, day, hour, isLunar);
     setReading(r);
@@ -445,7 +450,7 @@ export default function SajuPage() {
       {showReverse && (
         <ReverseFateScreen
           fortuneType="saju"
-          onComplete={() => { setShowReverse(false); setLimitReached(false); }}
+          onComplete={() => { setShowReverse(false); setLimitReached(false); setStep('input'); setReading(null); }}
           onCancel={() => setShowReverse(false)}
         />
       )}

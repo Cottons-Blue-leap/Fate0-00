@@ -45,6 +45,11 @@ export default function HoroscopePage() {
   const [orbitAngle, setOrbitAngle] = useState(0);
   const resultRef = useRef<HTMLDivElement>(null);
 
+  // Guard: reset to input if restored step requires sunSign data
+  useEffect(() => {
+    if (step !== 'input' && !sunSign) { setStep('input'); }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   const today = new Date();
   const todayStr = format(today, 'yyyy-MM-dd');
   const moonPhase = getMoonPhase(today);
@@ -391,7 +396,7 @@ export default function HoroscopePage() {
       {showReverse && (
         <ReverseFateScreen
           fortuneType="horoscope"
-          onComplete={() => { setShowReverse(false); setLimitReached(false); }}
+          onComplete={() => { setShowReverse(false); setLimitReached(false); setStep('input'); setSunSign(null); }}
           onCancel={() => setShowReverse(false)}
         />
       )}
