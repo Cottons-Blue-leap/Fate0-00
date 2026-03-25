@@ -133,7 +133,18 @@ export default function TarotPage() {
     const usedIds = new Set(cards.map(c => c.id));
     const remaining = Array.from({ length: CARD_COUNT }, (_, i) => i).filter(id => !usedIds.has(id));
     const id = remaining[Math.floor(Math.random() * remaining.length)];
-    setAdviceCard({ id, isReversed: Math.random() < 0.3, position: t('tarot.adviceCard'), positionKey: 'advice', flipped: true });
+    const isReversed = Math.random() < 0.3;
+    setAdviceCard({ id, isReversed, position: t('tarot.adviceCard'), positionKey: 'advice', flipped: true });
+    // Update history with advice card
+    addHistory({
+      type: 'tarot', summary: '', data: {
+        cardIds: cards.map(c => c.id),
+        reversed: cards.map(c => c.isReversed),
+        positions: cards.map(c => c.positionKey || c.position),
+        spread, question,
+        adviceId: id, adviceReversed: isReversed,
+      },
+    });
     setStep('advice');
   };
 

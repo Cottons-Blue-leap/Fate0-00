@@ -1,7 +1,7 @@
 // Unique emoji/symbol for each Major Arcana card
 export const tarotSymbols: Record<number, string> = {
   0: '🤡',   // The Fool
-  1: '🪄',   // The Magician
+  1: '✨',   // The Magician
   2: '🌙',   // The High Priestess
   3: '👑',   // The Empress
   4: '🏛️',   // The Emperor

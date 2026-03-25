@@ -90,6 +90,8 @@ function TarotContent({ data, t }: { data: Record<string, unknown>; t: (k: strin
   const reversed = (data['reversed'] as boolean[]) || [];
   const spread = (data['spread'] as string) || '1-card';
   const question = (data['question'] as string) || '';
+  const adviceId = data['adviceId'] as number | undefined;
+  const adviceReversed = data['adviceReversed'] as boolean | undefined;
   const displayCards = spread === 'celtic' ? cardIds.slice(0, 3) : cardIds;
 
   return (
@@ -130,6 +132,25 @@ function TarotContent({ data, t }: { data: Record<string, unknown>; t: (k: strin
           {cardIds.length === 1 ? t('tarot.summary1', { name: t(`tarot.cards.${cardIds[0]}.name`) }) : t('tarot.summary3')}
         </div>
       </SectionBox>
+
+      {/* Advice card */}
+      {adviceId !== undefined && (
+        <div style={{ marginTop: '8px', padding: '8px 10px', background: 'rgba(212,175,55,0.08)', borderRadius: '8px', display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+          <div style={{ fontSize: '20px', flexShrink: 0, width: '26px', textAlign: 'center', transform: adviceReversed ? 'rotate(180deg)' : 'none' }}>
+            {tarotSymbols[adviceId] || '🃏'}
+          </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontSize: '10px', color: 'rgba(212,175,55,0.6)', marginBottom: '2px' }}>✦ {t('tarot.adviceCard')}</div>
+            <div style={{ fontSize: '11px', fontWeight: 700, marginBottom: '2px' }}>
+              {t(`tarot.cards.${adviceId}.name`)}
+              {adviceReversed && <span style={{ color: '#e74c3c', fontSize: '9px', marginLeft: '4px' }}>{t('tarot.reversed')}</span>}
+            </div>
+            <div style={{ fontSize: '9px', lineHeight: '1.5', color: 'rgba(255,255,255,0.4)' }}>
+              {truncate(adviceReversed ? t(`tarot.cards.${adviceId}.reversed`) : t(`tarot.cards.${adviceId}.upright`), 80)}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
