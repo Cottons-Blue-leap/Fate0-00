@@ -15,6 +15,7 @@ import { playBgm } from '../logic/bgmEngine';
 import { useAuth } from '../context/AuthContext';
 import { hasServer } from '../services/api';
 import AuthModal from '../components/layout/AuthModal';
+import FortuneReport from '../components/layout/FortuneReport';
 
 function hashDate(str: string): number {
   let h = 0;
@@ -30,6 +31,7 @@ export default function HomePage() {
   const [, forceUpdate] = useState(0);
   const [showExitPopup, setShowExitPopup] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
+  const [showReport, setShowReport] = useState(false);
   const { isLoggedIn, logout } = useAuth();
 
   // Start home BGM on first interaction
@@ -138,6 +140,25 @@ export default function HomePage() {
                 📜 {t('history.title')}
               </motion.div>
             </Link>
+            {allUsedToday && (
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setShowReport(true)}
+                style={{
+                  marginTop: '4px',
+                  padding: '10px 16px',
+                  background: 'rgba(212,175,55,0.1)',
+                  border: '1px solid rgba(212,175,55,0.3)',
+                  borderRadius: '16px',
+                  fontSize: '12px',
+                  color: '#ffd700',
+                  cursor: 'pointer',
+                }}
+              >
+                ✦ {t('home.report', 'Today\'s Fortune Report')}
+              </motion.div>
+            )}
             {hasServer() && (
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -282,6 +303,7 @@ export default function HomePage() {
         )}
       </AnimatePresence>
       <AuthModal isOpen={showAuthModal} onClose={() => setShowAuthModal(false)} />
+      <FortuneReport isOpen={showReport} onClose={() => setShowReport(false)} />
       <Link to="/privacy" style={{
         position: 'fixed', bottom: '8px', left: '50%', transform: 'translateX(-50%)',
         fontSize: '10px', color: 'rgba(255,255,255,0.15)', textDecoration: 'none', zIndex: 5,
