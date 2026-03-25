@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { createContext, useContext, useState, type ReactNode } from 'react';
+import { isLoggedIn, saveServerProfile } from '../services/api';
 
 export interface UserProfile {
   name: string;
@@ -40,6 +41,13 @@ export function ProfileProvider({ children }: { children: ReactNode }) {
   const setProfile = (p: UserProfile) => {
     setProfileState(p);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(p));
+
+    // Background server sync
+    if (isLoggedIn()) {
+      saveServerProfile(p).catch(() => {
+        // Silent fail — localStorage is the source of truth
+      });
+    }
   };
 
   const clearProfile = () => {

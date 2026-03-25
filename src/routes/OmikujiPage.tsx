@@ -3,7 +3,7 @@ import PageShell from '../components/layout/PageShell';
 import { playBgm } from '../logic/bgmEngine';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { getWaka } from '../logic/wakaEngine';
+import { getWaka } from '@fate0/shared';
 import { sfxWaterPour, sfxBow, sfxClap, sfxBell, sfxShakeSticks, sfxStickDrop, sfxPaperUnfold, sfxKoto, sfxRankReveal, sfxKeep, sfxTie, sfxButtonClick, sfxTextInput } from '../logic/soundEngine';
 import ShareButton from '../components/layout/ShareButton';
 import Watermark from '../components/layout/Watermark';

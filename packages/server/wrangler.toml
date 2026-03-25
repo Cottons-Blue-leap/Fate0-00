@@ -1,0 +1,6 @@
+name = "fate0-api"
+main = "src/worker.ts"
+compatibility_date = "2025-01-01"
+
+[vars]
+JWT_SECRET = "change-this-in-production"

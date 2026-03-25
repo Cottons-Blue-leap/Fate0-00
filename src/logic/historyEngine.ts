@@ -1,4 +1,6 @@
-// Fortune history — saves results to localStorage
+// Fortune history — saves results to localStorage with optional server sync
+
+import { isLoggedIn, syncHistory as syncToServer } from '../services/api';
 
 export interface HistoryEntry {
   id: string;
@@ -31,8 +33,42 @@ export function addHistory(entry: Omit<HistoryEntry, 'id' | 'date'>): void {
   history.unshift(newEntry);
   if (history.length > MAX_ENTRIES) history.length = MAX_ENTRIES;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
+
+  // Background server sync (fire-and-forget)
+  if (isLoggedIn()) {
+    syncToServer([
+      {
+        id: newEntry.id,
+        type: newEntry.type,
+        summary: newEntry.summary,
+        data: newEntry.data,
+        createdAt: newEntry.date,
+      },
+    ]).catch(() => {
+      // Silent fail — localStorage is the source of truth
+    });
+  }
 }
 
 export function clearHistory(): void {
   localStorage.removeItem(STORAGE_KEY);
+}
+
+export async function syncAllHistory(): Promise<number> {
+  if (!isLoggedIn()) return 0;
+
+  const history = getHistory();
+  if (history.length === 0) return 0;
+
+  const result = await syncToServer(
+    history.map((h) => ({
+      id: h.id,
+      type: h.type,
+      summary: h.summary,
+      data: h.data,
+      createdAt: h.date,
+    })),
+  );
+
+  return result.synced;
 }

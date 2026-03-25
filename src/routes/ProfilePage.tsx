@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useProfile } from '../context/ProfileContext';
 import { sfxButtonClick, sfxTextInput } from '../logic/soundEngine';
-import { getMaxDays } from '../logic/dateUtils';
+import { getMaxDays } from '@fate0/shared';
 
 export default function ProfilePage() {
   const { t } = useTranslation();

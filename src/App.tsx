@@ -5,6 +5,7 @@ import HomePage from './routes/HomePage';
 
 import SplashScreen from './components/layout/SplashScreen';
 import { ProfileProvider, useProfile } from './context/ProfileContext';
+import { AuthProvider } from './context/AuthContext';
 
 // Lazy load fortune pages for code splitting
 const TarotPage = lazy(() => import('./routes/TarotPage'));
@@ -13,6 +14,7 @@ const SajuPage = lazy(() => import('./routes/SajuPage'));
 const OmikujiPage = lazy(() => import('./routes/OmikujiPage'));
 const ProfilePage = lazy(() => import('./routes/ProfilePage'));
 const HistoryPage = lazy(() => import('./routes/HistoryPage'));
+const SharedReadingPage = lazy(() => import('./routes/SharedReadingPage'));
 
 function Loading() {
   return (
@@ -42,6 +44,7 @@ function AppRoutes() {
           <Route path="/saju" element={hasProfile ? <SajuPage /> : <Navigate to="/profile" replace />} />
           <Route path="/omikuji" element={hasProfile ? <OmikujiPage /> : <Navigate to="/profile" replace />} />
           <Route path="/history" element={hasProfile ? <HistoryPage /> : <Navigate to="/profile" replace />} />
+          <Route path="/share/:id" element={<SharedReadingPage />} />
         </Routes>
       </AnimatePresence>
     </Suspense>
@@ -53,12 +56,14 @@ function App() {
   const handleSplashComplete = useCallback(() => setSplashDone(true), []);
 
   return (
-    <ProfileProvider>
-      {!splashDone && <SplashScreen onComplete={handleSplashComplete} />}
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
-    </ProfileProvider>
+    <AuthProvider>
+      <ProfileProvider>
+        {!splashDone && <SplashScreen onComplete={handleSplashComplete} />}
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
+      </ProfileProvider>
+    </AuthProvider>
   );
 }
 

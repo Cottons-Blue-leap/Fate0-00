@@ -3,11 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "dev": "vite",
+    "dev:server": "npm run dev -w @fate0/server",
+    "dev:all": "npm run dev:server & npm run dev",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "npm run start -w @fate0/server",
+    "db:setup": "npm run db:setup -w @fate0/server"
   },
   "dependencies": {
     "@capacitor-community/admob": "^8.0.0",

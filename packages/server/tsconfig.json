@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "allowImportingTsExtensions": true,
+    "moduleDetection": "force",
+    "paths": {
+      "@fate0/shared": ["../shared/src/index.ts"],
+      "@fate0/shared/*": ["../shared/src/*"]
+    }
+  },
+  "include": ["src"]
+}

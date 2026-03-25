@@ -12,6 +12,9 @@ import { useProfile } from '../context/ProfileContext';
 import { hasUsedToday } from '../logic/dailyLimitEngine';
 import { Capacitor } from '@capacitor/core';
 import { playBgm } from '../logic/bgmEngine';
+import { useAuth } from '../context/AuthContext';
+import { hasServer } from '../services/api';
+import AuthModal from '../components/layout/AuthModal';
 
 function hashDate(str: string): number {
   let h = 0;
@@ -26,6 +29,8 @@ export default function HomePage() {
   const [reverseTarget, setReverseTarget] = useState<'tarot' | 'horoscope' | 'saju' | 'omikuji' | null>(null);
   const [, forceUpdate] = useState(0);
   const [showExitPopup, setShowExitPopup] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const { isLoggedIn, logout } = useAuth();
 
   // Start home BGM on first interaction
   useEffect(() => {
@@ -128,6 +133,23 @@ export default function HomePage() {
                 📜 {t('history.title')}
               </motion.div>
             </Link>
+            {hasServer() && (
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                onClick={() => isLoggedIn ? logout() : setShowAuthModal(true)}
+                style={{
+                  marginTop: '4px',
+                  padding: '10px 16px',
+                  background: isLoggedIn ? 'rgba(46, 204, 113, 0.1)' : 'rgba(255,255,255,0.05)',
+                  borderRadius: '16px',
+                  fontSize: '12px',
+                  color: isLoggedIn ? 'rgba(46, 204, 113, 0.7)' : 'rgba(255,255,255,0.45)',
+                  cursor: 'pointer',
+                }}
+              >
+                {isLoggedIn ? `✓ ${t('auth.loggedIn', 'Synced')}` : `☁ ${t('auth.login', 'Login')}`}
+              </motion.div>
+            )}
           </div>
         }
         west={
@@ -254,6 +276,7 @@ export default function HomePage() {
           </motion.div>
         )}
       </AnimatePresence>
+      <AuthModal isOpen={showAuthModal} onClose={() => setShowAuthModal(false)} />
     </motion.div>
   );
 }

@@ -4,7 +4,7 @@ import { playBgm } from '../logic/bgmEngine';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { sfxBreath, sfxShuffle, sfxCut, sfxCardFlip, sfxReadingReveal, sfxAdviceCard, sfxButtonClick, sfxTextInput } from '../logic/soundEngine';
-import { tarotSymbols } from '../data/tarotSymbols';
+import { tarotSymbols } from '@fate0/shared';
 import ShareButton from '../components/layout/ShareButton';
 import Watermark from '../components/layout/Watermark';
 import { addHistory } from '../logic/historyEngine';
