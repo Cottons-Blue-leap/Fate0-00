@@ -25,7 +25,6 @@ export default function SharePreview({ entry, isOpen, onClose }: Props) {
   const { t } = useTranslation();
   const cardRef = useRef<HTMLDivElement>(null);
   const [capturing, setCapturing] = useState(false);
-  const [hideBirth, setHideBirth] = useState(false);
 
   const handleSave = useCallback(async () => {
     if (!cardRef.current) return;
@@ -100,18 +99,11 @@ export default function SharePreview({ entry, isOpen, onClose }: Props) {
           >
             {/* Card preview (scaled to fit screen) */}
             <div style={{ transform: 'scale(0.55)', transformOrigin: 'top center', marginBottom: '-160px' }}>
-              <ShareCard ref={cardRef} entry={entry} hideBirth={hideBirth} />
+              <ShareCard ref={cardRef} entry={entry} />
             </div>
 
             {/* Controls */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center', marginTop: '16px' }}>
-              {entry.type === 'saju' && (
-                <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: 'rgba(255,255,255,0.4)', cursor: 'pointer' }}>
-                  <input type="checkbox" checked={hideBirth} onChange={(e) => setHideBirth(e.target.checked)} style={{ accentColor: '#9b59b6' }} />
-                  {t('report.hideBirth', 'Hide birth info')}
-                </label>
-              )}
-
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}>
                 <ShareBtn icon="💾" label={t('share.saveImage', 'Save')} onClick={handleSave} disabled={capturing} />
                 {(canNativeShare || Capacitor.isNativePlatform()) && (

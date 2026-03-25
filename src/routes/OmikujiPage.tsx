@@ -153,7 +153,12 @@ export default function OmikujiPage() {
   useEffect(() => {
     if (step === 'reading') {
       sfxRankReveal(rankIdx <= 1);
-      addHistory({ type: 'omikuji', summary: '', data: { rank: ranks[rankIdx], rankKanji: rankKanji[rankIdx], number: stickNum, question, wakaJa: t(`waka.${ranks[rankIdx]}.japanese`), wakaKo: t(`waka.${ranks[rankIdx]}.translation`) } });
+      addHistory({ type: 'omikuji', summary: '', data: {
+        rank: ranks[rankIdx], rankKanji: rankKanji[rankIdx], number: stickNum, question,
+        wakaJa: t(`waka.${ranks[rankIdx]}.japanese`), wakaKo: t(`waka.${ranks[rankIdx]}.translation`),
+        wish: t(`omikuji.detail.${ranks[rankIdx]}.wish`), love: t(`omikuji.detail.${ranks[rankIdx]}.love`),
+        health: t(`omikuji.detail.${ranks[rankIdx]}.health`), travel: t(`omikuji.detail.${ranks[rankIdx]}.travel`),
+      } });
     }
   }, [step]);
 

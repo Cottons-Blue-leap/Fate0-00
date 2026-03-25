@@ -364,7 +364,7 @@ export default function SajuPage() {
             </div>
 
             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-              onClick={() => { sfxButtonClick(); addHistory({ type: 'saju', summary: '', data: { pillars: reading.pillars.map(p => p.stem + p.branch), dayMaster: dayMaster?.title || '', dayMasterElement: reading.dominantElement, dayMasterEmoji: dayMaster?.emoji || '' } }); markUsedToday('saju'); setLimitReached(true); setStep('daily'); }}
+              onClick={() => { sfxButtonClick(); addHistory({ type: 'saju', summary: '', data: { pillars: reading.pillars.map(p => p.stem + p.branch), dayMaster: dayMaster?.title || '', dayMasterElement: reading.dominantElement, dayMasterEmoji: dayMaster?.emoji || '', dayMasterDesc: dayMaster?.description || '', birthInfo: `${year}.${month}.${day} ${hour}:00`, elements: landscape ? { dominant: landscape.dominant, deficient: landscape.deficient } : null } }); markUsedToday('saju'); setLimitReached(true); setStep('daily'); }}
               style={{ padding: '14px 40px', background: 'rgba(212,175,55,0.2)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: '12px', fontSize: '16px', color: '#f5d5d5' }}>
               {t('saju.toDailyButton')}
             </motion.button>
