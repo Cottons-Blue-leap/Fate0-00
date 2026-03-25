@@ -250,7 +250,10 @@
     "policyLink": "Privacy Policy"
   },
   "share": {
-    "button": "Share result"
+    "button": "Share result",
+    "catchphrase": "0:00 — when fate rewrites itself.",
+    "userFortune": "{{name}}'s fortune",
+    "profileSuggestion": "Save your profile for a faster experience next time"
   },
   "history": {
     "title": "Past readings",

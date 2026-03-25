@@ -64,7 +64,10 @@
     "complete": "운명이 재편되었습니다"
   },
   "share": {
-    "button": "결과 공유하기"
+    "button": "결과 공유하기",
+    "catchphrase": "0시, 운명이 다시 쓰이는 시간.",
+    "userFortune": "{{name}}님의 운세",
+    "profileSuggestion": "프로필을 저장하면 다음엔 더 빠르게 볼 수 있어요"
   },
   "home": {
     "tarot": "타로 카드",

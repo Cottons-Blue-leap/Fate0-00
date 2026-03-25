@@ -1,5 +1,5 @@
 import { useState, useCallback, lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useSearchParams } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import HomePage from './routes/HomePage';
 
@@ -33,6 +33,9 @@ function Loading() {
 
 function AppRoutes() {
   const { hasProfile } = useProfile();
+  const [searchParams] = useSearchParams();
+  const isShareRef = searchParams.get('ref') === 'share';
+  const canAccess = hasProfile || isShareRef;
 
   return (
     <Suspense fallback={<Loading />}>
@@ -40,10 +43,10 @@ function AppRoutes() {
         <Routes>
           <Route path="/" element={hasProfile ? <HomePage /> : <Navigate to="/profile" replace />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/tarot" element={hasProfile ? <TarotPage /> : <Navigate to="/profile" replace />} />
-          <Route path="/horoscope" element={hasProfile ? <HoroscopePage /> : <Navigate to="/profile" replace />} />
-          <Route path="/saju" element={hasProfile ? <SajuPage /> : <Navigate to="/profile" replace />} />
-          <Route path="/omikuji" element={hasProfile ? <OmikujiPage /> : <Navigate to="/profile" replace />} />
+          <Route path="/tarot" element={canAccess ? <TarotPage /> : <Navigate to="/profile" replace />} />
+          <Route path="/horoscope" element={canAccess ? <HoroscopePage /> : <Navigate to="/profile" replace />} />
+          <Route path="/saju" element={canAccess ? <SajuPage /> : <Navigate to="/profile" replace />} />
+          <Route path="/omikuji" element={canAccess ? <OmikujiPage /> : <Navigate to="/profile" replace />} />
           <Route path="/history" element={hasProfile ? <HistoryPage /> : <Navigate to="/profile" replace />} />
           <Route path="/share/:id" element={<SharedReadingPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />

@@ -18,6 +18,7 @@ import ReverseFateScreen from '../components/layout/ReverseFateScreen';
 import { canReverse, getReverseRemaining } from '../logic/reverseEngine';
 import { useSessionState } from '../hooks/useSessionState';
 import { getLatestEntry } from '../hooks/useLatestEntry';
+import ProfileSuggestion from '../components/layout/ProfileSuggestion';
 
 type Step = 'input' | 'sync' | 'transit' | 'oracle';
 
@@ -390,6 +391,7 @@ export default function HoroscopePage() {
               </motion.button>
               <ShareButton entry={getLatestEntry('horoscope')} theme="west" />
             </div>
+            <ProfileSuggestion />
           </motion.div>
         )}
 

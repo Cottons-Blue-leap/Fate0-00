@@ -18,6 +18,7 @@ import ReverseFateScreen from '../components/layout/ReverseFateScreen';
 import { canReverse, getReverseRemaining } from '../logic/reverseEngine';
 import { useSessionState } from '../hooks/useSessionState';
 import { getLatestEntry } from '../hooks/useLatestEntry';
+import ProfileSuggestion from '../components/layout/ProfileSuggestion';
 
 type Step = 'input' | 'extract' | 'daymaster' | 'landscape' | 'daeun' | 'daily';
 
@@ -96,7 +97,11 @@ export default function SajuPage() {
         elements: landscape ? { dominant: landscape.dominant, deficient: landscape.deficient } : null,
         dailyPillar: `${daily.todayPillar.stem}${daily.todayPillar.branch}`,
         dailyElement: daily.todayPillar.element,
-        dailyAdvice: daily.adviceKey,
+        dailyAdvice: (() => {
+          const arr = t(`sajuDaily.advice.${daily.interaction}`, { returnObjects: true });
+          const idx = Number(daily.adviceKey.split('.').pop());
+          return Array.isArray(arr) ? arr[idx] : daily.adviceKey;
+        })(),
         dailyOverall: daily.overallScore,
       } });
       markUsedToday('saju');
@@ -446,7 +451,11 @@ export default function SajuPage() {
 
               {/* Advice */}
               <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '12px', padding: '16px', marginBottom: '24px', fontSize: '14px', lineHeight: '1.8', textAlign: 'left' }}>
-                {t(daily.adviceKey)}
+                {(() => {
+                  const arr = t(`sajuDaily.advice.${daily.interaction}`, { returnObjects: true });
+                  const idx = Number(daily.adviceKey.split('.').pop());
+                  return Array.isArray(arr) ? arr[idx] : t(daily.adviceKey);
+                })()}
               </div>
               <Watermark />
               </div>
@@ -459,6 +468,7 @@ export default function SajuPage() {
                 </motion.button>
                 <ShareButton entry={getLatestEntry('saju')} theme="east" />
               </div>
+              <ProfileSuggestion />
             </motion.div>
           );
         })()}

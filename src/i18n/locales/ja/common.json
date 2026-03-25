@@ -250,7 +250,10 @@
     "policyLink": "プライバシーポリシー"
   },
   "share": {
-    "button": "結果をシェア"
+    "button": "結果を共有",
+    "catchphrase": "0時、運命がふたたび綴られる時。",
+    "userFortune": "{{name}}の運勢",
+    "profileSuggestion": "プロフィールを保存すると、次回からもっと早く占えます"
   },
   "history": {
     "title": "過去の占い",

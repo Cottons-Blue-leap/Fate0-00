@@ -14,6 +14,7 @@ import ReverseFateScreen from '../components/layout/ReverseFateScreen';
 import { canReverse, getReverseRemaining } from '../logic/reverseEngine';
 import { useSessionState } from '../hooks/useSessionState';
 import { getLatestEntry } from '../hooks/useLatestEntry';
+import ProfileSuggestion from '../components/layout/ProfileSuggestion';
 import { useShakeDetection, isShakeEnabled } from '../hooks/useShakeDetection';
 
 type Step = 'purify' | 'pray' | 'shake' | 'waka' | 'reading' | 'fate';
@@ -156,8 +157,8 @@ export default function OmikujiPage() {
       addHistory({ type: 'omikuji', summary: '', data: {
         rank: ranks[rankIdx], rankKanji: rankKanji[rankIdx], number: stickNum, question,
         wakaJa: t(`waka.${ranks[rankIdx]}.japanese`), wakaKo: t(`waka.${ranks[rankIdx]}.translation`),
-        wish: t(`omikuji.detail.${ranks[rankIdx]}.wish`), love: t(`omikuji.detail.${ranks[rankIdx]}.love`),
-        health: t(`omikuji.detail.${ranks[rankIdx]}.health`), travel: t(`omikuji.detail.${ranks[rankIdx]}.travel`),
+        wish: t(`omikujiData.${ranks[rankIdx]}.0.wish`), love: t(`omikujiData.${ranks[rankIdx]}.0.relationship`),
+        health: t(`omikujiData.${ranks[rankIdx]}.0.health`), travel: t(`omikujiData.${ranks[rankIdx]}.0.travel`),
       } });
     }
   }, [step]);
@@ -546,6 +547,7 @@ export default function OmikujiPage() {
                     {t('omikuji.newVisit')}
                   </motion.button>
                 </div>
+                <ProfileSuggestion />
               </motion.div>
             ) : (
               <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}>
@@ -566,6 +568,7 @@ export default function OmikujiPage() {
                     {t('omikuji.newVisit')}
                   </motion.button>
                 </div>
+                <ProfileSuggestion />
               </motion.div>
             )}
           </motion.div>

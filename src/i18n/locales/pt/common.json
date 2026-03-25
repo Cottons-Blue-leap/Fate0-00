@@ -249,7 +249,10 @@
     "confirm": "Tomar assento"
   },
   "share": {
-    "button": "Compartilhar resultado"
+    "button": "Compartilhar resultado",
+    "catchphrase": "0h00 — quando o destino se reescreve.",
+    "userFortune": "Sorte de {{name}}",
+    "profileSuggestion": "Salve seu perfil para uma experiência mais rápida"
   },
   "history": {
     "title": "Leituras passadas",

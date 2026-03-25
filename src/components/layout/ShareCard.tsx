@@ -1,5 +1,6 @@
 import { forwardRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import i18n from '../../i18n';
 import { useProfile } from '../../context/ProfileContext';
 import type { HistoryEntry } from '../../logic/historyEngine';
 import { tarotSymbols } from '@fate0/shared';
@@ -12,7 +13,8 @@ interface Props {
 }
 
 const ShareCard = forwardRef<HTMLDivElement, Props>(({ entry }, ref) => {
-  const { t } = useTranslation();
+  const { t: tCurrent } = useTranslation();
+  const t = entry.language ? i18n.getFixedT(entry.language) : tCurrent;
   const { profile } = useProfile();
   const data = entry.data || {};
   const date = new Date(entry.date);
@@ -41,7 +43,7 @@ const ShareCard = forwardRef<HTMLDivElement, Props>(({ entry }, ref) => {
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <div style={{ fontSize: '9px', color: 'rgba(255,255,255,0.2)', letterSpacing: '4px' }}>✦ FATE 0:00 ✦</div>
-        <div style={{ fontSize: '10px', color: `${gold}80`, marginTop: '3px', fontStyle: 'italic' }}>0시, 운명이 다시 쓰이는 시간.</div>
+        <div style={{ fontSize: '10px', color: `${gold}80`, marginTop: '3px', fontStyle: 'italic' }}>{t('share.catchphrase')}</div>
         <div style={{ fontSize: '9px', color: 'rgba(255,255,255,0.25)', marginTop: '3px' }}>{dateStr} · {profile?.name || ''}</div>
       </div>
 
@@ -59,7 +61,7 @@ const ShareCard = forwardRef<HTMLDivElement, Props>(({ entry }, ref) => {
 
       {/* Footer */}
       <div style={{ textAlign: 'center', marginTop: '10px' }}>
-        {profile?.name && <div style={{ fontSize: '9px', color: 'rgba(255,255,255,0.2)' }}>{profile.name}님의 운세</div>}
+        {profile?.name && <div style={{ fontSize: '9px', color: 'rgba(255,255,255,0.2)' }}>{t('share.userFortune', { name: profile.name })}</div>}
         <div style={{ fontSize: '8px', color: 'rgba(255,255,255,0.1)', letterSpacing: '2px', marginTop: '2px' }}>운명 0시 · fate0-00.vercel.app</div>
       </div>
     </div>

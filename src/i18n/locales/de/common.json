@@ -249,7 +249,10 @@
     "confirm": "Platz nehmen"
   },
   "share": {
-    "button": "Ergebnis teilen"
+    "button": "Ergebnis teilen",
+    "catchphrase": "0:00 — wenn das Schicksal sich neu schreibt.",
+    "userFortune": "{{name}}s Horoskop",
+    "profileSuggestion": "Speichere dein Profil für ein schnelleres Erlebnis beim nächsten Mal"
   },
   "history": {
     "title": "Vergangene Lesungen",

@@ -249,7 +249,10 @@
     "confirm": "Yerinize buyurun"
   },
   "share": {
-    "button": "Sonucu paylaş"
+    "button": "Sonucu paylaş",
+    "catchphrase": "0:00 — kaderin yeniden yazıldığı an.",
+    "userFortune": "{{name}} falı",
+    "profileSuggestion": "Bir dahaki sefere daha hızlı deneyim için profilinizi kaydedin"
   },
   "history": {
     "title": "Geçmiş fallar",

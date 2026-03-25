@@ -249,7 +249,10 @@
     "confirm": "請入座"
   },
   "share": {
-    "button": "分享結果"
+    "button": "分享結果",
+    "catchphrase": "零時，命運重新書寫的時刻。",
+    "userFortune": "{{name}}的運勢",
+    "profileSuggestion": "保存您的資料，下次更快體驗"
   },
   "history": {
     "title": "歷史記錄",

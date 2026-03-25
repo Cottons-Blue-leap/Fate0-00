@@ -249,7 +249,10 @@
     "confirm": "Accomodarsi"
   },
   "share": {
-    "button": "Condividi risultato"
+    "button": "Condividi risultato",
+    "catchphrase": "0:00 — quando il destino si riscrive.",
+    "userFortune": "Oroscopo di {{name}}",
+    "profileSuggestion": "Salva il tuo profilo per un'esperienza più rapida la prossima volta"
   },
   "history": {
     "title": "Letture passate",

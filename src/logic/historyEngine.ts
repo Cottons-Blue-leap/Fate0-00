@@ -1,6 +1,7 @@
 // Fortune history — saves results to localStorage with optional server sync
 
 import { isLoggedIn, syncHistory as syncToServer } from '../services/api';
+import i18n from '../i18n';
 
 export interface HistoryEntry {
   id: string;
@@ -8,6 +9,7 @@ export interface HistoryEntry {
   date: string; // ISO date
   summary: string; // short description (legacy or i18n key)
   data: Record<string, unknown>; // fortune-specific data for i18n rendering
+  language?: string; // language code at time of fortune generation
 }
 
 const STORAGE_KEY = 'fate0_history';
@@ -29,6 +31,7 @@ export function addHistory(entry: Omit<HistoryEntry, 'id' | 'date'>): void {
     ...entry,
     id: `${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
     date: new Date().toISOString(),
+    language: entry.language || i18n.language,
   };
   history.unshift(newEntry);
   if (history.length > MAX_ENTRIES) history.length = MAX_ENTRIES;

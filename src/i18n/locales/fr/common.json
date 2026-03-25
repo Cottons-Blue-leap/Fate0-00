@@ -249,7 +249,10 @@
     "confirm": "Prendre place"
   },
   "share": {
-    "button": "Partager le résultat"
+    "button": "Partager le résultat",
+    "catchphrase": "0h00 — l'heure où le destin se réécrit.",
+    "userFortune": "Horoscope de {{name}}",
+    "profileSuggestion": "Enregistrez votre profil pour aller plus vite la prochaine fois"
   },
   "history": {
     "title": "Lectures passées",

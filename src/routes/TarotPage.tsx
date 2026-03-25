@@ -14,6 +14,7 @@ import ReverseFateScreen from '../components/layout/ReverseFateScreen';
 import { canReverse, getReverseRemaining } from '../logic/reverseEngine';
 import { useSessionState } from '../hooks/useSessionState';
 import { getLatestEntry } from '../hooks/useLatestEntry';
+import ProfileSuggestion from '../components/layout/ProfileSuggestion';
 
 type Spread = '1-card' | '3-card' | 'celtic';
 type Step = 'prepare' | 'question' | 'shuffle' | 'cut' | 'spread' | 'flip' | 'reading' | 'advice';
@@ -535,6 +536,7 @@ export default function TarotPage() {
                 {t('tarot.newReading')}
               </motion.button>
             </div>
+            <ProfileSuggestion />
           </motion.div>
         )}
       </AnimatePresence>

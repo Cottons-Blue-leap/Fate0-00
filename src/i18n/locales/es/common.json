@@ -249,7 +249,10 @@
     "confirm": "Tomar asiento"
   },
   "share": {
-    "button": "Compartir resultado"
+    "button": "Compartir resultado",
+    "catchphrase": "0:00 — cuando el destino se reescribe.",
+    "userFortune": "Fortuna de {{name}}",
+    "profileSuggestion": "Guarda tu perfil para una experiencia más rápida"
   },
   "history": {
     "title": "Lecturas pasadas",

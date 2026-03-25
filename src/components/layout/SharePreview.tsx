@@ -112,13 +112,15 @@ export default function SharePreview({ entry, isOpen, onClose }: Props) {
     setTimeout(() => setStatus(''), 3000);
   }, [t]);
 
+  const shareUrl = `https://fate0-00.vercel.app/${entry.type}?ref=share`;
+
   const handleCopyUrl = useCallback(async () => {
     try {
-      await navigator.clipboard.writeText('https://fate0-00.vercel.app');
+      await navigator.clipboard.writeText(shareUrl);
       setStatus('URL ✓');
     } catch {
       const input = document.createElement('input');
-      input.value = 'https://fate0-00.vercel.app';
+      input.value = shareUrl;
       document.body.appendChild(input);
       input.select();
       document.execCommand('copy');
@@ -126,7 +128,7 @@ export default function SharePreview({ entry, isOpen, onClose }: Props) {
       setStatus('URL ✓');
     }
     setTimeout(() => setStatus(''), 2000);
-  }, []);
+  }, [shareUrl]);
 
   const canNativeShare = typeof navigator !== 'undefined' && !!navigator.share;
 
@@ -151,7 +153,7 @@ export default function SharePreview({ entry, isOpen, onClose }: Props) {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             onClick={(e) => e.stopPropagation()}
-            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxHeight: '90vh', overflowY: 'auto' }}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxHeight: '90vh', overflowY: 'auto', paddingBottom: '8px' }}
           >
             {/* Visible preview (CSS-scaled, NOT used for capture) */}
             <div style={{ transform: 'scale(0.5)', transformOrigin: 'top center', marginBottom: '-190px' }}>
@@ -171,7 +173,7 @@ export default function SharePreview({ entry, isOpen, onClose }: Props) {
             )}
 
             {/* Controls */}
-            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '12px' }}>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '12px', padding: '4px' }}>
               <ShareBtn icon="💾" label={t('share.saveImage', 'Save')} onClick={handleSave} disabled={capturing} />
               {(canNativeShare || Capacitor.isNativePlatform()) && (
                 <ShareBtn icon="📤" label={t('share.nativeShare', 'Share')} onClick={handleShare} disabled={capturing} />
