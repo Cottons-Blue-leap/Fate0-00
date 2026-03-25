@@ -31,7 +31,7 @@ const policies: Record<string, { title: string; sections: Array<{ heading: strin
       },
       {
         heading: '6. 연락처',
-        content: '개인정보 관련 문의: gingernal.dev@gmail.com',
+        content: '개인정보 관련 문의: cottonsblueleap@gmail.com',
       },
     ],
   },
@@ -63,7 +63,7 @@ const policies: Record<string, { title: string; sections: Array<{ heading: strin
       },
       {
         heading: '6. Contact',
-        content: 'For privacy inquiries: gingernal.dev@gmail.com',
+        content: 'For privacy inquiries: cottonsblueleap@gmail.com',
       },
     ],
   },
@@ -95,7 +95,7 @@ const policies: Record<string, { title: string; sections: Array<{ heading: strin
       },
       {
         heading: '6. お問い合わせ',
-        content: 'プライバシーに関するお問い合わせ：gingernal.dev@gmail.com',
+        content: 'プライバシーに関するお問い合わせ：cottonsblueleap@gmail.com',
       },
     ],
   },

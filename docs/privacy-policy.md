@@ -29,7 +29,7 @@
 본 방침이 변경될 경우 이 페이지에 게시하여 알려드립니다.
 
 ### 6. 연락처
-개인정보 관련 문의: **gingernal.dev@gmail.com**
+개인정보 관련 문의: **cottonsblueleap@gmail.com**
 
 ---
 
@@ -58,7 +58,7 @@ This app is not intended for children under 13 and does not knowingly collect pe
 Any changes to this policy will be posted on this page.
 
 ### 6. Contact
-For privacy inquiries: **gingernal.dev@gmail.com**
+For privacy inquiries: **cottonsblueleap@gmail.com**
 
 ---
 
@@ -87,4 +87,4 @@ For privacy inquiries: **gingernal.dev@gmail.com**
 本ポリシーに変更がある場合、このページに掲載してお知らせします。
 
 ### 6. お問い合わせ
-プライバシーに関するお問い合わせ：**gingernal.dev@gmail.com**
+プライバシーに関するお問い合わせ：**cottonsblueleap@gmail.com**
