@@ -69,9 +69,6 @@ export {
   getSunSign,
 } from './logic/moonEngine';
 
-// === Logic: Nebula Oracle ===
-export type { OracleMessage } from './logic/nebulaOracle';
-export { generateOracleMessage } from './logic/nebulaOracle';
 
 // === Logic: Waka ===
 export type { Waka } from './logic/wakaEngine';

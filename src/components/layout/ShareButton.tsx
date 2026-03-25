@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import html2canvas from 'html2canvas';
 import { Capacitor } from '@capacitor/core';
 
 interface Props {
@@ -16,6 +15,7 @@ export default function ShareButton({ targetRef, theme = 'west' }: Props) {
     if (!targetRef.current) return;
 
     try {
+      const { default: html2canvas } = await import('html2canvas');
       const canvas = await html2canvas(targetRef.current, {
         backgroundColor: theme === 'west' ? '#1a0a2e' : '#2e0a0a',
         scale: 2,
