@@ -1,0 +1,448 @@
+{
+  "dailyQuote": [
+    "Das Schicksal begünstigt die Mutigen.",
+    "Die Wahl von heute formt die Sterne von morgen.",
+    "Ein unsichtbarer Faden führt dich.",
+    "Nur wer zu fragen wagt, findet die Antwort.",
+    "Nach Mitternacht wird alles neu geboren.",
+    "In deinem Inneren lebt ein ganzes Universum.",
+    "Kämpfe nicht gegen die Strömung — lass dich tragen.",
+    "Die Samen, die du heute säst, werden morgen ein Wald.",
+    "Das Schicksal wartet jenseits der Angst.",
+    "In einem stillen Herzen spiegeln sich die Sterne.",
+    "Die Zeit vergeht, doch das Schicksal wird gewählt.",
+    "Ein kleiner Funke entfacht ein großes Feuer.",
+    "Jede Begegnung birgt einen verborgenen Sinn.",
+    "Der Wind von heute verrät die Richtung von morgen.",
+    "Schließe die Augen — manches sieht man nur von innen."
+  ],
+  "tarot": {
+    "cards": {
+      "0": {
+        "name": "Der Narr",
+        "upright": "Ein neuer Anfang steht bevor. Machen Sie den ersten Schritt ohne Angst.",
+        "reversed": "Hüten Sie sich vor unüberlegtem Handeln. Ohne Vorbereitung zu springen ist gefährlich."
+      },
+      "1": {
+        "name": "Der Magier",
+        "upright": "Alle Werkzeuge, die Sie brauchen, stehen bereit. Verwirklichen Sie Ihre Träume mit Willenskraft und Konzentration.",
+        "reversed": "Verschwenden Sie Ihre Fähigkeiten? Ihre Konzentration ist zerstreut."
+      },
+      "2": {
+        "name": "Die Hohepriesterin",
+        "upright": "Vertrauen Sie Ihrer Intuition. Unter der Oberfläche verbirgt sich die Wahrheit.",
+        "reversed": "Sie ignorieren Ihre Intuition. Unterdrücken Sie Ihre innere Stimme nicht."
+      },
+      "3": {
+        "name": "Die Kaiserin",
+        "upright": "Energie des Überflusses und der Schöpfung erfüllt Sie. Liebe und Schönheit umgeben Sie.",
+        "reversed": "Sie vernachlässigen die Fürsorge für sich selbst."
+      },
+      "4": {
+        "name": "Der Kaiser",
+        "upright": "Es ist eine Zeit der Stabilität und Ordnung. Zeigen Sie Führungsstärke.",
+        "reversed": "Lassen Sie übermäßigen Kontrollwunsch los. Flexibilität ist nötig."
+      },
+      "5": {
+        "name": "Der Hierophant",
+        "upright": "Suchen Sie Weisheit in Traditionen und Lehren.",
+        "reversed": "Lassen Sie sich nicht von Konventionen fesseln. Es ist Zeit, Ihren eigenen Weg zu finden."
+      },
+      "6": {
+        "name": "Die Liebenden",
+        "upright": "Ein Moment wichtiger Entscheidung. Folgen Sie dem, wohin Ihr Herz Sie führt.",
+        "reversed": "In der Beziehung herrscht Ungleichgewicht. Stellen Sie sich dem Wertekonflikt."
+      },
+      "7": {
+        "name": "Der Wagen",
+        "upright": "Mit starkem Willen können Sie den Sieg erringen. Gehen Sie voran.",
+        "reversed": "Sie haben die Richtung verloren und treiben dahin. Gewinnen Sie die Kontrolle zurück."
+      },
+      "8": {
+        "name": "Die Kraft",
+        "upright": "Sanfte Stärke ist wahre Kraft. Überwinden Sie alles mit Geduld und Mut.",
+        "reversed": "Es fehlt an Selbstvertrauen. Glauben Sie an Ihre innere Stärke."
+      },
+      "9": {
+        "name": "Der Eremit",
+        "upright": "Sie brauchen Zeit für sich allein. Schauen Sie in Ihr Inneres.",
+        "reversed": "Kommen Sie aus der Isolation heraus. Übermäßige Zurückgezogenheit bringt Einsamkeit."
+      },
+      "10": {
+        "name": "Das Rad des Schicksals",
+        "upright": "Ein Wendepunkt des Schicksals. Reiten Sie auf der Welle der Veränderung.",
+        "reversed": "Die Pechsträhne geht vorüber. Haben Sie Geduld."
+      },
+      "11": {
+        "name": "Die Gerechtigkeit",
+        "upright": "Ein gerechtes Ergebnis naht. Wahrheit und Gerechtigkeit werden siegen.",
+        "reversed": "Empfinden Sie Ungerechtigkeit? Legen Sie Vorurteile ab."
+      },
+      "12": {
+        "name": "Der Gehängte",
+        "upright": "Es ist Zeit innezuhalten. Betrachten Sie die Dinge aus einer anderen Perspektive.",
+        "reversed": "Hören Sie auf mit unnötigen Opfern. Lassen Sie los, was losgelassen werden muss."
+      },
+      "13": {
+        "name": "Der Tod",
+        "upright": "Das Ende ist ein neuer Anfang. Nehmen Sie die Veränderung an.",
+        "reversed": "Sie fürchten sich vor Veränderung. Klammern Sie sich nicht an die Vergangenheit."
+      },
+      "14": {
+        "name": "Die Mäßigkeit",
+        "upright": "Es ist eine Zeit des Gleichgewichts und der Harmonie. Gehen Sie den Weg der goldenen Mitte.",
+        "reversed": "Das Gleichgewicht ist gestört. Stellen Sie die Harmonie wieder her."
+      },
+      "15": {
+        "name": "Der Teufel",
+        "upright": "Hüten Sie sich vor Versuchung und Anhaftung. Die Ketten, die Sie fesseln, können nur Sie selbst lösen.",
+        "reversed": "Sie befreien sich aus Ihren Fesseln. Dies ist der erste Schritt in die Freiheit."
+      },
+      "16": {
+        "name": "Der Turm",
+        "upright": "Plötzliche Veränderungen stehen bevor. Etwas muss einstürzen, damit Neues entstehen kann.",
+        "reversed": "Sie meiden die Zerstörung, doch Veränderung ist unvermeidlich."
+      },
+      "17": {
+        "name": "Der Stern",
+        "upright": "Ein Licht der Hoffnung ist zu sehen. Geben Sie Ihre Träume nicht auf.",
+        "reversed": "Verlieren Sie die Hoffnung? Suchen Sie auch nach dem kleinsten Lichtschein."
+      },
+      "18": {
+        "name": "Der Mond",
+        "upright": "Eine Zeit der Unsicherheit und Verwirrung. Unterscheiden Sie zwischen Illusion und Wirklichkeit.",
+        "reversed": "Die Angst legt sich. Die Wahrheit kommt ans Licht."
+      },
+      "19": {
+        "name": "Die Sonne",
+        "upright": "Eine Zeit des Erfolgs und der Freude! Seien Sie selbstbewusst.",
+        "reversed": "Die Freude ist vorübergehend verdeckt. Hinter den Wolken scheint immer die Sonne."
+      },
+      "20": {
+        "name": "Das Gericht",
+        "upright": "Zeit des Erwachens. Blicken Sie auf die Vergangenheit zurück und fassen Sie einen neuen Entschluss.",
+        "reversed": "Sie meiden die Selbstreflexion. Lernen Sie aus der Vergangenheit."
+      },
+      "21": {
+        "name": "Die Welt",
+        "upright": "Die Karte der Vollendung und Erfüllung. Ein neues Kapitel beginnt!",
+        "reversed": "Die Vollendung verzögert sich. Ein letzter Schritt steht noch aus."
+      }
+    },
+    "summary1": "Die Karte {{name}} wurde gezogen.",
+    "summary3": "Lesen Sie den Fluss von Vergangenheit, Gegenwart und Zukunft und handeln Sie weise."
+  },
+  "horoscopeData": {
+    "overall": [
+      "Heute ist ein Tag voller Energie. Stellen Sie sich neuen Herausforderungen.",
+      "Ruhige Planung führt zu guten Ergebnissen.",
+      "Kommunikation mit Ihrem Umfeld ist heute wichtig.",
+      "Unerwartetes Glück könnte kommen.",
+      "Sie brauchen Zeit, um sich um sich selbst zu kümmern.",
+      "Ein Tag, an dem kreative Ideen aufblühen.",
+      "Ein altes Problem könnte eine Lösung finden.",
+      "Heute ist finanzielle Vorsicht geboten.",
+      "Neue Bekanntschaften könnten entstehen.",
+      "Ein Tag, an dem Ausdauer und Geduld belohnt werden.",
+      "Ein Tag, an dem die Intuition geschärft ist.",
+      "Die Zeit, die Früchte früherer Bemühungen zu ernten."
+    ],
+    "love": [
+      "Ein tiefes Gespräch mit dem Partner stärkt die Beziehung.",
+      "Ein Tag voller Aufregung über neue Begegnungen.",
+      "Versuchen Sie, die Perspektive des anderen einzunehmen.",
+      "Kleine Meinungsverschiedenheiten sind möglich, lösen sich aber schnell.",
+      "Auch Zeit für sich allein ist wertvoll.",
+      "Ein Tag mit romantischer Atmosphäre.",
+      "Entdecken Sie neue Gefühle in einer bestehenden Beziehung.",
+      "Es ist wichtig, Ausgewogenheit in der Beziehung zu finden.",
+      "Fassen Sie Mut und machen Sie den ersten Schritt.",
+      "Dankbarkeit auszudrücken vertieft die Beziehung."
+    ],
+    "career": [
+      "Sie können herausragende Leistungen bei der Arbeit erzielen.",
+      "Zusammenarbeit mit Kollegen schafft Synergien.",
+      "Ein guter Zeitpunkt, ein neues Projekt zu starten.",
+      "Sorgfalt zahlt sich heute aus.",
+      "Eine Gelegenheit, Führungsstärke zu zeigen, wird kommen.",
+      "Investitionen in Lernen und Selbstentwicklung werden sich auszahlen.",
+      "Verschieben Sie wichtige Entscheidungen auf den Nachmittag.",
+      "Seien Sie aktiv beim Netzwerken.",
+      "Überprüfen Sie Ihre Routine und steigern Sie die Effizienz.",
+      "Es ist Zeit, selbstbewusst Ihren Wert zu zeigen."
+    ],
+    "colors": [
+      "Rot",
+      "Blau",
+      "Grün",
+      "Gelb",
+      "Lila",
+      "Rosa",
+      "Himmelblau",
+      "Gold",
+      "Silber",
+      "Orange"
+    ]
+  },
+  "sajuData": {
+    "木": "Die Energie von Holz (木) ist stark. Sie sind voller Wachstums- und Entwicklungsenergie. Mit einer beständig wachsenden Natur wie ein Baum zeichnen Sie sich in den Bereichen Bildung, Kreativität und Planung aus. Die östliche Richtung und Grün sind günstig.",
+    "火": "Die Energie von Feuer (火) ist stark. Sie sind voller Leidenschaft und Energie. Mit einer hellen und heißen Natur wie eine Flamme glänzen Sie in den Bereichen Kunst, Unterhaltung und Führung. Die südliche Richtung und Rot sind günstig.",
+    "土": "Die Energie von Erde (土) ist stark. Sie besitzen die Energie der Stabilität und des Zentrums. Mit einer soliden und vertrauenswürdigen Natur wie die Erde zeigen Sie Fähigkeiten in den Bereichen Verwaltung, Immobilien und Vermittlung. Gelb ist günstig.",
+    "金": "Die Energie von Metall (金) ist stark. Sie besitzen die Energie der Entschlossenheit und Gerechtigkeit. Mit einer harten und scharfen Natur wie Stahl zeichnen Sie sich in den Bereichen Recht, Finanzen und Technologie aus. Die westliche Richtung und Weiß sind günstig.",
+    "水": "Die Energie von Wasser (水) ist stark. Sie besitzen die Energie der Weisheit und Anpassungsfähigkeit. Mit einer flexiblen und tiefen Natur wie Wasser zeigen Sie Fähigkeiten in den Bereichen Forschung, Philosophie und Diplomatie. Die nördliche Richtung und Schwarz sind günstig."
+  },
+  "dayMaster": {
+    "甲": {
+      "title": "Der mächtige Baum, der den Himmel berührt",
+      "desc": "甲Holz — Sie sind ein mächtiger Baum, der gerade zum Himmel emporwächst. Starker Gerechtigkeitssinn und Führungskraft; einmal eingeschlagen, ändern Sie Ihre Richtung selten."
+    },
+    "乙": {
+      "title": "Die geschmeidige Ranke",
+      "desc": "乙Holz — Sie sind eine Ranke, die sich im Wind biegt, aber nie bricht. Sanft und anpassungsfähig, besitzen Sie künstlerische Sensibilität und Feingefühl."
+    },
+    "丙": {
+      "title": "Die Sonne, die alles erleuchtet",
+      "desc": "丙Feuer — Sie sind die Sonne, die die Welt erhellt. Leidenschaftlich und charismatisch, erwärmen Sie alle um sich herum."
+    },
+    "丁": {
+      "title": "Eine Kerze in der Dunkelheit",
+      "desc": "丁Feuer — Sie sind eine Kerze, die den Weg in der Dunkelheit weist. Sanftes, aber sicheres Licht; intellektuell und von tiefer Einsicht."
+    },
+    "戊": {
+      "title": "Der unerschütterliche Berg",
+      "desc": "戊Erde — Sie sind ein Berg, der selbst im Sturm standhält. Verlässlich und großherzig, Sie sind derjenige, auf den sich andere stützen."
+    },
+    "己": {
+      "title": "Die fruchtbare Erde",
+      "desc": "己Erde — Sie sind die fruchtbare Erde, die Leben nährt. Bescheiden und hingebungsvoll, Sie haben die Gabe, für andere zu sorgen."
+    },
+    "庚": {
+      "title": "Die Klinge aus rohem Erz",
+      "desc": "庚Metall — Sie sind ein kaltes, noch ungeschmolzenes Erz. Entschlossen und tatkräftig, Widrigkeiten schärfen nur Ihre Schneide."
+    },
+    "辛": {
+      "title": "Ein Juwel im Mondlicht",
+      "desc": "辛Metall — Sie sind ein kunstvoll geschliffenes Juwel, das im Mondlicht glänzt. Feinfühlig und perfektionistisch, Sie streben nach Schönheit und Reinheit."
+    },
+    "壬": {
+      "title": "Der unaufhaltsame große Strom",
+      "desc": "壬Wasser — Sie sind ein mächtiger Strom, der Berge durchschneidet auf dem Weg zum Meer. Weise und großherzig, Sie lieben die Freiheit."
+    },
+    "癸": {
+      "title": "Tautropfen in der Morgendämmerung",
+      "desc": "癸Wasser — Sie sind ein einzelner Tautropfen auf einem Grashalm in der Morgendämmerung. Feinfühlig und intuitiv, Sie besitzen die Inspiration, das Unsichtbare zu erspüren."
+    }
+  },
+  "waka": {
+    "daikichi": {
+      "japanese": "春風に\n花の香りの\n満ちわたり\n天地の恵み\n限りなき日よ",
+      "translation": "Im Frühlingswind verbreitet sich der Blütenduft — ein Tag grenzenloser Segnungen von Himmel und Erde",
+      "meaning": "Alles steht in voller Blüte. Die Samen, die Sie gesät haben, blühen endlich auf."
+    },
+    "kichi": {
+      "japanese": "風そよぐ\n若葉の影に\n身を寄せて\n心静かなる\n時を待つべし",
+      "translation": "Angelehnt an den Schatten junger Blätter, die im Wind wiegen — warten Sie auf den Moment, in dem Ihr Herz zur Ruhe kommt",
+      "meaning": "Seien Sie nicht ungeduldig. Eine gute Zeit nähert sich."
+    },
+    "chukichi": {
+      "japanese": "雲間より\nもるる光の\nほのかにて\n行く先遠き\n旅路なりけり",
+      "translation": "Das Licht, das durch die Wolken sickert, ist schwach — eine Reise mit einem noch fernen Ziel",
+      "meaning": "Es ist noch nicht ganz hell, aber das Licht ist gewiss da."
+    },
+    "shokichi": {
+      "japanese": "秋の田の\n刈穂のいなば\n置く露の\nうちぬるるとも\n心安かれ",
+      "translation": "Wie Tau auf den geschnittenen Ähren des Herbstfeldes — selbst wenn Sie nass werden, möge Ihr Herz ruhig sein",
+      "meaning": "Selbst bei kleinen Prüfungen verlieren Sie nicht Ihren inneren Frieden."
+    },
+    "suekichi": {
+      "japanese": "冬枯れの\n野辺にも春の\n気配あり\n地の下深く\n根は生きており",
+      "translation": "Selbst in den verdorrten Winterfeldern gibt es Zeichen des Frühlings — tief unter der Erde leben die Wurzeln",
+      "meaning": "Auch wenn jetzt nichts zu sehen ist, Ihre Bemühungen wachsen unter der Oberfläche."
+    },
+    "kyo": {
+      "japanese": "霧深き\n道に迷いて\n立ち止まる\n風の声聞け\n道は示さん",
+      "translation": "Verloren auf einem Weg in dichtem Nebel, halten Sie inne — hören Sie die Stimme des Windes, er wird den Weg zeigen",
+      "meaning": "In der Verwirrung halten Sie inne und hören auf Ihre innere Stimme."
+    },
+    "daikyo": {
+      "japanese": "嵐去り\n折れし枝にも\n新芽出づ\n闇の果てには\n必ず光あり",
+      "translation": "Nach dem Sturm treiben selbst gebrochene Äste neue Knospen — am Ende der Dunkelheit ist immer Licht",
+      "meaning": "Nach der tiefsten Dunkelheit kommt gewiss die Morgendämmerung."
+    }
+  },
+  "oracle": {
+    "adjectives": {
+      "fire": [
+        "lodernd",
+        "glühend",
+        "schwelend"
+      ],
+      "earth": [
+        "versteinert",
+        "kristallisiert",
+        "lautlos"
+      ],
+      "air": [
+        "durchscheinend",
+        "schwebend",
+        "nachklingend"
+      ],
+      "water": [
+        "eisig",
+        "abgründig",
+        "nebelumhüllt"
+      ]
+    },
+    "objects": {
+      "aries": "Horn der Flamme",
+      "taurus": "Obsidianstier",
+      "gemini": "Zwillingsspiegel",
+      "cancer": "Mondmuschel",
+      "leo": "Silberner Löwe",
+      "virgo": "Sternenkorn",
+      "libra": "Pendel des Gleichgewichts",
+      "scorpio": "Nadel des Abgrunds",
+      "sagittarius": "Feuerpfeil",
+      "capricorn": "Eisgipfel",
+      "aquarius": "Nachhallende Glocke",
+      "pisces": "Vergessene Umlaufbahn"
+    },
+    "verbs": [
+      "zusammentrifft",
+      "sich zerstreut",
+      "eintaucht",
+      "empfängt",
+      "durchdringt",
+      "umfasst",
+      "erwacht"
+    ],
+    "results": [
+      "wirst du Antworten in uralter Stille finden.",
+      "beginnt eine vergessene Frequenz erneut zu schwingen.",
+      "erleuchtet das erste Licht der Dämmerung deinen Weg.",
+      "steigt eine verborgene Möglichkeit an die Oberfläche.",
+      "öffnet unerschütterliche Entschlossenheit eine neue Umlaufbahn."
+    ],
+    "template": "Am Tag, an dem der/die/das {{adj}} {{obj}} {{verb}}, {{result}}"
+  },
+  "omikujiData": {
+    "daikichi": [
+      {
+        "general": "Das allerbeste Glück — alles läuft reibungslos!",
+        "wish": "Ihr Wunsch wird sich mit Sicherheit erfüllen.",
+        "relationship": "Die beste Verbindung kommt auf Sie zu.",
+        "travel": "Wohin Sie auch gehen, das Glück begleitet Sie.",
+        "health": "Sie strotzen vor Vitalität."
+      }
+    ],
+    "kichi": [
+      {
+        "general": "Gutes Glück. Beharrlichkeit bringt das Gewünschte.",
+        "wish": "Mit Einsatz wird sich Ihr Wunsch erfüllen.",
+        "relationship": "Eine gute Verbindung ist ganz nah.",
+        "travel": "Ein Kurzausflug hebt die Stimmung.",
+        "health": "Keine größeren gesundheitlichen Probleme."
+      }
+    ],
+    "chukichi": [
+      {
+        "general": "Nicht schlechtes Glück. Weniger Gier führt zu guten Ergebnissen.",
+        "wish": "Ändern Sie den Ansatz, dann kann es gelingen.",
+        "relationship": "Ein offenes Gespräch hilft.",
+        "travel": "Nahe Ziele sind vorzuziehen.",
+        "health": "Achten Sie auf Stressbewältigung."
+      }
+    ],
+    "shokichi": [
+      {
+        "general": "Ein Tag mit kleinem Glück. Finden Sie Freude in den kleinen Dingen.",
+        "wish": "Beginnen Sie mit kleinen Wünschen.",
+        "relationship": "Konzentrieren Sie sich auf bestehende Beziehungen.",
+        "travel": "Vermeiden Sie anstrengende Reisen.",
+        "health": "Überprüfen Sie Ihre Essgewohnheiten."
+      }
+    ],
+    "suekichi": [
+      {
+        "general": "Am Ende öffnet sich der Weg. Jetzt ist Vorbereitungszeit.",
+        "wish": "Nicht jetzt, aber später wird es sich erfüllen.",
+        "relationship": "Etwas Abstand zu halten ist besser.",
+        "travel": "Die Reise auf ein nächstes Mal verschieben.",
+        "health": "Überanstrengen Sie sich nicht."
+      }
+    ],
+    "kyo": [
+      {
+        "general": "Ein Tag, der Vorsicht erfordert. Verschieben Sie wichtige Entscheidungen.",
+        "wish": "Jetzt ist nicht der richtige Zeitpunkt. Warten Sie ab.",
+        "relationship": "Vorsicht vor Missverständnissen und Streit.",
+        "travel": "Vermeiden Sie unnötige Ausgänge.",
+        "health": "Kümmern Sie sich um Ihre Gesundheit."
+      }
+    ],
+    "daikyo": [
+      {
+        "general": "Nach der dunkelsten Nacht kommt die Morgendämmerung. Jetzt ist Durchhalten das Beste.",
+        "wish": "Halten Sie alles an und laden Sie Ihre Energie auf.",
+        "relationship": "Treten Sie einen Schritt zurück.",
+        "travel": "Vermeiden Sie Reisen.",
+        "health": "Ignorieren Sie nicht die Signale Ihres Körpers."
+      }
+    ]
+  },
+  "sajuDaily": {
+    "title": "Tagessäule",
+    "todayPillar": "Himmelsstamm und Erdzweig heute",
+    "interaction": {
+      "generate": "Erzeugung — Ihre Energie nährt den heutigen Fluss.",
+      "generated": "Empfang — Die heutige Energie füllt Sie auf.",
+      "same": "Harmonie — Gleiche Energien treffen sich.",
+      "restrain": "Kontrolle — Ihre Energie unterdrückt den heutigen Fluss.",
+      "restrained": "Druck — Die heutige Energie setzt Sie unter Druck."
+    },
+    "career": "Karriere",
+    "love": "Liebe",
+    "health": "Gesundheit",
+    "wealth": "Reichtum",
+    "overall": "Gesamt",
+    "advice": {
+      "generate": [
+        "Optimaler Tag für kreative Arbeit.",
+        "Ihre Energie beeinflusst Ihr Umfeld positiv.",
+        "Ihre Ausdruckskraft erreicht ihren Höhepunkt."
+      ],
+      "generated": [
+        "Nehmen Sie Hilfe von anderen an.",
+        "Gute Nachrichten könnten unerwartet kommen.",
+        "Ein guter Tag zum Lernen."
+      ],
+      "same": [
+        "Arbeiten Sie mit Gleichgesinnten zusammen.",
+        "Ein stabiler Tag. Halten Sie Ihre Routine.",
+        "Guter Tag, um sich auf sich selbst zu konzentrieren."
+      ],
+      "restrain": [
+        "Übernehmen Sie die Führung, aber drücken Sie nicht zu sehr.",
+        "Guter Tag für Entscheidungen, vermeiden Sie emotionale.",
+        "Mögliche Energieerschöpfung. Ruhen Sie sich aus."
+      ],
+      "restrained": [
+        "Heute ist Verteidigung der beste Angriff.",
+        "Emotionale Schwankungen möglich.",
+        "Verschieben Sie wichtige Entscheidungen."
+      ]
+    }
+  },
+  "sajuAnalysis": {
+    "木": "Holz im Übermaß. Wachstumsenergie läuft über. Ergänzen Sie das fehlende Element.",
+    "火": "Feuer im Übermaß. Leidenschaft brennt, kann aber austrocknen. Kühlen mit Wasser.",
+    "土": "Erde im Übermaß. Stabil, aber veränderungsresistent. Wind wird benötigt.",
+    "金": "Metall im Übermaß. Entschlossen, kann aber kalt werden. Wärme nötig.",
+    "水": "Wasser im Übermaß. Weise, aber unentschlossen. Feuer gibt Richtung."
+  },
+  "daeunDesc": {
+    "harmony": "Die Energie von {{stem}}{{branch}} harmoniert mit Ihrem Schicksal. Der innere Baum erblüht in der Sonne.",
+    "clash": "Die Energie von {{stem}}{{branch}} kollidiert mit Ihrem Schicksal. Intensiv, aber Motor des Wandels.",
+    "neutral": "Die Energie von {{stem}}{{branch}} fließt ruhig. Zeit der inneren Festigung."
+  }
+}

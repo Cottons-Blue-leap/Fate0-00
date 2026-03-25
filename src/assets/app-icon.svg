@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2d1450"/>
+      <stop offset="60%" stop-color="#1a0a2e"/>
+      <stop offset="100%" stop-color="#0d0518"/>
+    </radialGradient>
+    <radialGradient id="clockFace" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(155,89,182,0.15)"/>
+      <stop offset="100%" stop-color="rgba(155,89,182,0.02)"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" fill="url(#bg)"/>
+
+  <!-- Outer mystical ring -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="rgba(155,89,182,0.3)" stroke-width="2" filter="url(#glow)"/>
+  <circle cx="256" cy="256" r="196" fill="none" stroke="rgba(231,76,60,0.2)" stroke-width="1"/>
+
+  <!-- Zodiac dots ring -->
+  <g filter="url(#glow)">
+    <circle cx="256" cy="72" r="5" fill="#e74c3c" opacity="0.8"/>
+    <circle cx="348" cy="100" r="4" fill="#9b59b6" opacity="0.7"/>
+    <circle cx="412" cy="164" r="5" fill="#f39c12" opacity="0.8"/>
+    <circle cx="440" cy="256" r="4" fill="#e74c3c" opacity="0.7"/>
+    <circle cx="412" cy="348" r="5" fill="#9b59b6" opacity="0.8"/>
+    <circle cx="348" cy="412" r="4" fill="#3498db" opacity="0.7"/>
+    <circle cx="256" cy="440" r="5" fill="#e74c3c" opacity="0.8"/>
+    <circle cx="164" cy="412" r="4" fill="#f39c12" opacity="0.7"/>
+    <circle cx="100" cy="348" r="5" fill="#9b59b6" opacity="0.8"/>
+    <circle cx="72" cy="256" r="4" fill="#3498db" opacity="0.7"/>
+    <circle cx="100" cy="164" r="5" fill="#e74c3c" opacity="0.8"/>
+    <circle cx="164" cy="100" r="4" fill="#f39c12" opacity="0.7"/>
+  </g>
+
+  <!-- Clock face -->
+  <circle cx="256" cy="256" r="160" fill="url(#clockFace)" stroke="rgba(155,89,182,0.4)" stroke-width="1.5"/>
+
+  <!-- Hour markers -->
+  <g stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round">
+    <line x1="256" y1="108" x2="256" y2="120"/>
+    <line x1="330" y1="130" x2="324" y2="140"/>
+    <line x1="382" y1="182" x2="372" y2="188"/>
+    <line x1="404" y1="256" x2="392" y2="256"/>
+    <line x1="382" y1="330" x2="372" y2="324"/>
+    <line x1="330" y1="382" x2="324" y2="372"/>
+    <line x1="256" y1="404" x2="256" y2="392"/>
+    <line x1="182" y1="382" x2="188" y2="372"/>
+    <line x1="130" y1="330" x2="140" y2="324"/>
+    <line x1="108" y1="256" x2="120" y2="256"/>
+    <line x1="130" y1="182" x2="140" y2="188"/>
+    <line x1="182" y1="130" x2="188" y2="140"/>
+  </g>
+
+  <!-- 12 o'clock emphasis (midnight/fate hour) -->
+  <line x1="256" y1="104" x2="256" y2="124" stroke="#ffd700" stroke-width="3" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- Hour hand (pointing to 12) -->
+  <line x1="256" y1="256" x2="256" y2="160" stroke="rgba(255,255,255,0.9)" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- Minute hand (pointing to 12) -->
+  <line x1="256" y1="256" x2="256" y2="136" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- Center jewel -->
+  <circle cx="256" cy="256" r="10" fill="#1a0a2e" stroke="rgba(212,175,55,0.8)" stroke-width="2" filter="url(#glowStrong)"/>
+  <circle cx="256" cy="256" r="5" fill="#ffd700" opacity="0.9" filter="url(#glowStrong)"/>
+
+  <!-- "0:00" text -->
+  <text x="256" y="320" text-anchor="middle" font-family="monospace" font-size="28" font-weight="bold" fill="#ffd700" opacity="0.8" filter="url(#glow)">0:00</text>
+
+  <!-- Decorative stars -->
+  <g filter="url(#glow)" opacity="0.6">
+    <text x="180" y="200" font-size="14" fill="#ffd700">✦</text>
+    <text x="320" y="200" font-size="14" fill="#ffd700">✦</text>
+    <text x="180" y="340" font-size="12" fill="#9b59b6">✦</text>
+    <text x="320" y="340" font-size="12" fill="#e74c3c">✦</text>
+  </g>
+</svg>

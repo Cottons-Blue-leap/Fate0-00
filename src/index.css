@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+KR:wght@400;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+
+body {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: 'Noto Serif KR', serif;
+  -webkit-font-smoothing: antialiased;
+  padding-top: var(--sat);
+  padding-bottom: var(--sab);
+  padding-left: var(--sal);
+  padding-right: var(--sar);
+}
+
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; color: inherit; }
+
+[data-theme="west"] {
+  --bg-primary: #1a0a2e;
+  --bg-gradient: linear-gradient(135deg, #1a0a2e, #3d1f6d);
+  --accent: #9b59b6;
+  --accent-light: #c39bd3;
+  --glow: rgba(155, 89, 182, 0.4);
+  --text: #e8d5f5;
+  --text-muted: #b89ed0;
+  --font-display: 'Cinzel', serif;
+}
+
+[data-theme="east"] {
+  --bg-primary: #2e0a0a;
+  --bg-gradient: linear-gradient(135deg, #2e0a0a, #6d1f1f);
+  --accent: #e74c3c;
+  --accent-light: #f1948a;
+  --glow: rgba(231, 76, 60, 0.4);
+  --text: #f5d5d5;
+  --text-muted: #d09a9a;
+  --font-display: 'Noto Serif KR', serif;
+}
+
+.page-container {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  color: var(--text);
+  padding: 20px;
+  font-family: 'Noto Serif KR', serif;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: 0.3s;
+  margin-bottom: 24px;
+}
+.back-button:hover { background: rgba(255,255,255,0.2); color: var(--text); }
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 32px;
+  text-shadow: 0 0 20px var(--glow);
+}
+
+/* === RESPONSIVE === */
+
+/* Mobile portrait (< 640px) */
+@media (max-width: 639px) {
+  .page-container {
+    padding: 12px;
+  }
+  .page-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .back-button {
+    font-size: 12px;
+    padding: 6px 12px;
+    margin-bottom: 16px;
+  }
+}
+
+/* Mobile landscape (640-1024px) */
+@media (min-width: 640px) and (max-width: 1024px) {
+  .page-container {
+    padding: 16px;
+  }
+  .page-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+/* RTL support for Arabic */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .back-button {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .page-title,
+[dir="rtl"] [style*="text-align: center"] {
+  text-align: center;
+}
+
+[dir="rtl"] select,
+[dir="rtl"] input,
+[dir="rtl"] textarea {
+  text-align: right;
+}
+
+[dir="rtl"] input[type="text"][style*="text-align: center"],
+[dir="rtl"] textarea[style*="text-align: center"] {
+  text-align: center;
+}

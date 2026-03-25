@@ -1,0 +1,448 @@
+{
+  "dailyQuote": [
+    "El destino favorece a los valientes.",
+    "La elección de hoy transforma las estrellas de mañana.",
+    "Un hilo invisible te está guiando.",
+    "Solo quien se atreve a preguntar encuentra la respuesta.",
+    "Después de medianoche, todo renace.",
+    "Un universo habita dentro de ti.",
+    "No luches contra la corriente — déjate llevar.",
+    "Las semillas que siembras hoy serán el bosque de mañana.",
+    "El destino aguarda al otro lado del miedo.",
+    "Las estrellas se reflejan en un corazón sereno.",
+    "El tiempo fluye, pero el destino se elige.",
+    "Una pequeña chispa enciende una gran llama.",
+    "Cada encuentro esconde un significado oculto.",
+    "El viento de hoy revela el rumbo de mañana.",
+    "Cierra los ojos — hay cosas que solo se ven desde dentro."
+  ],
+  "tarot": {
+    "cards": {
+      "0": {
+        "name": "El Loco",
+        "upright": "Un nuevo comienzo se acerca. Da el primer paso sin miedo.",
+        "reversed": "Cuidado con las acciones imprudentes. Lanzarse sin preparación es peligroso."
+      },
+      "1": {
+        "name": "El Mago",
+        "upright": "Tienes todas las herramientas que necesitas. Usa tu voluntad y concentración para hacer realidad tus sueños.",
+        "reversed": "¿Estás desperdiciando tu talento? Tu concentración está dispersa."
+      },
+      "2": {
+        "name": "La Sacerdotisa",
+        "upright": "Confía en tu intuición. Hay una verdad oculta bajo la superficie.",
+        "reversed": "Estás ignorando tu intuición. No silencies tu voz interior."
+      },
+      "3": {
+        "name": "La Emperatriz",
+        "upright": "Abundancia y energía creativa te rodean. El amor y la belleza te envuelven.",
+        "reversed": "Estás descuidando tu propio cuidado."
+      },
+      "4": {
+        "name": "El Emperador",
+        "upright": "Es un momento de estabilidad y orden. Demuestra tu liderazgo.",
+        "reversed": "Suelta la necesidad de controlar en exceso. Necesitas flexibilidad."
+      },
+      "5": {
+        "name": "El Hierofante",
+        "upright": "Busca sabiduría en la tradición y las enseñanzas.",
+        "reversed": "No te dejes atar por las convenciones. Es hora de encontrar tu propio camino."
+      },
+      "6": {
+        "name": "Los Enamorados",
+        "upright": "Un momento de decisión crucial. Sigue a donde tu corazón te lleve.",
+        "reversed": "Se siente un desequilibrio en la relación. Enfrenta el choque de valores."
+      },
+      "7": {
+        "name": "El Carro",
+        "upright": "Con una voluntad fuerte puedes alcanzar la victoria. Avanza.",
+        "reversed": "Has perdido la dirección y estás a la deriva. Recupera el control."
+      },
+      "8": {
+        "name": "La Fuerza",
+        "upright": "La fuerza gentil es la verdadera fortaleza. Supera los obstáculos con paciencia y coraje.",
+        "reversed": "Te falta confianza. Cree en tu fuerza interior."
+      },
+      "9": {
+        "name": "El Ermitaño",
+        "upright": "Necesitas tiempo a solas. Mira dentro de ti.",
+        "reversed": "Sal del aislamiento. Demasiada soledad genera soledad."
+      },
+      "10": {
+        "name": "La Rueda de la Fortuna",
+        "upright": "Un punto de inflexión del destino. Déjate llevar por la corriente del cambio.",
+        "reversed": "Un período de mala suerte está pasando. Ten paciencia."
+      },
+      "11": {
+        "name": "La Justicia",
+        "upright": "Un resultado justo se acerca. La verdad y la justicia prevalecerán.",
+        "reversed": "¿Sientes injusticia? Deja ir tus prejuicios."
+      },
+      "12": {
+        "name": "El Colgado",
+        "upright": "Es momento de hacer una pausa. Mira las cosas desde otra perspectiva.",
+        "reversed": "Deja de hacer sacrificios innecesarios. Suelta lo que necesita ser soltado."
+      },
+      "13": {
+        "name": "La Muerte",
+        "upright": "Cada final es un nuevo comienzo. Acepta el cambio.",
+        "reversed": "Tienes miedo al cambio. No te aferres al pasado."
+      },
+      "14": {
+        "name": "La Templanza",
+        "upright": "Un momento de equilibrio y armonía. Camina por la senda de la moderación.",
+        "reversed": "Tu equilibrio se ha roto. Recupera la armonía."
+      },
+      "15": {
+        "name": "El Diablo",
+        "upright": "Cuidado con la tentación y la obsesión. Las cadenas que te atan las puedes romper tú mismo.",
+        "reversed": "Te estás liberando de las ataduras. Es el primer paso hacia la libertad."
+      },
+      "16": {
+        "name": "La Torre",
+        "upright": "Un cambio repentino se acerca. Lo que se derrumba puede reconstruirse.",
+        "reversed": "Evitas la destrucción, pero el cambio es inevitable."
+      },
+      "17": {
+        "name": "La Estrella",
+        "upright": "Brilla una luz de esperanza. No renuncies a tus sueños.",
+        "reversed": "¿Estás perdiendo la esperanza? Busca aunque sea una pequeña luz."
+      },
+      "18": {
+        "name": "La Luna",
+        "upright": "Un período de ansiedad y confusión. Distingue entre ilusión y realidad.",
+        "reversed": "Tus miedos se están disipando. La verdad se está revelando."
+      },
+      "19": {
+        "name": "El Sol",
+        "upright": "¡Un momento de éxito y alegría! Ten confianza.",
+        "reversed": "La alegría está temporalmente oculta. El sol siempre brilla detrás de las nubes."
+      },
+      "20": {
+        "name": "El Juicio",
+        "upright": "Un momento de despertar. Reflexiona sobre el pasado y toma nuevas resoluciones.",
+        "reversed": "Estás evitando la autorreflexión. Aprende del pasado."
+      },
+      "21": {
+        "name": "El Mundo",
+        "upright": "La carta de la plenitud y el logro. ¡Se abre un nuevo capítulo!",
+        "reversed": "La finalización se retrasa. Queda un último paso."
+      }
+    },
+    "summary1": "Ha salido la carta de {{name}}.",
+    "summary3": "Lee el flujo que conecta pasado, presente y futuro, y actúa con sabiduría."
+  },
+  "horoscopeData": {
+    "overall": [
+      "Hoy es un día lleno de energía. Atrévete con un nuevo desafío.",
+      "Planifica con calma y obtendrás buenos resultados.",
+      "La comunicación con quienes te rodean es importante hoy.",
+      "Puede que llegue una suerte inesperada.",
+      "Necesitas tiempo para cuidar de ti mismo.",
+      "Un día en el que surgen ideas creativas.",
+      "Un viejo problema encuentra una pista para su solución.",
+      "Un día en el que conviene ser prudente con las finanzas.",
+      "Puede que llegue una nueva conexión a tu vida.",
+      "Un día en el que la perseverancia y la paciencia son recompensadas.",
+      "Un día en el que tu intuición está muy aguda.",
+      "Los esfuerzos del pasado están dando frutos."
+    ],
+    "love": [
+      "Una conversación profunda con tu pareja fortalecerá la relación.",
+      "Un día lleno de ilusión por nuevos encuentros.",
+      "Intenta ponerte en el lugar de la otra persona.",
+      "Puede haber una pequeña discusión, pero se resolverá rápido.",
+      "El tiempo a solas también es valioso.",
+      "Un día envuelto en un ambiente romántico.",
+      "Descubres nuevos sentimientos en una vieja conexión.",
+      "Encontrar el equilibrio en la relación es importante.",
+      "Atrévete a dar el primer paso.",
+      "Expresar gratitud profundizará la relación."
+    ],
+    "career": [
+      "Puedes lograr resultados destacados en el trabajo.",
+      "La colaboración con colegas genera sinergia.",
+      "Un buen momento para iniciar un nuevo proyecto.",
+      "Un día en el que la atención al detalle brilla.",
+      "Se presenta una oportunidad para demostrar tu liderazgo.",
+      "Invertir en aprendizaje y desarrollo personal será recompensado.",
+      "Pospón las decisiones importantes para la tarde.",
+      "Sé proactivo en el networking.",
+      "Revisa tus rutinas y mejora la eficiencia.",
+      "Es momento de mostrar tu valor con confianza."
+    ],
+    "colors": [
+      "Rojo",
+      "Azul",
+      "Verde",
+      "Amarillo",
+      "Morado",
+      "Rosa",
+      "Celeste",
+      "Dorado",
+      "Plateado",
+      "Naranja"
+    ]
+  },
+  "sajuData": {
+    "木": "La energía de la Madera (木) es fuerte. Rebosa energía de crecimiento y desarrollo. Con una naturaleza que crece firme como un árbol, destacas en educación, creación y planificación. La dirección este y el color verde son favorables.",
+    "火": "La energía del Fuego (火) es fuerte. Rebosa pasión y energía. Con una naturaleza brillante y ardiente como una llama, brillas en las artes, el entretenimiento y el liderazgo. La dirección sur y el color rojo son favorables.",
+    "土": "La energía de la Tierra (土) es fuerte. Posees energía de estabilidad y equilibrio. Con una naturaleza sólida y confiable como la tierra, destacas en gestión, bienes raíces y mediación. El color amarillo es favorable.",
+    "金": "La energía del Metal (金) es fuerte. Posees energía de determinación y justicia. Con una naturaleza dura y afilada como el metal, destacas en derecho, finanzas y tecnología. La dirección oeste y el color blanco son favorables.",
+    "水": "La energía del Agua (水) es fuerte. Posees energía de sabiduría y adaptabilidad. Con una naturaleza flexible y profunda como el agua, destacas en investigación, filosofía y diplomacia. La dirección norte y el color negro son favorables."
+  },
+  "dayMaster": {
+    "甲": {
+      "title": "El gran árbol que alcanza el cielo",
+      "desc": "甲Madera — Eres un gran árbol que se extiende recto hacia el cielo. Fuerte sentido de la justicia y liderazgo; una vez que fijas una dirección, rara vez cambias."
+    },
+    "乙": {
+      "title": "La enredadera flexible",
+      "desc": "乙Madera — Eres una enredadera que se dobla con el viento pero nunca se quiebra. Suave y adaptable, posees sensibilidad artística y delicadeza."
+    },
+    "丙": {
+      "title": "El sol que ilumina todo",
+      "desc": "丙Fuego — Eres el sol que ilumina el mundo. Apasionado y carismático, calientas a todos a tu alrededor."
+    },
+    "丁": {
+      "title": "Una vela en la oscuridad",
+      "desc": "丁Fuego — Eres una vela que ilumina el camino en la oscuridad. Luz sutil pero certera; intelectual y profundamente perspicaz."
+    },
+    "戊": {
+      "title": "La montaña inquebrantable",
+      "desc": "戊Tierra — Eres una montaña que se mantiene firme incluso en un tifón. Confiable y acogedor, eres en quien los demás se apoyan."
+    },
+    "己": {
+      "title": "La tierra fértil",
+      "desc": "己Tierra — Eres la tierra fértil que nutre la vida. Humilde y entregado, tienes un don para cuidar de los demás."
+    },
+    "庚": {
+      "title": "La hoja del mineral en bruto",
+      "desc": "庚Metal — Eres un mineral frío aún sin refinar. Decisivo y enérgico, las adversidades solo afilan tu filo."
+    },
+    "辛": {
+      "title": "Una joya bajo la luz de la luna",
+      "desc": "辛Metal — Eres una joya finamente tallada que brilla bajo la luna. Delicado y perfeccionista, persigues la belleza y la pureza."
+    },
+    "壬": {
+      "title": "El gran río imparable",
+      "desc": "壬Agua — Eres un río poderoso que talla montañas camino al mar. Sabio y acogedor, amas la libertad."
+    },
+    "癸": {
+      "title": "Gota de rocío al amanecer",
+      "desc": "癸Agua — Eres una gota de rocío posada en una hoja de hierba al amanecer. Delicado e intuitivo, posees la inspiración para percibir lo invisible."
+    }
+  },
+  "waka": {
+    "daikichi": {
+      "japanese": "春風に\n花の香りの\n満ちわたり\n天地の恵み\n限りなき日よ",
+      "translation": "En la brisa primaveral, la fragancia de las flores se extiende — un día de bendiciones infinitas del cielo y la tierra",
+      "meaning": "Todo está en plena floración. Las semillas que sembraste por fin dan flor."
+    },
+    "kichi": {
+      "japanese": "風そよぐ\n若葉の影に\n身を寄せて\n心静かなる\n時を待つべし",
+      "translation": "Apoyado en la sombra de hojas jóvenes que se mecen con la brisa — espera el momento en que tu corazón esté en paz",
+      "meaning": "No te apresures. Un buen momento se acerca."
+    },
+    "chukichi": {
+      "japanese": "雲間より\nもるる光の\nほのかにて\n行く先遠き\n旅路なりけり",
+      "translation": "La luz que se filtra entre las nubes es tenue — un viaje con un destino aún lejano",
+      "meaning": "Aún no está del todo claro, pero la luz sin duda está ahí."
+    },
+    "shokichi": {
+      "japanese": "秋の田の\n刈穂のいなば\n置く露の\nうちぬるるとも\n心安かれ",
+      "translation": "Como el rocío sobre las espigas cortadas en el campo otoñal — aunque te mojes, que tu corazón esté en calma",
+      "meaning": "Aunque haya pequeñas pruebas, no pierdas la paz interior."
+    },
+    "suekichi": {
+      "japanese": "冬枯れの\n野辺にも春の\n気配あり\n地の下深く\n根は生きており",
+      "translation": "Incluso en los campos marchitos del invierno hay señales de primavera — bajo la tierra, las raíces siguen vivas",
+      "meaning": "Aunque ahora no se vea nada, tu esfuerzo crece bajo la superficie."
+    },
+    "kyo": {
+      "japanese": "霧深き\n道に迷いて\n立ち止まる\n風の声聞け\n道は示さん",
+      "translation": "Perdido en un camino de densa niebla, te detienes — escucha la voz del viento, te mostrará el camino",
+      "meaning": "En la confusión, detente y escucha tu voz interior."
+    },
+    "daikyo": {
+      "japanese": "嵐去り\n折れし枝にも\n新芽出づ\n闇の果てには\n必ず光あり",
+      "translation": "Tras pasar la tormenta, incluso las ramas rotas brotan nuevos retoños — al final de la oscuridad siempre hay luz",
+      "meaning": "Tras la oscuridad más profunda, el amanecer llegará sin falta."
+    }
+  },
+  "oracle": {
+    "adjectives": {
+      "fire": [
+        "ardiente",
+        "incandescente",
+        "abrasador"
+      ],
+      "earth": [
+        "petrificado",
+        "cristalizado",
+        "silente"
+      ],
+      "air": [
+        "translúcido",
+        "errante",
+        "resonante"
+      ],
+      "water": [
+        "gélido",
+        "abisal",
+        "velado por la niebla"
+      ]
+    },
+    "objects": {
+      "aries": "Cuerno de Llama",
+      "taurus": "Toro de Obsidiana",
+      "gemini": "Espejo Gemelo",
+      "cancer": "Concha de Luna",
+      "leo": "León de Plata",
+      "virgo": "Grano Estelar",
+      "libra": "Péndulo del Equilibrio",
+      "scorpio": "Aguja del Abismo",
+      "sagittarius": "Flecha de Fuego",
+      "capricorn": "Cima Helada",
+      "aquarius": "Campana Resonante",
+      "pisces": "Órbita Olvidada"
+    },
+    "verbs": [
+      "converge",
+      "se dispersa",
+      "se sumerge",
+      "concibe",
+      "atraviesa",
+      "abraza",
+      "despierta"
+    ],
+    "results": [
+      "hallarás respuestas en un silencio ancestral.",
+      "una frecuencia olvidada vuelve a resonar.",
+      "la primera luz del alba ilumina tu camino.",
+      "una posibilidad oculta emerge a la superficie.",
+      "una determinación inquebrantable abre una nueva órbita."
+    ],
+    "template": "El día en que el {{adj}} {{obj}} {{verb}}, {{result}}"
+  },
+  "omikujiData": {
+    "daikichi": [
+      {
+        "general": "¡La mejor fortuna: todo saldrá a pedir de boca!",
+        "wish": "Tu deseo se cumplirá sin falta.",
+        "relationship": "La mejor conexión está en camino.",
+        "travel": "La suerte te acompaña vayas donde vayas.",
+        "health": "Estás lleno de vitalidad."
+      }
+    ],
+    "kichi": [
+      {
+        "general": "Buena fortuna. Sigue esforzándote y conseguirás lo que deseas.",
+        "wish": "Con esfuerzo, tu deseo se cumplirá.",
+        "relationship": "Una buena conexión está cerca.",
+        "travel": "Un viaje corto te refrescará el ánimo.",
+        "health": "No hay grandes problemas de salud."
+      }
+    ],
+    "chukichi": [
+      {
+        "general": "Una fortuna aceptable. Reduce la ambición y obtendrás buenos resultados.",
+        "wish": "Cambia de enfoque y podrás lograrlo.",
+        "relationship": "Una conversación sincera ayudará.",
+        "travel": "Mejor los destinos cercanos.",
+        "health": "Presta atención al manejo del estrés."
+      }
+    ],
+    "shokichi": [
+      {
+        "general": "Un día con pequeños golpes de suerte. Encuentra alegría en las cosas sencillas.",
+        "wish": "Empieza cumpliendo deseos pequeños.",
+        "relationship": "Concéntrate en las relaciones que ya tienes.",
+        "travel": "Evita viajes agotadores.",
+        "health": "Revisa tus hábitos alimenticios."
+      }
+    ],
+    "suekichi": [
+      {
+        "general": "Al final el camino se abre. Ahora es tiempo de preparación.",
+        "wish": "Ahora no, pero se cumplirá más adelante.",
+        "relationship": "Mantener cierta distancia es mejor por ahora.",
+        "travel": "Deja el viaje para otra ocasión.",
+        "health": "No te excedas."
+      }
+    ],
+    "kyo": [
+      {
+        "general": "Un día que requiere precaución. Pospón las decisiones importantes.",
+        "wish": "No es el momento. Espera.",
+        "relationship": "Cuidado con los malentendidos y las discusiones.",
+        "travel": "Evita las salidas innecesarias.",
+        "health": "Cuida tu salud."
+      }
+    ],
+    "daikyo": [
+      {
+        "general": "Tras la noche más oscura llega el amanecer. Ahora lo mejor es resistir.",
+        "wish": "Detén todo y recarga energías.",
+        "relationship": "Da un paso atrás.",
+        "travel": "Evita los viajes.",
+        "health": "No ignores las señales que te envía tu cuerpo."
+      }
+    ]
+  },
+  "sajuDaily": {
+    "title": "Pilar del día",
+    "todayPillar": "Tronco celeste y rama terrenal de hoy",
+    "interaction": {
+      "generate": "Generación — Tu energía nutre el flujo de hoy. Un día de impulso natural.",
+      "generated": "Recepción — La energía de hoy te repone. Llega ayuda inesperada.",
+      "same": "Armonía — Energías iguales se encuentran. Estabilidad y familiaridad.",
+      "restrain": "Control — Tu energía suprime el flujo de hoy. Fuerte control, pero no exageres.",
+      "restrained": "Presión — La energía de hoy te presiona. Actúa con precaución."
+    },
+    "career": "Carrera",
+    "love": "Amor",
+    "health": "Salud",
+    "wealth": "Riqueza",
+    "overall": "General",
+    "advice": {
+      "generate": [
+        "Día óptimo para trabajo creativo.",
+        "Tu energía influye positivamente en tu entorno.",
+        "Tu expresividad alcanza su máximo hoy."
+      ],
+      "generated": [
+        "Acepta la ayuda de otros.",
+        "Buenas noticias pueden llegar de lugares inesperados.",
+        "Un buen día para aprender algo nuevo."
+      ],
+      "same": [
+        "Colabora con personas afines.",
+        "Un día estable. Mantén tu rutina.",
+        "Buen día para enfocarte en ti mismo."
+      ],
+      "restrain": [
+        "Toma la iniciativa pero no presiones demasiado.",
+        "Buen día para decisiones, evita las emocionales.",
+        "Posible desgaste energético. Descansa bien."
+      ],
+      "restrained": [
+        "Hoy la defensa es el mejor ataque.",
+        "Posibles fluctuaciones emocionales. Respira profundo.",
+        "Pospón decisiones importantes."
+      ]
+    }
+  },
+  "sajuAnalysis": {
+    "木": "Madera en exceso. Energía de crecimiento desbordada. Complemente el elemento deficiente.",
+    "火": "Fuego en exceso. La pasión arde pero puede resecar. Enfríe con Agua.",
+    "土": "Tierra en exceso. Estable pero resistente al cambio. Se necesita viento.",
+    "金": "Metal en exceso. Decisivo pero puede volverse frío. Se necesita calidez.",
+    "水": "Agua en exceso. Sabio pero indeciso. El Fuego da dirección."
+  },
+  "daeunDesc": {
+    "harmony": "La energía de {{stem}}{{branch}} armoniza con tu destino. El árbol interior florece al encontrar el sol.",
+    "clash": "La energía de {{stem}}{{branch}} choca con tu destino. Intenso, pero motor del cambio.",
+    "neutral": "La energía de {{stem}}{{branch}} fluye en calma. Tiempo de cultivo interior."
+  }
+}

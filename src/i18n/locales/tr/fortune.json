@@ -1,0 +1,448 @@
+{
+  "dailyQuote": [
+    "Kader cesurdan yanadır.",
+    "Bugünün seçimi yarının yıldızlarını yeniden şekillendirir.",
+    "Görünmez bir iplik seni yönlendiriyor.",
+    "Yalnızca sormaya cesaret eden, cevabı bulur.",
+    "Gece yarısından sonra her şey yeniden doğar.",
+    "Senin içinde koca bir evren yaşıyor.",
+    "Akıntıya karşı durma — ona bırak kendini.",
+    "Bugün ektiğin tohumlar yarının ormanı olacak.",
+    "Kader, korkunun öte yakasında bekliyor.",
+    "Durgun bir kalpte yıldızlar yansır.",
+    "Zaman akar, ama kader seçilir.",
+    "Küçük bir kıvılcım büyük bir alev başlatır.",
+    "Her karşılaşma gizli bir anlam taşır.",
+    "Bugünün rüzgârı yarının yönünü fısıldar.",
+    "Gözlerini kapat — bazı şeyler ancak içeriden görülür."
+  ],
+  "tarot": {
+    "cards": {
+      "0": {
+        "name": "Aptal",
+        "upright": "Yeni bir başlangıç yaklaşıyor. Korkusuzca ilk adımı atın.",
+        "reversed": "Düşüncesiz davranışlardan kaçının. Hazırlıksız atılmak tehlikelidir."
+      },
+      "1": {
+        "name": "Büyücü",
+        "upright": "İhtiyacınız olan tüm araçlar hazır. İrade ve odaklanmayla hayallerinizi gerçeğe dönüştürün.",
+        "reversed": "Yeteneklerinizi boşa mı harcıyorsunuz? Odağınız dağılmış durumda."
+      },
+      "2": {
+        "name": "Baş Rahibe",
+        "upright": "Sezgilerinize güvenin. Yüzeyin altında gizli gerçekler var.",
+        "reversed": "Sezgilerinizi görmezden geliyorsunuz. İç sesinizi susturmayın."
+      },
+      "3": {
+        "name": "İmparatoriçe",
+        "upright": "Bolluk ve yaratma enerjisiyle dolusunuz. Sevgi ve güzellik sizi sarıyor.",
+        "reversed": "Kendinize bakmayı ihmal ediyorsunuz."
+      },
+      "4": {
+        "name": "İmparator",
+        "upright": "İstikrar ve düzen zamanı. Liderlik gösterin.",
+        "reversed": "Aşırı kontrol arzusunu bırakın. Esneklik gerekli."
+      },
+      "5": {
+        "name": "Aziz",
+        "upright": "Geleneklerde ve öğretilerde bilgelik arayın.",
+        "reversed": "Geleneklere bağlı kalmayın. Kendi yolunuzu bulma zamanı."
+      },
+      "6": {
+        "name": "Aşıklar",
+        "upright": "Önemli bir seçim anı. Kalbinizin götürdüğü yere gidin.",
+        "reversed": "İlişkide dengesizlik hissediliyor. Değer çatışmasıyla yüzleşin."
+      },
+      "7": {
+        "name": "Savaş Arabası",
+        "upright": "Güçlü iradeyle zafere ulaşabilirsiniz. İlerleyin.",
+        "reversed": "Yönünüzü kaybedip sürükleniyorsunuz. Kontrolü geri kazanın."
+      },
+      "8": {
+        "name": "Güç",
+        "upright": "Yumuşak güç, gerçek güçtür. Sabır ve cesaretle aşın.",
+        "reversed": "Özgüven eksik. İç gücünüze inanın."
+      },
+      "9": {
+        "name": "Münzevi",
+        "upright": "Yalnız kalma zamanına ihtiyacınız var. İçinize bakın.",
+        "reversed": "İzolasyondan çıkın. Aşırı yalnızlık yalnızlık getirir."
+      },
+      "10": {
+        "name": "Kader Çarkı",
+        "upright": "Kaderin dönüm noktası. Değişim dalgasına binin.",
+        "reversed": "Şanssızlık dönemi geçiyor. Sabırlı olun."
+      },
+      "11": {
+        "name": "Adalet",
+        "upright": "Adil bir sonuç geliyor. Gerçek ve adalet kazanacak.",
+        "reversed": "Adaletsizlik mi hissediyorsunuz? Önyargılardan kurtulun."
+      },
+      "12": {
+        "name": "Asılan Adam",
+        "upright": "Durma zamanı. Farklı bir açıdan bakın.",
+        "reversed": "Gereksiz fedakarlıkları bırakın. Bırakılması gerekeni bırakın."
+      },
+      "13": {
+        "name": "Ölüm",
+        "upright": "Son, yeni bir başlangıçtır. Değişimi kabullenin.",
+        "reversed": "Değişimden korkuyorsunuz. Geçmişe takılı kalmayın."
+      },
+      "14": {
+        "name": "Denge",
+        "upright": "Denge ve uyum zamanı. Orta yolu izleyin.",
+        "reversed": "Denge bozuldu. Uyumu yeniden sağlayın."
+      },
+      "15": {
+        "name": "Şeytan",
+        "upright": "Ayartma ve bağımlılığa dikkat edin. Sizi bağlayan zincirleri yalnızca siz kırabilirsiniz.",
+        "reversed": "Zincirlerden kurtuluyorsunuz. Özgürlüğe doğru ilk adım."
+      },
+      "16": {
+        "name": "Kule",
+        "upright": "Ani değişiklikler geliyor. Yeniden inşa etmek için yıkılması gerekir.",
+        "reversed": "Yıkımdan kaçınıyorsunuz ama değişim kaçınılmaz."
+      },
+      "17": {
+        "name": "Yıldız",
+        "upright": "Umut ışığı görünüyor. Hayallerinizden vazgeçmeyin.",
+        "reversed": "Umudunuzu mu kaybediyorsunuz? En küçük ışığı bile arayın."
+      },
+      "18": {
+        "name": "Ay",
+        "upright": "Kaygı ve kafa karışıklığı zamanı. Yanılsama ile gerçeği ayırt edin.",
+        "reversed": "Korku dağılıyor. Gerçek ortaya çıkıyor."
+      },
+      "19": {
+        "name": "Güneş",
+        "upright": "Başarı ve neşe zamanı! Kendinize güvenin.",
+        "reversed": "Neşe geçici olarak örtülü. Bulutların arkasında güneş her zaman vardır."
+      },
+      "20": {
+        "name": "Yargı",
+        "upright": "Uyanış zamanı. Geçmişe bakın ve yeni bir karar alın.",
+        "reversed": "Öz eleştiriden kaçınıyorsunuz. Geçmişten ders alın."
+      },
+      "21": {
+        "name": "Dünya",
+        "upright": "Tamamlanma ve başarı kartı. Yeni bir bölüm açılıyor!",
+        "reversed": "Tamamlanma gecikiyor. Son bir adım kaldı."
+      }
+    },
+    "summary1": "{{name}} kartı çıktı.",
+    "summary3": "Geçmiş-şimdi-gelecek akışını okuyun ve bilgece hareket edin."
+  },
+  "horoscopeData": {
+    "overall": [
+      "Bugün enerji dolu bir gün. Yeni meydan okumalara atılın.",
+      "Sakin bir şekilde plan yapmak iyi sonuçlar getirecektir.",
+      "Bugün çevrenizdeki insanlarla iletişim önemli.",
+      "Beklenmedik bir şans gelebilir.",
+      "Kendinize zaman ayırmanız gerekiyor.",
+      "Yaratıcı fikirlerin doğduğu bir gün.",
+      "Eski bir sorun çözüm bulabilir.",
+      "Bugün mali konularda dikkatli olun.",
+      "Yeni tanışıklıklar kurulabilir.",
+      "Azim ve sabrın ödüllendirildiği bir gün.",
+      "Sezgilerin keskinleştiği bir gün.",
+      "Geçmiş çabaların meyvelerini toplama zamanı."
+    ],
+    "love": [
+      "Partnerinizle derin bir sohbet ilişkiyi güçlendirir.",
+      "Yeni tanışmalarla heyecan dolu bir gün.",
+      "Karşı tarafın bakış açısından düşünmeyi deneyin.",
+      "Küçük anlaşmazlıklar olabilir ama çabucak çözülür.",
+      "Yalnız geçirilen zaman da değerlidir.",
+      "Romantik bir atmosferin hakim olduğu gün.",
+      "Eski bir ilişkide yeni duygular keşfedin.",
+      "İlişkide denge bulmak önemli.",
+      "Cesaret edip ilk adımı atın.",
+      "Minnettarlık ifade etmek ilişkiyi derinleştirir."
+    ],
+    "career": [
+      "İşte göze çarpan başarılar elde edebilirsiniz.",
+      "Meslektaşlarla iş birliği sinerji yaratır.",
+      "Yeni bir projeye başlamak için iyi bir zamanlama.",
+      "Titizlik bugün meyvelerini verecek.",
+      "Liderlik gösterme fırsatı gelecek.",
+      "Öğrenme ve kendini geliştirmeye yatırım karşılığını verecek.",
+      "Önemli kararları öğleden sonraya erteleyin.",
+      "Ağ kurmada aktif olun.",
+      "Rutininizi gözden geçirin ve verimliliği artırın.",
+      "Değerinizi özgüvenle ortaya koyma zamanı."
+    ],
+    "colors": [
+      "kırmızı",
+      "mavi",
+      "yeşil",
+      "sarı",
+      "mor",
+      "pembe",
+      "gök mavisi",
+      "altın",
+      "gümüş",
+      "turuncu"
+    ]
+  },
+  "sajuData": {
+    "木": "Ağaç (木) enerjisi güçlü. Büyüme ve gelişme enerjisiyle dolusunuz. Bir ağaç gibi sürekli büyüyen yapınızla eğitim, yaratıcılık ve planlama alanlarında öne çıkarsınız. Doğu yönü ve yeşil renk uğurludur.",
+    "火": "Ateş (火) enerjisi güçlü. Tutku ve enerjiyle dolusunuz. Bir alev gibi parlak ve ateşli yapınızla sanat, eğlence ve liderlik alanlarında parlarsınız. Güney yönü ve kırmızı renk uğurludur.",
+    "土": "Toprak (土) enerjisi güçlü. İstikrar ve merkez enerjisine sahipsiniz. Toprak gibi sağlam ve güvenilir yapınızla yönetim, gayrimenkul ve arabuluculuk alanlarında yeteneklerinizi gösterirsiniz. Sarı renk uğurludur.",
+    "金": "Metal (金) enerjisi güçlü. Kararlılık ve adalet enerjisine sahipsiniz. Çelik gibi sert ve keskin yapınızla hukuk, finans ve teknoloji alanlarında öne çıkarsınız. Batı yönü ve beyaz renk uğurludur.",
+    "水": "Su (水) enerjisi güçlü. Bilgelik ve uyum sağlama enerjisine sahipsiniz. Su gibi esnek ve derin yapınızla araştırma, felsefe ve diplomasi alanlarında yeteneklerinizi gösterirsiniz. Kuzey yönü ve siyah renk uğurludur."
+  },
+  "dayMaster": {
+    "甲": {
+      "title": "Göğe uzanan ulu ağaç",
+      "desc": "甲Ağaç — Göğe doğru dimdik uzanan devasa bir ağaçsınız. Güçlü adalet duygusu ve liderlik; bir kez yön belirlediniz mi nadiren değiştirirsiniz."
+    },
+    "乙": {
+      "title": "Esnek sarmaşık",
+      "desc": "乙Ağaç — Rüzgârda eğilen ama asla kırılmayan bir sarmaşıksınız. Yumuşak ve uyum yeteneği yüksek, sanatsal duyarlılık ve incelik taşırsınız."
+    },
+    "丙": {
+      "title": "Her şeyi aydınlatan güneş",
+      "desc": "丙Ateş — Dünyayı aydınlatan güneşsiniz. Tutkulu ve karizmatik, çevrenizdekileri ısıtırsınız."
+    },
+    "丁": {
+      "title": "Karanlıkta bir mum",
+      "desc": "丁Ateş — Karanlıkta yol gösteren bir mumsunuz. Hafif ama kesin bir ışık; entelektüel ve derin kavrayışa sahipsiniz."
+    },
+    "戊": {
+      "title": "Sarsılmaz dağ",
+      "desc": "戊Toprak — Fırtınada bile sarsılmayan bir dağsınız. Güvenilir ve kucaklayıcı, başkalarının dayandığı kişisiniz."
+    },
+    "己": {
+      "title": "Verimli toprak",
+      "desc": "己Toprak — Hayat besleyen verimli topraksınız. Alçakgönüllü ve fedakâr, başkalarına bakmakta yeteneklisiniz."
+    },
+    "庚": {
+      "title": "İşlenmemiş cevherin bıçağı",
+      "desc": "庚Metal — Henüz eritilmemiş soğuk bir cevhersiniz. Kararlı ve atılgan, zorluklar sizi yalnızca daha keskin kılar."
+    },
+    "辛": {
+      "title": "Ay ışığında bir mücevher",
+      "desc": "辛Metal — Ay ışığında parlayan zarif bir mücevhersiniz. İnce ve mükemmeliyetçi, güzellik ve saflık peşindesiniz."
+    },
+    "壬": {
+      "title": "Durdurulamaz büyük nehir",
+      "desc": "壬Su — Dağları yararak denize akan kudretli bir nehirsiniz. Bilge ve kucaklayıcı, özgürlüğü seversiniz."
+    },
+    "癸": {
+      "title": "Şafaktaki çiy damlası",
+      "desc": "癸Su — Şafakta bir çimen yaprağının üzerindeki tek bir çiy damlasısınız. İnce ve sezgisel, görünmeyeni hisseden bir ilhama sahipsiniz."
+    }
+  },
+  "waka": {
+    "daikichi": {
+      "japanese": "春風に\n花の香りの\n満ちわたり\n天地の恵み\n限りなき日よ",
+      "translation": "Bahar rüzgârında çiçek kokusu her yere yayılır — göğün ve yerin sınırsız nimetleriyle dolu bir gün",
+      "meaning": "Her şey tam çiçek açmış durumda. Ektiğiniz tohumlar sonunda çiçek veriyor."
+    },
+    "kichi": {
+      "japanese": "風そよぐ\n若葉の影に\n身を寄せて\n心静かなる\n時を待つべし",
+      "translation": "Esintide sallanan taze yaprakların gölgesine yaslanarak — kalbinizin huzura erdiği anı bekleyin",
+      "meaning": "Acele etmeyin. İyi bir zaman yaklaşıyor."
+    },
+    "chukichi": {
+      "japanese": "雲間より\nもるる光の\nほのかにて\n行く先遠き\n旅路なりけり",
+      "translation": "Bulutların arasından süzülen ışık zayıf — varış yeri hâlâ uzak bir yolculuk",
+      "meaning": "Henüz tam aydınlık değil, ama ışık kesinlikle orada."
+    },
+    "shokichi": {
+      "japanese": "秋の田の\n刈穂のいなば\n置く露の\nうちぬるるとも\n心安かれ",
+      "translation": "Sonbahar tarlasında biçilmiş başaklar üzerindeki çiy gibi — ıslansanız bile kalbiniz huzurlu olsun",
+      "meaning": "Küçük sınavlar olsa da iç huzurunuzu kaybetmeyin."
+    },
+    "suekichi": {
+      "japanese": "冬枯れの\n野辺にも春の\n気配あり\n地の下深く\n根は生きており",
+      "translation": "Kışın kurumuş kırlarda bile baharın belirtileri var — toprağın derinliklerinde kökler canlı",
+      "meaning": "Şu an görünmese de çabalarınız yüzeyin altında büyüyor."
+    },
+    "kyo": {
+      "japanese": "霧深き\n道に迷いて\n立ち止まる\n風の声聞け\n道は示さん",
+      "translation": "Yoğun siste kaybolmuş yolda duraksarsınız — rüzgârın sesini dinleyin, yolu gösterecektir",
+      "meaning": "Kafa karışıklığında durun ve iç sesinizi dinleyin."
+    },
+    "daikyo": {
+      "japanese": "嵐去り\n折れし枝にも\n新芽出づ\n闇の果てには\n必ず光あり",
+      "translation": "Fırtına geçtikten sonra kırık dallarda bile yeni tomurcuklar açar — karanlığın sonunda mutlaka ışık vardır",
+      "meaning": "En derin karanlığın ardından şafak mutlaka söker."
+    }
+  },
+  "oracle": {
+    "adjectives": {
+      "fire": [
+        "alevli",
+        "akkor",
+        "için için yanan"
+      ],
+      "earth": [
+        "taşlaşmış",
+        "kristalleşmiş",
+        "sessiz"
+      ],
+      "air": [
+        "saydam",
+        "sürüklenen",
+        "yankılanan"
+      ],
+      "water": [
+        "buz gibi",
+        "dipsiz",
+        "sisle örtülü"
+      ]
+    },
+    "objects": {
+      "aries": "Alev Boynuzu",
+      "taurus": "Obsidyen Boğa",
+      "gemini": "İkiz Ayna",
+      "cancer": "Ay Işığı Midyesi",
+      "leo": "Gümüş Aslan",
+      "virgo": "Yıldız Tanesi",
+      "libra": "Denge Sarkacı",
+      "scorpio": "Uçurumun İğnesi",
+      "sagittarius": "Ateş Oku",
+      "capricorn": "Buz Doruğu",
+      "aquarius": "Yankılanan Çan",
+      "pisces": "Unutulmuş Yörünge"
+    },
+    "verbs": [
+      "buluşur",
+      "dağılır",
+      "dalıp gider",
+      "taşır",
+      "deler geçer",
+      "kucaklar",
+      "uyanır"
+    ],
+    "results": [
+      "kadim bir sessizlikte yanıtları bulacaksın.",
+      "unutulmuş bir frekans yeniden yankılanmaya başlar.",
+      "şafağın ilk ışığı yolunu aydınlatır.",
+      "gizli bir olasılık yüzeye çıkar.",
+      "sarsılmaz bir kararlılık yeni bir yörünge açar."
+    ],
+    "template": "{{adj}} {{obj}} {{verb}} günde, {{result}}"
+  },
+  "omikujiData": {
+    "daikichi": [
+      {
+        "general": "Her şeyin yolunda gittiği en iyi şans!",
+        "wish": "Dileğiniz mutlaka gerçekleşecek.",
+        "relationship": "En iyi bağ size geliyor.",
+        "travel": "Nereye giderseniz gidin, şans sizinle.",
+        "health": "Canlılık dolusunuz."
+      }
+    ],
+    "kichi": [
+      {
+        "general": "İyi şans. İstikrarlı çabayla istediğinizi elde edersiniz.",
+        "wish": "Çaba gösterirseniz dileğiniz gerçekleşir.",
+        "relationship": "İyi bir bağ çok yakında.",
+        "travel": "Kısa bir gezi ruh halinizi düzeltir.",
+        "health": "Ciddi bir sağlık sorunu yok."
+      }
+    ],
+    "chukichi": [
+      {
+        "general": "Fena olmayan bir şans. Hırsı azaltırsanız iyi sonuçlar alırsınız.",
+        "wish": "Yöntemi değiştirirseniz gerçekleştirebilirsiniz.",
+        "relationship": "Samimi bir konuşma yardımcı olur.",
+        "travel": "Yakın yerler daha iyidir.",
+        "health": "Stres yönetimine dikkat edin."
+      }
+    ],
+    "shokichi": [
+      {
+        "general": "Küçük şansların olduğu bir gün. Ufak şeylerde mutluluk bulun.",
+        "wish": "Küçük dileklerden başlayın.",
+        "relationship": "Mevcut ilişkilere odaklanın.",
+        "travel": "Yorucu seyahatlerden kaçının.",
+        "health": "Beslenme alışkanlıklarınızı kontrol edin."
+      }
+    ],
+    "suekichi": [
+      {
+        "general": "Sonunda yol açılır. Şimdi hazırlık zamanı.",
+        "wish": "Şimdi değil ama ileride gerçekleşecek.",
+        "relationship": "Biraz mesafe koymak daha iyi.",
+        "travel": "Seyahati bir sonraki sefere bırakın.",
+        "health": "Kendinizi zorlamayın."
+      }
+    ],
+    "kyo": [
+      {
+        "general": "Dikkat gerektiren bir gün. Önemli kararları erteleyin.",
+        "wish": "Şimdi zamanı değil. Bekleyin.",
+        "relationship": "Yanlış anlaşılma ve tartışmalara dikkat.",
+        "travel": "Gereksiz dışarı çıkmaktan kaçının.",
+        "health": "Sağlığınıza dikkat edin."
+      }
+    ],
+    "daikyo": [
+      {
+        "general": "En karanlık gecenin ardından şafak söker. Şimdi dayanmak en iyisi.",
+        "wish": "Her şeyi durdurun ve enerji toplayın.",
+        "relationship": "Bir adım geri çekilin.",
+        "travel": "Seyahatten kaçının.",
+        "health": "Vücudunuzun sinyallerini görmezden gelmeyin."
+      }
+    ]
+  },
+  "sajuDaily": {
+    "title": "Günün sütunu",
+    "todayPillar": "Bugünün göksel gövdesi ve yersel dalı",
+    "interaction": {
+      "generate": "Üretim — Enerjiniz bugünün akışını besliyor.",
+      "generated": "Alım — Bugünün enerjisi sizi dolduruyor.",
+      "same": "Uyum — Aynı enerjiler buluştu. İstikrar günü.",
+      "restrain": "Kontrol — Enerjiniz bugünün akışını bastırıyor.",
+      "restrained": "Baskı — Bugünün enerjisi size baskı yapıyor."
+    },
+    "career": "Kariyer",
+    "love": "Aşk",
+    "health": "Sağlık",
+    "wealth": "Zenginlik",
+    "overall": "Genel",
+    "advice": {
+      "generate": [
+        "Yaratıcı çalışma için optimal gün.",
+        "Enerjiniz çevrenizi olumlu etkiliyor.",
+        "İfade gücünüz zirvede."
+      ],
+      "generated": [
+        "Başkalarından gelen yardımı kabul edin.",
+        "Beklenmedik yerden iyi haberler gelebilir.",
+        "Öğrenmek için iyi bir gün."
+      ],
+      "same": [
+        "Benzer düşünen insanlarla işbirliği yapın.",
+        "İstikrarlı bir gün. Rutininizi koruyun.",
+        "Kendinize odaklanmak için iyi bir gün."
+      ],
+      "restrain": [
+        "İnisiyatif alın ama çok zorlamayın.",
+        "Kararlar için iyi gün, duygusallardan kaçının.",
+        "Enerji tükenmesi olabilir. İyi dinlenin."
+      ],
+      "restrained": [
+        "Bugün savunma en iyi saldırıdır.",
+        "Duygusal dalgalanmalar olabilir.",
+        "Önemli kararları erteleyin."
+      ]
+    }
+  },
+  "sajuAnalysis": {
+    "木": "Ağaç fazla. Büyüme enerjisi taşıyor. Eksik elementi tamamlayın.",
+    "火": "Ateş fazla. Tutku yanıyor ama kuruyabilir. Su ile soğutun.",
+    "土": "Toprak fazla. İstikrarlı ama değişime dirençli. Rüzgar gerekli.",
+    "金": "Metal fazla. Kararlı ama soğuyabilir. Sıcaklık gerekli.",
+    "水": "Su fazla. Bilge ama kararsız. Ateş yön verir."
+  },
+  "daeunDesc": {
+    "harmony": "{{stem}}{{branch}} enerjisi kaderinizle uyum içinde. İç ağaç güneşle buluşup çiçek açıyor.",
+    "clash": "{{stem}}{{branch}} enerjisi kaderinizle çatışıyor. Yoğun ama değişimin motoru.",
+    "neutral": "{{stem}}{{branch}} enerjisi sessizce akıyor. İç gelişim zamanı."
+  }
+}

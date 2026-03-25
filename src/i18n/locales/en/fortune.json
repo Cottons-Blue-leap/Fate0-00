@@ -1,0 +1,448 @@
+{
+  "dailyQuote": [
+    "Fate favors the brave.",
+    "Today's choice reshapes tomorrow's stars.",
+    "An invisible thread is guiding you.",
+    "Only those who dare to question find the answer.",
+    "After midnight, all things begin anew.",
+    "A universe lives within you.",
+    "Don't fight the current — ride it.",
+    "The seeds you plant today become tomorrow's forest.",
+    "Destiny waits on the other side of fear.",
+    "Stars reflect in a still heart.",
+    "Time flows on, but fate is chosen.",
+    "A small spark ignites a great flame.",
+    "Every encounter holds a hidden meaning.",
+    "Today's wind reveals tomorrow's direction.",
+    "Close your eyes — some things can only be seen within."
+  ],
+  "tarot": {
+    "cards": {
+      "0": {
+        "name": "The Fool",
+        "upright": "A new beginning is approaching. Take the first step without fear.",
+        "reversed": "Beware of reckless actions. Jumping in without preparation is dangerous."
+      },
+      "1": {
+        "name": "The Magician",
+        "upright": "You have all the tools you need. Use your willpower and focus to make your dreams a reality.",
+        "reversed": "Are you wasting your talents? Your focus is scattered."
+      },
+      "2": {
+        "name": "The High Priestess",
+        "upright": "Trust your intuition. There is a hidden truth beneath the surface.",
+        "reversed": "You are ignoring your intuition. Don't shut out your inner voice."
+      },
+      "3": {
+        "name": "The Empress",
+        "upright": "Abundance and creative energy abound. Love and beauty surround you.",
+        "reversed": "You are neglecting to take care of yourself."
+      },
+      "4": {
+        "name": "The Emperor",
+        "upright": "This is a time of stability and order. Show your leadership.",
+        "reversed": "Let go of your need for excessive control. Flexibility is needed."
+      },
+      "5": {
+        "name": "The Hierophant",
+        "upright": "Seek wisdom in tradition and teachings.",
+        "reversed": "Don't be bound by convention. It's time to find your own path."
+      },
+      "6": {
+        "name": "The Lovers",
+        "upright": "A crucial choice awaits. Follow where your heart leads.",
+        "reversed": "An imbalance is felt in your relationship. Face the clash of values."
+      },
+      "7": {
+        "name": "The Chariot",
+        "upright": "With strong willpower, you can seize victory. Move forward.",
+        "reversed": "You've lost direction and are drifting. Regain control."
+      },
+      "8": {
+        "name": "Strength",
+        "upright": "Gentle strength is true power. Overcome with patience and courage.",
+        "reversed": "You lack confidence. Believe in your inner strength."
+      },
+      "9": {
+        "name": "The Hermit",
+        "upright": "You need time alone. Look within yourself.",
+        "reversed": "Come out of isolation. Too much solitude breeds loneliness."
+      },
+      "10": {
+        "name": "Wheel of Fortune",
+        "upright": "A turning point of fate. Ride the wave of change.",
+        "reversed": "A period of misfortune is passing. Be patient."
+      },
+      "11": {
+        "name": "Justice",
+        "upright": "A fair outcome is coming. Truth and justice will prevail.",
+        "reversed": "Do you feel things are unfair? Let go of your biases."
+      },
+      "12": {
+        "name": "The Hanged Man",
+        "upright": "It's time to pause. Look at things from a different perspective.",
+        "reversed": "Stop unnecessary sacrifice. Let go of what needs to be released."
+      },
+      "13": {
+        "name": "Death",
+        "upright": "Every ending is a new beginning. Embrace the change.",
+        "reversed": "You are afraid of change. Don't cling to the past."
+      },
+      "14": {
+        "name": "Temperance",
+        "upright": "A time of balance and harmony. Walk the path of moderation.",
+        "reversed": "Your balance has been disrupted. Restore harmony."
+      },
+      "15": {
+        "name": "The Devil",
+        "upright": "Beware of temptation and obsession. The chains that bind you are yours to break.",
+        "reversed": "You are breaking free from bondage. This is the first step toward freedom."
+      },
+      "16": {
+        "name": "The Tower",
+        "upright": "A sudden change is coming. What falls can be rebuilt.",
+        "reversed": "You are avoiding destruction, but change is inevitable."
+      },
+      "17": {
+        "name": "The Star",
+        "upright": "A light of hope shines. Don't give up on your dreams.",
+        "reversed": "Are you losing hope? Find even the smallest light."
+      },
+      "18": {
+        "name": "The Moon",
+        "upright": "A time of anxiety and confusion. Distinguish between illusion and reality.",
+        "reversed": "Your fears are lifting. The truth is revealing itself."
+      },
+      "19": {
+        "name": "The Sun",
+        "upright": "A time of success and joy! Be confident.",
+        "reversed": "Joy is temporarily hidden. The sun always shines behind the clouds."
+      },
+      "20": {
+        "name": "Judgement",
+        "upright": "A time of awakening. Reflect on the past and make new resolutions.",
+        "reversed": "You are avoiding self-reflection. Learn from the past."
+      },
+      "21": {
+        "name": "The World",
+        "upright": "The card of completion and achievement. A new chapter opens!",
+        "reversed": "Completion is delayed. One last step remains."
+      }
+    },
+    "summary1": "The {{name}} card has appeared.",
+    "summary3": "Read the flow connecting past, present, and future, and respond wisely."
+  },
+  "horoscopeData": {
+    "overall": [
+      "Today is a day full of energy. Take on a new challenge.",
+      "Plan calmly and you'll achieve good results.",
+      "Communication with those around you is important today.",
+      "Unexpected luck may come your way.",
+      "You need time to take care of yourself.",
+      "A day when creative ideas will flow.",
+      "An old problem finds a clue to its solution.",
+      "A day when financial caution is needed.",
+      "A new connection may come your way.",
+      "A day when perseverance and patience are rewarded.",
+      "A day when your intuition is sharp.",
+      "Past efforts are bearing fruit."
+    ],
+    "love": [
+      "A deep conversation with your partner will strengthen the relationship.",
+      "A day full of excitement for new encounters.",
+      "Try to see things from the other person's perspective.",
+      "There may be a minor disagreement, but it will be resolved quickly.",
+      "Time alone is also precious.",
+      "A day filled with romantic atmosphere.",
+      "You discover new feelings in an old connection.",
+      "Finding balance in the relationship is important.",
+      "Muster the courage to make the first move.",
+      "Expressing gratitude will deepen the relationship."
+    ],
+    "career": [
+      "You can achieve outstanding results at work.",
+      "Collaboration with colleagues creates synergy.",
+      "A great time to start a new project.",
+      "A day when attention to detail pays off.",
+      "An opportunity to show your leadership is coming.",
+      "Investing in learning and self-improvement will be rewarded.",
+      "Postpone important decisions until the afternoon.",
+      "Take an active approach to networking.",
+      "Review your routines and improve efficiency.",
+      "It's time to confidently showcase your value."
+    ],
+    "colors": [
+      "Red",
+      "Blue",
+      "Green",
+      "Yellow",
+      "Purple",
+      "Pink",
+      "Sky Blue",
+      "Gold",
+      "Silver",
+      "Orange"
+    ]
+  },
+  "sajuData": {
+    "木": "The energy of Wood (木) is strong. Growth and development energy overflows. Like a tree, you steadily grow, excelling in education, creative work, and planning. The east direction and the color green are auspicious.",
+    "火": "The energy of Fire (火) is strong. Passion and energy overflow. Bright and fiery by nature, you shine in the arts, entertainment, and leadership. The south direction and the color red are auspicious.",
+    "土": "The energy of Earth (土) is strong. You possess energy of stability and centeredness. Solid and trustworthy like the earth, you excel in management, real estate, and mediation. The color yellow is auspicious.",
+    "金": "The energy of Metal (金) is strong. You possess energy of decisiveness and justice. Hard and sharp like metal, you excel in law, finance, and technology. The west direction and the color white are auspicious.",
+    "水": "The energy of Water (水) is strong. You possess energy of wisdom and adaptability. Flexible and deep like water, you excel in research, philosophy, and diplomacy. The north direction and the color black are auspicious."
+  },
+  "dayMaster": {
+    "甲": {
+      "title": "The Great Tree Reaching the Sky",
+      "desc": "甲Wood — You are a great tree stretching straight toward the heavens. Strong in justice and leadership, once you set a direction, you rarely waver."
+    },
+    "乙": {
+      "title": "The Supple Vine",
+      "desc": "乙Wood — You are a vine that bends in the wind but never breaks. Soft and adaptable, you possess artistic sensibility and delicacy."
+    },
+    "丙": {
+      "title": "The Sun That Illuminates All",
+      "desc": "丙Fire — You are the sun that lights up the world. Passionate and charismatic, you warm everyone around you."
+    },
+    "丁": {
+      "title": "A Candle in the Darkness",
+      "desc": "丁Fire — You are a candle illuminating the path in the dark. Subtle yet certain light — intellectual and deeply insightful."
+    },
+    "戊": {
+      "title": "The Unshakable Mountain",
+      "desc": "戊Earth — You are a mountain that stands firm even in a typhoon. Dependable and embracing, you are the one others rely on."
+    },
+    "己": {
+      "title": "The Fertile Earth",
+      "desc": "己Earth — You are the fertile earth that nurtures life. Humble and devoted, you have a gift for caring for others."
+    },
+    "庚": {
+      "title": "The Blade of Unrefined Ore",
+      "desc": "庚Metal — You are a cold, unrefined ore yet to be smelted. Decisive and driven, hardships only sharpen your edge."
+    },
+    "辛": {
+      "title": "A Jewel in the Moonlight",
+      "desc": "辛Metal — You are a finely crafted jewel shining under moonlight. Delicate and perfectionist, you pursue beauty and purity."
+    },
+    "壬": {
+      "title": "The Unstoppable Great River",
+      "desc": "壬Water — You are a mighty river carving through mountains on its way to the sea. Wise and embracing, you love freedom."
+    },
+    "癸": {
+      "title": "Morning Dewdrop at Dawn",
+      "desc": "癸Water — You are a single dewdrop resting on a blade of grass at dawn. Delicate and intuitive, you possess the inspiration to sense the unseen."
+    }
+  },
+  "waka": {
+    "daikichi": {
+      "japanese": "春風に\n花の香りの\n満ちわたり\n天地の恵み\n限りなき日よ",
+      "translation": "In the spring breeze, the fragrance of flowers fills the air — a day of boundless blessings from heaven and earth",
+      "meaning": "Everything is in full bloom. The seeds you planted are finally flowering."
+    },
+    "kichi": {
+      "japanese": "風そよぐ\n若葉の影に\n身を寄せて\n心静かなる\n時を待つべし",
+      "translation": "Leaning against the shade of young leaves swaying in the breeze — wait for the time when your heart is at peace",
+      "meaning": "Do not be impatient. A good time is approaching."
+    },
+    "chukichi": {
+      "japanese": "雲間より\nもるる光の\nほのかにて\n行く先遠き\n旅路なりけり",
+      "translation": "The light seeping through the clouds is faint — a journey with a distant destination ahead",
+      "meaning": "It is not fully bright yet, but the light is surely there."
+    },
+    "shokichi": {
+      "japanese": "秋の田の\n刈穂のいなば\n置く露の\nうちぬるるとも\n心安かれ",
+      "translation": "Like dew resting on the cut rice stalks in the autumn field — even if you are dampened, let your heart be at ease",
+      "meaning": "Even if there are small trials, do not lose your inner peace."
+    },
+    "suekichi": {
+      "japanese": "冬枯れの\n野辺にも春の\n気配あり\n地の下深く\n根は生きており",
+      "translation": "Even in the winter-barren fields, signs of spring are present — deep beneath the earth, the roots are alive",
+      "meaning": "Though nothing is visible now, your efforts are growing beneath the surface."
+    },
+    "kyo": {
+      "japanese": "霧深き\n道に迷いて\n立ち止まる\n風の声聞け\n道は示さん",
+      "translation": "Lost on a deeply foggy road, you stop — listen to the voice of the wind, it will show you the way",
+      "meaning": "In confusion, pause and listen to your inner voice."
+    },
+    "daikyo": {
+      "japanese": "嵐去り\n折れし枝にも\n新芽出づ\n闇の果てには\n必ず光あり",
+      "translation": "After the storm passes, even broken branches sprout new buds — at the end of darkness, there is always light",
+      "meaning": "After the deepest darkness, dawn will surely come."
+    }
+  },
+  "oracle": {
+    "adjectives": {
+      "fire": [
+        "blazing",
+        "incandescent",
+        "smoldering"
+      ],
+      "earth": [
+        "petrified",
+        "crystallized",
+        "silent"
+      ],
+      "air": [
+        "translucent",
+        "drifting",
+        "resonant"
+      ],
+      "water": [
+        "frigid",
+        "abyssal",
+        "mist-veiled"
+      ]
+    },
+    "objects": {
+      "aries": "Horn of Flame",
+      "taurus": "Obsidian Bull",
+      "gemini": "Twin Mirror",
+      "cancer": "Moonlit Shell",
+      "leo": "Silver Lion",
+      "virgo": "Star Grain",
+      "libra": "Pendulum of Balance",
+      "scorpio": "Needle of the Abyss",
+      "sagittarius": "Fire Arrow",
+      "capricorn": "Frozen Peak",
+      "aquarius": "Resonating Bell",
+      "pisces": "Forgotten Orbit"
+    },
+    "verbs": [
+      "converges",
+      "scatters",
+      "submerges",
+      "conceives",
+      "pierces",
+      "embraces",
+      "awakens"
+    ],
+    "results": [
+      "you shall find answers in an ancient silence.",
+      "a forgotten frequency begins to resonate once more.",
+      "the first light of dawn illuminates your path.",
+      "a hidden possibility rises to the surface.",
+      "an unwavering resolve opens a new orbit."
+    ],
+    "template": "On the day when the {{adj}} {{obj}} {{verb}}, {{result}}"
+  },
+  "omikujiData": {
+    "daikichi": [
+      {
+        "general": "The best fortune — everything will go smoothly!",
+        "wish": "Your wish will surely come true.",
+        "relationship": "The best connection is coming your way.",
+        "travel": "Good luck follows wherever you go.",
+        "health": "You are full of vitality."
+      }
+    ],
+    "kichi": [
+      {
+        "general": "Good fortune. Keep working hard and you'll get what you want.",
+        "wish": "With effort, your wish will come true.",
+        "relationship": "A good connection is nearby.",
+        "travel": "A short trip will refresh your mood.",
+        "health": "No major health concerns."
+      }
+    ],
+    "chukichi": [
+      {
+        "general": "Decent fortune. Reduce your desires and good results will follow.",
+        "wish": "Change your approach and you can achieve it.",
+        "relationship": "Honest conversation will help.",
+        "travel": "Nearby destinations are best.",
+        "health": "Pay attention to stress management."
+      }
+    ],
+    "shokichi": [
+      {
+        "general": "A day touched by small luck. Find joy in little things.",
+        "wish": "Start with small wishes first.",
+        "relationship": "Focus on existing relationships.",
+        "travel": "Avoid strenuous trips.",
+        "health": "Review your eating habits."
+      }
+    ],
+    "suekichi": [
+      {
+        "general": "The path opens at the end. Now is a time for preparation.",
+        "wish": "Not now, but it will come true later.",
+        "relationship": "Keeping some distance is actually better.",
+        "travel": "Save travel for another time.",
+        "health": "Don't overdo it."
+      }
+    ],
+    "kyo": [
+      {
+        "general": "A day that requires caution. Postpone important decisions.",
+        "wish": "Now is not the time. Wait.",
+        "relationship": "Watch out for misunderstandings and quarrels.",
+        "travel": "Avoid unnecessary outings.",
+        "health": "Pay attention to your health."
+      }
+    ],
+    "daikyo": [
+      {
+        "general": "After the darkest night comes dawn. Enduring is the best you can do now.",
+        "wish": "Stop everything and recharge.",
+        "relationship": "Take a step back.",
+        "travel": "Avoid travel.",
+        "health": "Don't ignore the signals your body is sending."
+      }
+    ]
+  },
+  "sajuDaily": {
+    "title": "Today's Daily Pillar",
+    "todayPillar": "Today's Heavenly Stem & Earthly Branch",
+    "interaction": {
+      "generate": "Generating (相生) — Your energy nurtures today's flow. A day of natural momentum.",
+      "generated": "Receiving (受生) — Today's energy replenishes you. Help arrives from unexpected places.",
+      "same": "Harmony (比和) — Same energies meet. A day of familiarity and stability.",
+      "restrain": "Controlling (剋制) — Your energy suppresses today's flow. Strong control, but don't overdo it.",
+      "restrained": "Pressured (受剋) — Today's energy pushes against you. Act with caution."
+    },
+    "career": "Career/Study",
+    "love": "Love/Relationships",
+    "health": "Health",
+    "wealth": "Wealth",
+    "overall": "Overall",
+    "advice": {
+      "generate": [
+        "An optimal day for creative work. Start that new project.",
+        "Your energy positively influences those around you. Lead.",
+        "Your expressiveness peaks today. Communicate your heart."
+      ],
+      "generated": [
+        "Accept help from others willingly. You don't have to do it alone today.",
+        "Good news may come from unexpected places.",
+        "A strong day for learning. Absorb something new."
+      ],
+      "same": [
+        "Collaborate with like-minded people for synergy.",
+        "A stable day. Stick to your routine.",
+        "A good day to focus on yourself."
+      ],
+      "restrain": [
+        "Take the lead, but don't push too hard.",
+        "Good day for decisions, but avoid emotional ones.",
+        "Energy drain is possible. Rest well."
+      ],
+      "restrained": [
+        "Defense is the best offense today. Save new attempts for tomorrow.",
+        "Emotional fluctuations possible. Center yourself with deep breaths.",
+        "Postpone important decisions. Your judgment may be clouded."
+      ]
+    }
+  },
+  "sajuAnalysis": {
+    "木": "Wood is excessive. Growth energy overflows and may lose direction. Supplement the deficient element to find balance.",
+    "火": "Fire is excessive. Passion burns bright but may parch. Cool it with Water energy.",
+    "土": "Earth is excessive. Stable but may be resistant to change. Wind energy is needed.",
+    "金": "Metal is excessive. Strong decisiveness but may become cold. Warmth is needed.",
+    "水": "Water is excessive. Wise but may become indecisive. Fire gives direction."
+  },
+  "daeunDesc": {
+    "harmony": "The energy of {{stem}}{{branch}} harmonizes with your destiny. Inner wood meets sunlight and blooms.",
+    "clash": "The energy of {{stem}}{{branch}} clashes with your destiny. Fire meets water and boils. Intense, but the engine of change.",
+    "neutral": "The energy of {{stem}}{{branch}} flows quietly. A time of inner cultivation without great waves."
+  }
+}
