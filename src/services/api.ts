@@ -147,5 +147,5 @@ export async function checkHealth() {
 
 // === Server availability ===
 export function hasServer(): boolean {
-  return !!API_URL;
+  return API_URL.startsWith('http');
 }
