@@ -187,6 +187,8 @@ function SajuContent({ data }: { data: Record<string, unknown> }) {
   const dayMasterDesc = data['dayMasterDesc'] as string || '';
   const birthInfo = data['birthInfo'] as string || '';
   const elements = data['elements'] as { dominant: string; deficient: string } | null;
+  const dailyPillar = data['dailyPillar'] as string || '';
+  const dailyAdvice = data['dailyAdvice'] as string || '';
   const labels = ['年', '月', '日', '時'];
 
   return (
@@ -226,6 +228,14 @@ function SajuContent({ data }: { data: Record<string, unknown> }) {
         <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginTop: '10px', fontSize: '10px', color: 'rgba(255,255,255,0.35)' }}>
           <div>주요 오행: <span style={{ color: '#f1948a' }}>{elements.dominant}</span></div>
           <div>부족 오행: <span style={{ color: '#999' }}>{elements.deficient}</span></div>
+        </div>
+      )}
+
+      {/* Daily fortune */}
+      {dailyPillar && (
+        <div style={{ marginTop: '10px', padding: '8px 12px', background: 'rgba(212,175,55,0.06)', borderRadius: '8px' }}>
+          <div style={{ fontSize: '10px', color: 'rgba(212,175,55,0.5)', marginBottom: '4px' }}>오늘의 일진: {dailyPillar}</div>
+          {dailyAdvice && <div style={{ fontSize: '10px', lineHeight: '1.6', color: 'rgba(255,255,255,0.4)' }}>{truncate(dailyAdvice, 80)}</div>}
         </div>
       )}
     </div>

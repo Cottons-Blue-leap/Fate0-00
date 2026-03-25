@@ -491,7 +491,6 @@ export default function OmikujiPage() {
                 style={{ padding: '14px 40px', background: cardBg, border: `1px solid ${cardBorder}`, borderRadius: '12px', fontSize: '16px', color: '#f5d5d5' }}>
                 {t('omikuji.tieToButton')}
               </motion.button>
-              <ShareButton entry={getLatestEntry('omikuji')} theme="east" />
             </div>
           </motion.div>
         )}
@@ -540,10 +539,13 @@ export default function OmikujiPage() {
                 <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '24px' }}>
                   {t('omikuji.keepMessage')}
                 </div>
-                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); reset(); }}
-                  style={{ padding: '14px 40px', background: cardBg, border: `1px solid ${cardBorder}`, borderRadius: '12px', fontSize: '16px', color: '#f5d5d5' }}>
-                  {t('omikuji.newVisit')}
-                </motion.button>
+                <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                  <ShareButton entry={getLatestEntry('omikuji')} theme="east" />
+                  <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); reset(); }}
+                    style={{ padding: '14px 24px', background: cardBg, border: `1px solid ${cardBorder}`, borderRadius: '12px', fontSize: '14px', color: '#f5d5d5' }}>
+                    {t('omikuji.newVisit')}
+                  </motion.button>
+                </div>
               </motion.div>
             ) : (
               <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}>
@@ -557,10 +559,13 @@ export default function OmikujiPage() {
                 <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '24px' }}>
                   {t('omikuji.tieMessage')}
                 </div>
-                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); reset(); }}
-                  style={{ padding: '14px 40px', background: cardBg, border: `1px solid ${cardBorder}`, borderRadius: '12px', fontSize: '16px', color: '#f5d5d5' }}>
-                  {t('omikuji.newVisit')}
-                </motion.button>
+                <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                  <ShareButton entry={getLatestEntry('omikuji')} theme="east" />
+                  <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); reset(); }}
+                    style={{ padding: '14px 24px', background: cardBg, border: `1px solid ${cardBorder}`, borderRadius: '12px', fontSize: '14px', color: '#f5d5d5' }}>
+                    {t('omikuji.newVisit')}
+                  </motion.button>
+                </div>
               </motion.div>
             )}
           </motion.div>
