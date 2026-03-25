@@ -120,6 +120,20 @@
       "hopesAndFears": "희망과 두려움",
       "finalOutcome": "최종 결과"
     },
+    "positionHint": {
+      "present": "이 카드는 당신의\n현재를 비춥니다",
+      "past": "이 카드는 당신의\n과거를 비춥니다",
+      "future": "이 카드는 당신의\n미래를 비춥니다",
+      "challenge": "이 카드는 당신 앞의\n도전을 비춥니다",
+      "foundation": "이 카드는 당신의\n기반을 비춥니다",
+      "recentPast": "이 카드는\n가까운 과거를 비춥니다",
+      "bestOutcome": "이 카드는\n최선의 결과를 비춥니다",
+      "nearFuture": "이 카드는\n가까운 미래를 비춥니다",
+      "selfImage": "이 카드는\n당신이 보는 자신을 비춥니다",
+      "environment": "이 카드는\n주변 환경을 비춥니다",
+      "hopesAndFears": "이 카드는 당신의\n희망과 두려움을 비춥니다",
+      "finalOutcome": "이 카드는\n최종 결과를 비춥니다"
+    },
     "step5Title": "5단계 — 리딩",
     "yourQuestion": "당신의 질문",
     "storyTitle": "카드가 말하는 이야기",

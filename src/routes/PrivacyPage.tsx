@@ -22,8 +22,8 @@ const policies: Record<string, { title: string; sections: Array<{ heading: strin
           '본 서비스는 다음 제3자 서비스를 사용할 수 있습니다:\n• Google AdSense/AdMob: 광고 표시를 위해 사용됩니다. Google의 광고 ID가 수집될 수 있습니다.',
       },
       {
-        heading: '4. 아동의 개인정보',
-        content: '본 서비스는 만 13세 미만 아동을 대상으로 하지 않으며, 의도적으로 아동의 개인정보를 수집하지 않습니다.',
+        heading: '4. 아동의 이용',
+        content: '본 서비스는 만 13세 미만 아동의 단독 이용을 권장하지 않습니다. 아동이 이용할 경우 보호자의 동반 또는 지도하에 이용하시기를 권장합니다.\n\n아동이 보호자 동의 없이 단독으로 이용하여 발생하는 문제에 대해 운영자는 책임을 지지 않습니다.',
       },
       {
         heading: '5. 개인정보처리방침 변경',
@@ -54,8 +54,8 @@ const policies: Record<string, { title: string; sections: Array<{ heading: strin
           'This service may use the following third-party services:\n• Google AdSense/AdMob: Used for displaying advertisements. Google\'s advertising ID may be collected.',
       },
       {
-        heading: '4. Children\'s Privacy',
-        content: 'This service is not intended for children under 13 and does not knowingly collect personal information from children.',
+        heading: '4. Children\'s Use',
+        content: 'This service is not recommended for unsupervised use by children under 13. If a child uses this service, we recommend parental guidance or supervision.\n\nThe operator is not responsible for any issues arising from a child\'s unsupervised use without parental consent.',
       },
       {
         heading: '5. Changes to This Policy',
@@ -86,8 +86,8 @@ const policies: Record<string, { title: string; sections: Array<{ heading: strin
           '本サービスは以下の第三者サービスを使用する場合があります：\n• Google AdSense/AdMob：広告の表示に使用されます。Googleの広告IDが収集される場合があります。',
       },
       {
-        heading: '4. 児童のプライバシー',
-        content: '本サービスは13歳未満の児童を対象としておらず、意図的に児童の個人情報を収集することはありません。',
+        heading: '4. 児童のご利用',
+        content: '本サービスは13歳未満の児童が単独で利用することを推奨しておりません。児童がご利用になる場合は、保護者の同伴または指導のもとでのご利用をお勧めいたします。\n\n保護者の同意なく児童が単独で利用したことにより生じた問題について、運営者は責任を負いません。',
       },
       {
         heading: '5. プライバシーポリシーの変更',

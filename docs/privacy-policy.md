@@ -22,8 +22,9 @@
 본 앱은 다음 제3자 서비스를 사용합니다:
 - **Google AdMob**: 보상형 광고 표시를 위해 사용됩니다. Google의 광고 ID가 수집될 수 있습니다. [Google 개인정보처리방침](https://policies.google.com/privacy)을 참조하세요.
 
-### 4. 아동의 개인정보
-본 앱은 만 13세 미만 아동을 대상으로 하지 않으며, 의도적으로 아동의 개인정보를 수집하지 않습니다.
+### 4. 아동의 이용
+본 앱은 만 13세 미만 아동의 단독 이용을 권장하지 않습니다. 아동이 이용할 경우 보호자의 동반 또는 지도하에 이용하시기를 권장합니다.
+아동이 보호자 동의 없이 단독으로 이용하여 발생하는 문제에 대해 운영자는 책임을 지지 않습니다.
 
 ### 5. 개인정보처리방침 변경
 본 방침이 변경될 경우 이 페이지에 게시하여 알려드립니다.
@@ -51,8 +52,9 @@
 This app uses the following third-party services:
 - **Google AdMob**: Used for displaying rewarded advertisements. Google's advertising ID may be collected. Please refer to [Google's Privacy Policy](https://policies.google.com/privacy).
 
-### 4. Children's Privacy
-This app is not intended for children under 13 and does not knowingly collect personal information from children.
+### 4. Children's Use
+This app is not recommended for unsupervised use by children under 13. If a child uses this app, we recommend parental guidance or supervision.
+The operator is not responsible for any issues arising from a child's unsupervised use without parental consent.
 
 ### 5. Changes to This Policy
 Any changes to this policy will be posted on this page.
@@ -80,8 +82,9 @@ For privacy inquiries: **cottonsblueleap@gmail.com**
 本アプリは以下の第三者サービスを使用しています：
 - **Google AdMob**：リワード広告の表示に使用されます。Googleの広告IDが収集される場合があります。[Googleプライバシーポリシー](https://policies.google.com/privacy)をご参照ください。
 
-### 4. 児童のプライバシー
-本アプリは13歳未満の児童を対象としておらず、意図的に児童の個人情報を収集することはありません。
+### 4. 児童のご利用
+本アプリは13歳未満の児童が単独で利用することを推奨しておりません。児童がご利用になる場合は、保護者の同伴または指導のもとでのご利用をお勧めいたします。
+保護者の同意なく児童が単独で利用したことにより生じた問題について、運営者は責任を負いません。
 
 ### 5. プライバシーポリシーの変更
 本ポリシーに変更がある場合、このページに掲載してお知らせします。

@@ -293,15 +293,19 @@ export default function TarotPage() {
                   transition={{ duration: 0.6 }}
                   style={cardStyle(c.flipped)}
                 >
-                  <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '6px' }}>{c.position}</div>
                   {c.flipped ? (
                     <>
+                      <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '4px' }}>{c.position}</div>
                       <div style={{ fontSize: '28px', marginBottom: '4px', transform: c.isReversed ? 'rotate(180deg)' : 'none' }}>{tarotSymbols[c.id] || '🃏'}</div>
                       <div style={{ fontSize: '14px', fontWeight: 700 }}>{t(`tarot.cards.${c.id}.name`)}</div>
                       {c.isReversed && <div style={{ fontSize: '11px', color: '#e74c3c' }}>{t('tarot.reversed')}</div>}
                     </>
                   ) : (
-                    <div style={{
+                    <>
+                      <div style={{ fontSize: '12px', color: '#c39bd3', marginBottom: '8px', fontStyle: 'italic', lineHeight: '1.4' }}>
+                        {c.positionKey ? t(`tarot.positionHint.${c.positionKey}`, c.position) : c.position}
+                      </div>
+                      <div style={{
   width: '50px', height: '70px', borderRadius: '8px',
   background: 'linear-gradient(135deg, #2d1450, #1a0a2e)',
   border: '2px solid rgba(155,89,182,0.4)',
@@ -309,6 +313,7 @@ export default function TarotPage() {
   fontSize: '20px', color: 'rgba(155,89,182,0.5)',
   boxShadow: '0 0 15px rgba(155,89,182,0.2)',
 }}>✦</div>
+                    </>
                   )}
                 </motion.div>
               ))}
