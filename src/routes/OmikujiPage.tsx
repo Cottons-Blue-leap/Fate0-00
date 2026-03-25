@@ -12,6 +12,7 @@ import { hasUsedToday, markUsedToday } from '../logic/dailyLimitEngine';
 import { Link } from 'react-router-dom';
 import ReverseFateScreen from '../components/layout/ReverseFateScreen';
 import { canReverse, getReverseRemaining } from '../logic/reverseEngine';
+import { useSessionState } from '../hooks/useSessionState';
 
 type Step = 'purify' | 'pray' | 'shake' | 'waka' | 'reading' | 'fate';
 
@@ -33,7 +34,7 @@ export default function OmikujiPage() {
   useEffect(() => { playBgm('omikuji'); }, []);
   const [limitReached, setLimitReached] = useState(hasUsedToday('omikuji'));
   const [showReverse, setShowReverse] = useState(false);
-  const [step, setStep] = useState<Step>('purify');
+  const [step, setStep] = useSessionState<Step>('omikuji_step', 'purify');
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [question, setQuestion] = useState('');
   const [rankIdx, setRankIdx] = useState(0);

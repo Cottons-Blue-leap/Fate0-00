@@ -16,6 +16,7 @@ import { hasUsedToday, markUsedToday } from '../logic/dailyLimitEngine';
 import { Link } from 'react-router-dom';
 import ReverseFateScreen from '../components/layout/ReverseFateScreen';
 import { canReverse, getReverseRemaining } from '../logic/reverseEngine';
+import { useSessionState } from '../hooks/useSessionState';
 
 type Step = 'input' | 'sync' | 'transit' | 'oracle';
 
@@ -36,7 +37,7 @@ export default function HoroscopePage() {
   const { profile } = useProfile();
   const [limitReached, setLimitReached] = useState(hasUsedToday('horoscope'));
   const [showReverse, setShowReverse] = useState(false);
-  const [step, setStep] = useState<Step>('input');
+  const [step, setStep] = useSessionState<Step>('horoscope_step', 'input');
   const [name, setName] = useState(profile?.name || '');
   const [birthMonth, setBirthMonth] = useState(profile?.birthMonth || 1);
   const [birthDay, setBirthDay] = useState(profile?.birthDay || 1);

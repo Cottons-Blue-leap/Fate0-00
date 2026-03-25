@@ -12,6 +12,7 @@ import { hasUsedToday, markUsedToday } from '../logic/dailyLimitEngine';
 import { Link } from 'react-router-dom';
 import ReverseFateScreen from '../components/layout/ReverseFateScreen';
 import { canReverse, getReverseRemaining } from '../logic/reverseEngine';
+import { useSessionState } from '../hooks/useSessionState';
 
 type Spread = '1-card' | '3-card' | 'celtic';
 type Step = 'prepare' | 'question' | 'shuffle' | 'cut' | 'spread' | 'flip' | 'reading' | 'advice';
@@ -54,12 +55,12 @@ export default function TarotPage() {
   useEffect(() => { playBgm('tarot'); }, []);
   const [limitReached, setLimitReached] = useState(hasUsedToday('tarot'));
   const [showReverse, setShowReverse] = useState(false);
-  const [step, setStep] = useState<Step>('prepare');
-  const [question, setQuestion] = useState('');
-  const [spread, setSpread] = useState<Spread>('3-card');
-  const [cards, setCards] = useState<DrawnCard[]>([]);
+  const [step, setStep, resetStep] = useSessionState<Step>('tarot_step', 'prepare');
+  const [question, setQuestion, resetQuestion] = useSessionState('tarot_question', '');
+  const [spread, setSpread, resetSpread] = useSessionState<Spread>('tarot_spread', '3-card');
+  const [cards, setCards, resetCards] = useSessionState<DrawnCard[]>('tarot_cards', []);
   const [adviceCard, setAdviceCard] = useState<DrawnCard | null>(null);
-  const [shuffleCount, setShuffleCount] = useState(0);
+  const [shuffleCount, setShuffleCount, resetShuffleCount] = useSessionState('tarot_shuffle', 0);
   const [breathPhase, setBreathPhase] = useState<'in' | 'hold' | 'out'>('in');
   const resultRef = useRef<HTMLDivElement>(null);
 
@@ -119,11 +120,12 @@ export default function TarotPage() {
   };
 
   const reset = () => {
-    setStep('prepare');
-    setQuestion('');
-    setCards([]);
+    resetStep();
+    resetQuestion();
+    resetSpread();
+    resetCards();
+    resetShuffleCount();
     setAdviceCard(null);
-    setShuffleCount(0);
   };
 
   const cardStyle = (flipped: boolean) => ({
@@ -234,44 +236,147 @@ export default function TarotPage() {
           </motion.div>
         )}
 
-        {/* STEP 3: SHUFFLE */}
+        {/* STEP 3: SHUFFLE — swipe/drag to shuffle cards */}
         {step === 'shuffle' && (
           <motion.div key="shuffle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             style={{ textAlign: 'center', maxWidth: '400px', margin: '0 auto' }}>
             <div style={{ fontSize: '14px', color: 'var(--text-muted)', letterSpacing: '2px', marginBottom: '16px' }}>
               {t('tarot.step3Title')}
             </div>
-            <motion.div
-              animate={{ rotate: [0, -5, 5, -3, 3, 0] }}
-              transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 1 }}
-              style={{ fontSize: '80px', marginBottom: '16px' }}
-            >
-              🃏
-            </motion.div>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '8px', fontSize: '14px' }}>
-              {t('tarot.shuffleDesc')}
-            </p>
-            <p style={{ color: 'var(--accent-light)', marginBottom: '24px', fontSize: '14px' }}>
+
+            {/* Card pile — drag/swipe to shuffle */}
+            <div style={{ position: 'relative', height: '180px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
+              {[...Array(5)].map((_, i) => (
+                <motion.div
+                  key={`pile-${i}-${shuffleCount}`}
+                  initial={{ rotate: 0, x: 0 }}
+                  animate={{
+                    rotate: (i - 2) * 4 + (shuffleCount > 0 ? (Math.random() - 0.5) * 20 : 0),
+                    x: shuffleCount > 0 ? (Math.random() - 0.5) * 30 : (i - 2) * 3,
+                    y: shuffleCount > 0 ? (Math.random() - 0.5) * 10 : 0,
+                  }}
+                  transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+                  style={{
+                    position: 'absolute',
+                    width: '80px', height: '120px',
+                    borderRadius: '10px',
+                    background: 'linear-gradient(135deg, #2d1450, #1a0a2e)',
+                    border: '2px solid rgba(155,89,182,0.4)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    fontSize: '24px', color: 'rgba(155,89,182,0.5)',
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+                    zIndex: i,
+                  }}
+                >
+                  ✦
+                </motion.div>
+              ))}
+
+              {/* Drag overlay */}
+              <motion.div
+                drag="x"
+                dragConstraints={{ left: -100, right: 100 }}
+                dragElastic={0.3}
+                onDragEnd={(_e, info) => {
+                  if (Math.abs(info.offset.x) > 50) {
+                    handleShuffle();
+                  }
+                }}
+                whileDrag={{ scale: 1.05 }}
+                style={{
+                  position: 'absolute', inset: 0,
+                  cursor: 'grab', zIndex: 10,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}
+              >
+                <motion.div
+                  animate={{ opacity: [0.3, 0.6, 0.3] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  style={{ fontSize: '13px', color: 'rgba(155,89,182,0.6)', pointerEvents: 'none' }}
+                >
+                  ← {t('tarot.swipeToShuffle', 'swipe to shuffle')} →
+                </motion.div>
+              </motion.div>
+            </div>
+
+            <p style={{ color: 'var(--accent-light)', marginBottom: '16px', fontSize: '14px' }}>
               {t('tarot.shuffleCount', { count: shuffleCount + 1, total: 3 })}
             </p>
-            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }} onClick={handleShuffle} style={btn('purple')}>
+            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }} onClick={handleShuffle} style={btn('dim')}>
               {shuffleCount >= 2 ? t('tarot.shuffleDone') : t('tarot.shuffleAction')}
             </motion.button>
           </motion.div>
         )}
 
-        {/* STEP 4: CUT */}
+        {/* STEP 4: CUT — tap deck to split */}
         {step === 'cut' && (
           <motion.div key="cut" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             style={{ textAlign: 'center', maxWidth: '400px', margin: '0 auto' }}>
             <div style={{ fontSize: '14px', color: 'var(--text-muted)', letterSpacing: '2px', marginBottom: '16px' }}>
               {t('tarot.step3bTitle')}
             </div>
-            <div style={{ fontSize: '60px', marginBottom: '16px' }}>✂️</div>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '24px', fontSize: '14px' }}>{t('tarot.cutDesc')}</p>
-            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={handleCut} style={btn('purple')}>
-              {t('tarot.cutAction')}
-            </motion.button>
+            <p style={{ color: 'var(--text-muted)', marginBottom: '20px', fontSize: '14px' }}>{t('tarot.cutDesc')}</p>
+
+            {/* Tap-to-split deck visual */}
+            <motion.div
+              onClick={handleCut}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              style={{
+                position: 'relative', height: '180px', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                marginBottom: '20px',
+              }}
+            >
+              {/* Left half */}
+              <motion.div
+                initial={{ x: 0 }}
+                whileHover={{ x: -15 }}
+                style={{
+                  width: '75px', height: '110px', borderRadius: '10px',
+                  background: 'linear-gradient(135deg, #2d1450, #1a0a2e)',
+                  border: '2px solid rgba(155,89,182,0.4)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: '20px', color: 'rgba(155,89,182,0.5)',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+                  position: 'absolute', left: 'calc(50% - 85px)',
+                }}
+              >✦</motion.div>
+
+              {/* Right half */}
+              <motion.div
+                initial={{ x: 0 }}
+                whileHover={{ x: 15 }}
+                style={{
+                  width: '75px', height: '110px', borderRadius: '10px',
+                  background: 'linear-gradient(135deg, #2d1450, #1a0a2e)',
+                  border: '2px solid rgba(155,89,182,0.4)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: '20px', color: 'rgba(155,89,182,0.5)',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+                  position: 'absolute', right: 'calc(50% - 85px)',
+                }}
+              >✦</motion.div>
+
+              {/* Center glow line */}
+              <motion.div
+                animate={{ opacity: [0.2, 0.6, 0.2] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+                style={{
+                  width: '2px', height: '130px',
+                  background: 'linear-gradient(180deg, transparent, rgba(155,89,182,0.6), transparent)',
+                  position: 'absolute',
+                }}
+              />
+            </motion.div>
+
+            <motion.div
+              animate={{ opacity: [0.3, 0.6, 0.3] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              style={{ fontSize: '13px', color: 'rgba(155,89,182,0.5)', marginBottom: '16px' }}
+            >
+              {t('tarot.tapToCut', 'tap the deck to cut')}
+            </motion.div>
           </motion.div>
         )}
 

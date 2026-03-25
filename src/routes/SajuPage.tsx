@@ -16,6 +16,7 @@ import { hasUsedToday, markUsedToday } from '../logic/dailyLimitEngine';
 import { Link } from 'react-router-dom';
 import ReverseFateScreen from '../components/layout/ReverseFateScreen';
 import { canReverse, getReverseRemaining } from '../logic/reverseEngine';
+import { useSessionState } from '../hooks/useSessionState';
 
 type Step = 'input' | 'extract' | 'daymaster' | 'landscape' | 'daeun' | 'daily';
 
@@ -25,7 +26,7 @@ export default function SajuPage() {
   const { profile } = useProfile();
   const [limitReached, setLimitReached] = useState(hasUsedToday('saju'));
   const [showReverse, setShowReverse] = useState(false);
-  const [step, setStep] = useState<Step>('input');
+  const [step, setStep] = useSessionState<Step>('saju_step', 'input');
   const [year, setYear] = useState(profile?.birthYear || 2000);
   const [month, setMonth] = useState(profile?.birthMonth || 1);
   const [day, setDay] = useState(profile?.birthDay || 1);

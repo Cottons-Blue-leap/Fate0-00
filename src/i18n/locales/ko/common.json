@@ -103,6 +103,8 @@
     "shuffleDone": "✓ 셔플 완료 — 커팅으로",
     "step3bTitle": "커팅",
     "cutDesc": "왼손으로 카드 더미를 나누고 다시 합칩니다. 당신의 기운이 카드에 스며듭니다.",
+    "swipeToShuffle": "← 스와이프하여 섞기 →",
+    "tapToCut": "덱을 터치하여 나누세요",
     "cutAction": "✂️ 카드 커팅하기",
     "step4Title": "4단계 — 카드 뒤집기",
     "flipGuide": "첫인상을 느끼며 카드를 하나씩 터치하세요.",
