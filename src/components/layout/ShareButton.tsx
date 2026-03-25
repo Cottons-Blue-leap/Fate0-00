@@ -79,15 +79,10 @@ export default function ShareButton({ targetRef, theme = 'west' }: Props) {
     setShowPanel(false);
   }, [targetRef, bg, t]);
 
-  const handleShareToX = useCallback(() => {
-    const text = encodeURIComponent(`${t('app.title')} - Fate 0:00 ✦\nhttps://fate0-00.vercel.app`);
-    window.open(`https://x.com/intent/tweet?text=${text}`, '_blank', 'noopener');
-    setShowPanel(false);
-  }, [t]);
-
-  const handleShareToFacebook = useCallback(() => {
-    const url = encodeURIComponent('https://fate0-00.vercel.app');
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'noopener');
+  const handleCopyUrl = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText('https://fate0-00.vercel.app');
+    } catch { /* silent */ }
     setShowPanel(false);
   }, []);
 
@@ -134,8 +129,7 @@ export default function ShareButton({ targetRef, theme = 'west' }: Props) {
             {(canNativeShare || Capacitor.isNativePlatform()) && (
               <ShareOption icon="📤" label={t('share.nativeShare', 'Share...')} onClick={handleNativeShare} disabled={capturing} />
             )}
-            <ShareOption icon="𝕏" label="X (Twitter)" onClick={handleShareToX} />
-            <ShareOption icon="f" label="Facebook" onClick={handleShareToFacebook} />
+            <ShareOption icon="🔗" label={t('share.copyUrl', 'Copy URL')} onClick={handleCopyUrl} />
 
             <motion.button whileTap={{ scale: 0.95 }} onClick={() => setShowPanel(false)}
               style={{ background: 'none', fontSize: '11px', color: 'rgba(255,255,255,0.25)', padding: '4px', marginTop: '2px' }}>

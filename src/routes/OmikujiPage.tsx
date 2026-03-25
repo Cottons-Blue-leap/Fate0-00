@@ -312,24 +312,28 @@ export default function OmikujiPage() {
                 <div style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '16px', lineHeight: '1.7' }}>
                   {t('omikuji.shakeDesc')}
                 </div>
-                {shakeAvailable && isShakeEnabled() && !permissionGranted && !permissionAsked && (
-                  <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                    onClick={requestPermission}
-                    style={{ padding: '10px 24px', background: 'rgba(231,76,60,0.15)', border: `1px solid rgba(231,76,60,0.3)`, borderRadius: '10px', fontSize: '13px', color: '#f1948a', marginBottom: '12px' }}>
-                    📳 {t('omikuji.enableShake', 'Enable phone shake')}
-                  </motion.button>
-                )}
                 {shakeAvailable && permissionGranted && isShakeEnabled() && (
                   <motion.div
-                    animate={{ opacity: [0.4, 0.8, 0.4] }}
+                    animate={{ opacity: [0.3, 0.6, 0.3] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
-                    style={{ fontSize: '13px', color: 'rgba(231,76,60,0.6)', marginBottom: '12px' }}
+                    style={{ fontSize: '12px', color: 'rgba(231,76,60,0.5)', marginBottom: '12px' }}
                   >
                     📳 {t('omikuji.shakePhone', 'Shake your phone!')}
                   </motion.div>
                 )}
-                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }} onClick={handleShake}
-                  style={{ padding: '16px 48px', background: cardBg, border: `1px solid ${cardBorder}`, borderRadius: '12px', fontSize: '18px', color: '#f5d5d5' }}>
+                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                  onClick={async () => {
+                    if (shakeAvailable && isShakeEnabled() && !permissionGranted && !permissionAsked) {
+                      await requestPermission();
+                    }
+                    handleShake();
+                  }}
+                  style={{
+                    padding: '16px 48px',
+                    background: 'rgba(231,76,60,0.2)',
+                    border: '1px solid rgba(231,76,60,0.4)',
+                    borderRadius: '12px', fontSize: '16px', color: '#f5d5d5',
+                  }}>
                   {t('omikuji.shakeAction')}
                 </motion.button>
               </>

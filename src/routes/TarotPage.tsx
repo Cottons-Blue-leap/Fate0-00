@@ -513,7 +513,18 @@ export default function TarotPage() {
       {showReverse && (
         <ReverseFateScreen
           fortuneType="tarot"
-          onComplete={() => { setShowReverse(false); setLimitReached(false); reset(); }}
+          onComplete={() => {
+            setShowReverse(false);
+            setLimitReached(false);
+            resetStep();
+            resetQuestion();
+            resetSpread();
+            resetCards();
+            resetShuffleCount();
+            setAdviceCard(null);
+            // Force step to prepare after a tick to ensure state is settled
+            setTimeout(() => setStep('prepare'), 50);
+          }}
           onCancel={() => setShowReverse(false)}
         />
       )}
