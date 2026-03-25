@@ -194,20 +194,22 @@ export default function ProfilePage() {
                 border: '1px solid rgba(155, 89, 182, 0.2)',
               }}
             >
-              <div style={{ fontSize: '36px', marginBottom: '16px' }}>🔮</div>
+              <div style={{ fontSize: '28px', marginBottom: '16px', color: '#c39bd3', letterSpacing: '8px' }}>✦ ✦ ✦</div>
               <p style={{
-                fontSize: '15px', lineHeight: '1.8',
-                color: 'rgba(255,255,255,0.75)',
+                fontSize: '15px', lineHeight: '2',
+                color: 'rgba(255,255,255,0.8)',
                 marginBottom: '24px',
+                whiteSpace: 'pre-line',
               }}>
-                {t('privacy.notice', '입력하신 정보는 오직 운세를 점치는 데에만 사용되며, 이 기기 밖으로 전송되지 않습니다.')}
+                {t('privacy.notice')}
               </p>
               <p style={{
-                fontSize: '12px', lineHeight: '1.6',
-                color: 'rgba(255,255,255,0.35)',
-                marginBottom: '24px',
+                fontSize: '12px', lineHeight: '1.8',
+                color: 'rgba(255,255,255,0.4)',
+                marginBottom: '28px',
+                whiteSpace: 'pre-line',
               }}>
-                {t('privacy.detail', '모든 데이터는 브라우저에만 저장되며, 언제든 삭제할 수 있습니다.')}
+                {t('privacy.detail')}
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}

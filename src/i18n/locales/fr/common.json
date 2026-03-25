@@ -240,6 +240,11 @@
     "skip": "Plus tard",
     "defaultName": "Voyageur"
   },
+  "privacy": {
+    "notice": "Bienvenue, cher visiteur.\nPartagez votre nom et votre date de naissance, et les étoiles vous révéleront leur histoire.",
+    "detail": "Soyez tranquille. Ce que vous partagez reste ici, uniquement sur cet appareil, et peut être effacé à tout moment.",
+    "confirm": "Prendre place"
+  },
   "share": {
     "button": "Partager le résultat"
   },

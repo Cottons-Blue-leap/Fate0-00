@@ -241,9 +241,9 @@
     "defaultName": "Traveler"
   },
   "privacy": {
-    "notice": "Your information is used solely for fortune-telling and is never transmitted outside this device.",
-    "detail": "All data is stored only in your browser and can be deleted at any time.",
-    "confirm": "Understood"
+    "notice": "Welcome, dear visitor.\nShare your name and birthday, and the stars will reveal their story for you.",
+    "detail": "Rest assured — what you share stays here, on this device alone, and can be erased whenever you wish.",
+    "confirm": "Take a seat"
   },
   "share": {
     "button": "Share result"

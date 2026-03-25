@@ -240,6 +240,11 @@
     "skip": "Salta per ora",
     "defaultName": "Viaggiatore"
   },
+  "privacy": {
+    "notice": "Benvenuto, caro visitatore.\nCondividi il tuo nome e la tua data di nascita, e le stelle riveleranno la loro storia per te.",
+    "detail": "Stai tranquillo. Ciò che condividi resta qui, solo su questo dispositivo, e può essere cancellato in qualsiasi momento.",
+    "confirm": "Accomodarsi"
+  },
   "share": {
     "button": "Condividi risultato"
   },

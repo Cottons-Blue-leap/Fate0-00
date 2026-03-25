@@ -240,6 +240,11 @@
     "skip": "Şimdilik atla",
     "defaultName": "Gezgin"
   },
+  "privacy": {
+    "notice": "Hoş geldiniz, değerli ziyaretçi.\nAdınızı ve doğum tarihinizi paylaşın, yıldızlar size hikâyelerini anlatacak.",
+    "detail": "Endişelenmeyin. Paylaştıklarınız burada kalır, yalnızca bu cihazda, ve istediğiniz zaman silinebilir.",
+    "confirm": "Yerinize buyurun"
+  },
   "share": {
     "button": "Sonucu paylaş"
   },

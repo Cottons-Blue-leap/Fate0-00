@@ -240,6 +240,11 @@
     "skip": "Später eingeben",
     "defaultName": "Reisender"
   },
+  "privacy": {
+    "notice": "Willkommen, lieber Besucher.\nTeilen Sie Ihren Namen und Ihr Geburtsdatum mit, und die Sterne werden Ihnen ihre Geschichte offenbaren.",
+    "detail": "Keine Sorge. Was Sie teilen, bleibt hier, nur auf diesem Gerät, und kann jederzeit gelöscht werden.",
+    "confirm": "Platz nehmen"
+  },
   "share": {
     "button": "Ergebnis teilen"
   },
