@@ -246,7 +246,8 @@
   "privacy": {
     "notice": "Welcome, dear visitor.\nShare your name and birthday, and the stars will reveal their story for you.",
     "detail": "Rest assured — what you share stays here, on this device alone, and can be erased whenever you wish.",
-    "confirm": "Take a seat"
+    "confirm": "Take a seat",
+    "policyLink": "Privacy Policy"
   },
   "share": {
     "button": "Share result"

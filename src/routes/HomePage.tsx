@@ -138,6 +138,15 @@ export default function HomePage() {
                 📜 {t('history.title')}
               </motion.div>
             </Link>
+            <Link to="/privacy" style={{ display: 'inline-block', marginTop: '4px' }}>
+              <div style={{
+                fontSize: '11px',
+                color: 'rgba(255,255,255,0.25)',
+                cursor: 'pointer',
+              }}>
+                {t('privacy.policyLink', 'Privacy Policy')}
+              </div>
+            </Link>
             {hasServer() && (
               <motion.div
                 whileHover={{ scale: 1.05 }}

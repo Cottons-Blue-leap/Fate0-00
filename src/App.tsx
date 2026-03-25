@@ -15,6 +15,7 @@ const OmikujiPage = lazy(() => import('./routes/OmikujiPage'));
 const ProfilePage = lazy(() => import('./routes/ProfilePage'));
 const HistoryPage = lazy(() => import('./routes/HistoryPage'));
 const SharedReadingPage = lazy(() => import('./routes/SharedReadingPage'));
+const PrivacyPage = lazy(() => import('./routes/PrivacyPage'));
 
 function Loading() {
   return (
@@ -45,6 +46,7 @@ function AppRoutes() {
           <Route path="/omikuji" element={hasProfile ? <OmikujiPage /> : <Navigate to="/profile" replace />} />
           <Route path="/history" element={hasProfile ? <HistoryPage /> : <Navigate to="/profile" replace />} />
           <Route path="/share/:id" element={<SharedReadingPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
         </Routes>
       </AnimatePresence>
     </Suspense>
