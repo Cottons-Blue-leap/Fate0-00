@@ -63,7 +63,8 @@ export default function HomePage() {
   const today = new Date();
   const dateStr = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
   const quoteIndex = hashDate(dateStr) % 15;
-  const dailyQuote = t(`dailyQuote.${quoteIndex}`);
+  const anyUsedToday = hasUsedToday('tarot') || hasUsedToday('horoscope') || hasUsedToday('saju') || hasUsedToday('omikuji');
+  const dailyQuote = anyUsedToday ? t('home.starsResting') : t(`dailyQuote.${quoteIndex}`);
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} style={{ position: 'relative' }}>

@@ -18,7 +18,10 @@
     "saju": "Cuatro Pilares",
     "sajuSub": "四柱八字",
     "omikuji": "Omikuji",
-    "omikujiSub": "おみくじ"
+    "omikujiSub": "おみくじ",
+    "starsResting": "Las estrellas ya te han hablado hoy. Nos vemos mañana.",
+    "starsSleeping": "Las estrellas descansan",
+    "starsRestingDetail": "Las estrellas descansan. Despertarán de nuevo mañana."
   },
   "tarot": {
     "title": "Tarot",

@@ -18,7 +18,10 @@
     "saju": "Saju",
     "sajuSub": "四柱八字",
     "omikuji": "Omikuji",
-    "omikujiSub": "おみくじ"
+    "omikujiSub": "おみくじ",
+    "starsResting": "Le stelle ti hanno già parlato oggi. Ci vediamo domani.",
+    "starsSleeping": "Le stelle riposano",
+    "starsRestingDetail": "Le stelle riposano. Si risveglieranno domani."
   },
   "tarot": {
     "title": "Carte dei Tarocchi",

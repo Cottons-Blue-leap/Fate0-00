@@ -18,7 +18,10 @@
     "saju": "四柱八字",
     "sajuSub": "四柱八字",
     "omikuji": "御神签",
-    "omikujiSub": "おみくじ"
+    "omikujiSub": "おみくじ",
+    "starsResting": "今天的星辰已经向你述说了故事。明天再见。",
+    "starsSleeping": "星辰在休息",
+    "starsRestingDetail": "星辰在休息，明天将再次苏醒。"
   },
   "tarot": {
     "title": "塔罗牌",

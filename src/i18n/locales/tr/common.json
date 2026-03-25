@@ -18,7 +18,10 @@
     "saju": "Saju",
     "sajuSub": "四柱八字",
     "omikuji": "Omikuji",
-    "omikujiSub": "おみくじ"
+    "omikujiSub": "おみくじ",
+    "starsResting": "Yıldızlar bugün zaten sizinle konuştu. Yarın görüşürüz.",
+    "starsSleeping": "Yıldızlar dinleniyor",
+    "starsRestingDetail": "Yıldızlar dinleniyor. Yarın tekrar uyanacaklar."
   },
   "tarot": {
     "title": "Tarot Kartları",

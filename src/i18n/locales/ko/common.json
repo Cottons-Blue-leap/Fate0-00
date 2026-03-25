@@ -73,7 +73,10 @@
     "saju": "사주",
     "sajuSub": "四柱八字",
     "omikuji": "오미쿠지",
-    "omikujiSub": "おみくじ"
+    "omikujiSub": "おみくじ",
+    "starsResting": "오늘의 별은 이미 당신에게 이야기를 전했습니다. 내일 다시 만나요.",
+    "starsSleeping": "별이 쉬고 있습니다",
+    "starsRestingDetail": "별이 쉬고 있습니다. 내일 다시 깨어납니다."
   },
   "tarot": {
     "title": "타로 카드",

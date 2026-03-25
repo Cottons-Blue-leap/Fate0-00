@@ -18,7 +18,10 @@
     "saju": "ساجو",
     "sajuSub": "四柱八字",
     "omikuji": "أوميكوجي",
-    "omikujiSub": "おみくじ"
+    "omikujiSub": "おみくじ",
+    "starsResting": "لقد تحدثت النجوم إليك اليوم بالفعل. نراك غداً.",
+    "starsSleeping": "النجوم تستريح",
+    "starsRestingDetail": "النجوم تستريح. ستستيقظ مجدداً غداً."
   },
   "tarot": {
     "title": "بطاقات التاروت",

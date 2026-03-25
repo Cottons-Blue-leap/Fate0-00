@@ -18,7 +18,10 @@
     "saju": "साजू",
     "sajuSub": "四柱八字",
     "omikuji": "ओमिकुजी",
-    "omikujiSub": "おみくじ"
+    "omikujiSub": "おみくじ",
+    "starsResting": "आज के तारे आपसे पहले ही बात कर चुके हैं। कल फिर मिलते हैं।",
+    "starsSleeping": "तारे विश्राम कर रहे हैं",
+    "starsRestingDetail": "तारे विश्राम कर रहे हैं। कल फिर जागेंगे।"
   },
   "tarot": {
     "title": "टैरो कार्ड",

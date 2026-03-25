@@ -18,7 +18,10 @@
     "saju": "Саджу",
     "sajuSub": "四柱八字",
     "omikuji": "Омикудзи",
-    "omikujiSub": "おみくじ"
+    "omikujiSub": "おみくじ",
+    "starsResting": "Звёзды уже говорили с вами сегодня. До завтра.",
+    "starsSleeping": "Звёзды отдыхают",
+    "starsRestingDetail": "Звёзды отдыхают. Они пробудятся завтра."
   },
   "tarot": {
     "title": "Карты Таро",

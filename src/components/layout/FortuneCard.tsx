@@ -75,8 +75,8 @@ export default function FortuneCard({ title, subtitle, icon, to, theme, used = f
             {subtitle}
           </div>
           {used && (
-            <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', marginTop: '8px', letterSpacing: '1px' }}>
-              {t('dailyLimit.completed')}
+            <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', marginTop: '8px', letterSpacing: '1px', lineHeight: '1.5' }}>
+              ✦ {t('home.starsSleeping')}
             </div>
           )}
         </motion.div>
@@ -96,7 +96,7 @@ export default function FortuneCard({ title, subtitle, icon, to, theme, used = f
               textAlign: 'center', backdropFilter: 'blur(10px)',
             }}
           >
-            <div style={{ marginBottom: '10px' }}>🔒 {t('dailyLimit.resetAt')}</div>
+            <div style={{ marginBottom: '10px' }}>✦ {t('home.starsRestingDetail')}</div>
 
             {canReverse() ? (
               <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={handleReverse}
