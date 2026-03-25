@@ -10,8 +10,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title>운명 0시</title>
   </head>
-  <body>
-    <div id="root"></div>
+  <body style="margin:0;background:#1a0a2e">
+    <div id="root">
+      <!-- Pre-render loading state visible before JS loads -->
+      <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a0a2e,#2d1450,#2e0a0a);color:rgba(255,255,255,0.3);font-size:18px;letter-spacing:6px">✦ ✦ ✦</div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

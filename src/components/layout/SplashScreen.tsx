@@ -11,12 +11,13 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
     const t1 = setTimeout(() => setPhase('title'), 800);
     const t2 = setTimeout(() => setPhase('fade'), 2200);
     const t3 = setTimeout(onComplete, 2800);
-    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
+    // Safety: force complete if something goes wrong
+    const safety = setTimeout(onComplete, 5000);
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(safety); };
   }, [onComplete]);
 
   return (
     <AnimatePresence>
-      {phase !== 'fade' ? null : null}
       <motion.div
         initial={{ opacity: 1 }}
         animate={{ opacity: phase === 'fade' ? 0 : 1 }}
@@ -29,6 +30,14 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
           padding: 'var(--sat, 0px) var(--sar, 0px) var(--sab, 0px) var(--sal, 0px)',
         }}
       >
+        {/* Immediate loading indicator — visible before Framer Motion kicks in */}
+        <div style={{
+          position: 'absolute', bottom: '20%',
+          color: 'rgba(255,255,255,0.2)', fontSize: '14px', letterSpacing: '4px',
+        }}>
+          ✦ ✦ ✦
+        </div>
+
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
