@@ -63,8 +63,8 @@ export default function HomePage() {
   const today = new Date();
   const dateStr = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
   const quoteIndex = hashDate(dateStr) % 15;
-  const anyUsedToday = hasUsedToday('tarot') || hasUsedToday('horoscope') || hasUsedToday('saju') || hasUsedToday('omikuji');
-  const dailyQuote = anyUsedToday ? t('home.starsResting') : t(`dailyQuote.${quoteIndex}`);
+  const allUsedToday = hasUsedToday('tarot') && hasUsedToday('horoscope') && hasUsedToday('saju') && hasUsedToday('omikuji');
+  const dailyQuote = allUsedToday ? t('home.starsResting') : t(`dailyQuote.${quoteIndex}`);
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} style={{ position: 'relative' }}>
@@ -137,15 +137,6 @@ export default function HomePage() {
               >
                 📜 {t('history.title')}
               </motion.div>
-            </Link>
-            <Link to="/privacy" style={{ display: 'inline-block', marginTop: '4px' }}>
-              <div style={{
-                fontSize: '11px',
-                color: 'rgba(255,255,255,0.25)',
-                cursor: 'pointer',
-              }}>
-                {t('privacy.policyLink', 'Privacy Policy')}
-              </div>
             </Link>
             {hasServer() && (
               <motion.div
@@ -291,6 +282,12 @@ export default function HomePage() {
         )}
       </AnimatePresence>
       <AuthModal isOpen={showAuthModal} onClose={() => setShowAuthModal(false)} />
+      <Link to="/privacy" style={{
+        position: 'fixed', bottom: '8px', left: '50%', transform: 'translateX(-50%)',
+        fontSize: '10px', color: 'rgba(255,255,255,0.15)', textDecoration: 'none', zIndex: 5,
+      }}>
+        {t('privacy.policyLink', 'Privacy Policy')}
+      </Link>
     </motion.div>
   );
 }

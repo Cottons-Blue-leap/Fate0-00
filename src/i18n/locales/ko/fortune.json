@@ -115,10 +115,10 @@
   },
   "oracle": {
     "adjectives": { "fire": ["불타는", "타오르는", "백열의"], "earth": ["정적에 잠긴", "묵직한", "결정화된"], "air": ["투명한", "떠도는", "공명하는"], "water": ["차가운", "깊은 곳의", "안개 낀"] },
-    "objects": { "aries": "불꽃의 뿔", "taurus": "흑요석 황소", "gemini": "이중의 거울", "cancer": "달빛 조개", "leo": "은빛 사자", "virgo": "별의 낟알", "libra": "균형의 추", "scorpio": "심연의 바늘", "sagittarius": "불화살", "capricorn": "얼음의 봉우리", "aquarius": "공명하는 종", "pisces": "잊힌 궤도" },
+    "objects": { "aries": "불꽃의 뿔", "taurus": "흑요석 황소", "gemini": "이중의 거울", "cancer": "달빛 조개", "leo": "은빛 사자", "virgo": "별의 낟알", "libra": "균형의 추", "scorpio": "심연의 바늘", "sagittarius": "불화살", "capricorn": "얼음의 봉우리", "aquarius": "수정의 종", "pisces": "잊힌 궤도" },
     "verbs": ["조우하는", "흩어지는", "침잠하는", "잉태하는", "관통하는", "포용하는", "각성하는"],
     "results": ["오래된 침묵 속에서 답을 얻으리라.", "잊혀진 주파수가 다시 공명하기 시작한다.", "새벽의 첫 빛이 당신의 길을 비춘다.", "감춰져 있던 가능성이 수면 위로 떠오른다.", "흔들림 없는 결단이 새로운 궤도를 연다."],
-    "template": "{{adj}} {{obj}}이(가) {{verb}} 날, {{result}}"
+    "template": "{{adj}} {{obj}} 이(가) {{verb}} 날, {{result}}"
   },
   "dailyQuote": [
     "운명은 용기 있는 자의 편이다.",

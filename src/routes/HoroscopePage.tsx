@@ -86,11 +86,16 @@ export default function HoroscopePage() {
 
   // Oracle from i18n
   const elementMap: Record<string, string> = { aries: 'fire', taurus: 'earth', gemini: 'air', cancer: 'water', leo: 'fire', virgo: 'earth', libra: 'air', scorpio: 'water', sagittarius: 'fire', capricorn: 'earth', aquarius: 'air', pisces: 'water' };
-  const oracleAdj = sunSign ? t(`oracle.adjectives.${elementMap[sunSign]}.${seed % 3}`) : '';
+  let oracleAdj = sunSign ? t(`oracle.adjectives.${elementMap[sunSign]}.${seed % 3}`) : '';
   const oracleObj = sunSign ? t(`oracle.objects.${sunSign}`) : '';
+  // Prevent adjective-object keyword duplication
+  if (oracleObj.includes(oracleAdj) && oracleAdj) {
+    oracleAdj = sunSign ? t(`oracle.adjectives.${elementMap[sunSign]}.${(seed + 1) % 3}`) : '';
+    if (oracleObj.includes(oracleAdj)) oracleAdj = '';
+  }
   const oracleVerb = t(`oracle.verbs.${(seed + 2) % 7}`);
   const oracleResult = t(`oracle.results.${(seed + 3) % 5}`);
-  const oracleMessage = sunSign ? t('oracle.template', { adj: oracleAdj, obj: oracleObj, verb: oracleVerb, result: oracleResult }) : '';
+  const oracleMessage = sunSign ? t('oracle.template', { adj: oracleAdj, obj: oracleObj, verb: oracleVerb, result: oracleResult }).replace(/\s+이\(가\)/, ' 이(가)') : '';
 
   const glowColor = resonance === 'aligned' ? '#ffd700' : resonance === 'approaching' ? '#9b59b6' : 'rgba(155,89,182,0.3)';
 

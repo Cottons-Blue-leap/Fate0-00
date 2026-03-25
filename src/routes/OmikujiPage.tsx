@@ -201,17 +201,6 @@ export default function OmikujiPage() {
               {t('omikuji.purifyDesc')}
             </div>
 
-            {/* Progress dots */}
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '20px' }}>
-              {[0, 1, 2].map(i => (
-                <div key={i} style={{
-                  width: '10px', height: '10px', borderRadius: '50%',
-                  background: i <= purifyStep ? 'var(--accent)' : 'rgba(255,255,255,0.15)',
-                  transition: '0.3s',
-                }} />
-              ))}
-            </div>
-
             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={handlePurifyStep}
               style={{ padding: '14px 40px', background: cardBg, border: `1px solid ${cardBorder}`, borderRadius: '12px', fontSize: '16px', color: '#f5d5d5' }}>
               {t('omikuji.purifyAction')}
