@@ -7,7 +7,7 @@ import { format } from 'date-fns';
 import { getSunSign, getLunarZodiac, getMoonPhase, getMoonEmoji, getMoonPhaseName, getResonance } from '@fate0/shared';
 // Oracle message now generated from i18n keys
 import type { ZodiacSign } from '@fate0/shared';
-import { sfxSync, sfxConstellationAppear, sfxResonance, sfxOracleKeyword, sfxOracleComplete, sfxButtonClick, sfxTextInput } from '../logic/soundEngine';
+import { sfxSync, sfxConstellationAppear, sfxResonance, sfxOracleComplete, sfxButtonClick, sfxTextInput } from '../logic/soundEngine';
 import { useProfile } from '../context/ProfileContext';
 import ShareButton from '../components/layout/ShareButton';
 import Watermark from '../components/layout/Watermark';

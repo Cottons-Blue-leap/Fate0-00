@@ -80,7 +80,6 @@ i18n
     detection: {
       order: ['localStorage', 'navigator'],
       caches: ['localStorage'],
-      lookupFromNavigator: true,
     },
     supportedLngs: ['ko', 'en', 'ja', 'zh-CN', 'zh-TW', 'hi', 'es', 'fr', 'ar', 'bn', 'pt', 'ru', 'de', 'it', 'tr'],
     nonExplicitSupportedLngs: false,

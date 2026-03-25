@@ -81,7 +81,7 @@ export default function SharedReadingPage() {
             lineHeight: '1.8',
             fontSize: '0.95rem',
           }}>
-            {renderReadingData(data.type, data.data, t)}
+            {renderReadingData(data.type, data.data)}
           </div>
 
           <Link
@@ -107,7 +107,7 @@ export default function SharedReadingPage() {
   );
 }
 
-function renderReadingData(type: string, data: Record<string, unknown>, t: (k: string, d?: string) => string): React.ReactNode {
+function renderReadingData(type: string, data: Record<string, unknown>): React.ReactNode {
   if (type === 'tarot') {
     const cards = data['cards'] as Array<{ name: string; isReversed?: boolean }> | undefined;
     if (cards) {
@@ -115,10 +115,10 @@ function renderReadingData(type: string, data: Record<string, unknown>, t: (k: s
         <div>
           {cards.map((card, i) => (
             <div key={i} style={{ marginBottom: '0.5rem' }}>
-              🃏 {card.name} {card.isReversed ? `(${t('tarot.reversed', 'Reversed')})` : ''}
+              🃏 {card.name} {card.isReversed ? '(Reversed)' : ''}
             </div>
           ))}
-          {data['summary'] && <p style={{ marginTop: '1rem', color: 'rgba(255,255,255,0.6)' }}>{String(data['summary'])}</p>}
+          {data['summary'] ? <p style={{ marginTop: '1rem', color: 'rgba(255,255,255,0.6)' }}>{String(data['summary'])}</p> : null}
         </div>
       );
     }

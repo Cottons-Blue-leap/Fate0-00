@@ -128,7 +128,7 @@ export function sfxAdviceCard() {
 // === HOROSCOPE ===
 
 export function sfxSync() {
-  const c = getCtx();
+  getCtx();
   for (let i = 0; i < 5; i++) {
     setTimeout(() => playTone(300 + i * 200, 0.1, 'square', 0.04), i * 60);
   }
@@ -217,7 +217,7 @@ export function sfxDaeunInteraction(type: 'harmony' | 'clash' | 'neutral') {
 // === OMIKUJI ===
 
 export function sfxWaterPour() {
-  const c = getCtx();
+  getCtx();
   for (let i = 0; i < 10; i++) {
     setTimeout(() => playTone(800 + Math.random() * 600, 0.08, 'sine', 0.03), i * 40);
   }

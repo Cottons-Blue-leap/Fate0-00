@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import PageShell from '../components/layout/PageShell';
 import { playBgm } from '../logic/bgmEngine';
-import { getSajuReading, getDayMasterProfile, analyzeElements, calculateDaeun, elementColors, elementEmojis, elementNames } from '@fate0/shared';
+import { getSajuReading, getDayMasterProfile, analyzeElements, calculateDaeun, elementColors, elementEmojis } from '@fate0/shared';
 import type { SajuReading, FiveElement } from '@fate0/shared';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { sfxPillarDrop, sfxElementReveal, sfxBarRise, sfxDaeunTimeline, sfxButtonClick, sfxReadingReveal } from '../logic/soundEngine';
+import { sfxPillarDrop, sfxElementReveal, sfxBarRise, sfxDaeunTimeline, sfxButtonClick } from '../logic/soundEngine';
 import { useProfile } from '../context/ProfileContext';
 import { getDailyFortune } from '@fate0/shared';
 import ShareButton from '../components/layout/ShareButton';

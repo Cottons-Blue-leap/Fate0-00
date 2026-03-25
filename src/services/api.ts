@@ -37,11 +37,13 @@ async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
 }
 
 export class ApiError extends Error {
+  status: number;
   constructor(
-    public status: number,
+    status: number,
     message: string,
   ) {
     super(message);
+    this.status = status;
     this.name = 'ApiError';
   }
 }

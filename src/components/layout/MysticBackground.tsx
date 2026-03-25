@@ -152,7 +152,7 @@ function HomePattern() {
 export type PatternType = 'home' | 'tarot' | 'horoscope' | 'saju' | 'omikuji';
 
 export default function MysticBackground({ pattern = 'home' }: { pattern?: PatternType }) {
-  const patterns: Record<PatternType, JSX.Element> = {
+  const patterns: Record<PatternType, React.ReactNode> = {
     home: <HomePattern />,
     tarot: <><StarPattern /><TarotPattern /></>,
     horoscope: <><StarPattern /><HoroscopePattern /></>,

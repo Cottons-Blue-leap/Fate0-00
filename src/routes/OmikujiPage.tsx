@@ -47,7 +47,7 @@ export default function OmikujiPage() {
   const resultRef = useRef<HTMLDivElement>(null);
 
   const seed = stickNum || 1;
-  const waka = getWaka(ranks[rankIdx], seed);
+  const _waka = getWaka(ranks[rankIdx], seed); void _waka;
 
   // Purification sequence
   const purifyLabels = [t('omikuji.purifyLeft'), t('omikuji.purifyRight'), t('omikuji.purifyMouth')];

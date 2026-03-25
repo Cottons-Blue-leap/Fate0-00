@@ -44,7 +44,7 @@ export function ProfileProvider({ children }: { children: ReactNode }) {
 
     // Background server sync
     if (isLoggedIn()) {
-      saveServerProfile(p).catch(() => {
+      saveServerProfile(p as unknown as Record<string, unknown>).catch(() => {
         // Silent fail — localStorage is the source of truth
       });
     }
