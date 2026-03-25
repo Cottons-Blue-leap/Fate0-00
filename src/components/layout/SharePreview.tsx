@@ -14,7 +14,12 @@ interface Props {
 
 async function captureCard(el: HTMLDivElement): Promise<Blob> {
   const { default: html2canvas } = await import('html2canvas');
-  const canvas = await html2canvas(el, { backgroundColor: null, scale: 2, useCORS: true });
+  const canvas = await html2canvas(el, {
+    backgroundColor: null,
+    scale: 2,
+    useCORS: true,
+    logging: false,
+  });
   return new Promise<Blob>((resolve, reject) => {
     canvas.toBlob((b) => {
       if (b) resolve(b);
@@ -28,28 +33,30 @@ function downloadBlob(blob: Blob, filename: string) {
   const a = document.createElement('a');
   a.href = url;
   a.download = filename;
+  a.style.display = 'none';
   document.body.appendChild(a);
   a.click();
-  document.body.removeChild(a);
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  setTimeout(() => {
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }, 500);
 }
 
 export default function SharePreview({ entry, isOpen, onClose }: Props) {
   const { t } = useTranslation();
-  const cardRef = useRef<HTMLDivElement>(null);
+  const captureRef = useRef<HTMLDivElement>(null);
   const [capturing, setCapturing] = useState(false);
   const [status, setStatus] = useState<string>('');
 
   const handleSave = useCallback(async () => {
-    if (!cardRef.current) {
+    if (!captureRef.current) {
       setStatus('Error: card not ready');
       return;
     }
     setCapturing(true);
-    setStatus('');
+    setStatus('...');
     try {
-      const blob = await captureCard(cardRef.current);
-
+      const blob = await captureCard(captureRef.current);
       if (Capacitor.isNativePlatform()) {
         const { Filesystem, Directory } = await import('@capacitor/filesystem');
         const reader = new FileReader();
@@ -58,25 +65,24 @@ export default function SharePreview({ entry, isOpen, onClose }: Props) {
           reader.readAsDataURL(blob);
         });
         await Filesystem.writeFile({ path: `fate0-${Date.now()}.png`, data: base64, directory: Directory.Cache });
-        setStatus('✓');
       } else {
         downloadBlob(blob, `fate0-${Date.now()}.png`);
-        setStatus('✓');
       }
+      setStatus('✓ Saved!');
     } catch (e) {
       setStatus('Error');
       console.error('Save failed:', e);
     }
     setCapturing(false);
+    setTimeout(() => setStatus(''), 3000);
   }, []);
 
   const handleShare = useCallback(async () => {
-    if (!cardRef.current) return;
+    if (!captureRef.current) return;
     setCapturing(true);
-    setStatus('');
+    setStatus('...');
     try {
-      const blob = await captureCard(cardRef.current);
-
+      const blob = await captureCard(captureRef.current);
       if (Capacitor.isNativePlatform()) {
         const { Filesystem, Directory } = await import('@capacitor/filesystem');
         const { Share } = await import('@capacitor/share');
@@ -87,20 +93,23 @@ export default function SharePreview({ entry, isOpen, onClose }: Props) {
         });
         const saved = await Filesystem.writeFile({ path: `fate0-${Date.now()}.png`, data: base64, directory: Directory.Cache });
         await Share.share({ title: t('app.title'), url: saved.uri });
+        setStatus('✓');
       } else {
         const file = new File([blob], 'fate0.png', { type: 'image/png' });
         if (navigator.share && navigator.canShare?.({ files: [file] })) {
           await navigator.share({ title: t('app.title'), files: [file] });
-        } else {
-          // Fallback: just download
-          downloadBlob(blob, `fate0-${Date.now()}.png`);
           setStatus('✓');
+        } else {
+          downloadBlob(blob, `fate0-${Date.now()}.png`);
+          setStatus('✓ Downloaded');
         }
       }
     } catch (e) {
       console.error('Share failed:', e);
+      setStatus('');
     }
     setCapturing(false);
+    setTimeout(() => setStatus(''), 3000);
   }, [t]);
 
   const handleCopyUrl = useCallback(async () => {
@@ -108,7 +117,6 @@ export default function SharePreview({ entry, isOpen, onClose }: Props) {
       await navigator.clipboard.writeText('https://fate0-00.vercel.app');
       setStatus('URL ✓');
     } catch {
-      // Fallback: select-and-copy
       const input = document.createElement('input');
       input.value = 'https://fate0-00.vercel.app';
       document.body.appendChild(input);
@@ -143,30 +151,33 @@ export default function SharePreview({ entry, isOpen, onClose }: Props) {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             onClick={(e) => e.stopPropagation()}
-            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxHeight: '90vh' }}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxHeight: '90vh', overflowY: 'auto' }}
           >
-            {/* Card preview (scaled to fit screen) */}
-            <div style={{ transform: 'scale(0.55)', transformOrigin: 'top center', marginBottom: '-160px' }}>
-              <ShareCard ref={cardRef} entry={entry} />
+            {/* Visible preview (CSS-scaled, NOT used for capture) */}
+            <div style={{ transform: 'scale(0.5)', transformOrigin: 'top center', marginBottom: '-190px' }}>
+              <ShareCard entry={entry} />
+            </div>
+
+            {/* Hidden full-size card for html2canvas capture */}
+            <div style={{ position: 'fixed', left: '-9999px', top: 0 }}>
+              <ShareCard ref={captureRef} entry={entry} />
             </div>
 
             {/* Status */}
             {status && (
-              <div style={{ fontSize: '12px', color: status.startsWith('Error') ? '#e74c3c' : '#2ecc71', marginBottom: '8px' }}>
+              <div style={{ fontSize: '13px', color: status.startsWith('Error') ? '#e74c3c' : '#2ecc71', marginTop: '8px', marginBottom: '4px' }}>
                 {status}
               </div>
             )}
 
             {/* Controls */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center', marginTop: '16px' }}>
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <ShareBtn icon="💾" label={t('share.saveImage', 'Save')} onClick={handleSave} disabled={capturing} />
-                {(canNativeShare || Capacitor.isNativePlatform()) && (
-                  <ShareBtn icon="📤" label={t('share.nativeShare', 'Share')} onClick={handleShare} disabled={capturing} />
-                )}
-                <ShareBtn icon="🔗" label={t('share.copyUrl', 'URL')} onClick={handleCopyUrl} />
-                <ShareBtn icon="✕" label={t('app.back')} onClick={onClose} dim />
-              </div>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '12px' }}>
+              <ShareBtn icon="💾" label={t('share.saveImage', 'Save')} onClick={handleSave} disabled={capturing} />
+              {(canNativeShare || Capacitor.isNativePlatform()) && (
+                <ShareBtn icon="📤" label={t('share.nativeShare', 'Share')} onClick={handleShare} disabled={capturing} />
+              )}
+              <ShareBtn icon="🔗" label={t('share.copyUrl', 'URL')} onClick={handleCopyUrl} />
+              <ShareBtn icon="✕" label={t('app.back')} onClick={onClose} dim />
             </div>
           </motion.div>
         </motion.div>
