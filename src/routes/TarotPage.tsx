@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 import ReverseFateScreen from '../components/layout/ReverseFateScreen';
 import { canReverse, getReverseRemaining } from '../logic/reverseEngine';
 import { useSessionState } from '../hooks/useSessionState';
+import { getLatestEntry } from '../hooks/useLatestEntry';
 
 type Spread = '1-card' | '3-card' | 'celtic';
 type Step = 'prepare' | 'question' | 'shuffle' | 'cut' | 'spread' | 'flip' | 'reading' | 'advice';
@@ -111,7 +112,19 @@ export default function TarotPage() {
     setCards(prev => prev.map((c, i) => i === index ? { ...c, flipped: true } : c));
     const allFlipped = cards.every((c, i) => i === index || c.flipped);
     if (allFlipped) {
-      setTimeout(() => { sfxReadingReveal(); addHistory({ type: 'tarot', summary: '', data: { cardIds: cards.map(c => c.id) } }); markUsedToday('tarot'); setLimitReached(true); setStep('reading'); }, 800);
+      setTimeout(() => {
+        sfxReadingReveal();
+        addHistory({
+          type: 'tarot', summary: '', data: {
+            cardIds: cards.map(c => c.id),
+            reversed: cards.map(c => c.isReversed),
+            positions: cards.map(c => c.positionKey || c.position),
+            spread,
+            question,
+          },
+        });
+        markUsedToday('tarot'); setLimitReached(true); setStep('reading');
+      }, 800);
     }
   };
 
@@ -484,7 +497,7 @@ export default function TarotPage() {
               <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); if (hasUsedToday('tarot')) { setShowReverse(true); } else { reset(); } }} style={btn('dim')}>
                 {t('tarot.newReading')}
               </motion.button>
-              <ShareButton targetRef={resultRef} theme="west" />
+              <ShareButton entry={getLatestEntry('tarot')} theme="west" />
             </div>
           </motion.div>
         )}

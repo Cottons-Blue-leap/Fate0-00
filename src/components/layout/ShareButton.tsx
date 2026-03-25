@@ -2,10 +2,13 @@ import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Capacitor } from '@capacitor/core';
+import type { HistoryEntry } from '../../logic/historyEngine';
+import SharePreview from './SharePreview';
 
 interface Props {
-  targetRef: React.RefObject<HTMLDivElement | null>;
+  targetRef?: React.RefObject<HTMLDivElement | null>;
   theme?: 'west' | 'east';
+  entry?: HistoryEntry;
 }
 
 async function captureImage(el: HTMLDivElement, bg: string): Promise<{ blob: Blob; dataUrl: string }> {
@@ -18,32 +21,57 @@ async function captureImage(el: HTMLDivElement, bg: string): Promise<{ blob: Blo
   return { blob, dataUrl };
 }
 
-export default function ShareButton({ targetRef, theme = 'west' }: Props) {
+export default function ShareButton({ targetRef, theme = 'west', entry }: Props) {
   const { t } = useTranslation();
+  const [showPreview, setShowPreview] = useState(false);
   const [showPanel, setShowPanel] = useState(false);
   const [capturing, setCapturing] = useState(false);
 
   const bg = theme === 'west' ? '#1a0a2e' : '#2e0a0a';
+  const color = theme === 'west' ? 'rgba(155,89,182,' : 'rgba(231,76,60,';
 
+  // New card-based sharing (when entry is provided)
+  if (entry) {
+    return (
+      <>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => setShowPreview(true)}
+          style={{
+            padding: '10px 24px',
+            background: `${color}0.2)`,
+            border: `1px solid ${color}0.4)`,
+            borderRadius: '12px',
+            fontSize: '14px',
+            color: '#e8d5f5',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '6px',
+          }}
+        >
+          📤 {t('share.button')}
+        </motion.button>
+        <SharePreview entry={entry} isOpen={showPreview} onClose={() => setShowPreview(false)} />
+      </>
+    );
+  }
+
+  // Legacy ref-based sharing (for FortuneReport etc.)
   const handleSaveImage = useCallback(async () => {
-    if (!targetRef.current) return;
+    if (!targetRef?.current) return;
     setCapturing(true);
     try {
       const { blob, dataUrl } = await captureImage(targetRef.current, bg);
-
       if (Capacitor.isNativePlatform()) {
         const { Filesystem, Directory } = await import('@capacitor/filesystem');
         const base64Data = dataUrl.replace(/^data:image\/png;base64,/, '');
-        await Filesystem.writeFile({
-          path: `fate-0-00-${Date.now()}.png`,
-          data: base64Data,
-          directory: Directory.Cache,
-        });
+        await Filesystem.writeFile({ path: `fate0-${Date.now()}.png`, data: base64Data, directory: Directory.Cache });
       } else {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `fate-0-00-${Date.now()}.png`;
+        a.download = `fate0-${Date.now()}.png`;
         a.click();
         URL.revokeObjectURL(url);
       }
@@ -53,23 +81,18 @@ export default function ShareButton({ targetRef, theme = 'west' }: Props) {
   }, [targetRef, bg]);
 
   const handleNativeShare = useCallback(async () => {
-    if (!targetRef.current) return;
+    if (!targetRef?.current) return;
     setCapturing(true);
     try {
       const { blob, dataUrl } = await captureImage(targetRef.current, bg);
-
       if (Capacitor.isNativePlatform()) {
         const { Filesystem, Directory } = await import('@capacitor/filesystem');
         const { Share } = await import('@capacitor/share');
         const base64Data = dataUrl.replace(/^data:image\/png;base64,/, '');
-        const saved = await Filesystem.writeFile({
-          path: `fate-0-00-${Date.now()}.png`,
-          data: base64Data,
-          directory: Directory.Cache,
-        });
+        const saved = await Filesystem.writeFile({ path: `fate0-${Date.now()}.png`, data: base64Data, directory: Directory.Cache });
         await Share.share({ title: t('app.title'), url: saved.uri });
       } else {
-        const file = new File([blob], 'fate-0-00.png', { type: 'image/png' });
+        const file = new File([blob], 'fate0.png', { type: 'image/png' });
         if (navigator.share && navigator.canShare?.({ files: [file] })) {
           await navigator.share({ title: t('app.title'), files: [file] });
         }
@@ -80,13 +103,10 @@ export default function ShareButton({ targetRef, theme = 'west' }: Props) {
   }, [targetRef, bg, t]);
 
   const handleCopyUrl = useCallback(async () => {
-    try {
-      await navigator.clipboard.writeText('https://fate0-00.vercel.app');
-    } catch { /* silent */ }
+    try { await navigator.clipboard.writeText('https://fate0-00.vercel.app'); } catch { /* */ }
     setShowPanel(false);
   }, []);
 
-  const color = theme === 'west' ? 'rgba(155,89,182,' : 'rgba(231,76,60,';
   const canNativeShare = typeof navigator !== 'undefined' && !!navigator.share;
 
   return (
@@ -130,7 +150,6 @@ export default function ShareButton({ targetRef, theme = 'west' }: Props) {
               <ShareOption icon="📤" label={t('share.nativeShare', 'Share...')} onClick={handleNativeShare} disabled={capturing} />
             )}
             <ShareOption icon="🔗" label={t('share.copyUrl', 'Copy URL')} onClick={handleCopyUrl} />
-
             <motion.button whileTap={{ scale: 0.95 }} onClick={() => setShowPanel(false)}
               style={{ background: 'none', fontSize: '11px', color: 'rgba(255,255,255,0.25)', padding: '4px', marginTop: '2px' }}>
               ✕

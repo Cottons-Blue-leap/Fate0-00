@@ -17,6 +17,7 @@ import { Link } from 'react-router-dom';
 import ReverseFateScreen from '../components/layout/ReverseFateScreen';
 import { canReverse, getReverseRemaining } from '../logic/reverseEngine';
 import { useSessionState } from '../hooks/useSessionState';
+import { getLatestEntry } from '../hooks/useLatestEntry';
 
 type Step = 'input' | 'sync' | 'transit' | 'oracle';
 
@@ -295,7 +296,7 @@ export default function HoroscopePage() {
             </div>
 
             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-              onClick={() => { sfxButtonClick(); addHistory({ type: 'horoscope', summary: '', data: { sign: sunSign, date: todayStr } }); markUsedToday('horoscope'); setLimitReached(true); setStep('oracle'); }}
+              onClick={() => { sfxButtonClick(); addHistory({ type: 'horoscope', summary: '', data: { sign: sunSign, date: todayStr, oracle: oracleMessage, moonPhase: getMoonPhaseName(moonPhase), moonEmoji: getMoonEmoji(moonPhase) } }); markUsedToday('horoscope'); setLimitReached(true); setStep('oracle'); }}
               style={{ padding: '14px 40px', background: 'rgba(212,175,55,0.2)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: '12px', fontSize: '16px', color: '#e8d5f5' }}>
               {t('horoscope.getOracle')}
             </motion.button>
@@ -387,7 +388,7 @@ export default function HoroscopePage() {
                 style={{ padding: '12px 32px', background: 'rgba(155,89,182,0.3)', border: '1px solid rgba(155,89,182,0.5)', borderRadius: '12px', fontSize: '16px', color: '#e8d5f5' }}>
                 {t('horoscope.newReading')}
               </motion.button>
-              <ShareButton targetRef={resultRef} theme="west" />
+              <ShareButton entry={getLatestEntry('horoscope')} theme="west" />
             </div>
           </motion.div>
         )}

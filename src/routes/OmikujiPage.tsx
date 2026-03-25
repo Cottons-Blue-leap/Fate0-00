@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 import ReverseFateScreen from '../components/layout/ReverseFateScreen';
 import { canReverse, getReverseRemaining } from '../logic/reverseEngine';
 import { useSessionState } from '../hooks/useSessionState';
+import { getLatestEntry } from '../hooks/useLatestEntry';
 import { useShakeDetection, isShakeEnabled } from '../hooks/useShakeDetection';
 
 type Step = 'purify' | 'pray' | 'shake' | 'waka' | 'reading' | 'fate';
@@ -152,7 +153,7 @@ export default function OmikujiPage() {
   useEffect(() => {
     if (step === 'reading') {
       sfxRankReveal(rankIdx <= 1);
-      addHistory({ type: 'omikuji', summary: '', data: { rank: ranks[rankIdx], rankKanji: rankKanji[rankIdx], number: stickNum } });
+      addHistory({ type: 'omikuji', summary: '', data: { rank: ranks[rankIdx], rankKanji: rankKanji[rankIdx], number: stickNum, question, wakaJa: t(`waka.${ranks[rankIdx]}.japanese`), wakaKo: t(`waka.${ranks[rankIdx]}.translation`) } });
     }
   }, [step]);
 
@@ -485,7 +486,7 @@ export default function OmikujiPage() {
                 style={{ padding: '14px 40px', background: cardBg, border: `1px solid ${cardBorder}`, borderRadius: '12px', fontSize: '16px', color: '#f5d5d5' }}>
                 {t('omikuji.tieToButton')}
               </motion.button>
-              <ShareButton targetRef={resultRef} theme="east" />
+              <ShareButton entry={getLatestEntry('omikuji')} theme="east" />
             </div>
           </motion.div>
         )}
