@@ -1,6 +1,20 @@
 // Web Audio API synthesized sound effects — no external files needed
 
 let ctx: AudioContext | null = null;
+const pendingTimers: Set<ReturnType<typeof setTimeout>> = new Set();
+
+function sfxTimeout(fn: () => void, ms: number) {
+  const id = setTimeout(() => {
+    pendingTimers.delete(id);
+    fn();
+  }, ms);
+  pendingTimers.add(id);
+}
+
+export function cancelAllSfxTimers() {
+  for (const id of pendingTimers) clearTimeout(id);
+  pendingTimers.clear();
+}
 
 function getCtx(): AudioContext {
   if (!ctx) ctx = new AudioContext();
@@ -47,9 +61,9 @@ function playNoise(duration: number, volume = 0.05) {
 export function sfxButtonClick() {
   // Dreamy water ripple — like disturbing calm water
   playTone(400, 0.4, 'sine', 0.06);
-  setTimeout(() => playTone(600, 0.3, 'sine', 0.04), 60);
-  setTimeout(() => playTone(800, 0.2, 'sine', 0.03), 120);
-  setTimeout(() => playTone(500, 0.5, 'sine', 0.02), 180);
+  sfxTimeout(() => playTone(600, 0.3, 'sine', 0.04), 60);
+  sfxTimeout(() => playTone(800, 0.2, 'sine', 0.03), 120);
+  sfxTimeout(() => playTone(500, 0.5, 'sine', 0.02), 180);
 }
 
 export function sfxTextInput() {
@@ -64,24 +78,24 @@ export function sfxHover() {
 
 export function sfxPopupOpen() {
   playTone(300, 0.3, 'sine', 0.06);
-  setTimeout(() => playTone(500, 0.25, 'sine', 0.04), 80);
-  setTimeout(() => playTone(400, 0.3, 'sine', 0.03), 160);
+  sfxTimeout(() => playTone(500, 0.25, 'sine', 0.04), 80);
+  sfxTimeout(() => playTone(400, 0.3, 'sine', 0.03), 160);
 }
 
 export function sfxPopupClose() {
   playTone(500, 0.2, 'sine', 0.05);
-  setTimeout(() => playTone(300, 0.3, 'sine', 0.03), 60);
+  sfxTimeout(() => playTone(300, 0.3, 'sine', 0.03), 60);
 }
 
 export function sfxPageTransition() {
   playTone(300, 0.3, 'sine', 0.06);
-  setTimeout(() => playTone(450, 0.3, 'sine', 0.05), 100);
+  sfxTimeout(() => playTone(450, 0.3, 'sine', 0.05), 100);
 }
 
 export function sfxLanguageSwitch() {
   playTone(1200, 0.15, 'sine', 0.08);
-  setTimeout(() => playTone(1500, 0.12, 'sine', 0.06), 80);
-  setTimeout(() => playTone(1800, 0.1, 'sine', 0.04), 160);
+  sfxTimeout(() => playTone(1500, 0.12, 'sine', 0.06), 80);
+  sfxTimeout(() => playTone(1800, 0.1, 'sine', 0.04), 160);
 }
 
 // === TAROT ===
@@ -98,31 +112,31 @@ export function sfxBreath(phase: 'in' | 'hold' | 'out') {
 
 export function sfxShuffle() {
   for (let i = 0; i < 8; i++) {
-    setTimeout(() => playNoise(0.04, 0.12), i * 30);
+    sfxTimeout(() => playNoise(0.04, 0.12), i * 30);
   }
 }
 
 export function sfxCut() {
   playNoise(0.1, 0.1);
-  setTimeout(() => playTone(400, 0.15, 'triangle', 0.08), 50);
+  sfxTimeout(() => playTone(400, 0.15, 'triangle', 0.08), 50);
 }
 
 export function sfxCardFlip() {
   playNoise(0.06, 0.08);
-  setTimeout(() => playTone(800, 0.2, 'sine', 0.1), 40);
-  setTimeout(() => playTone(1200, 0.15, 'sine', 0.06), 100);
+  sfxTimeout(() => playTone(800, 0.2, 'sine', 0.1), 40);
+  sfxTimeout(() => playTone(1200, 0.15, 'sine', 0.06), 100);
 }
 
 export function sfxReadingReveal() {
   playTone(400, 0.8, 'sine', 0.08);
-  setTimeout(() => playTone(600, 0.6, 'sine', 0.06), 200);
-  setTimeout(() => playTone(800, 0.5, 'sine', 0.05), 400);
+  sfxTimeout(() => playTone(600, 0.6, 'sine', 0.06), 200);
+  sfxTimeout(() => playTone(800, 0.5, 'sine', 0.05), 400);
 }
 
 export function sfxAdviceCard() {
   playTone(523, 0.4, 'sine', 0.1); // C5
-  setTimeout(() => playTone(659, 0.4, 'sine', 0.08), 150); // E5
-  setTimeout(() => playTone(784, 0.6, 'sine', 0.1), 300); // G5
+  sfxTimeout(() => playTone(659, 0.4, 'sine', 0.08), 150); // E5
+  sfxTimeout(() => playTone(784, 0.6, 'sine', 0.1), 300); // G5
 }
 
 // === HOROSCOPE ===
@@ -130,15 +144,15 @@ export function sfxAdviceCard() {
 export function sfxSync() {
   getCtx();
   for (let i = 0; i < 5; i++) {
-    setTimeout(() => playTone(300 + i * 200, 0.1, 'square', 0.04), i * 60);
+    sfxTimeout(() => playTone(300 + i * 200, 0.1, 'square', 0.04), i * 60);
   }
-  setTimeout(() => playTone(1500, 0.5, 'sine', 0.08), 350);
+  sfxTimeout(() => playTone(1500, 0.5, 'sine', 0.08), 350);
 }
 
 export function sfxConstellationAppear() {
   playTone(250, 1.2, 'sine', 0.06);
-  setTimeout(() => playTone(375, 1, 'sine', 0.05), 200);
-  setTimeout(() => playTone(500, 0.8, 'sine', 0.04), 400);
+  sfxTimeout(() => playTone(375, 1, 'sine', 0.05), 200);
+  sfxTimeout(() => playTone(500, 0.8, 'sine', 0.04), 400);
 }
 
 export function sfxMoonOrbit() {
@@ -150,10 +164,10 @@ export function sfxResonance(type: 'aligned' | 'approaching' | 'neutral' | 'dist
     playTone(400, 0.6, 'sine', 0.1);
     playTone(500, 0.6, 'sine', 0.08);
     playTone(600, 0.6, 'sine', 0.06);
-    setTimeout(() => { playTone(800, 0.8, 'sine', 0.1); playTone(1000, 0.8, 'sine', 0.06); }, 300);
+    sfxTimeout(() => { playTone(800, 0.8, 'sine', 0.1); playTone(1000, 0.8, 'sine', 0.06); }, 300);
   } else if (type === 'approaching') {
     playTone(300, 0.5, 'sine', 0.06);
-    setTimeout(() => playTone(450, 0.5, 'sine', 0.06), 200);
+    sfxTimeout(() => playTone(450, 0.5, 'sine', 0.06), 200);
   } else if (type === 'distant') {
     playTone(150, 1.5, 'sine', 0.04);
   }
@@ -166,9 +180,9 @@ export function sfxOracleKeyword() {
 
 export function sfxOracleComplete() {
   playTone(200, 1.5, 'sine', 0.08);
-  setTimeout(() => playTone(300, 1.2, 'sine', 0.06), 300);
-  setTimeout(() => playTone(400, 1, 'sine', 0.05), 600);
-  setTimeout(() => playTone(200, 2, 'sine', 0.04), 900);
+  sfxTimeout(() => playTone(300, 1.2, 'sine', 0.06), 300);
+  sfxTimeout(() => playTone(400, 1, 'sine', 0.05), 600);
+  sfxTimeout(() => playTone(200, 2, 'sine', 0.04), 900);
 }
 
 // === SAJU ===
@@ -176,7 +190,7 @@ export function sfxOracleComplete() {
 export function sfxPillarDrop(index: number) {
   const freq = 150 + index * 30;
   playTone(freq, 0.3, 'triangle', 0.12);
-  setTimeout(() => playNoise(0.08, 0.1), 50);
+  sfxTimeout(() => playNoise(0.08, 0.1), 50);
 }
 
 export function sfxElementReveal(element: string) {
@@ -185,19 +199,19 @@ export function sfxElementReveal(element: string) {
   const freq = freqs[element] || 400;
   const type = types[element] || 'sine';
   playTone(freq, 0.5, type, 0.08);
-  setTimeout(() => playTone(freq * 1.5, 0.4, 'sine', 0.05), 150);
+  sfxTimeout(() => playTone(freq * 1.5, 0.4, 'sine', 0.05), 150);
 }
 
 export function sfxBarRise() {
   for (let i = 0; i < 5; i++) {
-    setTimeout(() => playTone(200 + i * 80, 0.15, 'sine', 0.04), i * 100);
+    sfxTimeout(() => playTone(200 + i * 80, 0.15, 'sine', 0.04), i * 100);
   }
 }
 
 export function sfxDaeunTimeline() {
   playTone(180, 0.3, 'sine', 0.05);
   playNoise(0.15, 0.03);
-  setTimeout(() => playTone(220, 0.3, 'sine', 0.04), 200);
+  sfxTimeout(() => playTone(220, 0.3, 'sine', 0.04), 200);
 }
 
 export function sfxDaeunInteraction(type: 'harmony' | 'clash' | 'neutral') {
@@ -208,7 +222,7 @@ export function sfxDaeunInteraction(type: 'harmony' | 'clash' | 'neutral') {
   } else if (type === 'clash') {
     playTone(200, 0.2, 'sawtooth', 0.06);
     playTone(213, 0.2, 'sawtooth', 0.06);
-    setTimeout(() => playNoise(0.1, 0.08), 100);
+    sfxTimeout(() => playNoise(0.1, 0.08), 100);
   } else {
     playTone(300, 0.5, 'sine', 0.04);
   }
@@ -219,7 +233,7 @@ export function sfxDaeunInteraction(type: 'harmony' | 'clash' | 'neutral') {
 export function sfxWaterPour() {
   getCtx();
   for (let i = 0; i < 10; i++) {
-    setTimeout(() => playTone(800 + Math.random() * 600, 0.08, 'sine', 0.03), i * 40);
+    sfxTimeout(() => playTone(800 + Math.random() * 600, 0.08, 'sine', 0.03), i * 40);
   }
   playNoise(0.5, 0.04);
 }
@@ -231,18 +245,18 @@ export function sfxBow() {
 
 export function sfxClap() {
   playNoise(0.08, 0.2);
-  setTimeout(() => playNoise(0.04, 0.08), 30);
+  sfxTimeout(() => playNoise(0.04, 0.08), 30);
 }
 
 export function sfxBell() {
   playTone(800, 1.2, 'sine', 0.12);
   playTone(1200, 0.8, 'sine', 0.06);
-  setTimeout(() => playTone(600, 1.5, 'sine', 0.04), 200);
+  sfxTimeout(() => playTone(600, 1.5, 'sine', 0.04), 200);
 }
 
 export function sfxShakeSticks() {
   for (let i = 0; i < 15; i++) {
-    setTimeout(() => {
+    sfxTimeout(() => {
       playTone(2000 + Math.random() * 2000, 0.03, 'triangle', 0.06);
       playNoise(0.02, 0.04);
     }, i * 50 + Math.random() * 30);
@@ -251,42 +265,42 @@ export function sfxShakeSticks() {
 
 export function sfxStickDrop() {
   playTone(1500, 0.1, 'triangle', 0.1);
-  setTimeout(() => playTone(800, 0.15, 'triangle', 0.08), 80);
-  setTimeout(() => playNoise(0.05, 0.06), 120);
+  sfxTimeout(() => playTone(800, 0.15, 'triangle', 0.08), 80);
+  sfxTimeout(() => playNoise(0.05, 0.06), 120);
 }
 
 export function sfxPaperUnfold() {
   for (let i = 0; i < 6; i++) {
-    setTimeout(() => playNoise(0.04, 0.05), i * 60);
+    sfxTimeout(() => playNoise(0.04, 0.05), i * 60);
   }
 }
 
 export function sfxKoto() {
   playTone(440, 0.8, 'triangle', 0.1);
-  setTimeout(() => playTone(523, 0.6, 'triangle', 0.06), 100);
-  setTimeout(() => playTone(330, 1, 'triangle', 0.04), 300);
+  sfxTimeout(() => playTone(523, 0.6, 'triangle', 0.06), 100);
+  sfxTimeout(() => playTone(330, 1, 'triangle', 0.04), 300);
 }
 
 export function sfxRankReveal(isGood: boolean) {
   if (isGood) {
     playTone(523, 0.3, 'sine', 0.1);
-    setTimeout(() => playTone(659, 0.3, 'sine', 0.08), 100);
-    setTimeout(() => playTone(784, 0.5, 'sine', 0.1), 200);
+    sfxTimeout(() => playTone(659, 0.3, 'sine', 0.08), 100);
+    sfxTimeout(() => playTone(784, 0.5, 'sine', 0.1), 200);
   } else {
     playTone(200, 0.8, 'sine', 0.08);
-    setTimeout(() => playTone(150, 1, 'sine', 0.06), 200);
+    sfxTimeout(() => playTone(150, 1, 'sine', 0.06), 200);
   }
 }
 
 export function sfxKeep() {
   playNoise(0.1, 0.04); // paper fold
-  setTimeout(() => playTone(500, 0.2, 'sine', 0.06), 150);
-  setTimeout(() => playTone(600, 0.15, 'sine', 0.04), 250);
+  sfxTimeout(() => playTone(500, 0.2, 'sine', 0.06), 150);
+  sfxTimeout(() => playTone(600, 0.15, 'sine', 0.04), 250);
 }
 
 export function sfxTie() {
   playNoise(0.15, 0.04); // rope
-  setTimeout(() => {
+  sfxTimeout(() => {
     playTone(250, 1, 'sine', 0.05);
     playNoise(0.5, 0.02); // wind
   }, 200);

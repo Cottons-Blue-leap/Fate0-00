@@ -248,7 +248,7 @@ function initLifecycle() {
 
   // Capacitor native app state (more reliable on Android)
   import('@capacitor/app').then(({ App }) => {
-    App.addListener('appStateChange', ({ isActive }) => {
+    const handle = App.addListener('appStateChange', ({ isActive }) => {
       if (!ctx) return;
       if (!isActive) {
         ctx.suspend().catch(() => {});
@@ -256,6 +256,10 @@ function initLifecycle() {
         ctx.resume().catch(() => {});
       }
     });
+    // Clean up on page unload
+    window.addEventListener('beforeunload', () => {
+      handle.then(h => h.remove()).catch(() => {});
+    }, { once: true });
   }).catch(() => {});
 }
 

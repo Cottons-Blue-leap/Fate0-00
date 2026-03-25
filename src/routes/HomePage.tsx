@@ -47,14 +47,18 @@ export default function HomePage() {
   // Android back button → exit confirmation
   useEffect(() => {
     if (!Capacitor.isNativePlatform()) return;
-    let cleanup: (() => void) | undefined;
+    let handle: { remove: () => void } | null = null;
+    let unmounted = false;
     import('@capacitor/app').then(({ App }) => {
-      const listener = App.addListener('backButton', () => {
+      if (unmounted) return;
+      App.addListener('backButton', () => {
         setShowExitPopup(true);
-      });
-      cleanup = () => { listener.then(h => h.remove()); };
+      }).then(h => { handle = h; });
     });
-    return () => { cleanup?.(); };
+    return () => {
+      unmounted = true;
+      handle?.remove();
+    };
   }, []);
   const today = new Date();
   const dateStr = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
