@@ -99,7 +99,7 @@ export default function SharePreview({ entry, isOpen, onClose }: Props) {
             style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxHeight: '90vh' }}
           >
             {/* Card preview (scaled to fit screen) */}
-            <div style={{ transform: 'scale(0.6)', transformOrigin: 'top center', marginBottom: '-120px' }}>
+            <div style={{ transform: 'scale(0.55)', transformOrigin: 'top center', marginBottom: '-160px' }}>
               <ShareCard ref={cardRef} entry={entry} hideBirth={hideBirth} />
             </div>
 
