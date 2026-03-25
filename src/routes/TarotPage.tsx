@@ -296,9 +296,9 @@ export default function TarotPage() {
                   <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '6px' }}>{c.position}</div>
                   {c.flipped ? (
                     <>
-                      <div style={{ fontSize: '28px', marginBottom: '4px' }}>{tarotSymbols[c.id] || '🃏'}</div>
+                      <div style={{ fontSize: '28px', marginBottom: '4px', transform: c.isReversed ? 'rotate(180deg)' : 'none' }}>{tarotSymbols[c.id] || '🃏'}</div>
                       <div style={{ fontSize: '14px', fontWeight: 700 }}>{t(`tarot.cards.${c.id}.name`)}</div>
-                      {c.isReversed && <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{t('tarot.reversed')}</div>}
+                      {c.isReversed && <div style={{ fontSize: '11px', color: '#e74c3c' }}>{t('tarot.reversed')}</div>}
                     </>
                   ) : (
                     <div style={{
@@ -325,18 +325,17 @@ export default function TarotPage() {
             </div>
 
             {/* Question reminder */}
+            <div ref={resultRef}>
             <div style={{ background: 'rgba(155,89,182,0.1)', borderRadius: '12px', padding: '12px 16px', marginBottom: '20px', textAlign: 'center' }}>
               <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '4px' }}>{t('tarot.yourQuestion')}</div>
               <div style={{ fontSize: '15px', fontStyle: 'italic' }}>"{question}"</div>
             </div>
-
-            <div ref={resultRef}>
             {/* Card interpretations */}
             {cards.map((c, i) => (
               <motion.div key={i} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.2 }}
-                style={{ background: 'rgba(155,89,182,0.15)', border: '1px solid rgba(155,89,182,0.3)', borderRadius: '12px', padding: '20px', marginBottom: '12px' }}>
+                style={{ background: 'rgba(155,89,182,0.15)', border: '1px solid rgba(155,89,182,0.3)', borderRadius: '12px', padding: cards.length > 5 ? '14px' : '20px', marginBottom: cards.length > 5 ? '8px' : '12px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                  <span style={{ fontSize: '28px' }}>{tarotSymbols[c.id] || '🃏'}</span>
+                  <span style={{ fontSize: '28px', display: 'inline-block', transform: c.isReversed ? 'rotate(180deg)' : 'none' }}>{tarotSymbols[c.id] || '🃏'}</span>
                   <div>
                     <div style={{ fontSize: '16px', fontWeight: 700 }}>{t(`tarot.cards.${c.id}.name`)}</div>
                     <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>

@@ -82,26 +82,26 @@ function createFilteredNoise(freq: number, q: number, vol: number) {
   currentNodes.push(source);
 }
 
-// === HOME: Mystical fortune-telling ambience ===
+// === HOME: Warm, mystical fortune-telling ambience ===
 function playHomeBgm() {
-  // Deep foundation drone
-  createDrone(65, 'sine', 0.3);       // low C
-  createDrone(98, 'sine', 0.15);      // low G (fifth)
+  // Deep warm foundation
+  createDrone(55, 'sine', 0.25);       // low A1
+  createDrone(82, 'sine', 0.15);       // low E2 (fifth)
 
-  // Ethereal shimmer pad
-  const shimmer = createDrone(523, 'sine', 0.06);  // C5
-  createLFO(shimmer.frequency, 0.08, 8);  // slow wobble
+  // Mid-range warm pads (replacing high shimmer)
+  const pad1 = createDrone(220, 'sine', 0.06);  // A3 — warm mid
+  createLFO(pad1.frequency, 0.04, 3);  // gentle wobble
 
-  const shimmer2 = createDrone(659, 'sine', 0.04); // E5
-  createLFO(shimmer2.frequency, 0.06, 6);
+  const pad2 = createDrone(165, 'sine', 0.05);  // E3
+  createLFO(pad2.frequency, 0.03, 2);
 
-  // Mystic whisper texture
-  createFilteredNoise(2000, 5, 0.015);
-  createFilteredNoise(400, 2, 0.01);
+  // Soft low texture (replacing high noise)
+  createFilteredNoise(600, 3, 0.008);
+  createFilteredNoise(250, 2, 0.006);
 
-  // Subtle pulsing
-  const pulse = createDrone(131, 'triangle', 0.08); // C3
-  createLFO(pulse.frequency, 0.03, 4); // very slow drift
+  // Deep breath pulse
+  const pulse = createDrone(110, 'sine', 0.07); // A2
+  createLFO(pulse.frequency, 0.02, 2); // very slow drift
 }
 
 // === TAROT: Mysterious, mystical ===

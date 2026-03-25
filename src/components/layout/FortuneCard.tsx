@@ -52,6 +52,7 @@ export default function FortuneCard({ title, subtitle, icon, to, theme, used = f
             textAlign: 'center',
             cursor: 'pointer',
             width: 'clamp(130px, 36vw, 180px)',
+            minHeight: 'clamp(160px, 40vw, 220px)',
             transition: '0.3s',
             backdropFilter: 'blur(10px)',
             opacity: used ? 0.6 : 1,
@@ -85,41 +86,54 @@ export default function FortuneCard({ title, subtitle, icon, to, theme, used = f
       <AnimatePresence>
         {showPopup && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowPopup(false)}
             style={{
-              position: 'absolute', bottom: '-100px', left: '50%', transform: 'translateX(-50%)',
-              background: 'rgba(0,0,0,0.9)', border: '1px solid rgba(212,175,55,0.3)',
-              borderRadius: '14px', padding: '14px 18px', width: '220px',
-              fontSize: '12px', color: 'rgba(255,255,255,0.7)', zIndex: 20,
-              textAlign: 'center', backdropFilter: 'blur(10px)',
+              position: 'fixed', inset: 0, zIndex: 9000,
+              background: 'rgba(0,0,0,0.6)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              padding: '20px',
             }}
           >
-            <div style={{ marginBottom: '10px' }}>✦ {t('home.starsRestingDetail')}</div>
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                background: 'rgba(10,5,20,0.95)', border: '1px solid rgba(212,175,55,0.3)',
+                borderRadius: '16px', padding: '20px 24px', width: '260px',
+                fontSize: '13px', color: 'rgba(255,255,255,0.7)',
+                textAlign: 'center', backdropFilter: 'blur(10px)',
+              }}
+            >
+              <div style={{ marginBottom: '14px', lineHeight: '1.6' }}>✦ {t('home.starsRestingDetail')}</div>
 
-            {canReverse() ? (
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={handleReverse}
-                style={{
-                  width: '100%', padding: '8px 12px', borderRadius: '8px', fontSize: '12px',
-                  background: 'rgba(212,175,55,0.15)', border: '1px solid rgba(212,175,55,0.4)',
-                  color: '#ffd700', marginBottom: '6px',
-                }}>
-                <div style={{ fontWeight: 700 }}>{t('reverseFate.button')}</div>
-                <div style={{ fontSize: '10px', color: 'rgba(212,175,55,0.7)', marginTop: '2px' }}>
-                  {t('reverseFate.remaining', { count: getReverseRemaining() })}
+              {canReverse() ? (
+                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={handleReverse}
+                  style={{
+                    width: '100%', padding: '10px 14px', borderRadius: '10px', fontSize: '13px',
+                    background: 'rgba(212,175,55,0.15)', border: '1px solid rgba(212,175,55,0.4)',
+                    color: '#ffd700', marginBottom: '8px',
+                  }}>
+                  <div style={{ fontWeight: 700 }}>{t('reverseFate.button')}</div>
+                  <div style={{ fontSize: '11px', color: 'rgba(212,175,55,0.7)', marginTop: '3px' }}>
+                    {t('reverseFate.remaining', { count: getReverseRemaining() })}
+                  </div>
+                </motion.button>
+              ) : (
+                <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.3)', marginBottom: '8px' }}>
+                  {t('reverseFate.noRemaining')}
                 </div>
-              </motion.button>
-            ) : (
-              <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)', marginBottom: '6px' }}>
-                {t('reverseFate.noRemaining')}
-              </div>
-            )}
+              )}
 
-            <motion.button whileTap={{ scale: 0.95 }} onClick={() => setShowPopup(false)}
-              style={{ background: 'none', fontSize: '11px', color: 'rgba(255,255,255,0.3)', padding: '4px' }}>
-              ✕
-            </motion.button>
+              <motion.button whileTap={{ scale: 0.95 }} onClick={() => setShowPopup(false)}
+                style={{ background: 'none', fontSize: '12px', color: 'rgba(255,255,255,0.35)', padding: '6px' }}>
+                ✕
+              </motion.button>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

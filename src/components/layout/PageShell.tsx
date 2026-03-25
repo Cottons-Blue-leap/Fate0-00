@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -30,24 +30,19 @@ export default function PageShell({ theme, title, children, pattern }: Props) {
       <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column' }}>
         {/* Header: back button + language switcher */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <motion.button
-              whileTap={{ scale: 0.9 }}
-              onClick={() => navigate('/')}
-              style={{
-                width: '44px', height: '44px', borderRadius: '50%',
-                background: 'rgba(255,255,255,0.1)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '18px', color: 'var(--text-muted)',
-                flexShrink: 0,
-              }}
-            >
-              ←
-            </motion.button>
-            <Link to="/" className="back-button" style={{ margin: 0 }}>
-              {t('app.back')}
-            </Link>
-          </div>
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => navigate('/')}
+            style={{
+              padding: '8px 16px', borderRadius: '20px',
+              background: 'rgba(255,255,255,0.08)',
+              display: 'flex', alignItems: 'center', gap: '6px',
+              fontSize: '14px', color: 'var(--text-muted)',
+            }}
+          >
+            ← {t('app.back')}
+          </motion.button>
           <LanguageSwitcher />
         </div>
         <h1 className="page-title">{title}</h1>
