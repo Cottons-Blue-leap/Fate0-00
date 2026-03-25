@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { getHistory, clearHistory } from '../logic/historyEngine';
 import type { HistoryEntry } from '../logic/historyEngine';
@@ -46,6 +46,7 @@ export default function HistoryPage() {
   const [entries, setEntries] = useState<HistoryEntry[]>(getHistory());
   const [selectMode, setSelectMode] = useState(false);
   const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [detailEntry, setDetailEntry] = useState<HistoryEntry | null>(null);
 
   const toggleSelect = (id: string) => {
     setSelected(prev => {
@@ -156,7 +157,7 @@ export default function HistoryPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
-                onClick={() => selectMode && toggleSelect(entry.id)}
+                onClick={() => selectMode ? toggleSelect(entry.id) : setDetailEntry(entry)}
                 style={{
                   display: 'flex', alignItems: 'center', gap: '12px',
                   background: selected.has(entry.id) ? 'rgba(231,76,60,0.1)' : 'rgba(255,255,255,0.05)',
@@ -164,7 +165,7 @@ export default function HistoryPage() {
                   borderRadius: '12px',
                   padding: '14px 16px',
                   marginBottom: '8px',
-                  cursor: selectMode ? 'pointer' : 'default',
+                  cursor: 'pointer',
                   transition: '0.2s',
                 }}
               >
@@ -211,6 +212,127 @@ export default function HistoryPage() {
           </>
         )}
       </div>
+
+      {/* Detail popup */}
+      <AnimatePresence>
+        {detailEntry && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setDetailEntry(null)}
+            style={{
+              position: 'fixed', inset: 0, zIndex: 9000,
+              background: 'rgba(0,0,0,0.7)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              padding: '20px',
+            }}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                background: 'linear-gradient(135deg, rgba(26,10,46,0.97), rgba(46,10,10,0.97))',
+                borderRadius: '16px', padding: '24px',
+                maxWidth: '400px', width: '100%',
+                maxHeight: '80vh', overflowY: 'auto',
+                border: `1px solid ${typeColors[detailEntry.type]}40`,
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
+                <span style={{ fontSize: '28px' }}>{typeIcons[detailEntry.type]}</span>
+                <div>
+                  <div style={{ fontSize: '16px', fontWeight: 700, color: typeColors[detailEntry.type] }}>
+                    {t(`home.${detailEntry.type}`)}
+                  </div>
+                  <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)' }}>
+                    {formatDate(detailEntry.date)}
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ fontSize: '14px', lineHeight: '1.8', color: 'rgba(255,255,255,0.7)' }}>
+                <DetailContent entry={detailEntry} t={t} />
+              </div>
+
+              <motion.button
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setDetailEntry(null)}
+                style={{
+                  marginTop: '20px', width: '100%', padding: '10px',
+                  background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)',
+                  borderRadius: '10px', fontSize: '13px', color: 'rgba(255,255,255,0.5)',
+                }}
+              >
+                ✕ {t('app.back')}
+              </motion.button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
+}
+
+function DetailContent({ entry, t }: { entry: HistoryEntry; t: (key: string, opts?: Record<string, unknown>) => string }) {
+  const data = entry.data || {};
+
+  switch (entry.type) {
+    case 'tarot': {
+      const cardIds = (data.cardIds as number[]) || [];
+      return (
+        <div>
+          {cardIds.map((id, i) => (
+            <div key={i} style={{ marginBottom: '12px', padding: '10px', background: 'rgba(155,89,182,0.1)', borderRadius: '8px' }}>
+              <div style={{ fontWeight: 700 }}>{t(`tarot.cards.${id}.name`)}</div>
+              <div style={{ fontSize: '13px', marginTop: '4px', color: 'rgba(255,255,255,0.55)' }}>
+                {t(`tarot.cards.${id}.upright`)}
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    }
+    case 'horoscope': {
+      const sign = data.sign as string || '';
+      return (
+        <div>
+          {sign && <div style={{ fontSize: '16px', marginBottom: '8px' }}>{t(`horoscope.${sign}`)}</div>}
+          {data['oracle'] ? <div style={{ fontStyle: 'italic', marginTop: '8px' }}>"{String(data['oracle'])}"</div> : null}
+        </div>
+      );
+    }
+    case 'saju': {
+      const pillars = (data.pillars as string[]) || [];
+      const dayMaster = data.dayMaster as string || '';
+      return (
+        <div>
+          {pillars.length > 0 && (
+            <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', marginBottom: '12px' }}>
+              {pillars.map((p, i) => (
+                <div key={i} style={{ padding: '8px 12px', background: 'rgba(231,76,60,0.1)', borderRadius: '8px', textAlign: 'center' }}>
+                  {p}
+                </div>
+              ))}
+            </div>
+          )}
+          {dayMaster && <div>{t('saju.dayMasterLabel')}: {dayMaster}</div>}
+        </div>
+      );
+    }
+    case 'omikuji': {
+      const rankKanji = data.rankKanji as string || '';
+      const rank = data.rank as string || '';
+      return (
+        <div style={{ textAlign: 'center' }}>
+          {rankKanji && <div style={{ fontSize: '36px', marginBottom: '8px' }}>{rankKanji}</div>}
+          {rank && <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)' }}>{t(`omikuji.${rank}`)}</div>}
+        </div>
+      );
+    }
+    default:
+      return <div>{entry.summary}</div>;
+  }
 }

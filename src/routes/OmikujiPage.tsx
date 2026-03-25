@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 import ReverseFateScreen from '../components/layout/ReverseFateScreen';
 import { canReverse, getReverseRemaining } from '../logic/reverseEngine';
 import { useSessionState } from '../hooks/useSessionState';
+import { useShakeDetection, isShakeEnabled } from '../hooks/useShakeDetection';
 
 type Step = 'purify' | 'pray' | 'shake' | 'waka' | 'reading' | 'fate';
 
@@ -46,6 +47,12 @@ export default function OmikujiPage() {
   const [prayPhase, setPrayPhase] = useState<'bow1' | 'clap' | 'question' | 'bow2' | 'done'>('bow1');
   const [keepChoice, setKeepChoice] = useState<'keep' | 'tie' | null>(null);
   const resultRef = useRef<HTMLDivElement>(null);
+
+  // Shake detection for omikuji
+  const { requestPermission, permissionGranted, permissionAsked, isAvailable: shakeAvailable } = useShakeDetection(
+    () => { if (step === 'shake' && !shaking) handleShake(); },
+    step === 'shake' && !shaking,
+  );
 
   const seed = stickNum || 1;
   const _waka = getWaka(ranks[rankIdx], seed); void _waka;
@@ -305,6 +312,22 @@ export default function OmikujiPage() {
                 <div style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '16px', lineHeight: '1.7' }}>
                   {t('omikuji.shakeDesc')}
                 </div>
+                {shakeAvailable && isShakeEnabled() && !permissionGranted && !permissionAsked && (
+                  <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                    onClick={requestPermission}
+                    style={{ padding: '10px 24px', background: 'rgba(231,76,60,0.15)', border: `1px solid rgba(231,76,60,0.3)`, borderRadius: '10px', fontSize: '13px', color: '#f1948a', marginBottom: '12px' }}>
+                    📳 {t('omikuji.enableShake', 'Enable phone shake')}
+                  </motion.button>
+                )}
+                {shakeAvailable && permissionGranted && isShakeEnabled() && (
+                  <motion.div
+                    animate={{ opacity: [0.4, 0.8, 0.4] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                    style={{ fontSize: '13px', color: 'rgba(231,76,60,0.6)', marginBottom: '12px' }}
+                  >
+                    📳 {t('omikuji.shakePhone', 'Shake your phone!')}
+                  </motion.div>
+                )}
                 <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }} onClick={handleShake}
                   style={{ padding: '16px 48px', background: cardBg, border: `1px solid ${cardBorder}`, borderRadius: '12px', fontSize: '18px', color: '#f5d5d5' }}>
                   {t('omikuji.shakeAction')}
