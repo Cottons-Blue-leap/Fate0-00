@@ -134,7 +134,7 @@ export default function HomePage() {
                     border: '1px solid rgba(212,175,55,0.3)', borderRadius: '16px',
                     fontSize: '11px', color: '#ffd700', cursor: 'pointer',
                   }}>
-                  ✦ {t('home.report', 'Today\'s Fortune Report')}
+                  {t('home.report', '✦ Today\'s Fortune Report')}
                 </motion.div>
               )}
             </div>
