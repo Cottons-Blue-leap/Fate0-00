@@ -16,7 +16,7 @@ export default function SplitScreen({ west, east, header, nav }: Props) {
         flexDirection: 'column',
         height: '100dvh',
         background: 'linear-gradient(180deg, #1a0a2e 0%, #2d1450 40%, #501414 60%, #2e0a0a 100%)',
-        padding: '6px 10px 8px',
+        padding: '6px 10px max(8px, env(safe-area-inset-bottom, 8px))',
         overflow: 'hidden',
       }}>
         {/* Top bar: language left, nav right */}

@@ -74,7 +74,14 @@ export default function HomePage() {
       <SplitScreen
         nav={
           <div style={{ display: 'flex', gap: '6px', alignItems: 'center', flexWrap: 'wrap' }}>
-            <LanguageSwitcher />
+            <Link to="/history">
+              <motion.div whileHover={{ scale: 1.05 }} style={{
+                padding: '5px 10px', background: 'rgba(255,255,255,0.05)',
+                borderRadius: '14px', fontSize: '11px', color: 'rgba(255,255,255,0.45)', cursor: 'pointer',
+              }}>
+                📜 {t('history.title')}
+              </motion.div>
+            </Link>
             {profile && (
               <Link to="/profile">
                 <motion.div whileHover={{ scale: 1.05 }} style={{
@@ -86,14 +93,7 @@ export default function HomePage() {
                 </motion.div>
               </Link>
             )}
-            <Link to="/history">
-              <motion.div whileHover={{ scale: 1.05 }} style={{
-                padding: '5px 10px', background: 'rgba(255,255,255,0.05)',
-                borderRadius: '14px', fontSize: '11px', color: 'rgba(255,255,255,0.45)', cursor: 'pointer',
-              }}>
-                📜 {t('history.title')}
-              </motion.div>
-            </Link>
+            <LanguageSwitcher />
             {allUsedToday && (
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                 onClick={() => setShowReport(true)} style={{
@@ -115,7 +115,7 @@ export default function HomePage() {
             gap: '2px',
           }}>
             <h1 style={{
-              fontSize: 'clamp(14px, 3.5vw, 22px)',
+              fontSize: 'clamp(20px, 5vw, 28px)',
               color: '#fff',
               fontFamily: "'Noto Serif KR', serif",
               textShadow: '0 0 30px rgba(155, 89, 182, 0.5), 0 0 30px rgba(231, 76, 60, 0.5)',
@@ -124,7 +124,7 @@ export default function HomePage() {
             }}>
               {t('app.title')}
             </h1>
-            <MysticClock size={typeof window !== 'undefined' && window.innerWidth < 640 ? 55 : 100} />
+            <MysticClock size={typeof window !== 'undefined' && window.innerWidth < 640 ? 80 : 120} />
             <div style={{
               fontSize: 'clamp(11px, 2.2vw, 13px)',
               color: 'rgba(255,255,255,0.4)',
