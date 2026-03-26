@@ -31,28 +31,8 @@ export default function ShareButton({ targetRef, theme = 'west', entry }: Props)
   const color = theme === 'west' ? 'rgba(155,89,182,' : 'rgba(231,76,60,';
 
   // Don't render if neither entry nor targetRef provided
-  if (!entry && !targetRef?.current) {
-    return (
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        disabled
-        style={{
-          padding: '10px 24px',
-          background: `${color}0.1)`,
-          border: `1px solid ${color}0.2)`,
-          borderRadius: '12px',
-          fontSize: '14px',
-          color: 'rgba(255,255,255,0.3)',
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '6px',
-          opacity: 0.5,
-        }}
-      >
-        📤 {t('share.button')}
-      </motion.button>
-    );
+  if (!entry && !targetRef) {
+    return null;
   }
 
   // New card-based sharing (when entry is provided)
@@ -166,10 +146,10 @@ export default function ShareButton({ targetRef, theme = 'west', entry }: Props)
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             style={{
-              position: 'absolute', bottom: '100%', left: '50%', transform: 'translateX(-50%)',
-              marginBottom: '8px', background: 'rgba(10,5,20,0.95)',
+              position: 'fixed', bottom: '80px', left: '50%', transform: 'translateX(-50%)',
+              background: 'rgba(10,5,20,0.95)',
               border: '1px solid rgba(255,255,255,0.15)', borderRadius: '14px',
-              padding: '12px', width: '200px', zIndex: 50,
+              padding: '12px', width: '200px', zIndex: 9600,
               display: 'flex', flexDirection: 'column', gap: '6px',
               backdropFilter: 'blur(10px)',
             }}
