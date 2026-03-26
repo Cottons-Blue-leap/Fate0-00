@@ -13,54 +13,46 @@ export default function SplitScreen({ west, east, header }: Props) {
       <div dir="ltr" className="split-mobile" style={{
         display: 'none',
         flexDirection: 'column',
-        height: '100dvh',
+        justifyContent: 'center',
+        minHeight: '100dvh',
         background: 'linear-gradient(180deg, #1a0a2e 0%, #2d1450 40%, #501414 60%, #2e0a0a 100%)',
         padding: '0 10px 8px',
-        gap: '6px',
-        overflow: 'hidden',
+        gap: '10px',
       }}>
-        {header && <div style={{ width: '100%', flexShrink: 0 }}>{header}</div>}
-        <div data-theme="west" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', justifyItems: 'center', flex: 1, alignContent: 'center' }}>
+        {header && <div style={{ width: '100%' }}>{header}</div>}
+        <div data-theme="west" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', justifyItems: 'center' }}>
           {west}
         </div>
-        <div data-theme="east" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', justifyItems: 'center', flex: 1, alignContent: 'center' }}>
+        <div data-theme="east" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', justifyItems: 'center' }}>
           {east}
         </div>
       </div>
 
-      {/* Mobile landscape / tablet: header + side by side */}
+      {/* Mobile landscape / tablet: header left, cards right */}
       <div dir="ltr" className="split-landscape" style={{
         display: 'none',
-        flexDirection: 'column',
-        height: '100dvh',
-        overflow: 'hidden',
-        background: 'linear-gradient(180deg, #1a0a2e 0%, #2d1450 30%, #501414 70%, #2e0a0a 100%)',
+        flexDirection: 'row',
+        minHeight: '100dvh',
+        background: 'linear-gradient(135deg, #1a0a2e 0%, #2d1450 30%, #501414 70%, #2e0a0a 100%)',
       }}>
-        {header && <div style={{ width: '100%', padding: '12px 16px 0' }}>{header}</div>}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', flex: 1 }}>
-          <div data-theme="west" style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '8px',
-            padding: '20px 12px',
+        {header && (
+          <div style={{
+            flex: '0 0 35%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+            padding: '12px',
           }}>
-            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}>
-              {west}
-            </div>
+            {header}
           </div>
-          <div data-theme="east" style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '8px',
-            padding: '20px 12px',
-          }}>
-            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}>
-              {east}
-            </div>
+        )}
+        <div style={{
+          flex: 1, display: 'flex', flexDirection: 'column',
+          alignItems: 'center', justifyContent: 'center',
+          gap: '8px', padding: '12px',
+        }}>
+          <div data-theme="west" style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+            {west}
+          </div>
+          <div data-theme="east" style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+            {east}
           </div>
         </div>
       </div>
@@ -70,8 +62,7 @@ export default function SplitScreen({ west, east, header }: Props) {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        height: '100dvh',
-        overflow: 'hidden',
+        minHeight: '100dvh',
         background: 'linear-gradient(180deg, #1a0a2e 0%, #2d1450 30%, #501414 70%, #2e0a0a 100%)',
       }}>
         {header && <div style={{ width: '100%', maxWidth: '960px', padding: '16px 20px 0' }}>{header}</div>}

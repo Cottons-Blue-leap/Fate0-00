@@ -65,7 +65,7 @@ export default function ProfilePage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       style={{
-        height: '100dvh',
+        minHeight: '100dvh',
         background: 'linear-gradient(135deg, #1a0a2e 0%, #2e0a0a 100%)',
         display: 'flex',
         flexDirection: 'column',

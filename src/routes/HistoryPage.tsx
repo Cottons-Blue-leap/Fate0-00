@@ -114,24 +114,20 @@ export default function HistoryPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       style={{
-        height: '100dvh',
+        minHeight: '100dvh',
         background: 'linear-gradient(135deg, #1a0a2e 0%, #2d1450 50%, #2e0a0a 100%)',
         padding: '16px',
         color: '#e0d0f0',
         fontFamily: "'Noto Serif KR', serif",
-        display: 'flex',
-        flexDirection: 'column',
-        overflow: 'hidden',
       }}
     >
-      <div style={{ maxWidth: '500px', margin: '0 auto', flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', width: '100%' }}>
+      <div style={{ maxWidth: '500px', margin: '0 auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px' }}>
           <Link to="/" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>← {t('app.back')}</Link>
           <h1 style={{ fontSize: '20px', textShadow: '0 0 20px rgba(155,89,182,0.4)' }}>{t('history.title')}</h1>
           <div style={{ width: '60px' }} />
         </div>
 
-        <div style={{ flex: 1, overflowY: 'auto', minHeight: 0 }}>
         {entries.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '60px 20px', color: 'rgba(255,255,255,0.3)' }}>
             <div style={{ fontSize: '48px', marginBottom: '16px' }}>📜</div>
@@ -217,7 +213,6 @@ export default function HistoryPage() {
             )}
           </>
         )}
-        </div>
       </div>
 
       {/* Detail popup */}

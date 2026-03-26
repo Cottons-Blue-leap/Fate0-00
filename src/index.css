@@ -19,7 +19,6 @@ body {
   padding-bottom: var(--sab);
   padding-left: var(--sal);
   padding-right: var(--sar);
-  overflow: hidden;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -71,12 +70,11 @@ button:active:not(:disabled), [role="button"]:active:not(:disabled) {
 }
 
 .page-container {
-  height: 100dvh;
+  min-height: 100dvh;
   background: var(--bg-gradient);
   color: var(--text);
   padding: 16px;
   font-family: 'Noto Serif KR', serif;
-  overflow: hidden;
 }
 
 .back-button {
