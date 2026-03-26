@@ -21,7 +21,8 @@
     "omikujiSub": "おみくじ",
     "starsResting": "Las estrellas ya te han hablado hoy. Nos vemos mañana.",
     "starsSleeping": "Las estrellas descansan",
-    "starsRestingDetail": "Las estrellas descansan. Despertarán de nuevo mañana."
+    "starsRestingDetail": "Las estrellas descansan. Despertarán de nuevo mañana.",
+    "report": "✦ Informe de fortuna de hoy"
   },
   "tarot": {
     "title": "Tarot",
@@ -73,7 +74,23 @@
     "adviceCard": "Carta de consejo",
     "adviceMessage": "Esta carta ofrece un consejo para guiar tu situación actual en una mejor dirección. El tarot muestra la energía del presente, no un futuro fijo. La elección siempre es tuya.",
     "summary1": "Ha aparecido la carta {{name}}.",
-    "summary3": "Lee el flujo que conecta pasado, presente y futuro, y responde con sabiduría."
+    "summary3": "Lee el flujo que conecta pasado, presente y futuro, y responde con sabiduría.",
+    "swipeToShuffle": "← Desliza para mezclar →",
+    "tapToCut": "Toca la baraja para cortar",
+    "positionHint": {
+      "present": "Esta carta refleja\ntu presente",
+      "past": "Esta carta refleja\ntu pasado",
+      "future": "Esta carta refleja\ntu futuro",
+      "challenge": "Esta carta refleja\nel desafío por delante",
+      "foundation": "Esta carta refleja\ntu base",
+      "recentPast": "Esta carta refleja\nel pasado reciente",
+      "bestOutcome": "Esta carta refleja\nel mejor resultado",
+      "nearFuture": "Esta carta refleja\nel futuro cercano",
+      "selfImage": "Esta carta refleja\ncómo te ves a ti mismo",
+      "environment": "Esta carta refleja\ntu entorno",
+      "hopesAndFears": "Esta carta refleja\ntus esperanzas y miedos",
+      "finalOutcome": "Esta carta refleja\nel resultado final"
+    }
   },
   "horoscope": {
     "title": "Horóscopo",
@@ -224,7 +241,8 @@
     "tieDone": "Atado — Vínculo Completo",
     "tieMessage": "En la tradición japonesa, el pino (matsu) es homófono de 'esperar' (matsu). Atar una mala fortuna al pino retrasa el despliegue de un escenario desfavorable, permitiendo que el viento, la lluvia y la energía espiritual del santuario purifiquen gradualmente los datos negativos.",
     "newVisit": "Nueva Visita",
-    "tieToButton": "Atar el Nudo de la Narrativa"
+    "tieToButton": "Atar el Nudo de la Narrativa",
+    "shakePhone": "¡Agita tu teléfono!"
   },
   "profile": {
     "title": "Cuéntanos sobre ti",
@@ -246,7 +264,8 @@
   "privacy": {
     "notice": "Bienvenido, querido visitante.\nComparte tu nombre y fecha de nacimiento, y las estrellas revelarán su historia para ti.",
     "detail": "No te preocupes. Lo que compartas se queda aquí, solo en este dispositivo, y puedes borrarlo cuando quieras.",
-    "confirm": "Tomar asiento"
+    "confirm": "Tomar asiento",
+    "policyLink": "Política de privacidad"
   },
   "share": {
     "button": "Compartir resultado",

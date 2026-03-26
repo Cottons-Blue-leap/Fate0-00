@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   background: #0a0a0a;
   color: #fff;
   font-family: 'Noto Serif KR', serif;
@@ -19,10 +19,34 @@ body {
   padding-bottom: var(--sab);
   padding-left: var(--sal);
   padding-right: var(--sar);
+  overflow: hidden;
 }
 
 a { text-decoration: none; color: inherit; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; color: inherit; }
+
+/* Remove default mobile tap highlight */
+a, button, [role="button"], input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Mystic glow feedback for interactive elements */
+@keyframes glowPulse {
+  0%   { box-shadow: 0 0 0 0 var(--glow, rgba(155,89,182,0.4)); }
+  50%  { box-shadow: 0 0 20px 4px var(--glow, rgba(155,89,182,0.4)); }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+/* All buttons: smooth spring-like transition instead of instant snap */
+button, [role="button"] {
+  transition: box-shadow 0.3s ease, transform 0.15s ease;
+}
+
+/* Active state glow for all interactive buttons (mobile tap) */
+button:active:not(:disabled), [role="button"]:active:not(:disabled) {
+  animation: glowPulse 0.5s ease-out;
+}
 
 [data-theme="west"] {
   --bg-primary: #1a0a2e;
@@ -47,11 +71,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .page-container {
-  min-height: 100vh;
+  height: 100dvh;
   background: var(--bg-gradient);
   color: var(--text);
-  padding: 20px;
+  padding: 16px;
   font-family: 'Noto Serif KR', serif;
+  overflow: hidden;
 }
 
 .back-button {
@@ -70,9 +95,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .page-title {
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: clamp(18px, 4vw, 28px);
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: clamp(12px, 2vh, 32px);
   text-shadow: 0 0 20px var(--glow);
 }
 
@@ -84,19 +109,25 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* === RESPONSIVE === */
 
+/* Side decorations: only visible on desktop */
+.side-decor { display: none; }
+@media (min-width: 1025px) {
+  .side-decor { display: block; }
+}
+
 /* Mobile portrait (< 640px) */
 @media (max-width: 639px) {
   .page-container {
-    padding: 12px;
+    padding: 8px;
   }
   .page-title {
-    font-size: 22px;
-    margin-bottom: 20px;
+    font-size: 18px;
+    margin-bottom: 8px;
   }
   .back-button {
     font-size: 12px;
-    padding: 6px 12px;
-    margin-bottom: 16px;
+    padding: 4px 10px;
+    margin-bottom: 8px;
   }
 }
 

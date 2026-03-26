@@ -137,14 +137,45 @@ function OmikujiPattern() {
 }
 
 function HomePattern() {
-  // Combined: stars + subtle zodiac wheel
+  // Combined: stars + subtle zodiac wheel + vignette
   return (
     <>
       <StarPattern />
-      <svg width="100%" height="100%" style={{ position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none' }}>
+      <svg width="100%" height="100%" style={{ position: 'absolute', inset: 0, opacity: 0.05, pointerEvents: 'none' }}>
         <circle cx="50%" cy="50%" r="35%" fill="none" stroke="#fff" strokeWidth="0.5" strokeDasharray="8 8" />
         <circle cx="50%" cy="50%" r="25%" fill="none" stroke="#fff" strokeWidth="0.3" />
+        <circle cx="50%" cy="50%" r="15%" fill="none" stroke="#fff" strokeWidth="0.2" strokeDasharray="4 6" />
       </svg>
+      {/* Side decorations — zodiac symbols faintly along edges (desktop only) */}
+      <div className="side-decor" style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden',
+      }}>
+        {/* Left: western zodiac arc */}
+        <div style={{
+          position: 'absolute', left: '20px', top: '50%', transform: 'translateY(-50%)',
+          display: 'flex', flexDirection: 'column', gap: '18px', alignItems: 'center',
+          opacity: 0.08, fontSize: '18px', color: '#c39bd3',
+        }}>
+          {'♈♉♊♋♌♍♎♏♐♑♒♓'.split('').filter((_, i) => i % 2 === 0).map((s, i) => (
+            <span key={i}>{s}</span>
+          ))}
+        </div>
+        {/* Right: eastern symbols arc */}
+        <div style={{
+          position: 'absolute', right: '20px', top: '50%', transform: 'translateY(-50%)',
+          display: 'flex', flexDirection: 'column', gap: '18px', alignItems: 'center',
+          opacity: 0.08, fontSize: '16px', color: '#f1948a',
+        }}>
+          {'☰☱☲☳☴☵☶☷'.split('').filter((_, i) => i % 2 === 0).map((s, i) => (
+            <span key={i}>{s}</span>
+          ))}
+        </div>
+      </div>
+      {/* Vignette overlay */}
+      <div style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none',
+        background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.4) 100%)',
+      }} />
     </>
   );
 }

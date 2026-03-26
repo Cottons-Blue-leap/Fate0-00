@@ -13,16 +13,17 @@ export default function SplitScreen({ west, east, header }: Props) {
       <div dir="ltr" className="split-mobile" style={{
         display: 'none',
         flexDirection: 'column',
-        minHeight: '100vh',
+        height: '100dvh',
         background: 'linear-gradient(180deg, #1a0a2e 0%, #2d1450 40%, #501414 60%, #2e0a0a 100%)',
-        padding: '0 16px 16px',
-        gap: '20px',
+        padding: '0 10px 8px',
+        gap: '6px',
+        overflow: 'hidden',
       }}>
-        {header && <div style={{ width: '100%' }}>{header}</div>}
-        <div data-theme="west" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', justifyItems: 'center' }}>
+        {header && <div style={{ width: '100%', flexShrink: 0 }}>{header}</div>}
+        <div data-theme="west" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', justifyItems: 'center', flex: 1, alignContent: 'center' }}>
           {west}
         </div>
-        <div data-theme="east" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', justifyItems: 'center' }}>
+        <div data-theme="east" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', justifyItems: 'center', flex: 1, alignContent: 'center' }}>
           {east}
         </div>
       </div>
@@ -31,7 +32,8 @@ export default function SplitScreen({ west, east, header }: Props) {
       <div dir="ltr" className="split-landscape" style={{
         display: 'none',
         flexDirection: 'column',
-        minHeight: '100vh',
+        height: '100dvh',
+        overflow: 'hidden',
         background: 'linear-gradient(180deg, #1a0a2e 0%, #2d1450 30%, #501414 70%, #2e0a0a 100%)',
       }}>
         {header && <div style={{ width: '100%', padding: '12px 16px 0' }}>{header}</div>}
@@ -63,15 +65,17 @@ export default function SplitScreen({ west, east, header }: Props) {
         </div>
       </div>
 
-      {/* Desktop: header on top + side by side */}
+      {/* Desktop: header on top + side by side with center divider */}
       <div dir="ltr" className="split-desktop" style={{
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '100vh',
+        alignItems: 'center',
+        height: '100dvh',
+        overflow: 'hidden',
         background: 'linear-gradient(180deg, #1a0a2e 0%, #2d1450 30%, #501414 70%, #2e0a0a 100%)',
       }}>
-        {header && <div style={{ width: '100%', padding: '16px 20px 0' }}>{header}</div>}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', flex: 1 }}>
+        {header && <div style={{ width: '100%', maxWidth: '960px', padding: '16px 20px 0' }}>{header}</div>}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', flex: 1, width: '100%', maxWidth: '960px' }}>
           <div data-theme="west" style={{
             display: 'flex',
             flexDirection: 'column',
@@ -81,6 +85,27 @@ export default function SplitScreen({ west, east, header }: Props) {
             padding: '40px 20px',
           }}>
             {west}
+          </div>
+          {/* Center divider */}
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '40px 0',
+          }}>
+            <div style={{
+              width: '1px', flex: 1,
+              background: 'linear-gradient(180deg, rgba(155,89,182,0) 0%, rgba(155,89,182,0.4) 30%, rgba(212,175,55,0.3) 50%, rgba(231,76,60,0.4) 70%, rgba(231,76,60,0) 100%)',
+            }} />
+            <div style={{
+              fontSize: '16px', color: 'rgba(212,175,55,0.4)', padding: '12px 0',
+              textShadow: '0 0 12px rgba(212,175,55,0.3)',
+            }}>✦</div>
+            <div style={{
+              width: '1px', flex: 1,
+              background: 'linear-gradient(180deg, rgba(231,76,60,0) 0%, rgba(231,76,60,0.4) 30%, rgba(212,175,55,0.3) 50%, rgba(155,89,182,0.4) 70%, rgba(155,89,182,0) 100%)',
+            }} />
           </div>
           <div data-theme="east" style={{
             display: 'flex',

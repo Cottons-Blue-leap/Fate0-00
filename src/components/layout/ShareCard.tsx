@@ -1,6 +1,5 @@
 import { forwardRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import i18n from '../../i18n';
 import { useProfile } from '../../context/ProfileContext';
 import type { HistoryEntry } from '../../logic/historyEngine';
 import { tarotSymbols } from '@fate0/shared';
@@ -13,8 +12,7 @@ interface Props {
 }
 
 const ShareCard = forwardRef<HTMLDivElement, Props>(({ entry }, ref) => {
-  const { t: tCurrent } = useTranslation();
-  const t = entry.language ? i18n.getFixedT(entry.language) : tCurrent;
+  const { t } = useTranslation();
   const { profile } = useProfile();
   const data = entry.data || {};
   const date = new Date(entry.date);

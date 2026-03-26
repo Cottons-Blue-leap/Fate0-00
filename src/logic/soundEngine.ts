@@ -56,10 +56,23 @@ function playNoise(duration: number, volume = 0.05) {
   source.start();
 }
 
+// === HAPTIC ===
+
+/** Light haptic tap — 15ms vibration for subtle touch feedback */
+export function hapticTap() {
+  navigator?.vibrate?.(15);
+}
+
+/** Medium haptic tap — for confirmations */
+export function hapticMedium() {
+  navigator?.vibrate?.(30);
+}
+
 // === COMMON ===
 
 export function sfxButtonClick() {
   // Dreamy water ripple — like disturbing calm water
+  hapticTap();
   playTone(400, 0.4, 'sine', 0.06);
   sfxTimeout(() => playTone(600, 0.3, 'sine', 0.04), 60);
   sfxTimeout(() => playTone(800, 0.2, 'sine', 0.03), 120);

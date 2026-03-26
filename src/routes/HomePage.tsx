@@ -12,9 +12,9 @@ import { useProfile } from '../context/ProfileContext';
 import { hasUsedToday } from '../logic/dailyLimitEngine';
 import { Capacitor } from '@capacitor/core';
 import { playBgm } from '../logic/bgmEngine';
-import { useAuth } from '../context/AuthContext';
-import { hasServer } from '../services/api';
-import AuthModal from '../components/layout/AuthModal';
+// import { useAuth } from '../context/AuthContext';
+// import { hasServer } from '../services/api';
+// import AuthModal from '../components/layout/AuthModal';
 import FortuneReport from '../components/layout/FortuneReport';
 
 function hashDate(str: string): number {
@@ -30,9 +30,9 @@ export default function HomePage() {
   const [reverseTarget, setReverseTarget] = useState<'tarot' | 'horoscope' | 'saju' | 'omikuji' | null>(null);
   const [, forceUpdate] = useState(0);
   const [showExitPopup, setShowExitPopup] = useState(false);
-  const [showAuthModal, setShowAuthModal] = useState(false);
+  // const [showAuthModal, setShowAuthModal] = useState(false);
   const [showReport, setShowReport] = useState(false);
-  const { isLoggedIn, logout } = useAuth();
+  // const { isLoggedIn, logout } = useAuth();
 
   // Start home BGM on first interaction
   useEffect(() => {
@@ -64,7 +64,7 @@ export default function HomePage() {
   }, []);
   const today = new Date();
   const dateStr = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-  const quoteIndex = hashDate(dateStr) % 15;
+  const quoteIndex = hashDate(dateStr) % 33;
   const allUsedToday = hasUsedToday('tarot') && hasUsedToday('horoscope') && hasUsedToday('saju') && hasUsedToday('omikuji');
   const dailyQuote = allUsedToday ? t('home.starsResting') : t(`dailyQuote.${quoteIndex}`);
 
@@ -75,107 +75,69 @@ export default function HomePage() {
         header={
           <div style={{
             textAlign: 'center',
-            padding: '8px 0 0',
+            padding: '4px 0 0',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            gap: '2px',
           }}>
             <div style={{ alignSelf: 'flex-end' }}>
               <LanguageSwitcher />
             </div>
             <h1 style={{
-              fontSize: 'clamp(16px, 4vw, 22px)',
+              fontSize: 'clamp(14px, 3.5vw, 22px)',
               color: '#fff',
               fontFamily: "'Noto Serif KR', serif",
               textShadow: '0 0 30px rgba(155, 89, 182, 0.5), 0 0 30px rgba(231, 76, 60, 0.5)',
               letterSpacing: '4px',
               pointerEvents: 'none',
-              marginBottom: '4px',
             }}>
               {t('app.title')}
             </h1>
-            <MysticClock size={typeof window !== 'undefined' && window.innerWidth < 640 ? 70 : 100} />
+            <MysticClock size={typeof window !== 'undefined' && window.innerWidth < 640 ? 55 : 100} />
             <div style={{
-              fontSize: 'clamp(12px, 2.5vw, 13px)',
+              fontSize: 'clamp(11px, 2.2vw, 13px)',
               color: 'rgba(255,255,255,0.4)',
               fontStyle: 'italic',
-              marginTop: '4px',
-              maxWidth: '280px',
-              lineHeight: '1.5',
+              maxWidth: '260px',
+              lineHeight: '1.4',
               pointerEvents: 'none',
-              padding: '0 12px',
+              padding: '0 8px',
             }}>
               "{dailyQuote}"
             </div>
-            {profile && (
-              <Link to="/profile" style={{ display: 'inline-block', marginTop: '6px' }}>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  style={{
-                    padding: '10px 16px',
-                    background: 'rgba(255,255,255,0.08)',
-                    border: '1px solid rgba(255,255,255,0.15)',
-                    borderRadius: '20px',
-                    fontSize: '12px',
-                    color: 'rgba(255,255,255,0.6)',
-                    cursor: 'pointer',
-                  }}
-                >
-                  ✦ {profile.name} · {profile.birthYear}.{profile.birthMonth}.{profile.birthDay}
+            {/* Compact button row */}
+            <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '2px' }}>
+              {profile && (
+                <Link to="/profile">
+                  <motion.div whileHover={{ scale: 1.05 }} style={{
+                    padding: '6px 12px', background: 'rgba(255,255,255,0.08)',
+                    border: '1px solid rgba(255,255,255,0.15)', borderRadius: '16px',
+                    fontSize: '11px', color: 'rgba(255,255,255,0.6)', cursor: 'pointer',
+                  }}>
+                    ✦ {profile.name}
+                  </motion.div>
+                </Link>
+              )}
+              <Link to="/history">
+                <motion.div whileHover={{ scale: 1.05 }} style={{
+                  padding: '6px 12px', background: 'rgba(255,255,255,0.05)',
+                  borderRadius: '16px', fontSize: '11px', color: 'rgba(255,255,255,0.45)', cursor: 'pointer',
+                }}>
+                  📜 {t('history.title')}
                 </motion.div>
               </Link>
-            )}
-            <Link to="/history" style={{ display: 'inline-block', marginTop: '4px' }}>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                style={{
-                  padding: '10px 16px',
-                  background: 'rgba(255,255,255,0.05)',
-                  borderRadius: '16px',
-                  fontSize: '12px',
-                  color: 'rgba(255,255,255,0.45)',
-                  cursor: 'pointer',
-                }}
-              >
-                📜 {t('history.title')}
-              </motion.div>
-            </Link>
-            {allUsedToday && (
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setShowReport(true)}
-                style={{
-                  marginTop: '4px',
-                  padding: '10px 16px',
-                  background: 'rgba(212,175,55,0.1)',
-                  border: '1px solid rgba(212,175,55,0.3)',
-                  borderRadius: '16px',
-                  fontSize: '12px',
-                  color: '#ffd700',
-                  cursor: 'pointer',
-                }}
-              >
-                ✦ {t('home.report', 'Today\'s Fortune Report')}
-              </motion.div>
-            )}
-            {hasServer() && (
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                onClick={() => isLoggedIn ? logout() : setShowAuthModal(true)}
-                style={{
-                  marginTop: '4px',
-                  padding: '10px 16px',
-                  background: isLoggedIn ? 'rgba(46, 204, 113, 0.1)' : 'rgba(255,255,255,0.05)',
-                  borderRadius: '16px',
-                  fontSize: '12px',
-                  color: isLoggedIn ? 'rgba(46, 204, 113, 0.7)' : 'rgba(255,255,255,0.45)',
-                  cursor: 'pointer',
-                }}
-              >
-                {isLoggedIn ? `✓ ${t('auth.loggedIn', 'Synced')}` : `☁ ${t('auth.login', 'Login')}`}
-              </motion.div>
-            )}
+              {allUsedToday && (
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                  onClick={() => setShowReport(true)} style={{
+                    padding: '6px 12px', background: 'rgba(212,175,55,0.1)',
+                    border: '1px solid rgba(212,175,55,0.3)', borderRadius: '16px',
+                    fontSize: '11px', color: '#ffd700', cursor: 'pointer',
+                  }}>
+                  ✦ {t('home.report', 'Today\'s Fortune Report')}
+                </motion.div>
+              )}
+            </div>
           </div>
         }
         west={
@@ -302,7 +264,7 @@ export default function HomePage() {
           </motion.div>
         )}
       </AnimatePresence>
-      <AuthModal isOpen={showAuthModal} onClose={() => setShowAuthModal(false)} />
+      {/* AuthModal disabled — server features not yet active */}
       <FortuneReport isOpen={showReport} onClose={() => setShowReport(false)} />
       <Link to="/privacy" style={{
         position: 'fixed', bottom: '8px', left: '50%', transform: 'translateX(-50%)',

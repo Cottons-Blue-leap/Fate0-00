@@ -21,7 +21,8 @@
     "omikujiSub": "おみくじ",
     "starsResting": "As estrelas já falaram com você hoje. Até amanhã.",
     "starsSleeping": "As estrelas descansam",
-    "starsRestingDetail": "As estrelas descansam. Despertarão novamente amanhã."
+    "starsRestingDetail": "As estrelas descansam. Despertarão novamente amanhã.",
+    "report": "✦ Relatório de fortuna de hoje"
   },
   "tarot": {
     "title": "Tarô",
@@ -73,7 +74,23 @@
     "adviceCard": "Carta de conselho",
     "adviceMessage": "Esta carta oferece um conselho para guiar sua situação atual em uma direção melhor. O tarô mostra a energia do presente, não um futuro fixo. A escolha é sempre sua.",
     "summary1": "A carta {{name}} apareceu.",
-    "summary3": "Leia o fluxo que conecta passado, presente e futuro, e responda com sabedoria."
+    "summary3": "Leia o fluxo que conecta passado, presente e futuro, e responda com sabedoria.",
+    "swipeToShuffle": "← Deslize para embaralhar →",
+    "tapToCut": "Toque no baralho para cortar",
+    "positionHint": {
+      "present": "Esta carta reflete\no seu presente",
+      "past": "Esta carta reflete\no seu passado",
+      "future": "Esta carta reflete\no seu futuro",
+      "challenge": "Esta carta reflete\no desafio à frente",
+      "foundation": "Esta carta reflete\na sua base",
+      "recentPast": "Esta carta reflete\no passado recente",
+      "bestOutcome": "Esta carta reflete\no melhor resultado",
+      "nearFuture": "Esta carta reflete\no futuro próximo",
+      "selfImage": "Esta carta reflete\ncomo você se vê",
+      "environment": "Esta carta reflete\no seu ambiente",
+      "hopesAndFears": "Esta carta reflete\nsuas esperanças e medos",
+      "finalOutcome": "Esta carta reflete\no resultado final"
+    }
   },
   "horoscope": {
     "title": "Horóscopo",
@@ -224,7 +241,8 @@
     "tieDone": "Amarrado — Vínculo Completo",
     "tieMessage": "Na tradição japonesa, o pinheiro (matsu) é homófono de 'esperar' (matsu). Amarrar uma má sorte ao pinheiro atrasa o desenrolar de um cenário desfavorável, permitindo que o vento, a chuva e a energia espiritual do santuário purifiquem gradualmente os dados negativos.",
     "newVisit": "Nova Visita",
-    "tieToButton": "Atar o Nó da Narrativa"
+    "tieToButton": "Atar o Nó da Narrativa",
+    "shakePhone": "Sacuda seu celular!"
   },
   "profile": {
     "title": "Conte-nos sobre você",
@@ -246,7 +264,8 @@
   "privacy": {
     "notice": "Bem-vindo, caro visitante.\nCompartilhe seu nome e data de nascimento, e as estrelas revelarão sua história para você.",
     "detail": "Fique tranquilo. O que você compartilhar fica aqui, apenas neste dispositivo, e pode ser apagado quando quiser.",
-    "confirm": "Tomar assento"
+    "confirm": "Tomar assento",
+    "policyLink": "Política de privacidade"
   },
   "share": {
     "button": "Compartilhar resultado",

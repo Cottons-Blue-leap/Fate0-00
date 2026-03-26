@@ -21,7 +21,8 @@
     "omikujiSub": "おみくじ",
     "starsResting": "Yıldızlar bugün zaten sizinle konuştu. Yarın görüşürüz.",
     "starsSleeping": "Yıldızlar dinleniyor",
-    "starsRestingDetail": "Yıldızlar dinleniyor. Yarın tekrar uyanacaklar."
+    "starsRestingDetail": "Yıldızlar dinleniyor. Yarın tekrar uyanacaklar.",
+    "report": "✦ Bugünün kader raporu"
   },
   "tarot": {
     "title": "Tarot Kartları",
@@ -73,7 +74,23 @@
     "adviceCard": "Tavsiye kartı",
     "adviceMessage": "Bu kart, mevcut durumunuzu daha iyi bir yöne taşımak için bir tavsiyedir. Tarot kesinleşmiş bir gelecek değil, şimdiki enerjiyi gösterir. Seçim her zaman sizindir.",
     "summary1": "{{name}} kartı çıktı.",
-    "summary3": "Geçmiş-şimdi-gelecek akışını okuyun ve bilgece davranın."
+    "summary3": "Geçmiş-şimdi-gelecek akışını okuyun ve bilgece davranın.",
+    "swipeToShuffle": "← Karıştırmak için kaydırın →",
+    "tapToCut": "Kesmek için desteye dokunun",
+    "positionHint": {
+      "present": "Bu kart şu anınızı\nyansıtır",
+      "past": "Bu kart geçmişinizi\nyansıtır",
+      "future": "Bu kart geleceğinizi\nyansıtır",
+      "challenge": "Bu kart önünüzdeki\nmeydan okumayı yansıtır",
+      "foundation": "Bu kart temelinizi\nyansıtır",
+      "recentPast": "Bu kart yakın\ngeçmişi yansıtır",
+      "bestOutcome": "Bu kart olası en iyi\nsonucu yansıtır",
+      "nearFuture": "Bu kart yakın\ngeleceği yansıtır",
+      "selfImage": "Bu kart kendinizi nasıl\ngördüğünüzü yansıtır",
+      "environment": "Bu kart çevrenizi\nyansıtır",
+      "hopesAndFears": "Bu kart umutlarınızı\nve korkularınızı yansıtır",
+      "finalOutcome": "Bu kart nihai\nsonucu yansıtır"
+    }
   },
   "horoscope": {
     "title": "Burç Yorumu",
@@ -224,7 +241,8 @@
     "tieDone": "Düğüm — bağlama tamamlandı",
     "tieMessage": "Japoncada çam ağacı (松/matsu) ile 'beklemek' (待つ/matsu) aynı telaffuza sahiptir. Olumsuz senaryo ertelenir; rüzgar, yağmur ve tapınağın ruhani enerjisi negatif enerjiyi yavaş yavaş arındıracaktır.",
     "newVisit": "Yeni ziyaret",
-    "tieToButton": "Anlatıyı sonlandır"
+    "tieToButton": "Anlatıyı sonlandır",
+    "shakePhone": "Telefonunuzu sallayın!"
   },
   "profile": {
     "title": "Bize kendinizi anlatın",
@@ -246,7 +264,8 @@
   "privacy": {
     "notice": "Hoş geldiniz, değerli ziyaretçi.\nAdınızı ve doğum tarihinizi paylaşın, yıldızlar size hikâyelerini anlatacak.",
     "detail": "Endişelenmeyin. Paylaştıklarınız burada kalır, yalnızca bu cihazda, ve istediğiniz zaman silinebilir.",
-    "confirm": "Yerinize buyurun"
+    "confirm": "Yerinize buyurun",
+    "policyLink": "Gizlilik politikası"
   },
   "share": {
     "button": "Sonucu paylaş",

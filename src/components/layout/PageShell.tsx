@@ -24,10 +24,10 @@ export default function PageShell({ theme, title, children, pattern }: Props) {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}
+      style={{ position: 'relative', overflow: 'hidden', height: '100dvh', display: 'flex', flexDirection: 'column' }}
     >
       {pattern && <MysticBackground pattern={pattern} />}
-      <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column', maxWidth: '720px', width: '100%', margin: '0 auto' }}>
         {/* Header: back button + language switcher */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
           <motion.button
@@ -46,7 +46,7 @@ export default function PageShell({ theme, title, children, pattern }: Props) {
           <LanguageSwitcher />
         </div>
         <h1 className="page-title">{title}</h1>
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', overflowY: 'auto', minHeight: 0 }}>
           {children}
         </div>
       </div>

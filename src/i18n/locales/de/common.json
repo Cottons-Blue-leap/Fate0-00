@@ -21,7 +21,8 @@
     "omikujiSub": "おみくじ",
     "starsResting": "Die Sterne haben heute bereits zu Ihnen gesprochen. Bis morgen.",
     "starsSleeping": "Die Sterne ruhen",
-    "starsRestingDetail": "Die Sterne ruhen. Sie werden morgen wieder erwachen."
+    "starsRestingDetail": "Die Sterne ruhen. Sie werden morgen wieder erwachen.",
+    "report": "✦ Heutiger Schicksalsbericht"
   },
   "tarot": {
     "title": "Tarotkarten",
@@ -73,7 +74,23 @@
     "adviceCard": "Ratschlagkarte",
     "adviceMessage": "Diese Karte ist ein Ratschlag, um Ihre aktuelle Situation in eine bessere Richtung zu lenken. Tarot zeigt nicht eine festgelegte Zukunft, sondern die Energie der Gegenwart. Die Wahl liegt immer bei Ihnen.",
     "summary1": "Die Karte {{name}} wurde gezogen.",
-    "summary3": "Lesen Sie den Fluss von Vergangenheit-Gegenwart-Zukunft und handeln Sie weise."
+    "summary3": "Lesen Sie den Fluss von Vergangenheit-Gegenwart-Zukunft und handeln Sie weise.",
+    "swipeToShuffle": "← Wischen zum Mischen →",
+    "tapToCut": "Tippen Sie auf das Deck zum Abheben",
+    "positionHint": {
+      "present": "Diese Karte spiegelt\nIhre Gegenwart",
+      "past": "Diese Karte spiegelt\nIhre Vergangenheit",
+      "future": "Diese Karte spiegelt\nIhre Zukunft",
+      "challenge": "Diese Karte spiegelt\ndie bevorstehende Herausforderung",
+      "foundation": "Diese Karte spiegelt\nIhr Fundament",
+      "recentPast": "Diese Karte spiegelt\ndie jüngste Vergangenheit",
+      "bestOutcome": "Diese Karte spiegelt\ndas bestmögliche Ergebnis",
+      "nearFuture": "Diese Karte spiegelt\ndie nahe Zukunft",
+      "selfImage": "Diese Karte spiegelt\nwie Sie sich selbst sehen",
+      "environment": "Diese Karte spiegelt\nIhre Umgebung",
+      "hopesAndFears": "Diese Karte spiegelt\nIhre Hoffnungen und Ängste",
+      "finalOutcome": "Diese Karte spiegelt\ndas endgültige Ergebnis"
+    }
   },
   "horoscope": {
     "title": "Horoskop",
@@ -224,7 +241,8 @@
     "tieDone": "Knoten — Anbindung abgeschlossen",
     "tieMessage": "Im Japanischen klingt Kiefer (松/matsu) wie das Wort 'warten' (待つ/matsu). Das ungünstige Szenario wird aufgeschoben, und Wind, Regen und die spirituelle Energie des Schreins werden die negative Energie nach und nach reinigen.",
     "newVisit": "Neuer Besuch",
-    "tieToButton": "Erzählung abschließen"
+    "tieToButton": "Erzählung abschließen",
+    "shakePhone": "Schütteln Sie Ihr Handy!"
   },
   "profile": {
     "title": "Erzählen Sie uns von sich",
@@ -246,7 +264,8 @@
   "privacy": {
     "notice": "Willkommen, lieber Besucher.\nTeilen Sie Ihren Namen und Ihr Geburtsdatum mit, und die Sterne werden Ihnen ihre Geschichte offenbaren.",
     "detail": "Keine Sorge. Was Sie teilen, bleibt hier, nur auf diesem Gerät, und kann jederzeit gelöscht werden.",
-    "confirm": "Platz nehmen"
+    "confirm": "Platz nehmen",
+    "policyLink": "Datenschutzrichtlinie"
   },
   "share": {
     "button": "Ergebnis teilen",

@@ -21,7 +21,8 @@
     "omikujiSub": "おみくじ",
     "starsResting": "今天的星辰已经向你述说了故事。明天再见。",
     "starsSleeping": "星辰在休息",
-    "starsRestingDetail": "星辰在休息，明天将再次苏醒。"
+    "starsRestingDetail": "星辰在休息，明天将再次苏醒。",
+    "report": "✦ 今日运势报告"
   },
   "tarot": {
     "title": "塔罗牌",
@@ -73,7 +74,23 @@
     "adviceCard": "建议牌",
     "adviceMessage": "这张牌是引导当前状况走向更好方向的建议。塔罗展示的是当下的能量，而非注定的未来。选择权始终在你手中。",
     "summary1": "抽到了{{name}}牌。",
-    "summary3": "解读贯穿过去、现在与未来的脉络，智慧应对。"
+    "summary3": "解读贯穿过去、现在与未来的脉络，智慧应对。",
+    "swipeToShuffle": "← 滑动以洗牌 →",
+    "tapToCut": "点击牌堆进行切牌",
+    "positionHint": {
+      "present": "这张牌映照着\n你的现在",
+      "past": "这张牌映照着\n你的过去",
+      "future": "这张牌映照着\n你的未来",
+      "challenge": "这张牌映照着\n你面前的挑战",
+      "foundation": "这张牌映照着\n你的根基",
+      "recentPast": "这张牌映照着\n不久的过去",
+      "bestOutcome": "这张牌映照着\n最好的结果",
+      "nearFuture": "这张牌映照着\n不久的未来",
+      "selfImage": "这张牌映照着\n你眼中的自己",
+      "environment": "这张牌映照着\n你周围的环境",
+      "hopesAndFears": "这张牌映照着\n你的希望与恐惧",
+      "finalOutcome": "这张牌映照着\n最终结果"
+    }
   },
   "horoscope": {
     "title": "星座运势",
@@ -224,7 +241,8 @@
     "tieDone": "系结 — 完成",
     "tieMessage": "在日语中，松树（matsu）与「等待」（matsu）同音。将坏签系于松树，可以延缓不利情节的发生，让风雨和神社的灵力逐渐净化负面数据。",
     "newVisit": "新的参拜",
-    "tieToButton": "系上叙事之结"
+    "tieToButton": "系上叙事之结",
+    "shakePhone": "摇一摇手机！"
   },
   "profile": {
     "title": "请告诉我们关于你",
@@ -246,7 +264,8 @@
   "privacy": {
     "notice": "欢迎光临，第一次来呢。\n告诉我您的名字和生日，星辰将为您寻找属于您的故事。",
     "detail": "请放心。您告诉我的一切不会离开这里。\n它只会留在这台设备中，随时可以删除。",
-    "confirm": "请入座"
+    "confirm": "请入座",
+    "policyLink": "隐私政策"
   },
   "share": {
     "button": "分享结果",

@@ -21,7 +21,8 @@
     "omikujiSub": "おみくじ",
     "starsResting": "Les étoiles vous ont déjà parlé aujourd'hui. À demain.",
     "starsSleeping": "Les étoiles se reposent",
-    "starsRestingDetail": "Les étoiles se reposent. Elles se réveilleront demain."
+    "starsRestingDetail": "Les étoiles se reposent. Elles se réveilleront demain.",
+    "report": "✦ Rapport de fortune du jour"
   },
   "tarot": {
     "title": "Tarot",
@@ -73,7 +74,23 @@
     "adviceCard": "Carte conseil",
     "adviceMessage": "Cette carte offre un conseil pour guider votre situation actuelle dans une meilleure direction. Le tarot montre l'énergie du présent, pas un avenir figé. Le choix vous appartient toujours.",
     "summary1": "La carte {{name}} est apparue.",
-    "summary3": "Lisez le flux reliant passé, présent et futur, et réagissez avec sagesse."
+    "summary3": "Lisez le flux reliant passé, présent et futur, et réagissez avec sagesse.",
+    "swipeToShuffle": "← Glissez pour mélanger →",
+    "tapToCut": "Appuyez sur le paquet pour couper",
+    "positionHint": {
+      "present": "Cette carte reflète\nvotre présent",
+      "past": "Cette carte reflète\nvotre passé",
+      "future": "Cette carte reflète\nvotre futur",
+      "challenge": "Cette carte reflète\nle défi à venir",
+      "foundation": "Cette carte reflète\nvotre fondation",
+      "recentPast": "Cette carte reflète\nle passé récent",
+      "bestOutcome": "Cette carte reflète\nle meilleur résultat",
+      "nearFuture": "Cette carte reflète\nle futur proche",
+      "selfImage": "Cette carte reflète\ncomment vous vous voyez",
+      "environment": "Cette carte reflète\nvotre environnement",
+      "hopesAndFears": "Cette carte reflète\nvos espoirs et craintes",
+      "finalOutcome": "Cette carte reflète\nle résultat final"
+    }
   },
   "horoscope": {
     "title": "Horoscope",
@@ -224,7 +241,8 @@
     "tieDone": "Attaché — Lien Accompli",
     "tieMessage": "Dans la tradition japonaise, le pin (matsu) est homophone de « attendre » (matsu). Attacher une mauvaise fortune au pin retarde le déploiement d'un scénario défavorable, permettant au vent, à la pluie et à l'énergie spirituelle du sanctuaire de purifier progressivement les données négatives.",
     "newVisit": "Nouvelle Visite",
-    "tieToButton": "Nouer le Fil de la Narration"
+    "tieToButton": "Nouer le Fil de la Narration",
+    "shakePhone": "Secouez votre téléphone !"
   },
   "profile": {
     "title": "Parlez-nous de vous",
@@ -246,7 +264,8 @@
   "privacy": {
     "notice": "Bienvenue, cher visiteur.\nPartagez votre nom et votre date de naissance, et les étoiles vous révéleront leur histoire.",
     "detail": "Soyez tranquille. Ce que vous partagez reste ici, uniquement sur cet appareil, et peut être effacé à tout moment.",
-    "confirm": "Prendre place"
+    "confirm": "Prendre place",
+    "policyLink": "Politique de confidentialité"
   },
   "share": {
     "button": "Partager le résultat",

@@ -21,7 +21,8 @@
     "omikujiSub": "おみくじ",
     "starsResting": "The stars have already spoken to you today. See you tomorrow.",
     "starsSleeping": "The stars are resting",
-    "starsRestingDetail": "The stars are resting. They will awaken again tomorrow."
+    "starsRestingDetail": "The stars are resting. They will awaken again tomorrow.",
+    "report": "✦ Today's Fortune Report"
   },
   "tarot": {
     "title": "Tarot Cards",
@@ -73,7 +74,23 @@
     "adviceCard": "Advice Card",
     "adviceMessage": "This card offers advice to guide your current situation in a better direction. Tarot shows the energy of the present, not a fixed future. The choice is always yours.",
     "summary1": "The {{name}} card has appeared.",
-    "summary3": "Read the flow connecting past, present, and future, and respond wisely."
+    "summary3": "Read the flow connecting past, present, and future, and respond wisely.",
+    "swipeToShuffle": "← Swipe to shuffle →",
+    "tapToCut": "Tap the deck to cut",
+    "positionHint": {
+      "present": "This card reflects\nyour present",
+      "past": "This card reflects\nyour past",
+      "future": "This card reflects\nyour future",
+      "challenge": "This card reflects\nthe challenge ahead",
+      "foundation": "This card reflects\nyour foundation",
+      "recentPast": "This card reflects\nthe recent past",
+      "bestOutcome": "This card reflects\nthe best outcome",
+      "nearFuture": "This card reflects\nthe near future",
+      "selfImage": "This card reflects\nhow you see yourself",
+      "environment": "This card reflects\nyour surroundings",
+      "hopesAndFears": "This card reflects\nyour hopes and fears",
+      "finalOutcome": "This card reflects\nthe final outcome"
+    }
   },
   "horoscope": {
     "title": "Horoscope",
@@ -224,7 +241,8 @@
     "tieDone": "Tied — Binding Complete",
     "tieMessage": "In Japanese tradition, the pine tree (matsu) is a homophone for 'to wait' (matsu). Tying a bad fortune to the pine delays the unfolding of an unfavorable scenario, allowing the wind, rain, and the shrine's spiritual energy to gradually purify the negative data.",
     "newVisit": "New Visit",
-    "tieToButton": "Tie the Narrative's Knot"
+    "tieToButton": "Tie the Narrative's Knot",
+    "shakePhone": "Shake your phone!"
   },
   "profile": {
     "title": "Tell us about yourself",

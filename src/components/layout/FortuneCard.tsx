@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { getReverseRemaining, canReverse } from '../../logic/reverseEngine';
+import { hapticTap } from '../../logic/soundEngine';
 import MysticEye from './MysticEye';
 
 interface Props {
@@ -42,8 +43,10 @@ export default function FortuneCard({ title, subtitle, icon, to, theme, used = f
     <div style={{ position: 'relative' }}>
       <Link to={to} onClick={handleClick}>
         <motion.div
-          whileHover={{ scale: 1.05, boxShadow: `0 0 30px ${glowColor}` }}
-          whileTap={{ scale: 0.98 }}
+          whileHover={{ scale: 1.03, boxShadow: `0 0 25px ${glowColor}` }}
+          whileTap={{ scale: 0.97, boxShadow: `0 0 40px 8px ${glowColor}` }}
+          onTapStart={() => hapticTap()}
+          transition={{ type: 'spring', stiffness: 400, damping: 25 }}
           style={{
             background: 'rgba(255, 255, 255, 0.05)',
             border: `1px solid ${borderColor}`,
@@ -51,14 +54,14 @@ export default function FortuneCard({ title, subtitle, icon, to, theme, used = f
             padding: 'clamp(16px, 3vw, 32px) clamp(12px, 2vw, 24px)',
             textAlign: 'center',
             cursor: 'pointer',
-            width: 'clamp(130px, 36vw, 180px)',
-            minHeight: 'clamp(160px, 40vw, 220px)',
+            width: 'clamp(120px, 36vw, 200px)',
+            minHeight: 'clamp(120px, 28vw, 250px)',
             transition: '0.3s',
             backdropFilter: 'blur(10px)',
             opacity: used ? 0.6 : 1,
           }}
         >
-          <div style={{ fontSize: 'clamp(32px, 8vw, 48px)', marginBottom: '8px', position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{ fontSize: 'clamp(26px, 7vw, 48px)', marginBottom: '4px', position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             {icon}
             <div style={{ marginTop: '4px' }}>
               <MysticEye open={!used} theme={theme} size={28} />

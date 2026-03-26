@@ -21,7 +21,8 @@
     "omikujiSub": "おみくじ",
     "starsResting": "Le stelle ti hanno già parlato oggi. Ci vediamo domani.",
     "starsSleeping": "Le stelle riposano",
-    "starsRestingDetail": "Le stelle riposano. Si risveglieranno domani."
+    "starsRestingDetail": "Le stelle riposano. Si risveglieranno domani.",
+    "report": "✦ Rapporto della fortuna di oggi"
   },
   "tarot": {
     "title": "Carte dei Tarocchi",
@@ -73,7 +74,23 @@
     "adviceCard": "Carta del consiglio",
     "adviceMessage": "Questa carta è un consiglio per guidare la situazione attuale verso una direzione migliore. I tarocchi mostrano l'energia del presente, non un futuro predeterminato. La scelta è sempre tua.",
     "summary1": "È uscita la carta {{name}}.",
-    "summary3": "Leggi il flusso passato-presente-futuro e agisci con saggezza."
+    "summary3": "Leggi il flusso passato-presente-futuro e agisci con saggezza.",
+    "swipeToShuffle": "← Scorri per mescolare →",
+    "tapToCut": "Tocca il mazzo per tagliare",
+    "positionHint": {
+      "present": "Questa carta riflette\nil tuo presente",
+      "past": "Questa carta riflette\nil tuo passato",
+      "future": "Questa carta riflette\nil tuo futuro",
+      "challenge": "Questa carta riflette\nla sfida davanti a te",
+      "foundation": "Questa carta riflette\nle tue fondamenta",
+      "recentPast": "Questa carta riflette\nil passato recente",
+      "bestOutcome": "Questa carta riflette\nil miglior risultato",
+      "nearFuture": "Questa carta riflette\nil futuro prossimo",
+      "selfImage": "Questa carta riflette\ncome vedi te stesso",
+      "environment": "Questa carta riflette\nil tuo ambiente",
+      "hopesAndFears": "Questa carta riflette\nle tue speranze e paure",
+      "finalOutcome": "Questa carta riflette\nil risultato finale"
+    }
   },
   "horoscope": {
     "title": "Oroscopo",
@@ -224,7 +241,8 @@
     "tieDone": "Nodo — legatura completata",
     "tieMessage": "In giapponese, pino (松/matsu) si pronuncia come 'aspettare' (待つ/matsu). Lo scenario sfavorevole viene ritardato, e il vento, la pioggia e l'energia spirituale del santuario purificheranno gradualmente l'energia negativa.",
     "newVisit": "Nuova visita",
-    "tieToButton": "Concludi la narrazione"
+    "tieToButton": "Concludi la narrazione",
+    "shakePhone": "Scuoti il telefono!"
   },
   "profile": {
     "title": "Parlaci di te",
@@ -246,7 +264,8 @@
   "privacy": {
     "notice": "Benvenuto, caro visitatore.\nCondividi il tuo nome e la tua data di nascita, e le stelle riveleranno la loro storia per te.",
     "detail": "Stai tranquillo. Ciò che condividi resta qui, solo su questo dispositivo, e può essere cancellato in qualsiasi momento.",
-    "confirm": "Accomodarsi"
+    "confirm": "Accomodarsi",
+    "policyLink": "Informativa sulla privacy"
   },
   "share": {
     "button": "Condividi risultato",
