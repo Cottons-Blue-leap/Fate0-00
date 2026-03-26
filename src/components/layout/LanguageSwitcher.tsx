@@ -59,7 +59,7 @@ export default function LanguageSwitcher() {
                 style={{
                   display: 'block',
                   width: '100%',
-                  textAlign: 'left',
+                  textAlign: 'center',
                   padding: '8px 12px',
                   borderRadius: '8px',
                   fontSize: '14px',
