@@ -1,5 +1,5 @@
 // 역천(逆天) — Reverse Fate system
-// Max 2 uses per day, resets at midnight
+// Max 3 uses per day, resets at midnight
 
 const STORAGE_KEY = 'fate0_reverse';
 const MAX_DAILY = 3;

@@ -282,7 +282,9 @@
     "deselectAll": "Deselect all",
     "deleteSelected": "Delete selected",
     "deleteAll": "Delete all",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "entryCount": "{{count}} / {{max}}",
+    "limitReached": "* Oldest entries will be replaced by new ones"
   },
   "dailyLimit": {
     "used": "You've already read today's fortune",

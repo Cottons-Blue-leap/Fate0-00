@@ -282,7 +282,9 @@
     "deselectAll": "सभी हटाएं",
     "deleteSelected": "चयनित हटाएं",
     "deleteAll": "सभी हटाएं",
-    "cancel": "रद्द"
+    "cancel": "रद्द",
+    "entryCount": "{{count}} / {{max}}",
+    "limitReached": "* सबसे पुरानी प्रविष्टियाँ नई से बदल दी जाएँगी"
   },
   "dailyLimit": {
     "used": "आज का भाग्य पहले ही देख लिया",

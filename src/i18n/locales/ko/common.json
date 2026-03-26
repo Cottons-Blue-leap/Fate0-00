@@ -42,7 +42,9 @@
     "deselectAll": "전체 해제",
     "deleteSelected": "선택 삭제",
     "deleteAll": "모두 삭제",
-    "cancel": "취소"
+    "cancel": "취소",
+    "entryCount": "{{count}} / {{max}}",
+    "limitReached": "* 가장 오래된 기록이 새 기록으로 대체됩니다"
   },
   "dailyLimit": {
     "used": "오늘의 운세는 이미 확인했습니다",

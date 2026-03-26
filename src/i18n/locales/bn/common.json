@@ -282,7 +282,9 @@
     "deselectAll": "সব বাতিল",
     "deleteSelected": "নির্বাচিত মুছুন",
     "deleteAll": "সব মুছুন",
-    "cancel": "বাতিল"
+    "cancel": "বাতিল",
+    "entryCount": "{{count}} / {{max}}",
+    "limitReached": "* পুরানো এন্ট্রি নতুন দিয়ে প্রতিস্থাপিত হবে"
   },
   "dailyLimit": {
     "used": "আজকের ভাগ্য ইতিমধ্যে দেখা হয়েছে",

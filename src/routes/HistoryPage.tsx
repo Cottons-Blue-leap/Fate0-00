@@ -204,8 +204,18 @@ export default function HistoryPage() {
               </motion.div>
             ))}
 
+            {/* Entry count & limit indicator */}
+            <div style={{ textAlign: 'center', marginTop: '16px', fontSize: '12px', color: 'rgba(255,255,255,0.25)' }}>
+              {t('history.entryCount', { count: entries.length, max: 50, defaultValue: `${entries.length} / 50` })}
+              {entries.length >= 50 && (
+                <div style={{ color: 'rgba(231,76,60,0.5)', marginTop: '4px' }}>
+                  {t('history.limitReached', { defaultValue: '* Oldest entries will be replaced by new ones' })}
+                </div>
+              )}
+            </div>
+
             {!selectMode && (
-              <div style={{ textAlign: 'center', marginTop: '24px' }}>
+              <div style={{ textAlign: 'center', marginTop: '16px' }}>
                 <motion.button whileHover={{ scale: 1.05 }} onClick={handleEnterSelectMode} style={btnStyle()}>
                   {t('history.clear')}
                 </motion.button>

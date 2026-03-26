@@ -282,7 +282,9 @@
     "deselectAll": "Desselecionar",
     "deleteSelected": "Excluir seleção",
     "deleteAll": "Excluir tudo",
-    "cancel": "Cancelar"
+    "cancel": "Cancelar",
+    "entryCount": "{{count}} / {{max}}",
+    "limitReached": "* As entradas mais antigas serão substituídas"
   },
   "dailyLimit": {
     "used": "Você já consultou a fortuna de hoje",

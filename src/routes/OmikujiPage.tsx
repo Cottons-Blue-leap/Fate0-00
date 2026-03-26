@@ -15,7 +15,6 @@ import { canReverse, getReverseRemaining } from '../logic/reverseEngine';
 import { useSessionState } from '../hooks/useSessionState';
 import { getLatestEntry } from '../hooks/useLatestEntry';
 import ProfileSuggestion from '../components/layout/ProfileSuggestion';
-import { useShakeDetection, isShakeEnabled } from '../hooks/useShakeDetection';
 
 type Step = 'purify' | 'pray' | 'shake' | 'waka' | 'reading' | 'fate';
 
@@ -57,11 +56,6 @@ export default function OmikujiPage() {
     // Prayer mid-step: just let it restart from pray (bow1 is default)
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Shake detection for omikuji
-  const { requestPermission, permissionGranted, permissionAsked, isAvailable: shakeAvailable } = useShakeDetection(
-    () => { if (step === 'shake' && !shaking) handleShake(); },
-    step === 'shake' && !shaking,
-  );
 
   const seed = stickNum || 1;
   const _waka = getWaka(ranks[rankIdx], seed); void _waka;
@@ -326,22 +320,8 @@ export default function OmikujiPage() {
                 <div style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '16px', lineHeight: '1.7' }}>
                   {t('omikuji.shakeDesc')}
                 </div>
-                {shakeAvailable && permissionGranted && isShakeEnabled() && (
-                  <motion.div
-                    animate={{ opacity: [0.3, 0.6, 0.3] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                    style={{ fontSize: '12px', color: 'rgba(231,76,60,0.5)', marginBottom: '12px' }}
-                  >
-                    📳 {t('omikuji.shakePhone', 'Shake your phone!')}
-                  </motion.div>
-                )}
                 <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                  onClick={async () => {
-                    if (shakeAvailable && isShakeEnabled() && !permissionGranted && !permissionAsked) {
-                      await requestPermission();
-                    }
-                    handleShake();
-                  }}
+                  onClick={() => handleShake()}
                   style={{
                     padding: '16px 48px',
                     background: 'rgba(231,76,60,0.2)',

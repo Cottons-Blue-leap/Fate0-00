@@ -282,7 +282,9 @@
     "deselectAll": "Снять выбор",
     "deleteSelected": "Удалить выбранные",
     "deleteAll": "Удалить все",
-    "cancel": "Отмена"
+    "cancel": "Отмена",
+    "entryCount": "{{count}} / {{max}}",
+    "limitReached": "* Старые записи будут заменены новыми"
   },
   "dailyLimit": {
     "used": "Вы уже посмотрели сегодняшнее гадание",

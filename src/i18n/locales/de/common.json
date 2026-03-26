@@ -282,7 +282,9 @@
     "deselectAll": "Auswahl aufheben",
     "deleteSelected": "Auswahl löschen",
     "deleteAll": "Alle löschen",
-    "cancel": "Abbrechen"
+    "cancel": "Abbrechen",
+    "entryCount": "{{count}} / {{max}}",
+    "limitReached": "* Älteste Einträge werden durch neue ersetzt"
   },
   "dailyLimit": {
     "used": "Sie haben das heutige Horoskop bereits gelesen",

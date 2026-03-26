@@ -282,7 +282,9 @@
     "deselectAll": "選択解除",
     "deleteSelected": "選択を削除",
     "deleteAll": "すべて削除",
-    "cancel": "キャンセル"
+    "cancel": "キャンセル",
+    "entryCount": "{{count}} / {{max}}",
+    "limitReached": "* 古い記録は新しい記録に置き換えられます"
   },
   "dailyLimit": {
     "used": "今日の占いはすでに確認済みです",

@@ -282,7 +282,9 @@
     "deselectAll": "取消全选",
     "deleteSelected": "删除选中",
     "deleteAll": "全部删除",
-    "cancel": "取消"
+    "cancel": "取消",
+    "entryCount": "{{count}} / {{max}}",
+    "limitReached": "* 最旧的记录将被新记录替换"
   },
   "dailyLimit": {
     "used": "今天的运势已经查看过了",
