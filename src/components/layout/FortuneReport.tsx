@@ -1,5 +1,6 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Capacitor } from '@capacitor/core';
 import { useTranslation } from 'react-i18next';
 import { useProfile } from '../../context/ProfileContext';
 import { getHistory } from '../../logic/historyEngine';
@@ -249,6 +250,23 @@ export default function FortuneReport({ isOpen, onClose }: Props) {
   const { t } = useTranslation();
   const { profile } = useProfile();
   const reportRef = useRef<HTMLDivElement>(null);
+
+  // Android back button closes the report instead of triggering exit popup
+  useEffect(() => {
+    if (!isOpen || !Capacitor.isNativePlatform()) return;
+    let handle: { remove: () => void } | null = null;
+    let unmounted = false;
+    import('@capacitor/app').then(({ App }) => {
+      if (unmounted) return;
+      App.addListener('backButton', () => {
+        onClose();
+      }).then(h => { handle = h; });
+    });
+    return () => {
+      unmounted = true;
+      handle?.remove();
+    };
+  }, [isOpen, onClose]);
 
   const entries = getTodayEntries();
   const allComplete = !!entries['tarot'] && !!entries['horoscope'] && !!entries['saju'] && !!entries['omikuji'];
