@@ -14,51 +14,22 @@ export default function SplitScreen({ west, east, header, nav }: Props) {
       <div dir="ltr" className="split-mobile" style={{
         display: 'none',
         flexDirection: 'column',
-        minHeight: '100dvh',
+        height: '100dvh',
         background: 'linear-gradient(180deg, #1a0a2e 0%, #2d1450 40%, #501414 60%, #2e0a0a 100%)',
         padding: '6px 10px 8px',
+        overflow: 'hidden',
       }}>
         {/* Top bar: language left, nav right */}
-        <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '6px', marginBottom: '2px' }}>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '6px', marginBottom: '2px', flexShrink: 0 }}>
           {nav}
         </div>
         {/* Center group: header + cards */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px' }}>
-          {header && <div style={{ width: '100%' }}>{header}</div>}
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px', minHeight: 0 }}>
+          {header && <div style={{ width: '100%', flexShrink: 0 }}>{header}</div>}
           <div data-theme="west" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', justifyItems: 'center' }}>
             {west}
           </div>
           <div data-theme="east" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', justifyItems: 'center' }}>
-            {east}
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile landscape / tablet: compact header top, cards below */}
-      <div dir="ltr" className="split-landscape" style={{
-        display: 'none',
-        flexDirection: 'column',
-        minHeight: '100dvh',
-        background: 'linear-gradient(135deg, #1a0a2e 0%, #2d1450 30%, #501414 70%, #2e0a0a 100%)',
-        padding: '6px 12px',
-      }}>
-        {/* Top bar: header center, nav right */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-          {header && <div style={{ textAlign: 'center' }}>{header}</div>}
-          {nav && (
-            <div style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', display: 'flex', gap: '4px' }}>
-              {nav}
-            </div>
-          )}
-        </div>
-        {/* Cards: west + east in a row */}
-        <div style={{
-          flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px',
-        }}>
-          <div data-theme="west" style={{ display: 'flex', gap: '8px' }}>
-            {west}
-          </div>
-          <div data-theme="east" style={{ display: 'flex', gap: '8px' }}>
             {east}
           </div>
         </div>
@@ -69,10 +40,11 @@ export default function SplitScreen({ west, east, header, nav }: Props) {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        minHeight: '100dvh',
+        height: '100dvh',
         background: 'linear-gradient(180deg, #1a0a2e 0%, #2d1450 30%, #501414 70%, #2e0a0a 100%)',
+        overflow: 'hidden',
       }}>
-        <div style={{ width: '100%', maxWidth: '960px', padding: '16px 20px 0', position: 'relative' }}>
+        <div style={{ width: '100%', maxWidth: '960px', padding: '16px 20px 0', position: 'relative', flexShrink: 0 }}>
           {header}
           {nav && (
             <div style={{ position: 'absolute', right: '20px', top: '16px', display: 'flex', gap: '6px' }}>
@@ -80,7 +52,7 @@ export default function SplitScreen({ west, east, header, nav }: Props) {
             </div>
           )}
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', flex: 1, width: '100%', maxWidth: '960px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', flex: 1, width: '100%', maxWidth: '960px', minHeight: 0 }}>
           <div data-theme="west" style={{
             display: 'flex',
             flexDirection: 'column',
@@ -126,22 +98,14 @@ export default function SplitScreen({ west, east, header, nav }: Props) {
       </div>
 
       <style>{`
-        /* Mobile portrait */
+        /* Mobile portrait (default) */
         @media (max-width: 639px) {
           .split-mobile { display: flex !important; }
-          .split-landscape { display: none !important; }
-          .split-desktop { display: none !important; }
-        }
-        /* Mobile landscape / tablet */
-        @media (min-width: 640px) and (max-width: 1024px) {
-          .split-mobile { display: none !important; }
-          .split-landscape { display: flex !important; }
           .split-desktop { display: none !important; }
         }
         /* Desktop */
-        @media (min-width: 1025px) {
+        @media (min-width: 640px) {
           .split-mobile { display: none !important; }
-          .split-landscape { display: none !important; }
           .split-desktop { display: flex !important; }
         }
       `}</style>

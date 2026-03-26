@@ -10,7 +10,8 @@ html {
 }
 
 body {
-  min-height: 100dvh;
+  height: 100dvh;
+  overflow: hidden;
   background: #0a0a0a;
   color: #fff;
   font-family: 'Noto Serif KR', serif;
@@ -24,9 +25,11 @@ body {
 a { text-decoration: none; color: inherit; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; color: inherit; }
 
-/* Remove default mobile tap highlight */
+/* Remove default mobile tap highlight — apply to ALL elements */
+* {
+  -webkit-tap-highlight-color: transparent !important;
+}
 a, button, [role="button"], input, select, textarea {
-  -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
 
@@ -70,11 +73,12 @@ button:active:not(:disabled), [role="button"]:active:not(:disabled) {
 }
 
 .page-container {
-  min-height: 100dvh;
+  height: 100dvh;
   background: var(--bg-gradient);
   color: var(--text);
   padding: 16px;
   font-family: 'Noto Serif KR', serif;
+  overflow: hidden;
 }
 
 .back-button {
@@ -129,8 +133,8 @@ button:active:not(:disabled), [role="button"]:active:not(:disabled) {
   }
 }
 
-/* Mobile landscape (640-1024px) */
-@media (min-width: 640px) and (max-width: 1024px) {
+/* Tablet / desktop (≥640px) */
+@media (min-width: 640px) {
   .page-container {
     padding: 16px;
   }

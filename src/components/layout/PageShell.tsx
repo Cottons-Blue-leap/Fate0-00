@@ -24,12 +24,12 @@ export default function PageShell({ theme, title, children, pattern }: Props) {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      style={{ position: 'relative', minHeight: '100dvh', display: 'flex', flexDirection: 'column' }}
+      style={{ position: 'relative', height: '100dvh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
     >
       {pattern && <MysticBackground pattern={pattern} />}
-      <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column', maxWidth: '720px', width: '100%', margin: '0 auto' }}>
+      <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column', maxWidth: '720px', width: '100%', margin: '0 auto', minHeight: 0 }}>
         {/* Header: back button + language switcher */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px', flexShrink: 0 }}>
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.95 }}
@@ -45,8 +45,8 @@ export default function PageShell({ theme, title, children, pattern }: Props) {
           </motion.button>
           <LanguageSwitcher />
         </div>
-        <h1 className="page-title">{title}</h1>
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <h1 className="page-title" style={{ flexShrink: 0 }}>{title}</h1>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: 0, overflowY: 'auto' }}>
           {children}
         </div>
       </div>
