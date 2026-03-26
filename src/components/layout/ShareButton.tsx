@@ -97,11 +97,11 @@ export default function ShareButton({ targetRef, theme = 'west', entry }: Props)
         const { Share } = await import('@capacitor/share');
         const base64Data = dataUrl.replace(/^data:image\/png;base64,/, '');
         const saved = await Filesystem.writeFile({ path: `fate0-${Date.now()}.png`, data: base64Data, directory: Directory.Cache });
-        await Share.share({ title: t('app.title'), url: saved.uri });
+        await Share.share({ title: t('app.title'), text: 'https://fate0-00.vercel.app', url: saved.uri });
       } else {
         const file = new File([blob], 'fate0.png', { type: 'image/png' });
         if (navigator.share && navigator.canShare?.({ files: [file] })) {
-          await navigator.share({ title: t('app.title'), files: [file] });
+          await navigator.share({ title: t('app.title'), text: 'https://fate0-00.vercel.app', files: [file] });
         }
       }
     } catch {
