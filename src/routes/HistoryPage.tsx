@@ -473,14 +473,14 @@ function DetailContent({ entry, t }: { entry: HistoryEntry; t: (key: string, opt
 
           {elements && (
             <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '12px', fontSize: '12px', color: 'rgba(255,255,255,0.4)' }}>
-              <div>주요 오행: <span style={{ color: '#f1948a' }}>{elements.dominant}</span></div>
-              <div>부족 오행: <span style={{ color: '#999' }}>{elements.deficient}</span></div>
+              <div>{t('saju.dominant')}: <span style={{ color: '#f1948a' }}>{elements.dominant}</span></div>
+              <div>{t('saju.deficient')}: <span style={{ color: '#999' }}>{elements.deficient}</span></div>
             </div>
           )}
 
           {dailyPillar && (
             <div style={{ marginTop: '12px', padding: '10px 14px', background: 'rgba(212,175,55,0.08)', borderRadius: '10px' }}>
-              <div style={{ fontSize: '11px', color: 'rgba(212,175,55,0.6)', marginBottom: '5px' }}>오늘의 일진: {dailyPillar}</div>
+              <div style={{ fontSize: '11px', color: 'rgba(212,175,55,0.6)', marginBottom: '5px' }}>{t('saju.dailyTitle')}: {dailyPillar}</div>
               {dailyAdvice && <div style={{ fontSize: '12px', lineHeight: '1.6', color: 'rgba(255,255,255,0.45)' }}>{dailyAdvice}</div>}
             </div>
           )}
@@ -490,18 +490,19 @@ function DetailContent({ entry, t }: { entry: HistoryEntry; t: (key: string, opt
     case 'omikuji': {
       const rankKanji = data.rankKanji as string || '';
       const rank = data.rank as string || '';
-      const wakaKo = data.wakaKo as string || '';
       const question = data.question as string || '';
-      const wish = data.wish as string || '';
-      const love = data.love as string || '';
-      const health = data.health as string || '';
 
       const rankColors: Record<string, string> = {
         daikichi: '#ffd700', kichi: '#ffd700', chukichi: '#c39bd3', shokichi: '#c39bd3',
         suekichi: '#999', kyo: '#666', daikyo: '#444',
       };
 
+      // Re-derive from i18n keys instead of using stored pre-translated text
+      const wakaTranslation = rank ? t(`waka.${rank}.translation`) : '';
       const meaning = rank ? t(`waka.${rank}.meaning`) : '';
+      const wish = rank ? t(`omikujiData.${rank}.0.wish`) : '';
+      const love = rank ? t(`omikujiData.${rank}.0.relationship`) : '';
+      const health = rank ? t(`omikujiData.${rank}.0.health`) : '';
 
       return (
         <div style={{ textAlign: 'center' }}>
@@ -511,13 +512,13 @@ function DetailContent({ entry, t }: { entry: HistoryEntry; t: (key: string, opt
 
           {question && (
             <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.35)', marginBottom: '12px', fontStyle: 'italic' }}>
-              소원: "{question}"
+              {t('omikuji.questionLabel')}: "{question}"
             </div>
           )}
 
-          {wakaKo && (
+          {wakaTranslation && (
             <div style={{ fontSize: '13px', lineHeight: '1.7', color: 'rgba(255,255,255,0.5)', marginBottom: '12px', fontStyle: 'italic', padding: '0 8px' }}>
-              {wakaKo}
+              {wakaTranslation}
             </div>
           )}
 
@@ -530,7 +531,7 @@ function DetailContent({ entry, t }: { entry: HistoryEntry; t: (key: string, opt
           )}
 
           {(wish || love || health) && (
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginTop: '14px', fontSize: '12px', color: 'rgba(255,255,255,0.4)' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginTop: '14px', fontSize: '12px', color: 'rgba(255,255,255,0.4)', flexWrap: 'wrap' }}>
               {wish && <div>🙏 {wish}</div>}
               {love && <div>💕 {love}</div>}
               {health && <div>💪 {health}</div>}

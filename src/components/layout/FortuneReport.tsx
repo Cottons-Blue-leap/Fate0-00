@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useProfile } from '../../context/ProfileContext';
@@ -249,7 +249,6 @@ export default function FortuneReport({ isOpen, onClose }: Props) {
   const { t } = useTranslation();
   const { profile } = useProfile();
   const reportRef = useRef<HTMLDivElement>(null);
-  const [hideBirth, setHideBirth] = useState(false);
 
   const entries = getTodayEntries();
   const allComplete = !!entries['tarot'] && !!entries['horoscope'] && !!entries['saju'] && !!entries['omikuji'];
@@ -298,7 +297,7 @@ export default function FortuneReport({ isOpen, onClose }: Props) {
               <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', marginTop: '3px' }}>
                 {profile?.name || t('profile.defaultName')} · {dateStr}
               </div>
-              {profile && !hideBirth && (
+              {profile && (
                 <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.2)', marginTop: '2px' }}>
                   {profile.birthYear}.{profile.birthMonth}.{profile.birthDay}
                 </div>
@@ -357,14 +356,6 @@ export default function FortuneReport({ isOpen, onClose }: Props) {
 
           {/* Controls (outside capturable area) */}
           <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', marginTop: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
-            <label style={{
-              display: 'flex', alignItems: 'center', gap: '6px',
-              fontSize: '11px', color: 'rgba(255,255,255,0.35)', cursor: 'pointer',
-            }}>
-              <input type="checkbox" checked={hideBirth} onChange={(e) => setHideBirth(e.target.checked)}
-                style={{ accentColor: '#9b59b6' }} />
-              {t('report.hideBirth', 'Hide birth date')}
-            </label>
             {allComplete && <ShareButton targetRef={reportRef} theme="west" />}
             <motion.button whileTap={{ scale: 0.95 }} onClick={onClose}
               style={{ padding: '8px 18px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '10px', fontSize: '12px', color: 'rgba(255,255,255,0.4)' }}>
