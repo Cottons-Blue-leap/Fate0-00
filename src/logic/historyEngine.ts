@@ -53,6 +53,15 @@ export function addHistory(entry: Omit<HistoryEntry, 'id' | 'date'>): void {
   }
 }
 
+export function updateLatestEntry(type: HistoryEntry['type'], data: Record<string, unknown>): void {
+  const history = getHistory();
+  const idx = history.findIndex(e => e.type === type);
+  if (idx >= 0) {
+    history[idx].data = { ...history[idx].data, ...data };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
+  }
+}
+
 export function clearHistory(): void {
   localStorage.removeItem(STORAGE_KEY);
 }

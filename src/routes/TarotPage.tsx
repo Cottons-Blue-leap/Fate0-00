@@ -7,7 +7,7 @@ import { sfxBreath, sfxShuffle, sfxCut, sfxCardFlip, sfxReadingReveal, sfxAdvice
 import { tarotSymbols } from '@fate0/shared';
 import ShareButton from '../components/layout/ShareButton';
 import Watermark from '../components/layout/Watermark';
-import { addHistory } from '../logic/historyEngine';
+import { addHistory, updateLatestEntry } from '../logic/historyEngine';
 import { hasUsedToday, markUsedToday } from '../logic/dailyLimitEngine';
 import { Link } from 'react-router-dom';
 import ReverseFateScreen from '../components/layout/ReverseFateScreen';
@@ -136,16 +136,8 @@ export default function TarotPage() {
     const id = remaining[Math.floor(Math.random() * remaining.length)];
     const isReversed = Math.random() < 0.3;
     setAdviceCard({ id, isReversed, position: t('tarot.adviceCard'), positionKey: 'advice', flipped: true });
-    // Update history with advice card
-    addHistory({
-      type: 'tarot', summary: '', data: {
-        cardIds: cards.map(c => c.id),
-        reversed: cards.map(c => c.isReversed),
-        positions: cards.map(c => c.positionKey || c.position),
-        spread, question,
-        adviceId: id, adviceReversed: isReversed,
-      },
-    });
+    // Update existing history entry with advice card (don't create duplicate)
+    updateLatestEntry('tarot', { adviceId: id, adviceReversed: isReversed });
     setStep('advice');
   };
 
