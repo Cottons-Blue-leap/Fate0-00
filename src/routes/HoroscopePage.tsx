@@ -44,7 +44,6 @@ export default function HoroscopePage() {
   const [birthMonth, setBirthMonth] = useState(profile?.birthMonth || 1);
   const [birthDay, setBirthDay] = useState(profile?.birthDay || 1);
   const [sunSign, setSunSign] = useState<ZodiacSign | null>(null);
-  const [orbitAngle, setOrbitAngle] = useState(0);
   const resultRef = useRef<HTMLDivElement>(null);
 
   // Guard: reset to input if restored step requires sunSign data
@@ -58,13 +57,6 @@ export default function HoroscopePage() {
   const moonSign = getLunarZodiac(today);
   const moonEmoji = getMoonEmoji(moonPhase);
   const resonance = sunSign ? getResonance(sunSign, moonSign) : 'neutral';
-
-  // Moon orbit animation
-  useEffect(() => {
-    if (step !== 'transit') return;
-    const timer = setInterval(() => setOrbitAngle(prev => (prev + 0.8) % 360), 30);
-    return () => clearInterval(timer);
-  }, [step]);
 
   // Sound: resonance on transit step
   useEffect(() => {
@@ -221,17 +213,21 @@ export default function HoroscopePage() {
               >
                 {symbols[sunSign]}
               </motion.div>
-              {/* Moon (orbiting) */}
+              {/* Moon (orbiting via CSS animation — no state updates) */}
               <div style={{
-                position: 'absolute',
-                top: `${50 + 42 * Math.sin(orbitAngle * Math.PI / 180)}%`,
-                left: `${50 + 42 * Math.cos(orbitAngle * Math.PI / 180)}%`,
-                transform: 'translate(-50%, -50%)',
-                fontSize: '36px',
-                filter: `drop-shadow(0 0 10px ${glowColor})`,
-                transition: 'filter 0.5s',
+                position: 'absolute', inset: 0,
+                animation: 'orbit 15s linear infinite',
               }}>
-                {moonEmoji}
+                <div style={{
+                  position: 'absolute',
+                  top: '8%', left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  fontSize: '36px',
+                  filter: `drop-shadow(0 0 10px ${glowColor})`,
+                  transition: 'filter 0.5s',
+                }}>
+                  {moonEmoji}
+                </div>
               </div>
               {/* Spark effect on alignment */}
               {resonance === 'aligned' && (

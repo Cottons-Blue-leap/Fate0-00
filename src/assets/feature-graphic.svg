@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="40%" stop-color="#2d1450"/>
+      <stop offset="60%" stop-color="#501414"/>
+      <stop offset="100%" stop-color="#2e0a0a"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="30%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="rgba(155,89,182,0.2)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="70%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="rgba(231,76,60,0.15)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <filter id="glowF">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="500" fill="url(#bg)"/>
+  <rect width="1024" height="500" fill="url(#glow1)"/>
+  <rect width="1024" height="500" fill="url(#glow2)"/>
+
+  <!-- Decorative stars -->
+  <g fill="#ffd700" opacity="0.3" filter="url(#glowF)">
+    <circle cx="80" cy="60" r="1.5"/>
+    <circle cx="200" cy="120" r="1"/>
+    <circle cx="150" cy="400" r="1.5"/>
+    <circle cx="350" cy="80" r="1"/>
+    <circle cx="500" cy="50" r="1.5"/>
+    <circle cx="650" cy="90" r="1"/>
+    <circle cx="800" cy="60" r="1.5"/>
+    <circle cx="900" cy="130" r="1"/>
+    <circle cx="950" cy="400" r="1.5"/>
+    <circle cx="750" cy="430" r="1"/>
+    <circle cx="300" cy="440" r="1"/>
+    <circle cx="120" cy="250" r="1.5"/>
+    <circle cx="920" cy="280" r="1"/>
+  </g>
+
+  <!-- Clock icon (left side) -->
+  <g transform="translate(200, 250)">
+    <!-- Outer ring -->
+    <circle cx="0" cy="0" r="100" fill="none" stroke="rgba(155,89,182,0.3)" stroke-width="1.5" filter="url(#glowF)"/>
+    <circle cx="0" cy="0" r="96" fill="none" stroke="rgba(231,76,60,0.2)" stroke-width="0.8"/>
+
+    <!-- Zodiac dots -->
+    <g filter="url(#glowF)">
+      <circle cx="0" cy="-88" r="3.5" fill="#e74c3c" opacity="0.8"/>
+      <circle cx="44" cy="-76" r="3" fill="#9b59b6" opacity="0.7"/>
+      <circle cx="76" cy="-44" r="3.5" fill="#f39c12" opacity="0.8"/>
+      <circle cx="88" cy="0" r="3" fill="#e74c3c" opacity="0.7"/>
+      <circle cx="76" cy="44" r="3.5" fill="#9b59b6" opacity="0.8"/>
+      <circle cx="44" cy="76" r="3" fill="#3498db" opacity="0.7"/>
+      <circle cx="0" cy="88" r="3.5" fill="#e74c3c" opacity="0.8"/>
+      <circle cx="-44" cy="76" r="3" fill="#f39c12" opacity="0.7"/>
+      <circle cx="-76" cy="44" r="3.5" fill="#9b59b6" opacity="0.8"/>
+      <circle cx="-88" cy="0" r="3" fill="#3498db" opacity="0.7"/>
+      <circle cx="-76" cy="-44" r="3.5" fill="#e74c3c" opacity="0.8"/>
+      <circle cx="-44" cy="-76" r="3" fill="#f39c12" opacity="0.7"/>
+    </g>
+
+    <!-- Clock face -->
+    <circle cx="0" cy="0" r="75" fill="rgba(155,89,182,0.06)" stroke="rgba(155,89,182,0.3)" stroke-width="1"/>
+
+    <!-- Hour markers -->
+    <g stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round">
+      <line x1="0" y1="-68" x2="0" y2="-60"/>
+      <line x1="34" y1="-59" x2="30" y2="-52"/>
+      <line x1="59" y1="-34" x2="52" y2="-30"/>
+      <line x1="68" y1="0" x2="60" y2="0"/>
+      <line x1="59" y1="34" x2="52" y2="30"/>
+      <line x1="34" y1="59" x2="30" y2="52"/>
+      <line x1="0" y1="68" x2="0" y2="60"/>
+      <line x1="-34" y1="59" x2="-30" y2="52"/>
+      <line x1="-59" y1="34" x2="-52" y2="30"/>
+      <line x1="-68" y1="0" x2="-60" y2="0"/>
+      <line x1="-59" y1="-34" x2="-52" y2="-30"/>
+      <line x1="-34" y1="-59" x2="-30" y2="-52"/>
+    </g>
+
+    <!-- 12 o'clock gold -->
+    <line x1="0" y1="-70" x2="0" y2="-56" stroke="#ffd700" stroke-width="2.5" stroke-linecap="round" filter="url(#glowF)"/>
+
+    <!-- Hands pointing to 12 -->
+    <line x1="0" y1="0" x2="0" y2="-45" stroke="rgba(255,255,255,0.85)" stroke-width="3" stroke-linecap="round" filter="url(#glowF)"/>
+    <line x1="0" y1="0" x2="0" y2="-55" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" filter="url(#glowF)"/>
+
+    <!-- Center -->
+    <circle cx="0" cy="0" r="5" fill="#1a0a2e" stroke="rgba(212,175,55,0.8)" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="2.5" fill="#ffd700" opacity="0.9" filter="url(#glowStrong)"/>
+  </g>
+
+  <!-- Title text -->
+  <text x="512" y="190" text-anchor="middle" font-family="serif" font-size="64" font-weight="700" fill="#ffffff" filter="url(#glowStrong)">Fate 0:00</text>
+  <text x="512" y="235" text-anchor="middle" font-family="serif" font-size="20" fill="#ffd700" opacity="0.7" filter="url(#glowF)">When the clock strikes midnight</text>
+
+  <!-- Divider -->
+  <line x1="380" y1="260" x2="644" y2="260" stroke="rgba(212,175,55,0.3)" stroke-width="1"/>
+  <text x="512" y="265" text-anchor="middle" font-size="14" fill="#ffd700" opacity="0.5">✦</text>
+
+  <!-- Subtitle -->
+  <text x="512" y="300" text-anchor="middle" font-family="serif" font-size="18" fill="rgba(255,255,255,0.6)">Eastern &amp; Western fortunes in one app</text>
+
+  <!-- Fortune type icons -->
+  <g transform="translate(0, 370)" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.5)">
+    <!-- Tarot -->
+    <text x="370" y="0" font-size="32">🃏</text>
+    <text x="370" y="35" fill="#c39bd3">Tarot</text>
+
+    <!-- Horoscope -->
+    <text x="470" y="0" font-size="32">⭐</text>
+    <text x="470" y="35" fill="#c39bd3">Horoscope</text>
+
+    <!-- Saju -->
+    <text x="570" y="0" font-size="32">🏮</text>
+    <text x="570" y="35" fill="#f1948a">Saju</text>
+
+    <!-- Omikuji -->
+    <text x="670" y="0" font-size="32">🎋</text>
+    <text x="670" y="35" fill="#f1948a">Omikuji</text>
+  </g>
+</svg>

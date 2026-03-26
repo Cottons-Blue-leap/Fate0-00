@@ -76,6 +76,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   text-shadow: 0 0 20px var(--glow);
 }
 
+/* Moon orbit animation (GPU-accelerated, no JS state updates) */
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 /* === RESPONSIVE === */
 
 /* Mobile portrait (< 640px) */
@@ -102,6 +108,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .page-title {
     font-size: 24px;
     margin-bottom: 24px;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

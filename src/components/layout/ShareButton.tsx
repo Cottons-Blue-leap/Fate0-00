@@ -100,7 +100,9 @@ export default function ShareButton({ targetRef, theme = 'west', entry }: Props)
         a.click();
         URL.revokeObjectURL(url);
       }
-    } catch { /* silent */ }
+    } catch {
+      // capture failed — keep panel open so user sees it didn't work
+    }
     setCapturing(false);
     setShowPanel(false);
   }, [targetRef, bg]);
@@ -122,7 +124,9 @@ export default function ShareButton({ targetRef, theme = 'west', entry }: Props)
           await navigator.share({ title: t('app.title'), files: [file] });
         }
       }
-    } catch { /* silent */ }
+    } catch {
+      // share failed — keep panel open so user sees it didn't work
+    }
     setCapturing(false);
     setShowPanel(false);
   }, [targetRef, bg, t]);

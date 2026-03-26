@@ -30,7 +30,11 @@ function getLimits(): DailyLimits {
 }
 
 function saveLimits(limits: DailyLimits): void {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(limits));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(limits));
+  } catch {
+    // Privacy mode or quota exceeded — limit state won't persist but app continues
+  }
 }
 
 export function hasUsedToday(type: FortuneType): boolean {

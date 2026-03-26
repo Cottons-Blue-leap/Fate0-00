@@ -1,4 +1,5 @@
-import { useState, useCallback, lazy, Suspense } from 'react';
+import { useState, useCallback, lazy, Suspense, Component } from 'react';
+import type { ReactNode, ErrorInfo } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useSearchParams } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import HomePage from './routes/HomePage';
@@ -6,6 +7,32 @@ import HomePage from './routes/HomePage';
 import SplashScreen from './components/layout/SplashScreen';
 import { ProfileProvider, useProfile } from './context/ProfileContext';
 import { AuthProvider } from './context/AuthContext';
+
+class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
+  state = { hasError: false };
+  static getDerivedStateFromError() { return { hasError: true }; }
+  componentDidCatch(_error: Error, _info: ErrorInfo) { /* could log to analytics */ }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{
+          minHeight: '100vh',
+          background: 'linear-gradient(135deg, #1a0a2e, #2e0a0a)',
+          display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+          color: 'rgba(255,255,255,0.6)', fontFamily: "'Noto Serif KR', serif", gap: '16px',
+        }}>
+          <div style={{ fontSize: '48px' }}>✦</div>
+          <div style={{ fontSize: '16px' }}>Something went wrong</div>
+          <button onClick={() => { this.setState({ hasError: false }); window.location.href = '/'; }}
+            style={{ padding: '12px 28px', borderRadius: '10px', background: 'rgba(155,89,182,0.3)', border: '1px solid rgba(155,89,182,0.5)', color: '#e8d5f5', fontSize: '14px', cursor: 'pointer' }}>
+            Return Home
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 // Lazy load fortune pages for code splitting
 const TarotPage = lazy(() => import('./routes/TarotPage'));
@@ -64,9 +91,11 @@ function App() {
     <AuthProvider>
       <ProfileProvider>
         {!splashDone && <SplashScreen onComplete={handleSplashComplete} />}
-        <BrowserRouter>
-          <AppRoutes />
-        </BrowserRouter>
+        <ErrorBoundary>
+          <BrowserRouter>
+            <AppRoutes />
+          </BrowserRouter>
+        </ErrorBoundary>
       </ProfileProvider>
     </AuthProvider>
   );
