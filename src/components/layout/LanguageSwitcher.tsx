@@ -30,25 +30,28 @@ export default function LanguageSwitcher() {
 
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            style={{
-              position: 'absolute',
-              top: '44px',
-              right: 0,
-              background: 'rgba(20,10,30,0.95)',
-              border: '1px solid rgba(255,255,255,0.15)',
-              borderRadius: '12px',
-              padding: '8px',
-              minWidth: '160px',
-              maxWidth: 'calc(100vw - 32px)',
-              backdropFilter: 'blur(10px)',
-              maxHeight: '400px',
-              overflowY: 'auto',
-            }}
-          >
+          <>
+            {/* Backdrop to close on outside tap */}
+            <div onClick={() => setOpen(false)} style={{ position: 'fixed', inset: 0, zIndex: 99 }} />
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              style={{
+                position: 'fixed',
+                top: '80px',
+                right: '16px',
+                left: '16px',
+                background: 'rgba(20,10,30,0.95)',
+                border: '1px solid rgba(255,255,255,0.15)',
+                borderRadius: '12px',
+                padding: '8px',
+                backdropFilter: 'blur(10px)',
+                maxHeight: '60vh',
+                overflowY: 'auto',
+                zIndex: 100,
+              }}
+            >
             {languages.map(lang => (
               <button
                 key={lang.code}
@@ -68,6 +71,7 @@ export default function LanguageSwitcher() {
               </button>
             ))}
           </motion.div>
+          </>
         )}
       </AnimatePresence>
     </div>
