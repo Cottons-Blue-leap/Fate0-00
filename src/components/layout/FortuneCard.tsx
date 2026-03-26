@@ -72,10 +72,11 @@ export default function FortuneCard({ title, subtitle, icon, to, theme, used = f
             color: theme === 'west' ? '#e8d5f5' : '#f5d5d5',
             fontFamily: theme === 'west' ? "'Cinzel', serif" : "'Noto Serif KR', serif",
             marginBottom: '4px',
+            overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%',
           }}>
             {title}
           </div>
-          <div style={{ fontSize: 'clamp(10px, 2.5vw, 13px)', color: theme === 'west' ? '#b89ed0' : '#d09a9a' }}>
+          <div style={{ fontSize: 'clamp(10px, 2.5vw, 13px)', color: theme === 'west' ? '#b89ed0' : '#d09a9a', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }}>
             {subtitle}
           </div>
           {used && (

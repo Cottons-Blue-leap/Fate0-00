@@ -129,10 +129,12 @@ export default function HomePage() {
               fontSize: 'clamp(11px, 2.2vw, 13px)',
               color: 'rgba(255,255,255,0.4)',
               fontStyle: 'italic',
-              maxWidth: '260px',
+              maxWidth: '280px',
               lineHeight: '1.4',
               pointerEvents: 'none',
               padding: '0 8px',
+              maxHeight: '2.8em',
+              overflow: 'hidden',
             }}>
               "{dailyQuote}"
             </div>

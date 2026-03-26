@@ -141,7 +141,7 @@ export default function SharePreview({ entry, isOpen, onClose }: Props) {
           exit={{ opacity: 0 }}
           onClick={onClose}
           style={{
-            position: 'fixed', inset: 0, zIndex: 9500,
+            position: 'fixed', inset: 0, zIndex: 9200,
             background: 'rgba(0,0,0,0.85)',
             display: 'flex', flexDirection: 'column',
             alignItems: 'center', justifyContent: 'center',
