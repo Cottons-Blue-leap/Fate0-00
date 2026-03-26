@@ -117,7 +117,7 @@ export default function HistoryPage() {
         height: '100dvh',
         background: 'linear-gradient(135deg, #1a0a2e 0%, #2d1450 50%, #2e0a0a 100%)',
         padding: '16px',
-        paddingBottom: 'max(16px, env(safe-area-inset-bottom, 16px))',
+        paddingBottom: `max(48px, env(safe-area-inset-bottom, 48px))`,
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column' as const,

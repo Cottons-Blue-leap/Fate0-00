@@ -72,7 +72,7 @@ export default function ProfilePage() {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '16px 20px',
-        paddingBottom: 'max(16px, env(safe-area-inset-bottom, 16px))',
+        paddingBottom: `max(48px, env(safe-area-inset-bottom, 48px))`,
         overflow: 'hidden',
         color: '#e0d0f0',
         fontFamily: "'Noto Serif KR', serif",

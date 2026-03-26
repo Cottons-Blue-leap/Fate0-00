@@ -2,8 +2,12 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Capacitor } from '@capacitor/core';
 import MysticBackground, { type PatternType } from './MysticBackground';
 import LanguageSwitcher from './LanguageSwitcher';
+
+// Android WebView doesn't reliably report safe-area-inset-bottom for nav bar
+const NATIVE_BOTTOM_PAD = Capacitor.isNativePlatform() ? 48 : 16;
 
 interface Props {
   theme: 'west' | 'east';
@@ -46,7 +50,7 @@ export default function PageShell({ theme, title, children, pattern }: Props) {
           <LanguageSwitcher />
         </div>
         <h1 className="page-title" style={{ flexShrink: 0 }}>{title}</h1>
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: 0, overflowY: 'auto', paddingBottom: 'max(16px, env(safe-area-inset-bottom, 16px))' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: 0, overflowY: 'auto', paddingBottom: `max(${NATIVE_BOTTOM_PAD}px, env(safe-area-inset-bottom, ${NATIVE_BOTTOM_PAD}px))` }}>
           {children}
         </div>
       </div>
