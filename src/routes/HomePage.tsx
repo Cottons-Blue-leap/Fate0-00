@@ -74,6 +74,16 @@ export default function HomePage() {
       <SplitScreen
         nav={
           <div style={{ display: 'flex', gap: '6px', alignItems: 'center', flexWrap: 'wrap' }}>
+            {allUsedToday && (
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                onClick={() => setShowReport(true)} style={{
+                  padding: '5px 10px', background: 'rgba(212,175,55,0.1)',
+                  border: '1px solid rgba(212,175,55,0.3)', borderRadius: '14px',
+                  fontSize: '11px', color: '#ffd700', cursor: 'pointer',
+                }}>
+                {t('home.report', '✦ Today\'s Fortune Report')}
+              </motion.div>
+            )}
             <Link to="/history">
               <motion.div whileHover={{ scale: 1.05 }} style={{
                 padding: '5px 10px', background: 'rgba(255,255,255,0.05)',
@@ -94,16 +104,6 @@ export default function HomePage() {
               </Link>
             )}
             <LanguageSwitcher />
-            {allUsedToday && (
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                onClick={() => setShowReport(true)} style={{
-                  padding: '5px 10px', background: 'rgba(212,175,55,0.1)',
-                  border: '1px solid rgba(212,175,55,0.3)', borderRadius: '14px',
-                  fontSize: '11px', color: '#ffd700', cursor: 'pointer',
-                }}>
-                {t('home.report', '✦ Today\'s Fortune Report')}
-              </motion.div>
-            )}
           </div>
         }
         header={
