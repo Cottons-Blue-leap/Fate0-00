@@ -4,54 +4,61 @@ interface Props {
   west: ReactNode;
   east: ReactNode;
   header?: ReactNode;
+  nav?: ReactNode;
 }
 
-export default function SplitScreen({ west, east, header }: Props) {
+export default function SplitScreen({ west, east, header, nav }: Props) {
   return (
     <>
-      {/* Mobile portrait: header + sectioned layout */}
+      {/* Mobile portrait: top bar + header + cards */}
       <div dir="ltr" className="split-mobile" style={{
         display: 'none',
         flexDirection: 'column',
-        justifyContent: 'center',
         minHeight: '100dvh',
         background: 'linear-gradient(180deg, #1a0a2e 0%, #2d1450 40%, #501414 60%, #2e0a0a 100%)',
-        padding: '0 10px 8px',
-        gap: '10px',
+        padding: '6px 10px 8px',
       }}>
-        {header && <div style={{ width: '100%' }}>{header}</div>}
-        <div data-theme="west" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', justifyItems: 'center' }}>
-          {west}
+        {/* Top bar: language left, nav right */}
+        <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '6px', marginBottom: '2px' }}>
+          {nav}
         </div>
-        <div data-theme="east" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', justifyItems: 'center' }}>
-          {east}
+        {/* Center group: header + cards */}
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '8px' }}>
+          {header && <div style={{ width: '100%' }}>{header}</div>}
+          <div data-theme="west" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', justifyItems: 'center' }}>
+            {west}
+          </div>
+          <div data-theme="east" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', justifyItems: 'center' }}>
+            {east}
+          </div>
         </div>
       </div>
 
-      {/* Mobile landscape / tablet: header left, cards right */}
+      {/* Mobile landscape / tablet: compact header top, cards below */}
       <div dir="ltr" className="split-landscape" style={{
         display: 'none',
-        flexDirection: 'row',
+        flexDirection: 'column',
         minHeight: '100dvh',
         background: 'linear-gradient(135deg, #1a0a2e 0%, #2d1450 30%, #501414 70%, #2e0a0a 100%)',
+        padding: '6px 12px',
       }}>
-        {header && (
-          <div style={{
-            flex: '0 0 35%', display: 'flex', alignItems: 'center', justifyContent: 'center',
-            padding: '12px',
-          }}>
-            {header}
-          </div>
-        )}
+        {/* Top bar: header center, nav right */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+          {header && <div style={{ textAlign: 'center' }}>{header}</div>}
+          {nav && (
+            <div style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)', display: 'flex', gap: '4px' }}>
+              {nav}
+            </div>
+          )}
+        </div>
+        {/* Cards: west + east in a row */}
         <div style={{
-          flex: 1, display: 'flex', flexDirection: 'column',
-          alignItems: 'center', justifyContent: 'center',
-          gap: '8px', padding: '12px',
+          flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px',
         }}>
-          <div data-theme="west" style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+          <div data-theme="west" style={{ display: 'flex', gap: '8px' }}>
             {west}
           </div>
-          <div data-theme="east" style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+          <div data-theme="east" style={{ display: 'flex', gap: '8px' }}>
             {east}
           </div>
         </div>
@@ -65,7 +72,14 @@ export default function SplitScreen({ west, east, header }: Props) {
         minHeight: '100dvh',
         background: 'linear-gradient(180deg, #1a0a2e 0%, #2d1450 30%, #501414 70%, #2e0a0a 100%)',
       }}>
-        {header && <div style={{ width: '100%', maxWidth: '960px', padding: '16px 20px 0' }}>{header}</div>}
+        <div style={{ width: '100%', maxWidth: '960px', padding: '16px 20px 0', position: 'relative' }}>
+          {header}
+          {nav && (
+            <div style={{ position: 'absolute', right: '20px', top: '16px', display: 'flex', gap: '6px' }}>
+              {nav}
+            </div>
+          )}
+        </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', flex: 1, width: '100%', maxWidth: '960px' }}>
           <div data-theme="west" style={{
             display: 'flex',

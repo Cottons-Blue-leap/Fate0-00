@@ -72,18 +72,48 @@ export default function HomePage() {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} style={{ position: 'relative' }}>
       <MysticBackground pattern="home" />
       <SplitScreen
+        nav={
+          <div style={{ display: 'flex', gap: '6px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <LanguageSwitcher />
+            {profile && (
+              <Link to="/profile">
+                <motion.div whileHover={{ scale: 1.05 }} style={{
+                  padding: '5px 10px', background: 'rgba(255,255,255,0.08)',
+                  border: '1px solid rgba(255,255,255,0.15)', borderRadius: '14px',
+                  fontSize: '11px', color: 'rgba(255,255,255,0.6)', cursor: 'pointer',
+                }}>
+                  ✦ {profile.name}
+                </motion.div>
+              </Link>
+            )}
+            <Link to="/history">
+              <motion.div whileHover={{ scale: 1.05 }} style={{
+                padding: '5px 10px', background: 'rgba(255,255,255,0.05)',
+                borderRadius: '14px', fontSize: '11px', color: 'rgba(255,255,255,0.45)', cursor: 'pointer',
+              }}>
+                📜 {t('history.title')}
+              </motion.div>
+            </Link>
+            {allUsedToday && (
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                onClick={() => setShowReport(true)} style={{
+                  padding: '5px 10px', background: 'rgba(212,175,55,0.1)',
+                  border: '1px solid rgba(212,175,55,0.3)', borderRadius: '14px',
+                  fontSize: '11px', color: '#ffd700', cursor: 'pointer',
+                }}>
+                {t('home.report', '✦ Today\'s Fortune Report')}
+              </motion.div>
+            )}
+          </div>
+        }
         header={
           <div style={{
             textAlign: 'center',
-            padding: '4px 0 0',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             gap: '2px',
           }}>
-            <div style={{ alignSelf: 'flex-end' }}>
-              <LanguageSwitcher />
-            </div>
             <h1 style={{
               fontSize: 'clamp(14px, 3.5vw, 22px)',
               color: '#fff',
@@ -105,38 +135,6 @@ export default function HomePage() {
               padding: '0 8px',
             }}>
               "{dailyQuote}"
-            </div>
-            {/* Compact button row */}
-            <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '2px' }}>
-              {profile && (
-                <Link to="/profile">
-                  <motion.div whileHover={{ scale: 1.05 }} style={{
-                    padding: '6px 12px', background: 'rgba(255,255,255,0.08)',
-                    border: '1px solid rgba(255,255,255,0.15)', borderRadius: '16px',
-                    fontSize: '11px', color: 'rgba(255,255,255,0.6)', cursor: 'pointer',
-                  }}>
-                    ✦ {profile.name}
-                  </motion.div>
-                </Link>
-              )}
-              <Link to="/history">
-                <motion.div whileHover={{ scale: 1.05 }} style={{
-                  padding: '6px 12px', background: 'rgba(255,255,255,0.05)',
-                  borderRadius: '16px', fontSize: '11px', color: 'rgba(255,255,255,0.45)', cursor: 'pointer',
-                }}>
-                  📜 {t('history.title')}
-                </motion.div>
-              </Link>
-              {allUsedToday && (
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                  onClick={() => setShowReport(true)} style={{
-                    padding: '6px 12px', background: 'rgba(212,175,55,0.1)',
-                    border: '1px solid rgba(212,175,55,0.3)', borderRadius: '16px',
-                    fontSize: '11px', color: '#ffd700', cursor: 'pointer',
-                  }}>
-                  {t('home.report', '✦ Today\'s Fortune Report')}
-                </motion.div>
-              )}
             </div>
           </div>
         }
