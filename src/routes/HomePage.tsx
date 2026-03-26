@@ -115,7 +115,7 @@ export default function HomePage() {
             gap: '2px',
           }}>
             <h1 style={{
-              fontSize: 'clamp(20px, 5vw, 28px)',
+              fontSize: 'clamp(24px, 6vw, 36px)',
               color: '#fff',
               fontFamily: "'Noto Serif KR', serif",
               textShadow: '0 0 30px rgba(155, 89, 182, 0.5), 0 0 30px rgba(231, 76, 60, 0.5)',
@@ -124,7 +124,7 @@ export default function HomePage() {
             }}>
               {t('app.title')}
             </h1>
-            <MysticClock size={typeof window !== 'undefined' && window.innerWidth < 640 ? 80 : 120} />
+            <MysticClock size={typeof window !== 'undefined' && window.innerWidth < 640 ? 110 : 140} />
             <div style={{
               fontSize: 'clamp(11px, 2.2vw, 13px)',
               color: 'rgba(255,255,255,0.4)',
