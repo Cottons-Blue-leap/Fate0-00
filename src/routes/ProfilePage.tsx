@@ -65,13 +65,15 @@ export default function ProfilePage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       style={{
-        minHeight: '100dvh',
+        height: '100dvh',
         background: 'linear-gradient(135deg, #1a0a2e 0%, #2e0a0a 100%)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         padding: '16px 20px',
+        paddingBottom: 'max(16px, env(safe-area-inset-bottom, 16px))',
+        overflow: 'hidden',
         color: '#e0d0f0',
         fontFamily: "'Noto Serif KR', serif",
       }}

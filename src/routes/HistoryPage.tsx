@@ -114,15 +114,19 @@ export default function HistoryPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       style={{
-        minHeight: '100dvh',
+        height: '100dvh',
         background: 'linear-gradient(135deg, #1a0a2e 0%, #2d1450 50%, #2e0a0a 100%)',
         padding: '16px',
+        paddingBottom: 'max(16px, env(safe-area-inset-bottom, 16px))',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column' as const,
         color: '#e0d0f0',
         fontFamily: "'Noto Serif KR', serif",
       }}
     >
-      <div style={{ maxWidth: '500px', margin: '0 auto' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px' }}>
+      <div style={{ maxWidth: '500px', margin: '0 auto', flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0, width: '100%' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px', flexShrink: 0 }}>
           <Link to="/" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>← {t('app.back')}</Link>
           <h1 style={{ fontSize: '20px', textShadow: '0 0 20px rgba(155,89,182,0.4)' }}>{t('history.title')}</h1>
           <div style={{ width: '60px' }} />
@@ -134,7 +138,7 @@ export default function HistoryPage() {
             <div>{t('history.empty')}</div>
           </div>
         ) : (
-          <>
+          <div style={{ flex: 1, overflowY: 'auto', minHeight: 0 }}>
             {/* Select mode toolbar */}
             {selectMode && (
               <div style={{ display: 'flex', gap: '8px', marginBottom: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -221,7 +225,7 @@ export default function HistoryPage() {
                 </motion.button>
               </div>
             )}
-          </>
+          </div>
         )}
       </div>
 
