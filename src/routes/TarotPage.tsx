@@ -17,6 +17,7 @@ import { getLatestEntry } from '../hooks/useLatestEntry';
 import ProfileSuggestion from '../components/layout/ProfileSuggestion';
 import FortuneMemo from '../components/layout/FortuneMemo';
 import MysticDivider from '../components/layout/MysticDivider';
+import StickyFooter from '../components/layout/StickyFooter';
 
 type Spread = '1-card' | '3-card' | 'celtic';
 type Step = 'prepare' | 'question' | 'shuffle' | 'cut' | 'spread' | 'flip' | 'reading' | 'advice';
@@ -516,11 +517,11 @@ export default function TarotPage() {
             </div>
 
             {/* Proceed to advice card */}
-            <div style={{ textAlign: 'center' }}>
+            <StickyFooter>
               <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={handleDrawAdvice} style={btn('gold')}>
                 {t('tarot.drawAdvice')}
               </motion.button>
-            </div>
+            </StickyFooter>
           </motion.div>
         )}
 
@@ -545,13 +546,15 @@ export default function TarotPage() {
               {t('tarot.adviceMessage')}
             </div>
             <FortuneMemo fortuneType="tarot" />
-            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <ShareButton entry={getLatestEntry('tarot')} theme="west" />
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); if (hasUsedToday('tarot')) { setShowReverse(true); } else { reset(); } }} style={btn('dim')}>
-                {t('tarot.newReading')}
-              </motion.button>
-            </div>
-            <ProfileSuggestion />
+            <StickyFooter>
+              <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <ShareButton entry={getLatestEntry('tarot')} theme="west" />
+                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); if (hasUsedToday('tarot')) { setShowReverse(true); } else { reset(); } }} style={btn('dim')}>
+                  {t('tarot.newReading')}
+                </motion.button>
+              </div>
+              <ProfileSuggestion />
+            </StickyFooter>
           </motion.div>
         )}
       </AnimatePresence>

@@ -21,6 +21,7 @@ import { getLatestEntry } from '../hooks/useLatestEntry';
 import ProfileSuggestion from '../components/layout/ProfileSuggestion';
 import FortuneMemo from '../components/layout/FortuneMemo';
 import MysticDivider from '../components/layout/MysticDivider';
+import StickyFooter from '../components/layout/StickyFooter';
 
 type Step = 'input' | 'sync' | 'transit' | 'oracle';
 
@@ -322,11 +323,13 @@ export default function HoroscopePage() {
               </div>
             </div>
 
-            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-              onClick={() => { sfxButtonClick(); addHistory({ type: 'horoscope', summary: '', data: { sign: sunSign, date: todayStr, oracle: oracleMessage, moonPhase: getMoonPhaseName(moonPhase), moonEmoji: getMoonEmoji(moonPhase), resonance } }); markUsedToday('horoscope'); setLimitReached(true); setStep('oracle'); }}
-              style={{ padding: '14px 40px', background: 'rgba(212,175,55,0.2)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: '12px', fontSize: '16px', color: '#e8d5f5' }}>
-              {t('horoscope.getOracle')}
-            </motion.button>
+            <StickyFooter>
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                onClick={() => { sfxButtonClick(); addHistory({ type: 'horoscope', summary: '', data: { sign: sunSign, date: todayStr, oracle: oracleMessage, moonPhase: getMoonPhaseName(moonPhase), moonEmoji: getMoonEmoji(moonPhase), resonance } }); markUsedToday('horoscope'); setLimitReached(true); setStep('oracle'); }}
+                style={{ padding: '14px 40px', background: 'rgba(212,175,55,0.2)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: '12px', fontSize: '16px', color: '#e8d5f5' }}>
+                {t('horoscope.getOracle')}
+              </motion.button>
+            </StickyFooter>
           </motion.div>
         )}
 
@@ -411,15 +414,17 @@ export default function HoroscopePage() {
             </div>
 
             <FortuneMemo fortuneType="horoscope" />
-            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                onClick={() => { sfxButtonClick(); setStep('input'); setSunSign(null); setName(''); }}
-                style={{ padding: '12px 32px', background: 'rgba(155,89,182,0.3)', border: '1px solid rgba(155,89,182,0.5)', borderRadius: '12px', fontSize: '16px', color: '#e8d5f5' }}>
-                {t('horoscope.newReading')}
-              </motion.button>
-              <ShareButton entry={getLatestEntry('horoscope')} theme="west" />
-            </div>
-            <ProfileSuggestion />
+            <StickyFooter>
+              <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
+                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                  onClick={() => { sfxButtonClick(); setStep('input'); setSunSign(null); setName(''); }}
+                  style={{ padding: '12px 32px', background: 'rgba(155,89,182,0.3)', border: '1px solid rgba(155,89,182,0.5)', borderRadius: '12px', fontSize: '16px', color: '#e8d5f5' }}>
+                  {t('horoscope.newReading')}
+                </motion.button>
+                <ShareButton entry={getLatestEntry('horoscope')} theme="west" />
+              </div>
+              <ProfileSuggestion />
+            </StickyFooter>
           </motion.div>
         )}
 

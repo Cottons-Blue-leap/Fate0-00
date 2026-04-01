@@ -17,6 +17,7 @@ import { getLatestEntry } from '../hooks/useLatestEntry';
 import ProfileSuggestion from '../components/layout/ProfileSuggestion';
 import FortuneMemo from '../components/layout/FortuneMemo';
 import MysticDivider from '../components/layout/MysticDivider';
+import StickyFooter from '../components/layout/StickyFooter';
 
 type Step = 'purify' | 'pray' | 'shake' | 'waka' | 'reading' | 'fate';
 
@@ -547,14 +548,16 @@ export default function OmikujiPage() {
                   {t('omikuji.keepMessage')}
                 </div>
                 <FortuneMemo fortuneType="omikuji" />
-                <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                  <ShareButton entry={getLatestEntry('omikuji')} theme="east" />
-                  <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); reset(); }}
-                    style={{ padding: '14px 24px', background: cardBg, border: `1px solid ${cardBorder}`, borderRadius: '12px', fontSize: '14px', color: '#f5d5d5' }}>
-                    {t('omikuji.newVisit')}
-                  </motion.button>
-                </div>
-                <ProfileSuggestion />
+                <StickyFooter>
+                  <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                    <ShareButton entry={getLatestEntry('omikuji')} theme="east" />
+                    <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); reset(); }}
+                      style={{ padding: '14px 24px', background: cardBg, border: `1px solid ${cardBorder}`, borderRadius: '12px', fontSize: '14px', color: '#f5d5d5' }}>
+                      {t('omikuji.newVisit')}
+                    </motion.button>
+                  </div>
+                  <ProfileSuggestion />
+                </StickyFooter>
               </motion.div>
             ) : (
               <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}>
@@ -569,14 +572,16 @@ export default function OmikujiPage() {
                   {t('omikuji.tieMessage')}
                 </div>
                 <FortuneMemo fortuneType="omikuji" />
-                <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                  <ShareButton entry={getLatestEntry('omikuji')} theme="east" />
-                  <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); reset(); }}
-                    style={{ padding: '14px 24px', background: cardBg, border: `1px solid ${cardBorder}`, borderRadius: '12px', fontSize: '14px', color: '#f5d5d5' }}>
-                    {t('omikuji.newVisit')}
-                  </motion.button>
-                </div>
-                <ProfileSuggestion />
+                <StickyFooter>
+                  <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                    <ShareButton entry={getLatestEntry('omikuji')} theme="east" />
+                    <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); reset(); }}
+                      style={{ padding: '14px 24px', background: cardBg, border: `1px solid ${cardBorder}`, borderRadius: '12px', fontSize: '14px', color: '#f5d5d5' }}>
+                      {t('omikuji.newVisit')}
+                    </motion.button>
+                  </div>
+                  <ProfileSuggestion />
+                </StickyFooter>
               </motion.div>
             )}
           </motion.div>

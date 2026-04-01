@@ -21,6 +21,7 @@ import { getLatestEntry } from '../hooks/useLatestEntry';
 import ProfileSuggestion from '../components/layout/ProfileSuggestion';
 import FortuneMemo from '../components/layout/FortuneMemo';
 import MysticDivider from '../components/layout/MysticDivider';
+import StickyFooter from '../components/layout/StickyFooter';
 
 type Step = 'input' | 'extract' | 'daymaster' | 'landscape' | 'daeun' | 'daily';
 
@@ -257,11 +258,13 @@ export default function SajuPage() {
               {year}.{month}.{day} {hour}:00 | {isLunar ? '음력' : '양력'} | {gender === 'male' ? '남' : '여'}
             </motion.div>
 
-            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-              onClick={() => { sfxButtonClick(); setStep('daymaster'); }}
-              style={{ padding: '14px 40px', background: 'rgba(231,76,60,0.2)', border: '1px solid rgba(231,76,60,0.4)', borderRadius: '12px', fontSize: '16px', color: '#f5d5d5' }}>
-              {t('saju.toCoreButton')}
-            </motion.button>
+            <StickyFooter>
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                onClick={() => { sfxButtonClick(); setStep('daymaster'); }}
+                style={{ padding: '14px 40px', background: 'rgba(231,76,60,0.2)', border: '1px solid rgba(231,76,60,0.4)', borderRadius: '12px', fontSize: '16px', color: '#f5d5d5' }}>
+                {t('saju.toCoreButton')}
+              </motion.button>
+            </StickyFooter>
           </motion.div>
         )}
 
@@ -364,11 +367,13 @@ export default function SajuPage() {
               </div>
             </motion.div>
 
-            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-              onClick={() => { sfxButtonClick(); setStep('landscape'); }}
-              style={{ padding: '14px 40px', background: 'rgba(231,76,60,0.2)', border: '1px solid rgba(231,76,60,0.4)', borderRadius: '12px', fontSize: '16px', color: '#f5d5d5' }}>
-              {t('saju.toLandscapeButton')}
-            </motion.button>
+            <StickyFooter>
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                onClick={() => { sfxButtonClick(); setStep('landscape'); }}
+                style={{ padding: '14px 40px', background: 'rgba(231,76,60,0.2)', border: '1px solid rgba(231,76,60,0.4)', borderRadius: '12px', fontSize: '16px', color: '#f5d5d5' }}>
+                {t('saju.toLandscapeButton')}
+              </motion.button>
+            </StickyFooter>
           </motion.div>
         )}
 
@@ -458,11 +463,13 @@ export default function SajuPage() {
               {t('saju.landscapeQuote')}
             </div>
 
-            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-              onClick={() => { sfxButtonClick(); setStep('daeun'); }}
-              style={{ padding: '14px 40px', background: 'rgba(231,76,60,0.2)', border: '1px solid rgba(231,76,60,0.4)', borderRadius: '12px', fontSize: '16px', color: '#f5d5d5' }}>
-              {t('saju.toDaeunButton')}
-            </motion.button>
+            <StickyFooter>
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                onClick={() => { sfxButtonClick(); setStep('daeun'); }}
+                style={{ padding: '14px 40px', background: 'rgba(231,76,60,0.2)', border: '1px solid rgba(231,76,60,0.4)', borderRadius: '12px', fontSize: '16px', color: '#f5d5d5' }}>
+                {t('saju.toDaeunButton')}
+              </motion.button>
+            </StickyFooter>
           </motion.div>
         )}
 
@@ -516,11 +523,13 @@ export default function SajuPage() {
               {t('saju.daeunQuote')}
             </div>
 
-            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-              onClick={() => { sfxButtonClick(); setStep('daily'); }}
-              style={{ padding: '14px 40px', background: 'rgba(212,175,55,0.2)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: '12px', fontSize: '16px', color: '#f5d5d5' }}>
-              {t('saju.toDailyButton')}
-            </motion.button>
+            <StickyFooter>
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                onClick={() => { sfxButtonClick(); setStep('daily'); }}
+                style={{ padding: '14px 40px', background: 'rgba(212,175,55,0.2)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: '12px', fontSize: '16px', color: '#f5d5d5' }}>
+                {t('saju.toDailyButton')}
+              </motion.button>
+            </StickyFooter>
           </motion.div>
         )}
 
@@ -595,15 +604,17 @@ export default function SajuPage() {
               </div>
 
               <FortuneMemo fortuneType="saju" />
-              <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
-                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                  onClick={() => { sfxButtonClick(); setStep('input'); setReading(null); }}
-                  style={{ padding: '14px 32px', background: 'rgba(231,76,60,0.2)', border: '1px solid rgba(231,76,60,0.4)', borderRadius: '12px', fontSize: '14px', color: '#f5d5d5' }}>
-                  {t('saju.newExtract')}
-                </motion.button>
-                <ShareButton entry={getLatestEntry('saju')} theme="east" />
-              </div>
-              <ProfileSuggestion />
+              <StickyFooter>
+                <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
+                  <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                    onClick={() => { sfxButtonClick(); setStep('input'); setReading(null); }}
+                    style={{ padding: '14px 32px', background: 'rgba(231,76,60,0.2)', border: '1px solid rgba(231,76,60,0.4)', borderRadius: '12px', fontSize: '14px', color: '#f5d5d5' }}>
+                    {t('saju.newExtract')}
+                  </motion.button>
+                  <ShareButton entry={getLatestEntry('saju')} theme="east" />
+                </div>
+                <ProfileSuggestion />
+              </StickyFooter>
             </motion.div>
         )}
 
