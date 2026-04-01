@@ -16,6 +16,7 @@ import { useSessionState } from '../hooks/useSessionState';
 import { getLatestEntry } from '../hooks/useLatestEntry';
 import ProfileSuggestion from '../components/layout/ProfileSuggestion';
 import FortuneMemo from '../components/layout/FortuneMemo';
+import MysticDivider from '../components/layout/MysticDivider';
 
 type Spread = '1-card' | '3-card' | 'celtic';
 type Step = 'prepare' | 'question' | 'shuffle' | 'cut' | 'spread' | 'flip' | 'reading' | 'advice';
@@ -470,7 +471,7 @@ export default function TarotPage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
                   <span style={{ fontSize: '28px', display: 'inline-block', transform: c.isReversed ? 'rotate(180deg)' : 'none' }}>{tarotSymbols[c.id] || '🃏'}</span>
                   <div>
-                    <div style={{ fontSize: '16px', fontWeight: 700 }}>{t(`tarot.cards.${c.id}.name`)}</div>
+                    <div className="mystic-glow" style={{ fontSize: '16px', fontWeight: 700 }}>{t(`tarot.cards.${c.id}.name`)}</div>
                     <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
                       {c.position} {c.isReversed ? t('tarot.reversed') : ''} · {t(`tarot.deep.${c.id}.archetype`)}
                     </div>
@@ -493,6 +494,7 @@ export default function TarotPage() {
               </motion.div>
             ))}
 
+            <MysticDivider delay={0.3} />
             {/* Spread flow narrative */}
             <div style={{ background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '12px', padding: '20px', marginBottom: '20px' }}>
               <div style={{ fontSize: '13px', color: 'rgba(212,175,55,0.8)', marginBottom: '8px', fontWeight: 700 }}>
@@ -533,7 +535,7 @@ export default function TarotPage() {
               style={{ background: 'rgba(212,175,55,0.15)', border: '2px solid rgba(212,175,55,0.4)', borderRadius: '16px', padding: '28px', marginBottom: '20px', display: 'inline-block' }}>
               <div style={{ fontSize: '12px', color: 'rgba(212,175,55,0.8)', marginBottom: '8px' }}>{t('tarot.adviceCard')}</div>
               <div style={{ fontSize: '40px', marginBottom: '8px' }}>{tarotSymbols[adviceCard.id] || '🃏'}</div>
-              <div style={{ fontSize: '20px', fontWeight: 700, marginBottom: '4px' }}>{t(`tarot.cards.${adviceCard.id}.name`)}</div>
+              <div className="mystic-glow" style={{ fontSize: '20px', fontWeight: 700, marginBottom: '4px' }}>{t(`tarot.cards.${adviceCard.id}.name`)}</div>
               {adviceCard.isReversed && <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '8px' }}>{t('tarot.reversed')}</div>}
               <div style={{ fontSize: '15px', lineHeight: '1.8', textAlign: 'left', marginTop: '12px' }}>
                 {adviceCard.isReversed ? t(`tarot.cards.${adviceCard.id}.reversed`) : t(`tarot.cards.${adviceCard.id}.upright`)}

@@ -20,6 +20,7 @@ import { useSessionState } from '../hooks/useSessionState';
 import { getLatestEntry } from '../hooks/useLatestEntry';
 import ProfileSuggestion from '../components/layout/ProfileSuggestion';
 import FortuneMemo from '../components/layout/FortuneMemo';
+import MysticDivider from '../components/layout/MysticDivider';
 
 type Step = 'input' | 'extract' | 'daymaster' | 'landscape' | 'daeun' | 'daily';
 
@@ -279,7 +280,7 @@ export default function SajuPage() {
               style={{ marginBottom: '20px' }}
             >
               <div style={{ fontSize: '80px', marginBottom: '8px' }}>{dayMaster.emoji}</div>
-              <div style={{ fontSize: '36px', fontWeight: 700, color: elementColors[dayMaster.element] }}>{dayMaster.stem}</div>
+              <div className="mystic-glow" style={{ fontSize: '36px', fontWeight: 700, color: elementColors[dayMaster.element] }}>{dayMaster.stem}</div>
               <div style={{ fontSize: '18px', color: 'var(--accent-light)', marginTop: '4px' }}>{t(`dayMaster.${dayMaster.stem}.title`)}</div>
               <div style={{ fontSize: '13px', color: 'var(--text-muted)', marginTop: '4px' }}>
                 {elementEmojis[dayMaster.element]} {t(`saju.element.${dayMaster.element}`)} · {dayMaster.nature === '양' ? t('saju.yang') : t('saju.yin')}
@@ -298,6 +299,7 @@ export default function SajuPage() {
               {t(`dayMaster.${dayMaster.stem}.desc`)}
             </motion.div>
 
+            <MysticDivider delay={0.6} />
             {/* Personality Profile Section */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -415,6 +417,7 @@ export default function SajuPage() {
               {t(landscape.analysis)}
             </div>
 
+            <MysticDivider delay={0.8} />
             {/* Deep Element Interpretation */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}

@@ -20,6 +20,7 @@ import { useSessionState } from '../hooks/useSessionState';
 import { getLatestEntry } from '../hooks/useLatestEntry';
 import ProfileSuggestion from '../components/layout/ProfileSuggestion';
 import FortuneMemo from '../components/layout/FortuneMemo';
+import MysticDivider from '../components/layout/MysticDivider';
 
 type Step = 'input' | 'sync' | 'transit' | 'oracle';
 
@@ -272,6 +273,7 @@ export default function HoroscopePage() {
               </div>
             </motion.div>
 
+            <MysticDivider delay={0.8} />
             {/* Resonance message */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -376,6 +378,7 @@ export default function HoroscopePage() {
                 ))}
               </div>
 
+              <MysticDivider delay={1.2} />
               {/* The oracle message */}
               <motion.div
                 initial={{ opacity: 0 }}

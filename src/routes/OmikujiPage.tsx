@@ -16,6 +16,7 @@ import { useSessionState } from '../hooks/useSessionState';
 import { getLatestEntry } from '../hooks/useLatestEntry';
 import ProfileSuggestion from '../components/layout/ProfileSuggestion';
 import FortuneMemo from '../components/layout/FortuneMemo';
+import MysticDivider from '../components/layout/MysticDivider';
 
 type Step = 'purify' | 'pray' | 'shake' | 'waka' | 'reading' | 'fate';
 
@@ -441,12 +442,13 @@ export default function OmikujiPage() {
               animate={{ scale: 1, opacity: 1 }}
               style={{ marginBottom: '16px' }}
             >
-              <div style={{ fontSize: '56px', fontWeight: 700, color: rankColor(rankIdx), fontFamily: "'Noto Serif KR', serif", textShadow: `0 0 20px ${rankColor(rankIdx)}40` }}>
+              <div className="mystic-glow" style={{ fontSize: '56px', fontWeight: 700, color: rankColor(rankIdx), fontFamily: "'Noto Serif KR', serif", textShadow: `0 0 20px ${rankColor(rankIdx)}40` }}>
                 {rankKanji[rankIdx]}
               </div>
               <div style={{ fontSize: '16px', color: 'var(--text-muted)' }}>{t(`omikuji.${ranks[rankIdx]}`)}</div>
             </motion.div>
 
+            <MysticDivider delay={0.2} />
             {/* Rank guidance */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
