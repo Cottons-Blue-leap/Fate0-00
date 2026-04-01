@@ -27,7 +27,7 @@ export default function FortuneMemo({ fortuneType }: Props) {
         initial={{ opacity: 0, y: 5 }}
         animate={{ opacity: 1, y: 0 }}
         style={{
-          padding: '12px 16px', marginTop: '16px',
+          padding: '12px 16px', marginTop: '16px', marginBottom: '20px',
           background: 'rgba(212,175,55,0.06)',
           border: '1px solid rgba(212,175,55,0.15)',
           borderRadius: '10px', textAlign: 'center',
@@ -48,7 +48,7 @@ export default function FortuneMemo({ fortuneType }: Props) {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5 }}
-      style={{ marginTop: '16px' }}
+      style={{ marginTop: '16px', marginBottom: '20px' }}
     >
       <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.35)', marginBottom: '6px', textAlign: 'center' }}>
         💬 {t('memo.prompt', '지금 떠오르는 생각을 적어보세요')}
