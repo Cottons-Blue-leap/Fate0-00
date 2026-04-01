@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tarot SVG Icon Preview — 운명0시</title>
+<style>
+  body {
+    background: #1a0a2e;
+    color: #c9a0dc;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    gap: 40px;
+  }
+  h1 { color: #e8d5f5; font-size: 20px; letter-spacing: 2px; }
+  .card-row {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .card-name { font-size: 13px; opacity: 0.7; }
+  .card-name-ko { font-size: 15px; font-weight: 600; }
+  .sizes {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+  }
+  .size-label {
+    font-size: 10px;
+    opacity: 0.5;
+    text-align: center;
+  }
+  .size-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .comparison {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid rgba(201,160,220,0.2);
+    border-radius: 12px;
+  }
+  .vs { opacity: 0.4; font-size: 12px; }
+  .emoji { display: inline-block; }
+  h2 { font-size: 14px; opacity: 0.5; margin-top: 20px; }
+</style>
+</head>
+<body>
+  <h1>✦ TAROT SVG ICON SAMPLES ✦</h1>
+
+  <h2>— SIZE COMPARISON (18px / 28px / 40px / 64px) —</h2>
+
+  <div class="card-row">
+    <!-- The Fool -->
+    <div class="card">
+      <div class="card-name">0 · The Fool</div>
+      <div class="card-name-ko">광대</div>
+      <div class="sizes">
+        <div class="size-box">
+          <img src="fool.svg" width="18" height="18">
+          <span class="size-label">18px</span>
+        </div>
+        <div class="size-box">
+          <img src="fool.svg" width="28" height="28">
+          <span class="size-label">28px</span>
+        </div>
+        <div class="size-box">
+          <img src="fool.svg" width="40" height="40">
+          <span class="size-label">40px</span>
+        </div>
+        <div class="size-box">
+          <img src="fool.svg" width="64" height="64">
+          <span class="size-label">64px</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Death -->
+    <div class="card">
+      <div class="card-name">13 · Death</div>
+      <div class="card-name-ko">죽음</div>
+      <div class="sizes">
+        <div class="size-box">
+          <img src="death.svg" width="18" height="18">
+          <span class="size-label">18px</span>
+        </div>
+        <div class="size-box">
+          <img src="death.svg" width="28" height="28">
+          <span class="size-label">28px</span>
+        </div>
+        <div class="size-box">
+          <img src="death.svg" width="40" height="40">
+          <span class="size-label">40px</span>
+        </div>
+        <div class="size-box">
+          <img src="death.svg" width="64" height="64">
+          <span class="size-label">64px</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- The World -->
+    <div class="card">
+      <div class="card-name">21 · The World</div>
+      <div class="card-name-ko">세계</div>
+      <div class="sizes">
+        <div class="size-box">
+          <img src="world.svg" width="18" height="18">
+          <span class="size-label">18px</span>
+        </div>
+        <div class="size-box">
+          <img src="world.svg" width="28" height="28">
+          <span class="size-label">28px</span>
+        </div>
+        <div class="size-box">
+          <img src="world.svg" width="40" height="40">
+          <span class="size-label">40px</span>
+        </div>
+        <div class="size-box">
+          <img src="world.svg" width="64" height="64">
+          <span class="size-label">64px</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>— EMOJI vs SVG COMPARISON —</h2>
+
+  <div class="card-row">
+    <div class="comparison">
+      <div>
+        <div class="size-label">BEFORE (emoji)</div>
+        <span class="emoji" style="font-size:40px">🤡</span>
+      </div>
+      <span class="vs">→</span>
+      <div>
+        <div class="size-label">AFTER (SVG)</div>
+        <img src="fool.svg" width="40" height="40">
+      </div>
+    </div>
+
+    <div class="comparison">
+      <div>
+        <div class="size-label">BEFORE (emoji)</div>
+        <span class="emoji" style="font-size:40px">💀</span>
+      </div>
+      <span class="vs">→</span>
+      <div>
+        <div class="size-label">AFTER (SVG)</div>
+        <img src="death.svg" width="40" height="40">
+      </div>
+    </div>
+
+    <div class="comparison">
+      <div>
+        <div class="size-label">BEFORE (emoji)</div>
+        <span class="emoji" style="font-size:40px">🌍</span>
+      </div>
+      <span class="vs">→</span>
+      <div>
+        <div class="size-label">AFTER (SVG)</div>
+        <img src="world.svg" width="40" height="40">
+      </div>
+    </div>
+  </div>
+
+  <h2>— REVERSED (180° ROTATION) —</h2>
+  <div class="card-row">
+    <div class="size-box">
+      <img src="fool.svg" width="40" height="40" style="transform: rotate(180deg)">
+      <span class="size-label">Fool ↓</span>
+    </div>
+    <div class="size-box">
+      <img src="death.svg" width="40" height="40" style="transform: rotate(180deg)">
+      <span class="size-label">Death ↓</span>
+    </div>
+    <div class="size-box">
+      <img src="world.svg" width="40" height="40" style="transform: rotate(180deg)">
+      <span class="size-label">World ↓</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -5,7 +5,9 @@ import { useTranslation } from 'react-i18next';
 import { useProfile } from '../../context/ProfileContext';
 import { getHistory } from '../../logic/historyEngine';
 import type { HistoryEntry } from '../../logic/historyEngine';
-import { tarotSymbols } from '@fate0/shared';
+import TarotCardIcon from '../tarot/TarotCardIcon';
+import SajuStemIcon from '../saju/SajuStemIcon';
+import OmikujiIcon from '../omikuji/OmikujiIcon';
 import ShareButton from './ShareButton';
 
 function getTodayEntries(): Record<string, HistoryEntry | undefined> {
@@ -31,7 +33,7 @@ function Divider({ color = 'rgba(212,175,55,0.2)' }: { color?: string }) {
   return <div style={{ height: '1px', background: `linear-gradient(90deg, transparent, ${color}, transparent)`, margin: '14px 0' }} />;
 }
 
-function SectionHeader({ icon, label, color }: { icon: string; label: string; color: string }) {
+function SectionHeader({ icon, label, color }: { icon: React.ReactNode; label: string; color: string }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
       <span style={{ fontSize: '20px' }}>{icon}</span>
@@ -78,8 +80,8 @@ function TarotSection({ entry, t }: { entry: HistoryEntry; t: (k: string, o?: Re
       </div>
       {cardIds.map((id, i) => (
         <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginBottom: '6px', padding: '6px 8px', background: 'rgba(155,89,182,0.06)', borderRadius: '8px' }}>
-          <div style={{ fontSize: '20px', flexShrink: 0, width: '26px', textAlign: 'center', transform: reversed[i] ? 'rotate(180deg)' : 'none' }}>
-            {tarotSymbols[id] || '🃏'}
+          <div style={{ flexShrink: 0, width: '26px', textAlign: 'center' }}>
+            <TarotCardIcon id={id} size={20} reversed={reversed[i]} />
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ fontSize: '12px', fontWeight: 700 }}>
@@ -94,8 +96,8 @@ function TarotSection({ entry, t }: { entry: HistoryEntry; t: (k: string, o?: Re
       ))}
       {adviceId !== undefined && (
         <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginTop: '6px', padding: '6px 8px', background: 'rgba(212,175,55,0.06)', borderRadius: '8px' }}>
-          <div style={{ fontSize: '18px', flexShrink: 0, width: '26px', textAlign: 'center', transform: adviceReversed ? 'rotate(180deg)' : 'none' }}>
-            {tarotSymbols[adviceId] || '🃏'}
+          <div style={{ flexShrink: 0, width: '26px', textAlign: 'center' }}>
+            <TarotCardIcon id={adviceId} size={18} reversed={adviceReversed} />
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ fontSize: '10px', color: 'rgba(212,175,55,0.6)', marginBottom: '2px' }}>✦ {t('tarot.adviceCard')}</div>
@@ -141,6 +143,7 @@ function SajuSection({ entry, t }: { entry: HistoryEntry; t: (k: string) => stri
   const pillars = (data['pillars'] as string[]) || [];
   const dayMaster = data['dayMaster'] as string || '';
   const dayMasterEmoji = data['dayMasterEmoji'] as string || '';
+  const dayMasterStem = data['dayMasterStem'] as string || '';
   const elements = data['elements'] as { dominant: string; deficient: string } | null;
   const dailyPillar = data['dailyPillar'] as string || '';
   const dailyAdvice = data['dailyAdvice'] as string || '';
@@ -161,7 +164,7 @@ function SajuSection({ entry, t }: { entry: HistoryEntry; t: (k: string) => stri
       )}
       {dayMaster && (
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-          {dayMasterEmoji && <span style={{ fontSize: '20px' }}>{dayMasterEmoji}</span>}
+          {(dayMasterStem || dayMasterEmoji) && <SajuStemIcon stem={dayMasterStem} emoji={dayMasterEmoji} size={20} />}
           <span style={{ fontSize: '13px', fontWeight: 700, color: '#f1948a' }}>{dayMaster}</span>
         </div>
       )}
@@ -193,7 +196,7 @@ function OmikujiSection({ entry, t }: { entry: HistoryEntry; t: (k: string) => s
 
   return (
     <div>
-      <SectionHeader icon="🎋" label={t('home.omikuji')} color="#f1948a" />
+      <SectionHeader icon={<OmikujiIcon name="tanabata" size={20} />} label={t('home.omikuji')} color="#f1948a" />
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
         <span style={{ fontSize: '32px', fontWeight: 700, color: omikujiColors[rank] || '#c39bd3' }}>{rankKanji}</span>
         <div>
@@ -208,7 +211,7 @@ function OmikujiSection({ entry, t }: { entry: HistoryEntry; t: (k: string) => s
       )}
       {(wish || love || health) && (
         <div style={{ display: 'flex', gap: '10px', fontSize: '10px', color: 'rgba(255,255,255,0.4)', flexWrap: 'wrap' }}>
-          {wish && <span>🙏 {truncate(wish, 18)}</span>}
+          {wish && <span><OmikujiIcon name="pray" size={12} style={{ marginRight: '3px' }} />{truncate(wish, 18)}</span>}
           {love && <span>💕 {truncate(love, 18)}</span>}
           {health && <span>💪 {truncate(health, 18)}</span>}
         </div>

@@ -9,7 +9,7 @@ import MysticEye from './MysticEye';
 interface Props {
   title: string;
   subtitle: string;
-  icon: string;
+  icon: React.ReactNode;
   to: string;
   theme: 'west' | 'east';
   used?: boolean;

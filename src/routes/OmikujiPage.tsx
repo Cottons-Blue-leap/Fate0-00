@@ -18,6 +18,7 @@ import ProfileSuggestion from '../components/layout/ProfileSuggestion';
 import FortuneMemo from '../components/layout/FortuneMemo';
 import MysticDivider from '../components/layout/MysticDivider';
 import StickyFooter from '../components/layout/StickyFooter';
+import OmikujiIcon from '../components/omikuji/OmikujiIcon';
 
 type Step = 'purify' | 'pray' | 'shake' | 'waka' | 'reading' | 'fate';
 
@@ -65,7 +66,7 @@ export default function OmikujiPage() {
 
   // Purification sequence
   const purifyLabels = [t('omikuji.purifyLeft'), t('omikuji.purifyRight'), t('omikuji.purifyMouth')];
-  const purifyEmojis = ['🤲', '🤲', '💧'];
+  const purifyIcons = ['palms_up', 'palms_up', 'droplet'] as const;
 
   const handlePurifyStep = () => {
     if (isTransitioning) return;
@@ -208,9 +209,9 @@ export default function OmikujiPage() {
             <motion.div
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
-              style={{ fontSize: '60px', marginBottom: '16px' }}
+              style={{ marginBottom: '16px' }}
             >
-              {purifyEmojis[purifyStep]}
+              <OmikujiIcon name={purifyIcons[purifyStep]} size={60} />
             </motion.div>
 
             <div style={{ fontSize: '16px', color: '#f5d5d5', marginBottom: '8px' }}>
@@ -240,7 +241,7 @@ export default function OmikujiPage() {
 
             {prayPhase === 'bow1' && (
               <>
-                <motion.div animate={{ rotateX: [0, 30, 0] }} transition={{ duration: 1 }} style={{ fontSize: '60px', marginBottom: '16px' }}>⛩️</motion.div>
+                <motion.div animate={{ rotateX: [0, 30, 0] }} transition={{ duration: 1 }} style={{ marginBottom: '16px' }}><OmikujiIcon name="torii" size={60} /></motion.div>
                 <div style={{ fontSize: '16px', color: '#f5d5d5', marginBottom: '8px' }}>{t('omikuji.bowCount', { count: bowCount })}</div>
                 <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={handlePrayAction}
                   style={{ padding: '14px 40px', background: cardBg, border: `1px solid ${cardBorder}`, borderRadius: '12px', fontSize: '16px', color: '#f5d5d5' }}>
@@ -255,7 +256,7 @@ export default function OmikujiPage() {
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 0.3 }}
                   key={clapCount}
-                  style={{ fontSize: '60px', marginBottom: '16px' }}>👏</motion.div>
+                  style={{ marginBottom: '16px' }}><OmikujiIcon name="clap" size={60} /></motion.div>
                 <div style={{ fontSize: '16px', color: '#f5d5d5', marginBottom: '8px' }}>{t('omikuji.clapCount', { count: clapCount })}</div>
                 <div style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '16px' }}>
                   {t('omikuji.clapDesc')}
@@ -269,7 +270,7 @@ export default function OmikujiPage() {
 
             {prayPhase === 'question' && (
               <>
-                <div style={{ fontSize: '60px', marginBottom: '16px' }}>🙏</div>
+                <div style={{ marginBottom: '16px' }}><OmikujiIcon name="pray" size={60} /></div>
                 <div style={{ fontSize: '16px', color: '#f5d5d5', marginBottom: '8px' }}>{t('omikuji.questionPrompt')}</div>
                 <div style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '16px' }}>
                   {t('omikuji.questionDesc')}
@@ -287,7 +288,7 @@ export default function OmikujiPage() {
 
             {prayPhase === 'bow2' && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                <motion.div animate={{ rotateX: [0, 30, 0] }} transition={{ duration: 1 }} style={{ fontSize: '60px', marginBottom: '16px' }}>⛩️</motion.div>
+                <motion.div animate={{ rotateX: [0, 30, 0] }} transition={{ duration: 1 }} style={{ marginBottom: '16px' }}><OmikujiIcon name="torii" size={60} /></motion.div>
                 <div style={{ fontSize: '16px', color: '#f5d5d5' }}>{t('omikuji.prayComplete')}</div>
               </motion.div>
             )}
@@ -314,9 +315,9 @@ export default function OmikujiPage() {
             <motion.div
               animate={shaking ? { rotate: [0, -15, 15, -10, 10, -5, 5, 0], y: [0, -5, 5, -3, 3, 0] } : {}}
               transition={{ duration: 0.6, repeat: shaking ? 3 : 0 }}
-              style={{ fontSize: '80px', marginBottom: '20px' }}
+              style={{ marginBottom: '20px' }}
             >
-              🎋
+              <OmikujiIcon name="tanabata" size={80} />
             </motion.div>
 
             {!shaking ? (
@@ -468,7 +469,7 @@ export default function OmikujiPage() {
                 {t(`rankGuide.${ranks[rankIdx]}.meaning`)}
               </div>
               <div style={{ fontSize: '12px', lineHeight: '1.6', color: 'rgba(255,255,255,0.5)', fontStyle: 'italic' }}>
-                💡 {t(`rankGuide.${ranks[rankIdx]}.advice`)}
+                <OmikujiIcon name="bulb" size={14} style={{ marginRight: '4px' }} />{t(`rankGuide.${ranks[rankIdx]}.advice`)}
               </div>
             </motion.div>
 
@@ -521,7 +522,7 @@ export default function OmikujiPage() {
                   <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                     onClick={() => { sfxKeep(); setKeepChoice('keep'); }}
                     style={{ padding: '20px 28px', background: 'rgba(212,175,55,0.15)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: '16px', color: '#f5d5d5', width: '180px' }}>
-                    <div style={{ fontSize: '32px', marginBottom: '8px' }}>👛</div>
+                    <div style={{ marginBottom: '8px' }}><OmikujiIcon name="purse" size={32} /></div>
                     <div style={{ fontSize: '15px', fontWeight: 700, marginBottom: '4px' }}>{t('omikuji.keepTitle')}</div>
                     <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>{t('omikuji.keepDesc')}</div>
                   </motion.button>
@@ -529,7 +530,7 @@ export default function OmikujiPage() {
                   <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                     onClick={() => { sfxTie(); setKeepChoice('tie'); }}
                     style={{ padding: '20px 28px', background: 'rgba(100,100,100,0.15)', border: '1px solid rgba(150,150,150,0.3)', borderRadius: '16px', color: '#f5d5d5', width: '180px' }}>
-                    <div style={{ fontSize: '32px', marginBottom: '8px' }}>🌲</div>
+                    <div style={{ marginBottom: '8px' }}><OmikujiIcon name="tree" size={32} /></div>
                     <div style={{ fontSize: '15px', fontWeight: 700, marginBottom: '4px' }}>{t('omikuji.tieTitle')}</div>
                     <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>{t('omikuji.tieDesc')}</div>
                   </motion.button>
@@ -540,7 +541,7 @@ export default function OmikujiPage() {
                 <motion.div
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  style={{ fontSize: '60px', marginBottom: '16px' }}>👛</motion.div>
+                  style={{ marginBottom: '16px' }}><OmikujiIcon name="purse" size={60} /></motion.div>
                 <div style={{ fontSize: '18px', color: '#ffd700', marginBottom: '8px', fontWeight: 700 }}>
                   {t('omikuji.keepDone')}
                 </div>
@@ -564,7 +565,7 @@ export default function OmikujiPage() {
                 <motion.div
                   animate={{ rotate: [0, 2, -2, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
-                  style={{ fontSize: '60px', marginBottom: '16px' }}>🌲</motion.div>
+                  style={{ marginBottom: '16px' }}><OmikujiIcon name="tree" size={60} /></motion.div>
                 <div style={{ fontSize: '18px', color: '#aaa', marginBottom: '8px', fontWeight: 700 }}>
                   {t('omikuji.tieDone')}
                 </div>

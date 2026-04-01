@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>RWS Tarot — Dark Mystical Theme Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #1a0a2e;
+    color: #c9a0dc;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 40px 20px;
+  }
+  h1 {
+    text-align: center;
+    color: #e8d5f5;
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.5;
+    margin-bottom: 40px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .card img {
+    width: 120px;
+    height: auto;
+    border-radius: 4px;
+    transition: transform 0.3s;
+  }
+  .card img:hover {
+    transform: scale(1.5);
+    z-index: 10;
+    position: relative;
+  }
+  .card-id { font-size: 11px; opacity: 0.4; }
+  .card-name { font-size: 13px; font-weight: 600; color: #e8d5f5; }
+  .card-name-ko { font-size: 12px; opacity: 0.7; }
+
+  h2 {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.5;
+    margin: 50px 0 20px;
+    letter-spacing: 2px;
+  }
+  .comparison {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .compare-pair {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    border: 1px solid rgba(201,160,220,0.15);
+    border-radius: 8px;
+  }
+  .compare-label { font-size: 10px; opacity: 0.4; text-align: center; margin-bottom: 4px; }
+  .arrow { opacity: 0.3; font-size: 20px; }
+
+  .size-demo {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: flex-end;
+    margin: 20px 0 40px;
+  }
+  .size-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .size-item span { font-size: 10px; opacity: 0.4; }
+</style>
+</head>
+<body>
+  <h1>✦ RIDER-WAITE-SMITH — DARK MYSTICAL THEME ✦</h1>
+  <div class="subtitle">22 Major Arcana · CC0 Public Domain · Processed for 운명0시</div>
+
+  <h2>— SIZE RENDERING TEST (18px / 28px / 40px / 64px / 120px) —</h2>
+  <div class="size-demo">
+    <div class="size-item"><img src="RWS_Tarot_00_Fool.png" width="18"><span>18px</span></div>
+    <div class="size-item"><img src="RWS_Tarot_00_Fool.png" width="28"><span>28px</span></div>
+    <div class="size-item"><img src="RWS_Tarot_00_Fool.png" width="40"><span>40px</span></div>
+    <div class="size-item"><img src="RWS_Tarot_00_Fool.png" width="64"><span>64px</span></div>
+    <div class="size-item"><img src="RWS_Tarot_00_Fool.png" width="120"><span>120px</span></div>
+  </div>
+
+  <h2>— ALL 22 MAJOR ARCANA —</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="RWS_Tarot_00_Fool.png">
+      <span class="card-id">0</span>
+      <span class="card-name">The Fool</span>
+      <span class="card-name-ko">광대</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_01_Magician.png">
+      <span class="card-id">1</span>
+      <span class="card-name">The Magician</span>
+      <span class="card-name-ko">마법사</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_02_High_Priestess.png">
+      <span class="card-id">2</span>
+      <span class="card-name">The High Priestess</span>
+      <span class="card-name-ko">여사제</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_03_Empress.png">
+      <span class="card-id">3</span>
+      <span class="card-name">The Empress</span>
+      <span class="card-name-ko">여황제</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_04_Emperor.png">
+      <span class="card-id">4</span>
+      <span class="card-name">The Emperor</span>
+      <span class="card-name-ko">황제</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_05_Hierophant.png">
+      <span class="card-id">5</span>
+      <span class="card-name">The Hierophant</span>
+      <span class="card-name-ko">교황</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_06_Lovers.png">
+      <span class="card-id">6</span>
+      <span class="card-name">The Lovers</span>
+      <span class="card-name-ko">연인</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_07_Chariot.png">
+      <span class="card-id">7</span>
+      <span class="card-name">The Chariot</span>
+      <span class="card-name-ko">전차</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_08_Strength.png">
+      <span class="card-id">8</span>
+      <span class="card-name">Strength</span>
+      <span class="card-name-ko">힘</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_09_Hermit.png">
+      <span class="card-id">9</span>
+      <span class="card-name">The Hermit</span>
+      <span class="card-name-ko">은둔자</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_10_Wheel_of_Fortune.png">
+      <span class="card-id">10</span>
+      <span class="card-name">Wheel of Fortune</span>
+      <span class="card-name-ko">운명의 수레바퀴</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_11_Justice.png">
+      <span class="card-id">11</span>
+      <span class="card-name">Justice</span>
+      <span class="card-name-ko">정의</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_12_Hanged_Man.png">
+      <span class="card-id">12</span>
+      <span class="card-name">The Hanged Man</span>
+      <span class="card-name-ko">매달린 사람</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_13_Death.png">
+      <span class="card-id">13</span>
+      <span class="card-name">Death</span>
+      <span class="card-name-ko">죽음</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_14_Temperance.png">
+      <span class="card-id">14</span>
+      <span class="card-name">Temperance</span>
+      <span class="card-name-ko">절제</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_15_Devil.png">
+      <span class="card-id">15</span>
+      <span class="card-name">The Devil</span>
+      <span class="card-name-ko">악마</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_16_Tower.png">
+      <span class="card-id">16</span>
+      <span class="card-name">The Tower</span>
+      <span class="card-name-ko">탑</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_17_Star.png">
+      <span class="card-id">17</span>
+      <span class="card-name">The Star</span>
+      <span class="card-name-ko">별</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_18_Moon.png">
+      <span class="card-id">18</span>
+      <span class="card-name">The Moon</span>
+      <span class="card-name-ko">달</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_19_Sun.png">
+      <span class="card-id">19</span>
+      <span class="card-name">The Sun</span>
+      <span class="card-name-ko">태양</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_20_Judgement.png">
+      <span class="card-id">20</span>
+      <span class="card-name">Judgement</span>
+      <span class="card-name-ko">심판</span>
+    </div>
+    <div class="card">
+      <img src="RWS_Tarot_21_World.png">
+      <span class="card-id">21</span>
+      <span class="card-name">The World</span>
+      <span class="card-name-ko">세계</span>
+    </div>
+  </div>
+</body>
+</html>

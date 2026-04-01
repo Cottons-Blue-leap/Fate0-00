@@ -4,7 +4,7 @@ import { playBgm } from '../logic/bgmEngine';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { sfxBreath, sfxShuffle, sfxCut, sfxCardFlip, sfxReadingReveal, sfxAdviceCard, sfxButtonClick, sfxTextInput } from '../logic/soundEngine';
-import { tarotSymbols } from '@fate0/shared';
+import TarotCardIcon from '../components/tarot/TarotCardIcon';
 import ShareButton from '../components/layout/ShareButton';
 import Watermark from '../components/layout/Watermark';
 import { addHistory, updateLatestEntry } from '../logic/historyEngine';
@@ -426,7 +426,7 @@ export default function TarotPage() {
                   {c.flipped ? (
                     <>
                       <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '4px' }}>{c.position}</div>
-                      <div style={{ fontSize: '28px', marginBottom: '4px', transform: c.isReversed ? 'rotate(180deg)' : 'none' }}>{tarotSymbols[c.id] || '🃏'}</div>
+                      <div style={{ marginBottom: '4px' }}><TarotCardIcon id={c.id} size={28} reversed={c.isReversed} /></div>
                       <div style={{ fontSize: '14px', fontWeight: 700 }}>{t(`tarot.cards.${c.id}.name`)}</div>
                       {c.isReversed && <div style={{ fontSize: '11px', color: '#e74c3c' }}>{t('tarot.reversed')}</div>}
                     </>
@@ -470,7 +470,7 @@ export default function TarotPage() {
               <motion.div key={i} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.2 }}
                 style={{ background: 'rgba(155,89,182,0.15)', border: '1px solid rgba(155,89,182,0.3)', borderRadius: '12px', padding: cards.length > 5 ? '14px' : '20px', marginBottom: cards.length > 5 ? '8px' : '12px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                  <span style={{ fontSize: '28px', display: 'inline-block', transform: c.isReversed ? 'rotate(180deg)' : 'none' }}>{tarotSymbols[c.id] || '🃏'}</span>
+                  <TarotCardIcon id={c.id} size={28} reversed={c.isReversed} />
                   <div>
                     <div className="mystic-glow" style={{ fontSize: '16px', fontWeight: 700 }}>{t(`tarot.cards.${c.id}.name`)}</div>
                     <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
@@ -535,7 +535,7 @@ export default function TarotPage() {
             <motion.div initial={{ rotateY: 180, opacity: 0 }} animate={{ rotateY: 0, opacity: 1 }} transition={{ duration: 0.8 }}
               style={{ background: 'rgba(212,175,55,0.15)', border: '2px solid rgba(212,175,55,0.4)', borderRadius: '16px', padding: 'clamp(16px, 3vh, 28px)', marginBottom: 'clamp(12px, 2vh, 20px)', display: 'inline-block' }}>
               <div style={{ fontSize: '12px', color: 'rgba(212,175,55,0.8)', marginBottom: '8px' }}>{t('tarot.adviceCard')}</div>
-              <div style={{ fontSize: '40px', marginBottom: '8px' }}>{tarotSymbols[adviceCard.id] || '🃏'}</div>
+              <div style={{ marginBottom: '8px' }}><TarotCardIcon id={adviceCard.id} size={40} reversed={adviceCard.isReversed} /></div>
               <div className="mystic-glow" style={{ fontSize: '20px', fontWeight: 700, marginBottom: '4px' }}>{t(`tarot.cards.${adviceCard.id}.name`)}</div>
               {adviceCard.isReversed && <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '8px' }}>{t('tarot.reversed')}</div>}
               <div style={{ fontSize: '15px', lineHeight: '1.8', textAlign: 'left', marginTop: '12px' }}>

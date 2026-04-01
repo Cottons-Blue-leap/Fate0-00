@@ -2,7 +2,9 @@ import { forwardRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useProfile } from '../../context/ProfileContext';
 import type { HistoryEntry } from '../../logic/historyEngine';
-import { tarotSymbols } from '@fate0/shared';
+import TarotCardIcon from '../tarot/TarotCardIcon';
+import SajuStemIcon from '../saju/SajuStemIcon';
+import OmikujiIcon from '../omikuji/OmikujiIcon';
 
 const CARD_WIDTH = 540;
 const CARD_HEIGHT = 900;
@@ -109,8 +111,8 @@ function TarotContent({ data, t }: { data: Record<string, unknown>; t: (k: strin
       {displayCards.map((id, i) => (
         <div key={i} style={{ marginBottom: '10px', padding: '10px 12px', background: 'rgba(155,89,182,0.06)', borderRadius: '8px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
-            <div style={{ fontSize: '24px', flexShrink: 0, width: '30px', textAlign: 'center', transform: reversed[i] ? 'rotate(180deg)' : 'none' }}>
-              {tarotSymbols[id] || '🃏'}
+            <div style={{ flexShrink: 0, width: '30px', textAlign: 'center' }}>
+              <TarotCardIcon id={id} size={24} reversed={reversed[i]} />
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontSize: '12px', fontWeight: 700 }}>
@@ -157,8 +159,8 @@ function TarotContent({ data, t }: { data: Record<string, unknown>; t: (k: strin
       {/* Advice card */}
       {adviceId !== undefined && (
         <div style={{ marginTop: '8px', padding: '8px 10px', background: 'rgba(212,175,55,0.08)', borderRadius: '8px', display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-          <div style={{ fontSize: '20px', flexShrink: 0, width: '26px', textAlign: 'center', transform: adviceReversed ? 'rotate(180deg)' : 'none' }}>
-            {tarotSymbols[adviceId] || '🃏'}
+          <div style={{ flexShrink: 0, width: '26px', textAlign: 'center' }}>
+            <TarotCardIcon id={adviceId} size={20} reversed={adviceReversed} />
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ fontSize: '10px', color: 'rgba(212,175,55,0.6)', marginBottom: '2px' }}>✦ {t('tarot.adviceCard')}</div>
@@ -239,6 +241,7 @@ function SajuContent({ data, t }: { data: Record<string, unknown>; t: (k: string
   const pillars = (data['pillars'] as string[]) || [];
   const dayMaster = data['dayMaster'] as string || '';
   const dayMasterEmoji = data['dayMasterEmoji'] as string || '';
+  const dayMasterStem = data['dayMasterStem'] as string || '';
   const birthInfo = data['birthInfo'] as string || '';
   const elements = data['elements'] as { dominant: string; deficient: string } | null;
   const dailyPillar = data['dailyPillar'] as string || '';
@@ -267,7 +270,7 @@ function SajuContent({ data, t }: { data: Record<string, unknown>; t: (k: string
 
       {dayMaster && (
         <div style={{ marginBottom: '8px' }}>
-          <div style={{ fontSize: '22px', marginBottom: '2px' }}>{dayMasterEmoji}</div>
+          <div style={{ marginBottom: '2px' }}><SajuStemIcon stem={dayMasterStem} emoji={dayMasterEmoji} size={22} /></div>
           <div style={{ fontSize: '14px', fontWeight: 700, color: '#f1948a' }}>{dayMaster}</div>
         </div>
       )}
@@ -364,7 +367,7 @@ function OmikujiContent({ data, t }: { data: Record<string, unknown>; t: (k: str
       {/* Detail items */}
       {(wish || love || travel || health) && (
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px 12px', marginTop: '8px', fontSize: '9px', color: 'rgba(255,255,255,0.35)', textAlign: 'left', padding: '0 8px' }}>
-          {wish && <div>🙏 {truncate(wish, 25)}</div>}
+          {wish && <div><OmikujiIcon name="pray" size={11} style={{ marginRight: '3px' }} />{truncate(wish, 25)}</div>}
           {love && <div>💕 {truncate(love, 25)}</div>}
           {travel && <div>✈️ {truncate(travel, 25)}</div>}
           {health && <div>💪 {truncate(health, 25)}</div>}

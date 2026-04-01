@@ -5,10 +5,17 @@ import { useTranslation } from 'react-i18next';
 import { getHistory, clearHistory, updateMemo } from '../logic/historyEngine';
 import type { HistoryEntry } from '../logic/historyEngine';
 import { sfxButtonClick } from '../logic/soundEngine';
-import { tarotSymbols, elementEmojis } from '@fate0/shared';
+import TarotCardIcon from '../components/tarot/TarotCardIcon';
+import SajuElementIcon from '../components/saju/SajuElementIcon';
+import SajuStemIcon from '../components/saju/SajuStemIcon';
 import ShareButton from '../components/layout/ShareButton';
+import OmikujiIcon from '../components/omikuji/OmikujiIcon';
 
-const typeIcons: Record<string, string> = { tarot: '🃏', horoscope: '⭐', saju: '🏮', omikuji: '🎋' };
+const typeEmojis: Record<string, string> = { tarot: '🃏', horoscope: '⭐', saju: '🏮' };
+function typeIcon(type: string, size: number): React.ReactNode {
+  if (type === 'omikuji') return <OmikujiIcon name="tanabata" size={size} />;
+  return typeEmojis[type] || '❓';
+}
 const typeColors: Record<string, string> = { tarot: '#9b59b6', horoscope: '#9b59b6', saju: '#e74c3c', omikuji: '#e74c3c' };
 
 function getDateGroup(isoDate: string, t: (key: string, opts?: Record<string, unknown>) => string): string {
@@ -31,7 +38,7 @@ function getDateGroup(isoDate: string, t: (key: string, opts?: Record<string, un
   return t('history.earlier', { defaultValue: '이전' });
 }
 
-function getWeeklySummary(entries: HistoryEntry[], t: (key: string, opts?: Record<string, unknown>) => string): { show: boolean; totalCount: number; typeCounts: Record<string, number>; elementFlow: string; mood: string } | null {
+function getWeeklySummary(entries: HistoryEntry[], t: (key: string, opts?: Record<string, unknown>) => string): { show: boolean; totalCount: number; typeCounts: Record<string, number>; elementFlow: string; dominantElementKey: string; mood: string } | null {
   const today = new Date();
   const weekAgo = new Date(today);
   weekAgo.setDate(weekAgo.getDate() - 7);
@@ -53,8 +60,9 @@ function getWeeklySummary(entries: HistoryEntry[], t: (key: string, opts?: Recor
 
   const dominantElement = Object.entries(elementCounts).sort((a, b) => b[1] - a[1])[0];
 
+  const dominantElementKey = dominantElement ? dominantElement[0] : '';
   const elementFlow = dominantElement
-    ? `${(elementEmojis as Record<string, string>)[dominantElement[0]] || ''} ${t(`saju.element.${dominantElement[0]}`, { defaultValue: dominantElement[0] })}`
+    ? t(`saju.element.${dominantElement[0]}`, { defaultValue: dominantElement[0] })
     : '';
 
   const daysWithEntries = new Set(weekEntries.map(e => e.date.slice(0, 10))).size;
@@ -68,6 +76,7 @@ function getWeeklySummary(entries: HistoryEntry[], t: (key: string, opts?: Recor
     totalCount: weekEntries.length,
     typeCounts,
     elementFlow,
+    dominantElementKey,
     mood,
   };
 }
@@ -241,13 +250,13 @@ export default function HistoryPage() {
                         borderRadius: '12px', fontSize: '12px', color: typeColors[type],
                         border: `1px solid ${typeColors[type]}30`,
                       }}>
-                        {typeIcons[type]} {count}
+                        {typeIcon(type, 14)} {count}
                       </div>
                     ))}
                   </div>
                   {weeklySummary.elementFlow && (
                     <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.45)', textAlign: 'center', marginBottom: '6px' }}>
-                      {t('weekly.elementFlow')}: {weeklySummary.elementFlow}
+                      {t('weekly.elementFlow')}: <SajuElementIcon element={weeklySummary.dominantElementKey} size={12} /> {weeklySummary.elementFlow}
                     </div>
                   )}
                   <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)', textAlign: 'center', fontStyle: 'italic' }}>
@@ -315,7 +324,7 @@ export default function HistoryPage() {
                         </div>
                       </div>
                     )}
-                    <div style={{ fontSize: '24px' }}>{typeIcons[entry.type]}</div>
+                    <div style={{ fontSize: '24px' }}>{typeIcon(entry.type, 24)}</div>
                     <div style={{ flex: 1 }}>
                       <div style={{ fontSize: '14px', fontWeight: 700 }}>{renderSummary(entry, t)}</div>
                       <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', marginTop: '2px' }}>{formatDate(entry.date)}</div>
@@ -395,7 +404,7 @@ export default function HistoryPage() {
               <div style={{ textAlign: 'center', marginBottom: '12px' }}>
                 <div style={{ fontSize: '9px', color: 'rgba(255,255,255,0.2)', letterSpacing: '4px' }}>✦ FATE 0:00 ✦</div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginTop: '8px' }}>
-                  <span style={{ fontSize: '28px' }}>{typeIcons[detailEntry.type]}</span>
+                  <span style={{ fontSize: '28px' }}>{typeIcon(detailEntry.type, 28)}</span>
                   <div>
                     <div style={{ fontSize: '16px', fontWeight: 700, color: typeColors[detailEntry.type] }}>
                       {t(`home.${detailEntry.type}`)}
@@ -536,8 +545,8 @@ function DetailContent({ entry, t }: { entry: HistoryEntry; t: (key: string, opt
 
           {cardIds.map((id, i) => (
             <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '10px', padding: '10px 12px', background: 'rgba(155,89,182,0.08)', borderRadius: '10px' }}>
-              <div style={{ fontSize: '28px', flexShrink: 0, width: '34px', textAlign: 'center', transform: reversed[i] ? 'rotate(180deg)' : 'none' }}>
-                {tarotSymbols[id] || '🃏'}
+              <div style={{ flexShrink: 0, width: '34px', textAlign: 'center' }}>
+                <TarotCardIcon id={id} size={28} reversed={reversed[i]} />
               </div>
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontSize: '14px', fontWeight: 700, marginBottom: '3px' }}>
@@ -559,8 +568,8 @@ function DetailContent({ entry, t }: { entry: HistoryEntry; t: (key: string, opt
 
           {adviceId !== undefined && (
             <div style={{ marginTop: '10px', padding: '10px 12px', background: 'rgba(212,175,55,0.08)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-              <div style={{ fontSize: '24px', flexShrink: 0, width: '30px', textAlign: 'center', transform: adviceReversed ? 'rotate(180deg)' : 'none' }}>
-                {tarotSymbols[adviceId] || '🃏'}
+              <div style={{ flexShrink: 0, width: '30px', textAlign: 'center' }}>
+                <TarotCardIcon id={adviceId} size={24} reversed={adviceReversed} />
               </div>
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontSize: '11px', color: 'rgba(212,175,55,0.6)', marginBottom: '3px' }}>✦ {t('tarot.adviceCard')}</div>
@@ -620,6 +629,7 @@ function DetailContent({ entry, t }: { entry: HistoryEntry; t: (key: string, opt
       const pillars = (data.pillars as string[]) || [];
       const dayMaster = data.dayMaster as string || '';
       const dayMasterEmoji = data.dayMasterEmoji as string || '';
+      const dayMasterStem = data.dayMasterStem as string || '';
       const dayMasterDesc = data.dayMasterDesc as string || '';
       const birthInfo = data.birthInfo as string || '';
       const elements = data.elements as { dominant: string; deficient: string } | null;
@@ -649,7 +659,7 @@ function DetailContent({ entry, t }: { entry: HistoryEntry; t: (key: string, opt
 
           {dayMaster && (
             <div style={{ marginBottom: '14px' }}>
-              {dayMasterEmoji && <div style={{ fontSize: '26px', marginBottom: '4px' }}>{dayMasterEmoji}</div>}
+              {(dayMasterStem || dayMasterEmoji) && <div style={{ marginBottom: '4px' }}><SajuStemIcon stem={dayMasterStem} emoji={dayMasterEmoji} size={26} /></div>}
               <div style={{ fontSize: '16px', fontWeight: 700, color: '#f1948a' }}>{dayMaster}</div>
             </div>
           )}
@@ -733,7 +743,7 @@ function DetailContent({ entry, t }: { entry: HistoryEntry; t: (key: string, opt
 
           {(wish || love || travel || health) && (
             <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginTop: '14px', fontSize: '12px', color: 'rgba(255,255,255,0.4)', flexWrap: 'wrap' }}>
-              {wish && <div>🙏 {wish}</div>}
+              {wish && <div><OmikujiIcon name="pray" size={14} style={{ marginRight: '4px' }} />{wish}</div>}
               {love && <div>💕 {love}</div>}
               {travel && <div>✈️ {travel}</div>}
               {health && <div>💪 {health}</div>}

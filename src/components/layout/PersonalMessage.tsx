@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useProfile } from '../../context/ProfileContext';
 import { getPersonalMessage } from '@fate0/shared';
+import SajuElementIcon from '../saju/SajuElementIcon';
 
 function hashDate(str: string): number {
   let h = 0;
@@ -81,7 +82,7 @@ export default function PersonalMessage({ allUsedToday }: Props) {
   const elementName = t(personal.elementNameKey);
   const rawMessage = t(personal.messageKey, {
     name: profile!.name,
-    element: `${personal.elementEmoji} ${elementName}`,
+    element: elementName,
   });
 
   return (
@@ -116,7 +117,7 @@ export default function PersonalMessage({ allUsedToday }: Props) {
           letterSpacing: '1px',
         }}
       >
-        <span>{personal.elementEmoji}</span>
+        <SajuElementIcon element={personal.dayMasterElement} size={11} />
         <span>{t('personalDaily.elementLabel')}</span>
         <span style={{ margin: '0 2px', opacity: 0.4 }}>·</span>
         <span>{elementName}({personal.dayMasterElement})</span>

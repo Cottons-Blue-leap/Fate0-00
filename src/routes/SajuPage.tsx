@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import PageShell from '../components/layout/PageShell';
 import { playBgm } from '../logic/bgmEngine';
-import { getSajuReading, getDayMasterProfile, analyzeElements, calculateDaeun, elementColors, elementEmojis, lunarToSolar, getSajuMonthAndYear } from '@fate0/shared';
+import { getSajuReading, getDayMasterProfile, analyzeElements, calculateDaeun, elementColors, lunarToSolar, getSajuMonthAndYear } from '@fate0/shared';
+import SajuElementIcon from '../components/saju/SajuElementIcon';
+import SajuStemIcon from '../components/saju/SajuStemIcon';
 import type { SajuReading, FiveElement } from '@fate0/shared';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -119,7 +121,7 @@ export default function SajuPage() {
       addHistory({ type: 'saju', summary: '', data: {
         pillars: reading.pillars.map(p => p.stem + p.branch),
         dayMaster: dayMaster.title, dayMasterElement: reading.dominantElement,
-        dayMasterEmoji: dayMaster.emoji, dayMasterDesc: dayMaster.description,
+        dayMasterEmoji: dayMaster.emoji, dayMasterStem: dayMaster.stem, dayMasterDesc: dayMaster.description,
         birthInfo: `${year}.${month}.${day} ${hour}:00`,
         elements: landscape ? { dominant: landscape.dominant, deficient: landscape.deficient } : null,
         dailyPillar: `${daily.todayPillar.stem}${daily.todayPillar.branch}`,
@@ -237,12 +239,12 @@ export default function SajuPage() {
                   <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '8px' }}>{p.label}</div>
                   <div style={{ fontSize: '28px', fontWeight: 700, color: elementColors[p.element] }}>{p.stem}</div>
                   <div style={{ fontSize: '10px', color: elementColors[p.element], marginTop: '2px' }}>
-                    {elementEmojis[p.element]} {t(`saju.element.${p.element}`)}
+                    <SajuElementIcon element={p.element} size={10} /> {t(`saju.element.${p.element}`)}
                   </div>
                   <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.1)', margin: '6px 0' }} />
                   <div style={{ fontSize: '28px', color: elementColors[p.branchElement] }}>{p.branch}</div>
                   <div style={{ fontSize: '10px', color: elementColors[p.branchElement], marginTop: '2px' }}>
-                    {elementEmojis[p.branchElement]} {t(`saju.element.${p.branchElement}`)}
+                    <SajuElementIcon element={p.branchElement} size={10} /> {t(`saju.element.${p.branchElement}`)}
                   </div>
                   {i === 2 && <div style={{ fontSize: '10px', color: 'rgba(212,175,55,0.7)', marginTop: '4px' }}>{t('saju.dayMasterLabel')}</div>}
                 </motion.div>
@@ -282,11 +284,11 @@ export default function SajuPage() {
               transition={{ duration: 0.8 }}
               style={{ marginBottom: '20px' }}
             >
-              <div style={{ fontSize: '80px', marginBottom: '8px' }}>{dayMaster.emoji}</div>
+              <div style={{ marginBottom: '8px' }}><SajuStemIcon stem={dayMaster.stem} size={80} /></div>
               <div className="mystic-glow" style={{ fontSize: '36px', fontWeight: 700, color: elementColors[dayMaster.element] }}>{dayMaster.stem}</div>
               <div style={{ fontSize: '18px', color: 'var(--accent-light)', marginTop: '4px' }}>{t(`dayMaster.${dayMaster.stem}.title`)}</div>
               <div style={{ fontSize: '13px', color: 'var(--text-muted)', marginTop: '4px' }}>
-                {elementEmojis[dayMaster.element]} {t(`saju.element.${dayMaster.element}`)} · {dayMaster.nature === '양' ? t('saju.yang') : t('saju.yin')}
+                <SajuElementIcon element={dayMaster.element} size={13} /> {t(`saju.element.${dayMaster.element}`)} · {dayMaster.nature === '양' ? t('saju.yang') : t('saju.yin')}
               </div>
             </motion.div>
 
@@ -400,7 +402,7 @@ export default function SajuPage() {
                       border: el === landscape.dominant ? `2px solid ${elementColors[el]}` : 'none',
                     }}
                   />
-                  <div style={{ fontSize: '20px', marginTop: '8px' }}>{elementEmojis[el]}</div>
+                  <div style={{ marginTop: '8px' }}><SajuElementIcon element={el} size={20} /></div>
                   <div style={{ fontSize: '13px', color: elementColors[el] }}>{t(`saju.element.${el}`)}</div>
                   <div style={{ fontSize: '16px', fontWeight: 700 }}>{count}</div>
                 </div>
@@ -410,10 +412,10 @@ export default function SajuPage() {
             {/* Dominant / Deficient */}
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', marginBottom: '16px' }}>
               <div style={{ padding: '8px 16px', background: `${elementColors[landscape.dominant]}20`, border: `1px solid ${elementColors[landscape.dominant]}50`, borderRadius: '20px', fontSize: '13px' }}>
-                {t('saju.excess')} {elementEmojis[landscape.dominant]} {t(`saju.element.${landscape.dominant}`)}({landscape.dominant})
+                {t('saju.excess')} <SajuElementIcon element={landscape.dominant} size={13} /> {t(`saju.element.${landscape.dominant}`)}({landscape.dominant})
               </div>
               <div style={{ padding: '8px 16px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '20px', fontSize: '13px' }}>
-                {t('saju.deficient')} {elementEmojis[landscape.deficient]} {t(`saju.element.${landscape.deficient}`)}({landscape.deficient})
+                {t('saju.deficient')} <SajuElementIcon element={landscape.deficient} size={13} /> {t(`saju.element.${landscape.deficient}`)}({landscape.deficient})
               </div>
             </div>
 
@@ -439,7 +441,7 @@ export default function SajuPage() {
                 borderRadius: '12px', padding: '14px', marginBottom: '8px', textAlign: 'left',
               }}>
                 <div style={{ fontSize: '11px', color: elementColors[landscape.dominant], marginBottom: '4px', fontWeight: 700 }}>
-                  {elementEmojis[landscape.dominant]} {t('saju.excess')} — {t(`saju.element.${landscape.dominant}`)}
+                  <SajuElementIcon element={landscape.dominant} size={11} /> {t('saju.excess')} — {t(`saju.element.${landscape.dominant}`)}
                 </div>
                 <div style={{ fontSize: '13px', lineHeight: '1.7', color: 'rgba(255,255,255,0.65)' }}>
                   {t(`elementDeep.excess.${landscape.dominant}`)}
@@ -451,7 +453,7 @@ export default function SajuPage() {
                 borderRadius: '12px', padding: '14px', textAlign: 'left',
               }}>
                 <div style={{ fontSize: '11px', color: elementColors[landscape.deficient], marginBottom: '4px', fontWeight: 700 }}>
-                  {elementEmojis[landscape.deficient]} {t('saju.deficient')} — {t(`saju.element.${landscape.deficient}`)}
+                  <SajuElementIcon element={landscape.deficient} size={11} /> {t('saju.deficient')} — {t(`saju.element.${landscape.deficient}`)}
                 </div>
                 <div style={{ fontSize: '13px', lineHeight: '1.7', color: 'rgba(255,255,255,0.65)' }}>
                   {t(`elementDeep.deficient.${landscape.deficient}`)}
@@ -549,13 +551,13 @@ export default function SajuPage() {
                   <div style={{ textAlign: 'center' }}>
                     <span style={{ fontSize: '32px', fontWeight: 700, color: elementColors[daily.todayPillar.element] }}>{daily.todayPillar.stem}</span>
                     <div style={{ fontSize: '10px', color: elementColors[daily.todayPillar.element] }}>
-                      {elementEmojis[daily.todayPillar.element]} {t(`saju.element.${daily.todayPillar.element}`)}
+                      <SajuElementIcon element={daily.todayPillar.element} size={10} /> {t(`saju.element.${daily.todayPillar.element}`)}
                     </div>
                   </div>
                   <div style={{ textAlign: 'center' }}>
                     <span style={{ fontSize: '32px', color: elementColors[daily.todayPillar.branchElement] }}>{daily.todayPillar.branch}</span>
                     <div style={{ fontSize: '10px', color: elementColors[daily.todayPillar.branchElement] }}>
-                      {elementEmojis[daily.todayPillar.branchElement]} {t(`saju.element.${daily.todayPillar.branchElement}`)}
+                      <SajuElementIcon element={daily.todayPillar.branchElement} size={10} /> {t(`saju.element.${daily.todayPillar.branchElement}`)}
                     </div>
                   </div>
                 </div>

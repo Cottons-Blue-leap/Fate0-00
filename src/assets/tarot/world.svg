@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- The World: 월계관 안의 춤추는 인물 -->
+  <defs>
+    <linearGradient id="world-glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c9a0dc"/>
+      <stop offset="100%" stop-color="#7b2faf"/>
+    </linearGradient>
+  </defs>
+  <!-- 월계관 (타원) -->
+  <ellipse cx="32" cy="32" rx="24" ry="28" stroke="url(#world-glow)" stroke-width="2" fill="none"/>
+  <!-- 월계관 장식 (잎) -->
+  <path d="M10 20 Q8 18 10 16" stroke="#c9a0dc" stroke-width="1" fill="none"/>
+  <path d="M8 24 Q6 22 8 20" stroke="#c9a0dc" stroke-width="1" fill="none"/>
+  <path d="M54 20 Q56 18 54 16" stroke="#c9a0dc" stroke-width="1" fill="none"/>
+  <path d="M56 24 Q58 22 56 20" stroke="#c9a0dc" stroke-width="1" fill="none"/>
+  <path d="M10 44 Q8 46 10 48" stroke="#c9a0dc" stroke-width="1" fill="none"/>
+  <path d="M54 44 Q56 46 54 48" stroke="#c9a0dc" stroke-width="1" fill="none"/>
+  <!-- 춤추는 인물 -->
+  <circle cx="32" cy="20" r="4.5" stroke="#c9a0dc" stroke-width="1.5" fill="none"/>
+  <line x1="32" y1="24.5" x2="32" y2="40" stroke="#c9a0dc" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- 팔 (양쪽으로 펼친) -->
+  <line x1="32" y1="30" x2="22" y2="26" stroke="#c9a0dc" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="32" y1="30" x2="42" y2="26" stroke="#c9a0dc" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- 지팡이 (양손) -->
+  <line x1="21" y1="24" x2="20" y2="28" stroke="#7b2faf" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="43" y1="24" x2="44" y2="28" stroke="#7b2faf" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- 다리 (춤추는 자세) -->
+  <line x1="32" y1="40" x2="26" y2="50" stroke="#c9a0dc" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="32" y1="40" x2="36" y2="48" stroke="#c9a0dc" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="36" y1="48" x2="38" y2="44" stroke="#c9a0dc" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- 네 모서리 심볼 (4원소) -->
+  <circle cx="10" cy="8" r="2" fill="#c9a0dc" opacity="0.6"/>
+  <circle cx="54" cy="8" r="2" fill="#c9a0dc" opacity="0.6"/>
+  <circle cx="10" cy="56" r="2" fill="#c9a0dc" opacity="0.6"/>
+  <circle cx="54" cy="56" r="2" fill="#c9a0dc" opacity="0.6"/>
+</svg>

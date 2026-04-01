@@ -12,6 +12,7 @@ import { useProfile } from '../context/ProfileContext';
 import { hasUsedToday } from '../logic/dailyLimitEngine';
 import { Capacitor } from '@capacitor/core';
 import { playBgm } from '../logic/bgmEngine';
+import OmikujiIcon from '../components/omikuji/OmikujiIcon';
 // import { useAuth } from '../context/AuthContext';
 // import { hasServer } from '../services/api';
 // import AuthModal from '../components/layout/AuthModal';
@@ -156,7 +157,7 @@ export default function HomePage() {
               <div style={{ flex: 1, maxWidth: '60px', height: '1px', background: 'linear-gradient(270deg, transparent, rgba(231,76,60,0.5))' }} />
             </div>
             <FortuneCard title={t('home.saju')} subtitle={t('home.sajuSub')} icon="🏮" to="/saju" theme="east" used={hasUsedToday('saju')} onReverse={() => setReverseTarget('saju')} />
-            <FortuneCard title={t('home.omikuji')} subtitle={t('home.omikujiSub')} icon="🎋" to="/omikuji" theme="east" used={hasUsedToday('omikuji')} onReverse={() => setReverseTarget('omikuji')} />
+            <FortuneCard title={t('home.omikuji')} subtitle={t('home.omikujiSub')} icon={<OmikujiIcon name="tanabata" size={40} />} to="/omikuji" theme="east" used={hasUsedToday('omikuji')} onReverse={() => setReverseTarget('omikuji')} />
           </>
         }
       />

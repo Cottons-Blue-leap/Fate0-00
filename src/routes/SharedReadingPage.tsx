@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { getShare } from '../services/api';
+import OmikujiIcon from '../components/omikuji/OmikujiIcon';
 
 export default function SharedReadingPage() {
   const { id } = useParams<{ id: string }>();
@@ -19,11 +20,11 @@ export default function SharedReadingPage() {
       .finally(() => setLoading(false));
   }, [id]);
 
-  const typeLabels: Record<string, { icon: string; color: string }> = {
+  const typeLabels: Record<string, { icon: React.ReactNode; color: string }> = {
     tarot: { icon: '🃏', color: '#9b59b6' },
     horoscope: { icon: '⭐', color: '#9b59b6' },
     saju: { icon: '🏮', color: '#e74c3c' },
-    omikuji: { icon: '🎋', color: '#e74c3c' },
+    omikuji: { icon: <OmikujiIcon name="tanabata" size={48} />, color: '#e74c3c' },
   };
 
   return (
