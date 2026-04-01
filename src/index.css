@@ -186,6 +186,22 @@ button:active:not(:disabled), [role="button"]:active:not(:disabled) {
   animation: mysticGlowIn 0.8s ease-out forwards;
 }
 
+/* B3: Candle flicker on step transitions — brief darkness pulse */
+@keyframes candleFlicker {
+  0%   { opacity: 0; }
+  30%  { opacity: 0.25; }
+  100% { opacity: 0; }
+}
+
+.step-veil {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  pointer-events: none;
+  z-index: 2;
+  animation: candleFlicker 0.4s ease-out forwards;
+}
+
 /* === RESPONSIVE === */
 
 /* Side decorations: only visible on desktop */
