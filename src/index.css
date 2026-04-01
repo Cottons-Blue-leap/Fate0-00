@@ -249,6 +249,15 @@ button:active:not(:disabled), [role="button"]:active:not(:disabled) {
     padding: 4px 10px;
     margin-bottom: 8px;
   }
+  /* Compact vertical spacing for mobile result screens */
+  .mystic-divider {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+  .fortune-memo {
+    margin-top: 10px !important;
+    margin-bottom: 12px !important;
+  }
 }
 
 /* Tablet / desktop (≥640px) */

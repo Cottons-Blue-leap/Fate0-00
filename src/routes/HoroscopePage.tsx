@@ -334,7 +334,7 @@ export default function HoroscopePage() {
         {step === 'oracle' && sunSign && oracleMessage && (
           <motion.div key="oracle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             style={{ textAlign: 'center', maxWidth: '500px', margin: '0 auto' }}>
-            <div style={{ fontSize: '14px', color: 'var(--text-muted)', letterSpacing: '2px', marginBottom: '20px' }}>
+            <div style={{ fontSize: '14px', color: 'var(--text-muted)', letterSpacing: '2px', marginBottom: 'clamp(10px, 2vh, 20px)' }}>
               {t('horoscope.step3')}
             </div>
 
@@ -347,8 +347,8 @@ export default function HoroscopePage() {
                 background: 'linear-gradient(135deg, rgba(20,10,40,0.9), rgba(40,15,60,0.9))',
                 border: '1px solid rgba(212,175,55,0.3)',
                 borderRadius: '16px',
-                padding: '40px 28px',
-                marginBottom: '24px',
+                padding: 'clamp(24px, 4vh, 40px) clamp(16px, 3vh, 28px)',
+                marginBottom: 'clamp(12px, 2vh, 24px)',
                 position: 'relative',
                 overflow: 'hidden',
               }}
@@ -361,7 +361,7 @@ export default function HoroscopePage() {
               }} />
 
               {/* Keyword fragments */}
-              <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '20px', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: 'clamp(10px, 2vh, 20px)', flexWrap: 'wrap' }}>
                 {[oracleAdj, oracleObj, oracleVerb].map((word, i) => (
                   <motion.span key={i}
                     initial={{ opacity: 0, y: 10 }}

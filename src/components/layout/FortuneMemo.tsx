@@ -24,6 +24,7 @@ export default function FortuneMemo({ fortuneType }: Props) {
   if (saved) {
     return (
       <motion.div
+        className="fortune-memo"
         initial={{ opacity: 0, y: 5 }}
         animate={{ opacity: 1, y: 0 }}
         style={{
@@ -45,6 +46,7 @@ export default function FortuneMemo({ fortuneType }: Props) {
 
   return (
     <motion.div
+      className="fortune-memo"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5 }}

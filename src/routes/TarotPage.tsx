@@ -496,7 +496,7 @@ export default function TarotPage() {
 
             <MysticDivider delay={0.3} />
             {/* Spread flow narrative */}
-            <div style={{ background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '12px', padding: '20px', marginBottom: '20px' }}>
+            <div style={{ background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '12px', padding: 'clamp(12px, 2vh, 20px)', marginBottom: 'clamp(12px, 2vh, 20px)' }}>
               <div style={{ fontSize: '13px', color: 'rgba(212,175,55,0.8)', marginBottom: '8px', fontWeight: 700 }}>
                 ✦ {t('tarot.flowLabel')}
               </div>
@@ -532,7 +532,7 @@ export default function TarotPage() {
               {t('tarot.step6Title')}
             </div>
             <motion.div initial={{ rotateY: 180, opacity: 0 }} animate={{ rotateY: 0, opacity: 1 }} transition={{ duration: 0.8 }}
-              style={{ background: 'rgba(212,175,55,0.15)', border: '2px solid rgba(212,175,55,0.4)', borderRadius: '16px', padding: '28px', marginBottom: '20px', display: 'inline-block' }}>
+              style={{ background: 'rgba(212,175,55,0.15)', border: '2px solid rgba(212,175,55,0.4)', borderRadius: '16px', padding: 'clamp(16px, 3vh, 28px)', marginBottom: 'clamp(12px, 2vh, 20px)', display: 'inline-block' }}>
               <div style={{ fontSize: '12px', color: 'rgba(212,175,55,0.8)', marginBottom: '8px' }}>{t('tarot.adviceCard')}</div>
               <div style={{ fontSize: '40px', marginBottom: '8px' }}>{tarotSymbols[adviceCard.id] || '🃏'}</div>
               <div className="mystic-glow" style={{ fontSize: '20px', fontWeight: 700, marginBottom: '4px' }}>{t(`tarot.cards.${adviceCard.id}.name`)}</div>
@@ -541,7 +541,7 @@ export default function TarotPage() {
                 {adviceCard.isReversed ? t(`tarot.cards.${adviceCard.id}.reversed`) : t(`tarot.cards.${adviceCard.id}.upright`)}
               </div>
             </motion.div>
-            <div style={{ color: 'var(--text-muted)', fontSize: '14px', lineHeight: '1.8', marginBottom: '24px' }}>
+            <div style={{ color: 'var(--text-muted)', fontSize: '14px', lineHeight: '1.8', marginBottom: 'clamp(12px, 2vh, 24px)' }}>
               {t('tarot.adviceMessage')}
             </div>
             <FortuneMemo fortuneType="tarot" />

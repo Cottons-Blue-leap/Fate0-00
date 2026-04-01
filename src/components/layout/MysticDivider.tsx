@@ -10,6 +10,7 @@ export default function MysticDivider({ delay = 0 }: { delay?: number }) {
       initial={{ opacity: 0, scaleX: 0 }}
       animate={{ opacity: 1, scaleX: 1 }}
       transition={{ delay, duration: 0.6, ease: 'easeOut' }}
+      className="mystic-divider"
       style={{
         display: 'flex', alignItems: 'center', gap: '12px',
         margin: '20px 0', justifyContent: 'center',

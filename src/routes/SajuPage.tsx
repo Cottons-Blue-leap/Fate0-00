@@ -528,13 +528,13 @@ export default function SajuPage() {
         {step === 'daily' && reading && dayMaster && daily && (
             <motion.div key="daily" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               style={{ textAlign: 'center', maxWidth: '500px', margin: '0 auto' }}>
-              <div style={{ fontSize: '14px', color: 'var(--text-muted)', letterSpacing: '2px', marginBottom: '20px' }}>
+              <div style={{ fontSize: '14px', color: 'var(--text-muted)', letterSpacing: '2px', marginBottom: 'clamp(10px, 2vh, 20px)' }}>
                 {t('saju.step5')}
               </div>
 
               <div ref={resultRef}>
               {/* Today's pillar */}
-              <div style={{ marginBottom: '20px' }}>
+              <div style={{ marginBottom: 'clamp(10px, 2vh, 20px)' }}>
                 <div style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '8px' }}>{t('sajuDaily.todayPillar')} · {daily.dateStr}</div>
                 <div style={{ display: 'inline-flex', gap: '4px', padding: '12px 24px', background: 'rgba(212,175,55,0.15)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: '12px', alignItems: 'center' }}>
                   <div style={{ textAlign: 'center' }}>
@@ -553,7 +553,7 @@ export default function SajuPage() {
               </div>
 
               {/* Interaction */}
-              <div style={{ background: `${dailyInterColor}15`, border: `1px solid ${dailyInterColor}40`, borderRadius: '12px', padding: '16px', marginBottom: '20px', fontSize: '14px', lineHeight: '1.8' }}>
+              <div style={{ background: `${dailyInterColor}15`, border: `1px solid ${dailyInterColor}40`, borderRadius: '12px', padding: 'clamp(10px, 1.5vh, 16px)', marginBottom: 'clamp(10px, 2vh, 20px)', fontSize: '14px', lineHeight: '1.8' }}>
                 <div style={{ fontSize: '12px', color: dailyInterColor, marginBottom: '6px', fontWeight: 700 }}>
                   {dayMaster.stem}({t(`saju.element.${dayMaster.element}`)}) × {daily.todayPillar.stem}({t(`saju.element.${daily.todayPillar.element}`)})
                 </div>
@@ -561,7 +561,7 @@ export default function SajuPage() {
               </div>
 
               {/* Scores */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '20px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', marginBottom: 'clamp(10px, 2vh, 20px)' }}>
                 {[
                   { key: 'overall', score: daily.overallScore },
                   { key: 'career', score: daily.categories.career },
@@ -584,7 +584,7 @@ export default function SajuPage() {
               </div>
 
               {/* Advice */}
-              <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '12px', padding: '16px', marginBottom: '24px', fontSize: '14px', lineHeight: '1.8', textAlign: 'left' }}>
+              <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '12px', padding: 'clamp(10px, 1.5vh, 16px)', marginBottom: 'clamp(12px, 2vh, 24px)', fontSize: '14px', lineHeight: '1.8', textAlign: 'left' }}>
                 {(() => {
                   const arr = t(`sajuDaily.advice.${daily.interaction}`, { returnObjects: true });
                   const idx = Number(daily.adviceKey.split('.').pop());

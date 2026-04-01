@@ -440,9 +440,9 @@ export default function OmikujiPage() {
             <motion.div
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              style={{ marginBottom: '16px' }}
+              style={{ marginBottom: 'clamp(8px, 1.5vh, 16px)' }}
             >
-              <div className="mystic-glow" style={{ fontSize: '56px', fontWeight: 700, color: rankColor(rankIdx), fontFamily: "'Noto Serif KR', serif", textShadow: `0 0 20px ${rankColor(rankIdx)}40` }}>
+              <div className="mystic-glow" style={{ fontSize: 'clamp(40px, 7vh, 56px)', fontWeight: 700, color: rankColor(rankIdx), fontFamily: "'Noto Serif KR', serif", textShadow: `0 0 20px ${rankColor(rankIdx)}40` }}>
                 {rankKanji[rankIdx]}
               </div>
               <div style={{ fontSize: '16px', color: 'var(--text-muted)' }}>{t(`omikuji.${ranks[rankIdx]}`)}</div>
@@ -457,7 +457,7 @@ export default function OmikujiPage() {
               style={{
                 background: rankIdx <= 4 ? 'rgba(212,175,55,0.08)' : 'rgba(231,76,60,0.08)',
                 border: `1px solid ${rankIdx <= 4 ? 'rgba(212,175,55,0.2)' : 'rgba(231,76,60,0.2)'}`,
-                borderRadius: '12px', padding: '14px', marginBottom: '16px', textAlign: 'left',
+                borderRadius: '12px', padding: 'clamp(10px, 1.5vh, 14px)', marginBottom: 'clamp(8px, 1.5vh, 16px)', textAlign: 'left',
               }}
             >
               <div style={{ fontSize: '11px', color: rankIdx <= 4 ? 'rgba(212,175,55,0.7)' : 'rgba(231,76,60,0.7)', marginBottom: '6px', fontWeight: 700, letterSpacing: '1px' }}>
