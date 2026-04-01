@@ -264,7 +264,7 @@ export default function HoroscopePage() {
               style={{
                 background: 'rgba(155,89,182,0.08)',
                 border: '1px solid rgba(155,89,182,0.2)',
-                borderRadius: '12px', padding: '16px', marginBottom: '12px', textAlign: 'left',
+                borderRadius: '12px', padding: '16px', marginBottom: '12px', textAlign: 'start',
               }}
             >
               <div style={{ fontSize: '12px', color: '#c39bd3', marginBottom: '6px', fontWeight: 700, letterSpacing: '1px' }}>
@@ -308,7 +308,7 @@ export default function HoroscopePage() {
                 const count = cat === 'overall' ? 12 : 10;
                 const idx = (seed + ci) % count;
                 return (
-                  <div key={cat} style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '10px', padding: '14px', marginBottom: '8px', textAlign: 'left' }}>
+                  <div key={cat} style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '10px', padding: '14px', marginBottom: '8px', textAlign: 'start' }}>
                     <div style={{ fontSize: '13px', color: 'var(--accent-light)', marginBottom: '4px', fontWeight: 700 }}>
                       {t(`horoscope.${cat}`)}
                     </div>

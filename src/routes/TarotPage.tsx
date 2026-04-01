@@ -539,7 +539,7 @@ export default function TarotPage() {
               <div style={{ marginBottom: '8px' }}><TarotCardIcon id={adviceCard.id} size={40} reversed={adviceCard.isReversed} /></div>
               <div className="mystic-glow" style={{ fontSize: '20px', fontWeight: 700, marginBottom: '4px' }}>{t(`tarot.cards.${adviceCard.id}.name`)}</div>
               {adviceCard.isReversed && <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '8px' }}>{t('tarot.reversed')}</div>}
-              <div style={{ fontSize: '15px', lineHeight: '1.8', textAlign: 'left', marginTop: '12px' }}>
+              <div style={{ fontSize: '15px', lineHeight: '1.8', textAlign: 'start', marginTop: '12px' }}>
                 {adviceCard.isReversed ? t(`tarot.cards.${adviceCard.id}.reversed`) : t(`tarot.cards.${adviceCard.id}.upright`)}
               </div>
             </motion.div>

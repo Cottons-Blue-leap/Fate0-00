@@ -117,7 +117,7 @@ function TarotContent({ data, t }: { data: Record<string, unknown>; t: (k: strin
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontSize: '12px', fontWeight: 700 }}>
                 {t(`tarot.cards.${id}.name`)}
-                {reversed[i] && <span style={{ color: '#e74c3c', fontSize: '9px', marginLeft: '4px' }}>{t('tarot.reversed')}</span>}
+                {reversed[i] && <span style={{ color: '#e74c3c', fontSize: '9px', marginInlineStart: '4px' }}>{t('tarot.reversed')}</span>}
               </div>
               <div style={{ fontSize: '9px', color: 'rgba(212,175,55,0.6)', marginTop: '1px' }}>
                 ✦ {t(`tarot.deep.${id}.archetype`)}
@@ -166,7 +166,7 @@ function TarotContent({ data, t }: { data: Record<string, unknown>; t: (k: strin
             <div style={{ fontSize: '10px', color: 'rgba(212,175,55,0.6)', marginBottom: '2px' }}>✦ {t('tarot.adviceCard')}</div>
             <div style={{ fontSize: '11px', fontWeight: 700, marginBottom: '2px' }}>
               {t(`tarot.cards.${adviceId}.name`)}
-              {adviceReversed && <span style={{ color: '#e74c3c', fontSize: '9px', marginLeft: '4px' }}>{t('tarot.reversed')}</span>}
+              {adviceReversed && <span style={{ color: '#e74c3c', fontSize: '9px', marginInlineStart: '4px' }}>{t('tarot.reversed')}</span>}
             </div>
             <div style={{ fontSize: '9px', lineHeight: '1.5', color: 'rgba(255,255,255,0.4)' }}>
               {truncate(adviceReversed ? t(`tarot.cards.${adviceId}.reversed`) : t(`tarot.cards.${adviceId}.upright`), 80)}
@@ -202,7 +202,7 @@ function HoroscopeContent({ data, t }: { data: Record<string, unknown>; t: (k: s
 
       {/* Sign personality trait */}
       {sign && (
-        <div style={{ margin: '10px 0', padding: '10px 14px', background: 'rgba(155,89,182,0.08)', borderRadius: '8px', textAlign: 'left' }}>
+        <div style={{ margin: '10px 0', padding: '10px 14px', background: 'rgba(155,89,182,0.08)', borderRadius: '8px', textAlign: 'start' }}>
           <div style={{ fontSize: '9px', color: '#c39bd3', marginBottom: '4px', fontWeight: 700, letterSpacing: '1px' }}>
             {symbols[sign]} {t('signContext.title')}
           </div>
@@ -277,7 +277,7 @@ function SajuContent({ data, t }: { data: Record<string, unknown>; t: (k: string
 
       {/* Day Master deep profile */}
       {dayStem && (
-        <div style={{ margin: '8px 0', padding: '10px 14px', background: 'rgba(231,76,60,0.06)', borderRadius: '8px', textAlign: 'left' }}>
+        <div style={{ margin: '8px 0', padding: '10px 14px', background: 'rgba(231,76,60,0.06)', borderRadius: '8px', textAlign: 'start' }}>
           <div style={{ fontSize: '10px', lineHeight: '1.6', color: 'rgba(255,255,255,0.5)', marginBottom: '6px' }}>
             {truncate(t(`dayMaster.${dayStem}.desc`), 100)}
           </div>
@@ -366,8 +366,8 @@ function OmikujiContent({ data, t }: { data: Record<string, unknown>; t: (k: str
 
       {/* Detail items */}
       {(wish || love || travel || health) && (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px 12px', marginTop: '8px', fontSize: '9px', color: 'rgba(255,255,255,0.35)', textAlign: 'left', padding: '0 8px' }}>
-          {wish && <div><OmikujiIcon name="pray" size={11} style={{ marginRight: '3px' }} />{truncate(wish, 25)}</div>}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px 12px', marginTop: '8px', fontSize: '9px', color: 'rgba(255,255,255,0.35)', textAlign: 'start', padding: '0 8px' }}>
+          {wish && <div><OmikujiIcon name="pray" size={11} style={{ marginInlineEnd: '3px' }} />{truncate(wish, 25)}</div>}
           {love && <div>💕 {truncate(love, 25)}</div>}
           {travel && <div>✈️ {truncate(travel, 25)}</div>}
           {health && <div>💪 {truncate(health, 25)}</div>}

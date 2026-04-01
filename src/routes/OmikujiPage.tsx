@@ -460,7 +460,7 @@ export default function OmikujiPage() {
               style={{
                 background: rankIdx <= 4 ? 'rgba(212,175,55,0.08)' : 'rgba(231,76,60,0.08)',
                 border: `1px solid ${rankIdx <= 4 ? 'rgba(212,175,55,0.2)' : 'rgba(231,76,60,0.2)'}`,
-                borderRadius: '12px', padding: 'clamp(10px, 1.5vh, 14px)', marginBottom: 'clamp(8px, 1.5vh, 16px)', textAlign: 'left',
+                borderRadius: '12px', padding: 'clamp(10px, 1.5vh, 14px)', marginBottom: 'clamp(8px, 1.5vh, 16px)', textAlign: 'start',
               }}
             >
               <div style={{ fontSize: '11px', color: rankIdx <= 4 ? 'rgba(212,175,55,0.7)' : 'rgba(231,76,60,0.7)', marginBottom: '6px', fontWeight: 700, letterSpacing: '1px' }}>
@@ -470,7 +470,7 @@ export default function OmikujiPage() {
                 {t(`rankGuide.${ranks[rankIdx]}.meaning`)}
               </div>
               <div style={{ fontSize: '12px', lineHeight: '1.6', color: 'rgba(255,255,255,0.5)', fontStyle: 'italic' }}>
-                <OmikujiIcon name="bulb" size={14} style={{ marginRight: '4px' }} />{t(`rankGuide.${ranks[rankIdx]}.advice`)}
+                <OmikujiIcon name="bulb" size={14} style={{ marginInlineEnd: '4px' }} />{t(`rankGuide.${ranks[rankIdx]}.advice`)}
               </div>
             </motion.div>
 
@@ -486,7 +486,7 @@ export default function OmikujiPage() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.15 }}
-                style={{ textAlign: 'left', marginBottom: '10px', padding: '14px', background: 'rgba(0,0,0,0.2)', borderRadius: '10px' }}
+                style={{ textAlign: 'start', marginBottom: '10px', padding: '14px', background: 'rgba(0,0,0,0.2)', borderRadius: '10px' }}
               >
                 <div style={{ fontSize: '12px', color: 'var(--accent-light)', marginBottom: '4px', fontWeight: 700 }}>{t(`omikuji.${field}`)}</div>
                 <div style={{ fontSize: '14px', lineHeight: '1.7' }}>{t(`omikujiData.${ranks[rankIdx]}.0.${field}`)}</div>

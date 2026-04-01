@@ -333,7 +333,7 @@ export default function HistoryPage() {
                       <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', marginTop: '2px' }}>{formatDate(entry.date)}</div>
                       {entry.memo && (
                         <div style={{ fontSize: '11px', color: 'rgba(212,175,55,0.5)', marginTop: '3px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                          <TablerIcon name="message-circle" size={12} style={{ marginRight: '3px' }} />{entry.memo}
+                          <TablerIcon name="message-circle" size={12} style={{ marginInlineEnd: '3px' }} />{entry.memo}
                         </div>
                       )}
                     </div>
@@ -471,14 +471,14 @@ export default function HistoryPage() {
                   >
                     {detailEntry.memo ? (
                       <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)', fontStyle: 'italic' }}>
-                        <TablerIcon name="message-circle" size={12} style={{ marginRight: '3px' }} />{detailEntry.memo}
+                        <TablerIcon name="message-circle" size={12} style={{ marginInlineEnd: '3px' }} />{detailEntry.memo}
                         <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.25)', marginTop: '4px' }}>
                           {t('memo.tapToEdit', { defaultValue: '탭하여 수정' })}
                         </div>
                       </div>
                     ) : (
                       <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.25)' }}>
-                        <TablerIcon name="message-circle" size={12} style={{ marginRight: '3px' }} />{t('memo.addNote', { defaultValue: '메모를 남겨보세요' })}
+                        <TablerIcon name="message-circle" size={12} style={{ marginInlineEnd: '3px' }} />{t('memo.addNote', { defaultValue: '메모를 남겨보세요' })}
                       </div>
                     )}
                   </motion.div>
@@ -554,7 +554,7 @@ function DetailContent({ entry, t }: { entry: HistoryEntry; t: (key: string, opt
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ fontSize: '14px', fontWeight: 700, marginBottom: '3px' }}>
                   {t(`tarot.cards.${id}.name`)}
-                  {reversed[i] && <span style={{ color: '#e74c3c', fontSize: '10px', marginLeft: '6px' }}>{t('tarot.reversed')}</span>}
+                  {reversed[i] && <span style={{ color: '#e74c3c', fontSize: '10px', marginInlineStart: '6px' }}>{t('tarot.reversed')}</span>}
                 </div>
                 <div style={{ fontSize: '12px', lineHeight: '1.6', color: 'rgba(255,255,255,0.5)' }}>
                   {reversed[i] ? t(`tarot.cards.${id}.reversed`) : t(`tarot.cards.${id}.upright`)}
@@ -578,7 +578,7 @@ function DetailContent({ entry, t }: { entry: HistoryEntry; t: (key: string, opt
                 <div style={{ fontSize: '11px', color: 'rgba(212,175,55,0.6)', marginBottom: '3px' }}>✦ {t('tarot.adviceCard')}</div>
                 <div style={{ fontSize: '13px', fontWeight: 700, marginBottom: '3px' }}>
                   {t(`tarot.cards.${adviceId}.name`)}
-                  {adviceReversed && <span style={{ color: '#e74c3c', fontSize: '10px', marginLeft: '6px' }}>{t('tarot.reversed')}</span>}
+                  {adviceReversed && <span style={{ color: '#e74c3c', fontSize: '10px', marginInlineStart: '6px' }}>{t('tarot.reversed')}</span>}
                 </div>
                 <div style={{ fontSize: '11px', lineHeight: '1.6', color: 'rgba(255,255,255,0.45)' }}>
                   {adviceReversed ? t(`tarot.cards.${adviceId}.reversed`) : t(`tarot.cards.${adviceId}.upright`)}
@@ -746,7 +746,7 @@ function DetailContent({ entry, t }: { entry: HistoryEntry; t: (key: string, opt
 
           {(wish || love || travel || health) && (
             <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginTop: '14px', fontSize: '12px', color: 'rgba(255,255,255,0.4)', flexWrap: 'wrap' }}>
-              {wish && <div><OmikujiIcon name="pray" size={14} style={{ marginRight: '4px' }} />{wish}</div>}
+              {wish && <div><OmikujiIcon name="pray" size={14} style={{ marginInlineEnd: '4px' }} />{wish}</div>}
               {love && <div>💕 {love}</div>}
               {travel && <div>✈️ {travel}</div>}
               {health && <div>💪 {health}</div>}

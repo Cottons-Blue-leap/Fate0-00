@@ -294,7 +294,7 @@ button:active:not(:disabled), [role="button"]:active:not(:disabled) {
   }
 }
 
-/* RTL support for Arabic */
+/* RTL support for Arabic — uses CSS logical properties where possible */
 [dir="rtl"] {
   text-align: right;
 }
@@ -312,9 +312,20 @@ button:active:not(:disabled), [role="button"]:active:not(:disabled) {
 [dir="rtl"] input,
 [dir="rtl"] textarea {
   text-align: right;
+  direction: rtl;
 }
 
 [dir="rtl"] input[type="text"][style*="text-align: center"],
 [dir="rtl"] textarea[style*="text-align: center"] {
   text-align: center;
+}
+
+/* Ensure flex gaps and grid work correctly in RTL */
+[dir="rtl"] [style*="flex-direction: row"] {
+  direction: rtl;
+}
+
+/* Flip decorative gradients */
+[dir="rtl"] [style*="linear-gradient(90deg"] {
+  direction: rtl;
 }

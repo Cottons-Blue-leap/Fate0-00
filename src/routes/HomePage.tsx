@@ -82,7 +82,7 @@ export default function HomePage() {
                 padding: '5px 10px', background: 'rgba(255,255,255,0.05)',
                 borderRadius: '14px', fontSize: '11px', color: 'rgba(255,255,255,0.45)', cursor: 'pointer',
               }}>
-                <TablerIcon name="history" size={14} style={{ marginRight: '4px' }} />{t('history.title')}
+                <TablerIcon name="history" size={14} style={{ marginInlineEnd: '4px' }} />{t('history.title')}
               </motion.div>
             </Link>
             {profile && (

@@ -86,7 +86,7 @@ function TarotSection({ entry, t }: { entry: HistoryEntry; t: (k: string, o?: Re
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ fontSize: '12px', fontWeight: 700 }}>
               {t(`tarot.cards.${id}.name`)}
-              {reversed[i] && <span style={{ color: '#e74c3c', fontSize: '9px', marginLeft: '4px' }}>{t('tarot.reversed')}</span>}
+              {reversed[i] && <span style={{ color: '#e74c3c', fontSize: '9px', marginInlineStart: '4px' }}>{t('tarot.reversed')}</span>}
             </div>
             <div style={{ fontSize: '10px', lineHeight: '1.5', color: 'rgba(255,255,255,0.45)', marginTop: '2px' }}>
               {truncate(reversed[i] ? t(`tarot.cards.${id}.reversed`) : t(`tarot.cards.${id}.upright`), 80)}
@@ -103,7 +103,7 @@ function TarotSection({ entry, t }: { entry: HistoryEntry; t: (k: string, o?: Re
             <div style={{ fontSize: '10px', color: 'rgba(212,175,55,0.6)', marginBottom: '2px' }}>✦ {t('tarot.adviceCard')}</div>
             <div style={{ fontSize: '11px', fontWeight: 700 }}>
               {t(`tarot.cards.${adviceId}.name`)}
-              {adviceReversed && <span style={{ color: '#e74c3c', fontSize: '9px', marginLeft: '4px' }}>{t('tarot.reversed')}</span>}
+              {adviceReversed && <span style={{ color: '#e74c3c', fontSize: '9px', marginInlineStart: '4px' }}>{t('tarot.reversed')}</span>}
             </div>
           </div>
         </div>
@@ -211,7 +211,7 @@ function OmikujiSection({ entry, t }: { entry: HistoryEntry; t: (k: string) => s
       )}
       {(wish || love || health) && (
         <div style={{ display: 'flex', gap: '10px', fontSize: '10px', color: 'rgba(255,255,255,0.4)', flexWrap: 'wrap' }}>
-          {wish && <span><OmikujiIcon name="pray" size={12} style={{ marginRight: '3px' }} />{truncate(wish, 18)}</span>}
+          {wish && <span><OmikujiIcon name="pray" size={12} style={{ marginInlineEnd: '3px' }} />{truncate(wish, 18)}</span>}
           {love && <span>💕 {truncate(love, 18)}</span>}
           {health && <span>💪 {truncate(health, 18)}</span>}
         </div>

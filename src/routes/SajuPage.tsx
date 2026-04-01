@@ -299,7 +299,7 @@ export default function SajuPage() {
               transition={{ delay: 0.5 }}
               style={{
                 background: 'rgba(255,255,255,0.05)', borderRadius: '12px', padding: '20px',
-                fontSize: '15px', lineHeight: '2', textAlign: 'left', marginBottom: '16px',
+                fontSize: '15px', lineHeight: '2', textAlign: 'start', marginBottom: '16px',
               }}
             >
               {t(`dayMaster.${dayMaster.stem}.desc`)}
@@ -316,7 +316,7 @@ export default function SajuPage() {
               {/* Strengths */}
               <div style={{
                 background: 'rgba(46,204,113,0.08)', border: '1px solid rgba(46,204,113,0.2)',
-                borderRadius: '12px', padding: '16px', marginBottom: '8px', textAlign: 'left',
+                borderRadius: '12px', padding: '16px', marginBottom: '8px', textAlign: 'start',
               }}>
                 <div style={{ fontSize: '12px', color: '#2ecc71', marginBottom: '8px', fontWeight: 700, letterSpacing: '1px' }}>
                   ✦ {t('saju.profileStrengths', '강점')}
@@ -331,7 +331,7 @@ export default function SajuPage() {
               {/* Weaknesses */}
               <div style={{
                 background: 'rgba(231,76,60,0.08)', border: '1px solid rgba(231,76,60,0.2)',
-                borderRadius: '12px', padding: '16px', marginBottom: '8px', textAlign: 'left',
+                borderRadius: '12px', padding: '16px', marginBottom: '8px', textAlign: 'start',
               }}>
                 <div style={{ fontSize: '12px', color: '#e74c3c', marginBottom: '8px', fontWeight: 700, letterSpacing: '1px' }}>
                   ✦ {t('saju.profileWeaknesses', '주의점')}
@@ -347,10 +347,10 @@ export default function SajuPage() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
                 <div style={{
                   background: 'rgba(212,175,55,0.08)', border: '1px solid rgba(212,175,55,0.2)',
-                  borderRadius: '12px', padding: '14px', textAlign: 'left',
+                  borderRadius: '12px', padding: '14px', textAlign: 'start',
                 }}>
                   <div style={{ fontSize: '11px', color: '#ffd700', marginBottom: '6px', fontWeight: 700 }}>
-                    <TablerIcon name="compass" size={14} color="#f1948a" style={{ marginRight: '4px' }} />{t('saju.profileDirection', '방향')}
+                    <TablerIcon name="compass" size={14} color="#f1948a" style={{ marginInlineEnd: '4px' }} />{t('saju.profileDirection', '방향')}
                   </div>
                   <div style={{ fontSize: '12px', lineHeight: '1.7', color: 'rgba(255,255,255,0.6)' }}>
                     {t(`dayMaster.${dayMaster.stem}.direction`)}
@@ -358,10 +358,10 @@ export default function SajuPage() {
                 </div>
                 <div style={{
                   background: 'rgba(155,89,182,0.08)', border: '1px solid rgba(155,89,182,0.2)',
-                  borderRadius: '12px', padding: '14px', textAlign: 'left',
+                  borderRadius: '12px', padding: '14px', textAlign: 'start',
                 }}>
                   <div style={{ fontSize: '11px', color: '#c39bd3', marginBottom: '6px', fontWeight: 700 }}>
-                    <TablerIcon name="heart" size={14} color="#f1948a" style={{ marginRight: '4px' }} />{t('saju.profileRelationship', '관계')}
+                    <TablerIcon name="heart" size={14} color="#f1948a" style={{ marginInlineEnd: '4px' }} />{t('saju.profileRelationship', '관계')}
                   </div>
                   <div style={{ fontSize: '12px', lineHeight: '1.7', color: 'rgba(255,255,255,0.6)' }}>
                     {t(`dayMaster.${dayMaster.stem}.relationship`)}
@@ -421,7 +421,7 @@ export default function SajuPage() {
             </div>
 
             {/* Analysis */}
-            <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '12px', padding: '16px', fontSize: '14px', lineHeight: '1.8', textAlign: 'left', marginBottom: '12px' }}>
+            <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '12px', padding: '16px', fontSize: '14px', lineHeight: '1.8', textAlign: 'start', marginBottom: '12px' }}>
               {t(landscape.analysis)}
             </div>
 
@@ -439,7 +439,7 @@ export default function SajuPage() {
               <div style={{
                 background: `${elementColors[landscape.dominant]}10`,
                 border: `1px solid ${elementColors[landscape.dominant]}30`,
-                borderRadius: '12px', padding: '14px', marginBottom: '8px', textAlign: 'left',
+                borderRadius: '12px', padding: '14px', marginBottom: '8px', textAlign: 'start',
               }}>
                 <div style={{ fontSize: '11px', color: elementColors[landscape.dominant], marginBottom: '4px', fontWeight: 700 }}>
                   <SajuElementIcon element={landscape.dominant} size={11} /> {t('saju.excess')} — {t(`saju.element.${landscape.dominant}`)}
@@ -451,7 +451,7 @@ export default function SajuPage() {
               <div style={{
                 background: 'rgba(255,255,255,0.04)',
                 border: '1px solid rgba(255,255,255,0.1)',
-                borderRadius: '12px', padding: '14px', textAlign: 'left',
+                borderRadius: '12px', padding: '14px', textAlign: 'start',
               }}>
                 <div style={{ fontSize: '11px', color: elementColors[landscape.deficient], marginBottom: '4px', fontWeight: 700 }}>
                   <SajuElementIcon element={landscape.deficient} size={11} /> {t('saju.deficient')} — {t(`saju.element.${landscape.deficient}`)}
@@ -501,7 +501,7 @@ export default function SajuPage() {
                       display: 'flex', alignItems: 'center', gap: '12px',
                       background: isCurrent ? 'rgba(212,175,55,0.15)' : 'rgba(255,255,255,0.03)',
                       border: `1px solid ${isCurrent ? 'rgba(212,175,55,0.5)' : 'rgba(255,255,255,0.08)'}`,
-                      borderRadius: '10px', padding: '12px 16px', textAlign: 'left',
+                      borderRadius: '10px', padding: '12px 16px', textAlign: 'start',
                     }}
                   >
                     <div style={{ fontSize: '12px', color: 'var(--text-muted)', width: '70px', flexShrink: 0 }}>
@@ -596,7 +596,7 @@ export default function SajuPage() {
               </div>
 
               {/* Advice */}
-              <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '12px', padding: 'clamp(10px, 1.5vh, 16px)', marginBottom: 'clamp(12px, 2vh, 24px)', fontSize: '14px', lineHeight: '1.8', textAlign: 'left' }}>
+              <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '12px', padding: 'clamp(10px, 1.5vh, 16px)', marginBottom: 'clamp(12px, 2vh, 24px)', fontSize: '14px', lineHeight: '1.8', textAlign: 'start' }}>
                 {(() => {
                   const arr = t(`sajuDaily.advice.${daily.interaction}`, { returnObjects: true });
                   const idx = Number(daily.adviceKey.split('.').pop());

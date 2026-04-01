@@ -78,7 +78,7 @@ export default function SharedReadingPage() {
             borderRadius: '16px',
             padding: '1.5rem',
             border: '1px solid rgba(255,255,255,0.1)',
-            textAlign: 'left',
+            textAlign: 'start',
             lineHeight: '1.8',
             fontSize: '0.95rem',
           }}>
