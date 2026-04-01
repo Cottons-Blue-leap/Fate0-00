@@ -53,8 +53,10 @@ export default function PageShell({ theme, title, children, pattern }: Props) {
           <LanguageSwitcher />
         </div>
         <h1 className="page-title" style={{ flexShrink: 0 }}>{title}</h1>
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: 0, overflowY: 'auto', paddingBottom: `max(${NATIVE_BOTTOM_PAD}px, env(safe-area-inset-bottom, ${NATIVE_BOTTOM_PAD}px))` }}>
-          {children}
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0, overflowY: 'auto', paddingBottom: `max(${NATIVE_BOTTOM_PAD}px, env(safe-area-inset-bottom, ${NATIVE_BOTTOM_PAD}px))` }}>
+          <div style={{ margin: 'auto 0' }}>
+            {children}
+          </div>
         </div>
       </div>
     </motion.div>
