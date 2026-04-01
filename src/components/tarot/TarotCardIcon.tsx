@@ -6,7 +6,7 @@ interface Props {
 }
 
 export default function TarotCardIcon({ id, size, reversed, style }: Props) {
-  const src = `/tarot/${String(id).padStart(2, '0')}.png`;
+  const src = `/tarot/${String(id).padStart(2, '0')}.webp`;
   return (
     <img
       src={src}
