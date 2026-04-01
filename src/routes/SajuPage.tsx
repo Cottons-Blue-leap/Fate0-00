@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import PageShell from '../components/layout/PageShell';
 import { playBgm } from '../logic/bgmEngine';
 import { getSajuReading, getDayMasterProfile, analyzeElements, calculateDaeun, elementColors, elementEmojis, lunarToSolar, getSajuMonthAndYear } from '@fate0/shared';
@@ -66,21 +66,27 @@ export default function SajuPage() {
   ) : null;
 
   // Calculate daeun using corrected pillar data from reading
-  const daeunPeriods = reading ? (() => {
+  const daeunPeriods = useMemo(() => {
+    if (!reading) return [];
     const solar = isLunar ? lunarToSolar(year, month, day) : { year, month, day };
     const date = new Date(solar.year, solar.month - 1, solar.day, hour);
     const { branchIndex: monthBranchIdx, sajuYear } = getSajuMonthAndYear(date);
     const yearStemIdx = ((sajuYear - 4) % 10 + 10) % 10;
-
-    // Get month stem index from reading's month pillar
     const monthStemIdx = reading.pillars[1].stem
       ? ['甲','乙','丙','丁','戊','己','庚','辛','壬','癸'].indexOf(reading.pillars[1].stem)
       : 0;
     const dayMasterElement = reading.pillars[2].element;
-
     return calculateDaeun(monthStemIdx, monthBranchIdx, yearStemIdx, gender, date, dayMasterElement);
-  })() : [];
+  }, [reading, isLunar, year, month, day, hour, gender]);
   const currentAge = new Date().getFullYear() - year;
+
+  // Daily fortune data (computed once when dayMaster is available)
+  const daily = useMemo(() => {
+    if (!dayMaster) return null;
+    return getDailyFortune(dayMaster.element);
+  }, [dayMaster]);
+  const dailyInterColor = daily ? (daily.overallScore >= 4 ? '#2ecc71' : daily.overallScore >= 3 ? '#f39c12' : '#e74c3c') : '#888';
+  const stars = (n: number) => '★'.repeat(n) + '☆'.repeat(5 - n);
 
   // Sound effects on step changes
   useEffect(() => {
@@ -107,8 +113,7 @@ export default function SajuPage() {
     if (step === 'daeun') {
       sfxDaeunTimeline();
     }
-    if (step === 'daily' && reading && dayMaster && !hasUsedToday('saju')) {
-      const daily = getDailyFortune(dayMaster.element);
+    if (step === 'daily' && reading && dayMaster && daily && !hasUsedToday('saju')) {
       addHistory({ type: 'saju', summary: '', data: {
         pillars: reading.pillars.map(p => p.stem + p.branch),
         dayMaster: dayMaster.title, dayMasterElement: reading.dominantElement,
@@ -517,12 +522,7 @@ export default function SajuPage() {
         )}
 
         {/* STEP 5: DAILY FORTUNE — Today's Ilchin */}
-        {step === 'daily' && reading && dayMaster && (() => {
-          const daily = getDailyFortune(dayMaster.element);
-          const interColor = daily.overallScore >= 4 ? '#2ecc71' : daily.overallScore >= 3 ? '#f39c12' : '#e74c3c';
-          const stars = (n: number) => '★'.repeat(n) + '☆'.repeat(5 - n);
-
-          return (
+        {step === 'daily' && reading && dayMaster && daily && (
             <motion.div key="daily" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               style={{ textAlign: 'center', maxWidth: '500px', margin: '0 auto' }}>
               <div style={{ fontSize: '14px', color: 'var(--text-muted)', letterSpacing: '2px', marginBottom: '20px' }}>
@@ -550,8 +550,8 @@ export default function SajuPage() {
               </div>
 
               {/* Interaction */}
-              <div style={{ background: `${interColor}15`, border: `1px solid ${interColor}40`, borderRadius: '12px', padding: '16px', marginBottom: '20px', fontSize: '14px', lineHeight: '1.8' }}>
-                <div style={{ fontSize: '12px', color: interColor, marginBottom: '6px', fontWeight: 700 }}>
+              <div style={{ background: `${dailyInterColor}15`, border: `1px solid ${dailyInterColor}40`, borderRadius: '12px', padding: '16px', marginBottom: '20px', fontSize: '14px', lineHeight: '1.8' }}>
+                <div style={{ fontSize: '12px', color: dailyInterColor, marginBottom: '6px', fontWeight: 700 }}>
                   {dayMaster.stem}({t(`saju.element.${dayMaster.element}`)}) × {daily.todayPillar.stem}({t(`saju.element.${daily.todayPillar.element}`)})
                 </div>
                 {t(`sajuDaily.interaction.${daily.interaction}`)}
@@ -602,8 +602,7 @@ export default function SajuPage() {
               <FortuneMemo fortuneType="saju" />
               <ProfileSuggestion />
             </motion.div>
-          );
-        })()}
+        )}
 
       </AnimatePresence>
       {showReverse && (

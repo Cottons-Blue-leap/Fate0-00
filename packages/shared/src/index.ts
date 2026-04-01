@@ -44,8 +44,8 @@ export { getDailyHoroscope } from './logic/horoscopeEngine';
 export { getSajuReading, countElements, setUseKoreanManseryeok } from './logic/sajuEngine';
 
 // === Logic: Solar Terms ===
-export { getSajuMonthAndYear, getLichunDate, getSolarTermDates, getAdjacentTerm } from './logic/solarTerms';
-export type { SajuMonthInfo, SolarTermDate } from './logic/solarTerms';
+export { getSajuMonthAndYear, getAdjacentTerm } from './logic/solarTerms';
+export type { SajuMonthInfo } from './logic/solarTerms';
 
 // === Logic: Lunar Converter ===
 export { lunarToSolar, lunarToSolarAsync, solarToLunar } from './logic/lunarConverter';
