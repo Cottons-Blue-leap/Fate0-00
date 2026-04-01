@@ -136,8 +136,8 @@ export default function HomePage() {
               </span>
               <div style={{ flex: 1, maxWidth: '60px', height: '1px', background: 'linear-gradient(270deg, transparent, rgba(155,89,182,0.5))' }} />
             </div>
-            <FortuneCard title={t('home.tarot')} subtitle="Tarot" icon={<HomeCardIcon type="tarot" size={80} />} to="/tarot" theme="west" used={hasUsedToday('tarot')} onReverse={() => setReverseTarget('tarot')} />
-            <FortuneCard title={t('home.horoscope')} subtitle="Horoscope" icon={<HomeCardIcon type="horoscope" size={80} />} to="/horoscope" theme="west" used={hasUsedToday('horoscope')} onReverse={() => setReverseTarget('horoscope')} />
+            <FortuneCard title={t('home.tarot')} subtitle="Tarot" icon={<HomeCardIcon type="tarot" size={80} color="#c39bd3" />} to="/tarot" theme="west" used={hasUsedToday('tarot')} onReverse={() => setReverseTarget('tarot')} />
+            <FortuneCard title={t('home.horoscope')} subtitle="Horoscope" icon={<HomeCardIcon type="horoscope" size={80} color="#c39bd3" />} to="/horoscope" theme="west" used={hasUsedToday('horoscope')} onReverse={() => setReverseTarget('horoscope')} />
           </>
         }
         east={
@@ -156,8 +156,8 @@ export default function HomePage() {
               </span>
               <div style={{ flex: 1, maxWidth: '60px', height: '1px', background: 'linear-gradient(270deg, transparent, rgba(231,76,60,0.5))' }} />
             </div>
-            <FortuneCard title={t('home.saju')} subtitle={t('home.sajuSub')} icon={<HomeCardIcon type="saju" size={80} />} to="/saju" theme="east" used={hasUsedToday('saju')} onReverse={() => setReverseTarget('saju')} />
-            <FortuneCard title={t('home.omikuji')} subtitle={t('home.omikujiSub')} icon={<HomeCardIcon type="omikuji" size={80} />} to="/omikuji" theme="east" used={hasUsedToday('omikuji')} onReverse={() => setReverseTarget('omikuji')} />
+            <FortuneCard title={t('home.saju')} subtitle={t('home.sajuSub')} icon={<HomeCardIcon type="saju" size={80} color="#f1948a" />} to="/saju" theme="east" used={hasUsedToday('saju')} onReverse={() => setReverseTarget('saju')} />
+            <FortuneCard title={t('home.omikuji')} subtitle={t('home.omikujiSub')} icon={<HomeCardIcon type="omikuji" size={80} color="#f1948a" />} to="/omikuji" theme="east" used={hasUsedToday('omikuji')} onReverse={() => setReverseTarget('omikuji')} />
           </>
         }
       />
