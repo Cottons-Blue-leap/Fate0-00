@@ -19,6 +19,7 @@ import FortuneMemo from '../components/layout/FortuneMemo';
 import MysticDivider from '../components/layout/MysticDivider';
 import StickyFooter from '../components/layout/StickyFooter';
 import OmikujiIcon from '../components/omikuji/OmikujiIcon';
+import TablerIcon from '../components/common/TablerIcon';
 
 type Step = 'purify' | 'pray' | 'shake' | 'waka' | 'reading' | 'fate';
 
@@ -173,7 +174,7 @@ export default function OmikujiPage() {
         {step === 'purify' && limitReached && (
           <motion.div key="limit" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-              <div style={{ fontSize: '48px', marginBottom: '16px' }}>🔒</div>
+              <div style={{ marginBottom: '16px' }}><TablerIcon name="lock" size={48} color="var(--text-muted)" /></div>
               <div style={{ fontSize: '18px', color: 'var(--text)', marginBottom: '8px' }}>{t('dailyLimit.used')}</div>
               <div style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '24px' }}>{t('dailyLimit.resetAt')}</div>
               <Link to="/" style={{ color: 'var(--accent)', fontSize: '14px' }}>← {t('app.back')}</Link>

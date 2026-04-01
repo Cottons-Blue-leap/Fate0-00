@@ -13,6 +13,7 @@ import { hasUsedToday } from '../logic/dailyLimitEngine';
 import { Capacitor } from '@capacitor/core';
 import { playBgm } from '../logic/bgmEngine';
 import HomeCardIcon from '../components/home/HomeCardIcon';
+import TablerIcon from '../components/common/TablerIcon';
 // import { useAuth } from '../context/AuthContext';
 // import { hasServer } from '../services/api';
 // import AuthModal from '../components/layout/AuthModal';
@@ -81,7 +82,7 @@ export default function HomePage() {
                 padding: '5px 10px', background: 'rgba(255,255,255,0.05)',
                 borderRadius: '14px', fontSize: '11px', color: 'rgba(255,255,255,0.45)', cursor: 'pointer',
               }}>
-                📜 {t('history.title')}
+                <TablerIcon name="history" size={14} style={{ marginRight: '4px' }} />{t('history.title')}
               </motion.div>
             </Link>
             {profile && (

@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { getShare } from '../services/api';
-import OmikujiIcon from '../components/omikuji/OmikujiIcon';
+import TablerIcon from '../components/common/TablerIcon';
 
 export default function SharedReadingPage() {
   const { id } = useParams<{ id: string }>();
@@ -21,10 +21,10 @@ export default function SharedReadingPage() {
   }, [id]);
 
   const typeLabels: Record<string, { icon: React.ReactNode; color: string }> = {
-    tarot: { icon: '🃏', color: '#9b59b6' },
-    horoscope: { icon: '⭐', color: '#9b59b6' },
-    saju: { icon: '🏮', color: '#e74c3c' },
-    omikuji: { icon: <OmikujiIcon name="tanabata" size={48} />, color: '#e74c3c' },
+    tarot: { icon: <TablerIcon name="cards" size={48} color="#c39bd3" />, color: '#9b59b6' },
+    horoscope: { icon: <TablerIcon name="moon-stars" size={48} color="#c39bd3" />, color: '#9b59b6' },
+    saju: { icon: <TablerIcon name="yin-yang" size={48} color="#f1948a" />, color: '#e74c3c' },
+    omikuji: { icon: <TablerIcon name="torii" size={48} color="#f1948a" />, color: '#e74c3c' },
   };
 
   return (
@@ -47,7 +47,7 @@ export default function SharedReadingPage() {
 
       {error && (
         <div style={{ textAlign: 'center' }}>
-          <p style={{ fontSize: '48px', marginBottom: '1rem' }}>🔮</p>
+          <div style={{ marginBottom: '1rem' }}><TablerIcon name="crystal-ball" size={48} color="#c39bd3" /></div>
           <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.6)' }}>
             {t('share.notFound', 'This reading has expired or does not exist.')}
           </p>

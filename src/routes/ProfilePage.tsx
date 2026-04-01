@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useProfile } from '../context/ProfileContext';
 import { sfxButtonClick, sfxTextInput } from '../logic/soundEngine';
 import { getMaxDays } from '@fate0/shared';
+import TablerIcon from '../components/common/TablerIcon';
 
 const PRIVACY_SEEN_KEY = 'fate0_privacy_seen';
 
@@ -84,7 +85,7 @@ export default function ProfilePage() {
         transition={{ delay: 0.2 }}
         style={{ textAlign: 'center', maxWidth: '400px', width: '100%' }}
       >
-        <div style={{ fontSize: '40px', marginBottom: '12px' }}>✨</div>
+        <div style={{ marginBottom: '12px' }}><TablerIcon name="sparkles" size={40} color="#c39bd3" /></div>
         <h1 style={{ fontSize: '24px', marginBottom: '8px', textShadow: '0 0 20px rgba(155,89,182,0.4)' }}>
           {t('profile.title')}
         </h1>

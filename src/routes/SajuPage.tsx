@@ -24,6 +24,7 @@ import ProfileSuggestion from '../components/layout/ProfileSuggestion';
 import FortuneMemo from '../components/layout/FortuneMemo';
 import MysticDivider from '../components/layout/MysticDivider';
 import StickyFooter from '../components/layout/StickyFooter';
+import TablerIcon from '../components/common/TablerIcon';
 
 type Step = 'input' | 'extract' | 'daymaster' | 'landscape' | 'daeun' | 'daily';
 
@@ -152,7 +153,7 @@ export default function SajuPage() {
         {step === 'input' && limitReached && (
           <motion.div key="limit" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-              <div style={{ fontSize: '48px', marginBottom: '16px' }}>🔒</div>
+              <div style={{ marginBottom: '16px' }}><TablerIcon name="lock" size={48} color="var(--text-muted)" /></div>
               <div style={{ fontSize: '18px', color: 'var(--text)', marginBottom: '8px' }}>{t('dailyLimit.used')}</div>
               <div style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '24px' }}>{t('dailyLimit.resetAt')}</div>
               <Link to="/" style={{ color: 'var(--accent)', fontSize: '14px' }}>← {t('app.back')}</Link>
@@ -349,7 +350,7 @@ export default function SajuPage() {
                   borderRadius: '12px', padding: '14px', textAlign: 'left',
                 }}>
                   <div style={{ fontSize: '11px', color: '#ffd700', marginBottom: '6px', fontWeight: 700 }}>
-                    🧭 {t('saju.profileDirection', '방향')}
+                    <TablerIcon name="compass" size={14} color="#f1948a" style={{ marginRight: '4px' }} />{t('saju.profileDirection', '방향')}
                   </div>
                   <div style={{ fontSize: '12px', lineHeight: '1.7', color: 'rgba(255,255,255,0.6)' }}>
                     {t(`dayMaster.${dayMaster.stem}.direction`)}
@@ -360,7 +361,7 @@ export default function SajuPage() {
                   borderRadius: '12px', padding: '14px', textAlign: 'left',
                 }}>
                   <div style={{ fontSize: '11px', color: '#c39bd3', marginBottom: '6px', fontWeight: 700 }}>
-                    💞 {t('saju.profileRelationship', '관계')}
+                    <TablerIcon name="heart" size={14} color="#f1948a" style={{ marginRight: '4px' }} />{t('saju.profileRelationship', '관계')}
                   </div>
                   <div style={{ fontSize: '12px', lineHeight: '1.7', color: 'rgba(255,255,255,0.6)' }}>
                     {t(`dayMaster.${dayMaster.stem}.relationship`)}

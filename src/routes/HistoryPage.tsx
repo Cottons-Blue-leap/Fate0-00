@@ -10,11 +10,14 @@ import SajuElementIcon from '../components/saju/SajuElementIcon';
 import SajuStemIcon from '../components/saju/SajuStemIcon';
 import ShareButton from '../components/layout/ShareButton';
 import OmikujiIcon from '../components/omikuji/OmikujiIcon';
+import TablerIcon from '../components/common/TablerIcon';
 
-const typeEmojis: Record<string, string> = { tarot: '🃏', horoscope: '⭐', saju: '🏮' };
+const typeIconNames: Record<string, string> = { tarot: 'cards', horoscope: 'moon-stars', saju: 'yin-yang', omikuji: 'torii' };
+const typeIconColors: Record<string, string> = { tarot: '#c39bd3', horoscope: '#c39bd3', saju: '#f1948a', omikuji: '#f1948a' };
 function typeIcon(type: string, size: number): React.ReactNode {
-  if (type === 'omikuji') return <OmikujiIcon name="tanabata" size={size} />;
-  return typeEmojis[type] || '❓';
+  const name = typeIconNames[type];
+  if (!name) return '❓';
+  return <TablerIcon name={name} size={size} color={typeIconColors[type]} />;
 }
 const typeColors: Record<string, string> = { tarot: '#9b59b6', horoscope: '#9b59b6', saju: '#e74c3c', omikuji: '#e74c3c' };
 
@@ -224,7 +227,7 @@ export default function HistoryPage() {
 
         {entries.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '60px 20px', color: 'rgba(255,255,255,0.3)' }}>
-            <div style={{ fontSize: '48px', marginBottom: '16px' }}>📜</div>
+            <div style={{ marginBottom: '16px' }}><TablerIcon name="file-text" size={48} color="rgba(255,255,255,0.3)" /></div>
             <div>{t('history.empty')}</div>
           </div>
         ) : (
@@ -330,7 +333,7 @@ export default function HistoryPage() {
                       <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', marginTop: '2px' }}>{formatDate(entry.date)}</div>
                       {entry.memo && (
                         <div style={{ fontSize: '11px', color: 'rgba(212,175,55,0.5)', marginTop: '3px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                          💬 {entry.memo}
+                          <TablerIcon name="message-circle" size={12} style={{ marginRight: '3px' }} />{entry.memo}
                         </div>
                       )}
                     </div>
@@ -468,14 +471,14 @@ export default function HistoryPage() {
                   >
                     {detailEntry.memo ? (
                       <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)', fontStyle: 'italic' }}>
-                        💬 {detailEntry.memo}
+                        <TablerIcon name="message-circle" size={12} style={{ marginRight: '3px' }} />{detailEntry.memo}
                         <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.25)', marginTop: '4px' }}>
                           {t('memo.tapToEdit', { defaultValue: '탭하여 수정' })}
                         </div>
                       </div>
                     ) : (
                       <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.25)' }}>
-                        💬 {t('memo.addNote', { defaultValue: '메모를 남겨보세요' })}
+                        <TablerIcon name="message-circle" size={12} style={{ marginRight: '3px' }} />{t('memo.addNote', { defaultValue: '메모를 남겨보세요' })}
                       </div>
                     )}
                   </motion.div>

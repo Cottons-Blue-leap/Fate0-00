@@ -22,6 +22,7 @@ import ProfileSuggestion from '../components/layout/ProfileSuggestion';
 import FortuneMemo from '../components/layout/FortuneMemo';
 import MysticDivider from '../components/layout/MysticDivider';
 import StickyFooter from '../components/layout/StickyFooter';
+import TablerIcon from '../components/common/TablerIcon';
 
 type Step = 'input' | 'sync' | 'transit' | 'oracle';
 
@@ -109,7 +110,7 @@ export default function HoroscopePage() {
         {step === 'input' && limitReached && (
           <motion.div key="limit" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-              <div style={{ fontSize: '48px', marginBottom: '16px' }}>🔒</div>
+              <div style={{ marginBottom: '16px' }}><TablerIcon name="lock" size={48} color="var(--text-muted)" /></div>
               <div style={{ fontSize: '18px', color: 'var(--text)', marginBottom: '8px' }}>{t('dailyLimit.used')}</div>
               <div style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '24px' }}>{t('dailyLimit.resetAt')}</div>
               <Link to="/" style={{ color: 'var(--accent)', fontSize: '14px' }}>← {t('app.back')}</Link>
@@ -138,7 +139,7 @@ export default function HoroscopePage() {
             <div style={{ fontSize: '14px', color: 'var(--text-muted)', letterSpacing: '2px', marginBottom: '20px' }}>
               {t('horoscope.step1')}
             </div>
-            <div style={{ fontSize: '48px', marginBottom: '20px' }}>✨</div>
+            <div style={{ marginBottom: '20px' }}><TablerIcon name="sparkles" size={48} color="#c39bd3" /></div>
             <div style={{ marginBottom: '16px' }}>
               <input type="text" value={name} onChange={e => { setName(e.target.value.slice(0, 50)); sfxTextInput(); }} maxLength={50} autoComplete="off"
                 placeholder={t('horoscope.namePlaceholder')}

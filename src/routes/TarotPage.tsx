@@ -18,6 +18,7 @@ import ProfileSuggestion from '../components/layout/ProfileSuggestion';
 import FortuneMemo from '../components/layout/FortuneMemo';
 import MysticDivider from '../components/layout/MysticDivider';
 import StickyFooter from '../components/layout/StickyFooter';
+import TablerIcon from '../components/common/TablerIcon';
 
 type Spread = '1-card' | '3-card' | 'celtic';
 type Step = 'prepare' | 'question' | 'shuffle' | 'cut' | 'spread' | 'flip' | 'reading' | 'advice';
@@ -175,7 +176,7 @@ export default function TarotPage() {
         {step === 'prepare' && limitReached && (
           <motion.div key="limit" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-              <div style={{ fontSize: '48px', marginBottom: '16px' }}>🔒</div>
+              <div style={{ marginBottom: '16px' }}><TablerIcon name="lock" size={48} color="var(--text-muted)" /></div>
               <div style={{ fontSize: '18px', color: 'var(--text)', marginBottom: '8px' }}>{t('dailyLimit.used')}</div>
               <div style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '24px' }}>{t('dailyLimit.resetAt')}</div>
               <Link to="/" style={{ color: 'var(--accent)', fontSize: '14px' }}>← {t('app.back')}</Link>
@@ -207,9 +208,9 @@ export default function TarotPage() {
             <motion.div
               animate={{ scale: breathPhase === 'in' ? 1.2 : breathPhase === 'hold' ? 1.2 : 1 }}
               transition={{ duration: 2 }}
-              style={{ fontSize: '60px', marginBottom: '16px' }}
+              style={{ marginBottom: '16px' }}
             >
-              🔮
+              <TablerIcon name="crystal-ball" size={60} color="#c39bd3" />
             </motion.div>
             <div style={{ fontSize: '18px', color: 'var(--accent-light)', marginBottom: '8px' }}>
               {breathPhase === 'in' ? t('tarot.breathIn') : breathPhase === 'hold' ? t('tarot.breathHold') : t('tarot.breathOut')}
