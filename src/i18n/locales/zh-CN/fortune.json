@@ -148,7 +148,101 @@
       }
     },
     "summary1": "抽到了{{name}}牌。",
-    "summary3": "解读贯穿过去、现在与未来的脉络，明智地应对吧。"
+    "summary3": "解读贯穿过去、现在与未来的脉络，明智地应对吧。",
+    "deep": {
+      "0": {
+        "archetype": "纯真的冒险者",
+        "context": "这张牌唤醒了你内心无畏的孩童。如果有什么想重新开始的，那就是这张牌出现的原因。"
+      },
+      "1": {
+        "archetype": "意志的炼金术士",
+        "context": "你需要的一切已经具备。将散落的碎片汇聚一处，集中精力。"
+      },
+      "2": {
+        "archetype": "内在的引导者",
+        "context": "现在是跟随直觉而非理性的时候。你拥有一种无法言说的智慧。"
+      },
+      "3": {
+        "archetype": "丰饶之母",
+        "context": "养育与创造的能量在召唤你。是时候培育或创造些什么了。"
+      },
+      "4": {
+        "archetype": "秩序的守护者",
+        "context": "为动摇的事物赋予结构。现在是你成为支柱的时候。"
+      },
+      "5": {
+        "archetype": "智慧的传递者",
+        "context": "某人的建议或教导也许正是你现在所需。或许你就是那个角色。"
+      },
+      "6": {
+        "archetype": "十字路口的选择者",
+        "context": "心而非脑知道答案。这张牌在问你什么才是真正重要的。"
+      },
+      "7": {
+        "archetype": "突破的战士",
+        "context": "将对立的力量合而为一，勇往直前。只要有意志，路就会打开。"
+      },
+      "8": {
+        "archetype": "温柔的主宰者",
+        "context": "真正的力量不在于压制，而在于接纳。这张牌唤醒忍耐的价值。"
+      },
+      "9": {
+        "archetype": "路上的贤者",
+        "context": "现在需要独处的时间。在孤独中有等待被发现的答案。"
+      },
+      "10": {
+        "archetype": "命运的转换者",
+        "context": "轮子永远在转。当下的处境不会永恒，这本身就是希望。"
+      },
+      "11": {
+        "archetype": "真理的审判者",
+        "context": "你现在需要公正的目光。放下偏见，如实观察。"
+      },
+      "12": {
+        "archetype": "自愿的牺牲者",
+        "context": "停下不是后退。换个角度就能看见隐藏的事物。"
+      },
+      "13": {
+        "archetype": "蜕变的守门人",
+        "context": "放手旧物，新事物才能进来。这不是终结，而是变身的开始。"
+      },
+      "14": {
+        "archetype": "调和的炼金术士",
+        "context": "在极端之间找到中心。不急不缓，稳步调和。"
+      },
+      "15": {
+        "archetype": "阴影之镜",
+        "context": "你所恐惧的不在外面而在内心。直面它才能获得自由。"
+      },
+      "16": {
+        "archetype": "解放之雷",
+        "context": "崩塌的是建错的东西。虽然痛苦但这是必要的拆解。"
+      },
+      "17": {
+        "archetype": "希望的守护者",
+        "context": "即使在黑暗中光也未曾消失。最暗的时刻最亮的星升起。"
+      },
+      "18": {
+        "archetype": "潜意识的向导",
+        "context": "你看到的不是全部。不安背后隐藏着直觉的信息。"
+      },
+      "19": {
+        "archetype": "内在之光",
+        "context": "你已经知道答案。恢复信心，做最真实的自己。"
+      },
+      "20": {
+        "archetype": "觉醒的号角",
+        "context": "回顾过去，不是后悔而是领悟。以真实的自我站起来。"
+      },
+      "21": {
+        "archetype": "圆满的舞者",
+        "context": "一段旅程正在完结。庆祝成就，准备打开下一扇门。"
+      }
+    },
+    "deepLabel": "这张牌此刻来到你身边的原因",
+    "flowLabel": "牌传达的流向",
+    "flowPastToFuture": "从过去的{{past}}，经过现在的{{present}}，未来朝着{{future}}前行。相信这个流向。",
+    "flowSingle": "此刻，{{card}}的能量环绕着你。"
   },
   "horoscopeData": {
     "overall": [
@@ -212,43 +306,63 @@
   "dayMaster": {
     "甲": {
       "title": "直插云霄的巨木",
-      "desc": "甲木 — 你是一棵向天空笔直伸展的参天大树。正义感强，具有领导力，一旦确定方向便不轻易改变。"
+      "desc": "甲木 — 你是一棵向天空笔直伸展的参天大树。正义感强，具有领导力，一旦确定方向便不轻易改变。",
+      "direction": "You shine when leading organizations or pioneering new paths",
+      "relationship": "A dependable, responsible partner — though sometimes insistent on your own way"
     },
     "乙": {
       "title": "柔韧的藤蔓",
-      "desc": "乙木 — 你是随风弯曲却不会折断的藤蔓。柔软且适应力强，拥有艺术感性和细腻心思。"
+      "desc": "乙木 — 你是随风弯曲却不会折断的藤蔓。柔软且适应力强，拥有艺术感性和细腻心思。",
+      "direction": "Arts, design, diplomacy, counseling — paths that engage people and emotion suit you",
+      "relationship": "A warm partner who reads hearts well — sometimes it's okay to express your own feelings more"
     },
     "丙": {
       "title": "照耀万物的太阳",
-      "desc": "丙火 — 你是照亮世界的太阳。热情而充满魅力，温暖着身边的每一个人。"
+      "desc": "丙火 — 你是照亮世界的太阳。热情而充满魅力，温暖着身边的每一个人。",
+      "direction": "On stage, in leadership, as an educator — you shine brightest in front of people",
+      "relationship": "A joyful, warm partner — but be careful not to burn yourself giving everything away"
     },
     "丁": {
       "title": "黑暗中的烛光",
-      "desc": "丁火 — 你是在黑暗中照亮道路的烛光。光芒虽柔却坚定，智慧深邃，洞察力强。"
+      "desc": "丁火 — 你是在黑暗中照亮道路的烛光。光芒虽柔却坚定，智慧深邃，洞察力强。",
+      "direction": "Research, strategy, writing, consulting — paths requiring deep thought suit you",
+      "relationship": "A partner of genuine devotion — quiet on the surface but deeper than anyone within"
     },
     "戊": {
       "title": "屹立不倒的高山",
-      "desc": "戊土 — 你是即使在暴风中也不动摇的大山。沉稳而包容力广，是人们信赖和依靠的存在。"
+      "desc": "戊土 — 你是即使在暴风中也不动摇的大山。沉稳而包容力广，是人们信赖和依靠的存在。",
+      "direction": "Management, administration, real estate, education — roles that build stable foundations",
+      "relationship": "A pillar of trust — clumsy with words but shows everything through action"
     },
     "己": {
       "title": "肥沃的大地",
-      "desc": "己土 — 你是孕育生命的肥沃大地。谦虚而奉献，有着关怀他人的天赋。"
+      "desc": "己土 — 你是孕育生命的肥沃大地。谦虚而奉献，有着关怀他人的天赋。",
+      "direction": "Caregiving, education, cooking, HR — paths that nurture and grow people bring you happiness",
+      "relationship": "A partner who silently devotes — it's okay to put yourself first sometimes"
     },
     "庚": {
       "title": "未经雕琢的矿石之刃",
-      "desc": "庚金 — 你是尚未冶炼的冰冷原石。果断力和执行力出众，磨难只会让你变得更加锋利。"
+      "desc": "庚金 — 你是尚未冶炼的冰冷原石。果断力和执行力出众，磨难只会让你变得更加锋利。",
+      "direction": "Law, military, competitive business, surgery — where decisiveness is needed, you prove your worth",
+      "relationship": "A deeply loyal partner — behind the sharp words hides a warm heart"
     },
     "辛": {
       "title": "月光下的宝石",
-      "desc": "辛金 — 你是月光下闪耀的精致宝石。细腻而追求完美，向往美与纯粹。"
+      "desc": "辛金 — 你是月光下闪耀的精致宝石。细腻而追求完美，向往美与纯粹。",
+      "direction": "Jewelry, fashion, finance, artisanship — where precision and aesthetic sense are needed",
+      "relationship": "A pure partner who loves with all their heart — just needs a bit of time to open up"
     },
     "壬": {
       "title": "奔流不息的大河",
-      "desc": "壬水 — 你是削山入海的浩荡大河。睿智而包容，热爱自由。"
+      "desc": "壬水 — 你是削山入海的浩荡大河。睿智而包容，热爱自由。",
+      "direction": "Travel, trade, philosophy, media, freelance — paths that meet the wide world suit you",
+      "relationship": "A free and open partner — hold too tight and they drift away, but trust and they always return"
     },
     "癸": {
       "title": "清晨的露珠",
-      "desc": "癸水 — 你是黎明时分凝结在草叶上的一滴露珠。细腻而直觉敏锐，拥有感知无形之物的灵感。"
+      "desc": "癸水 — 你是黎明时分凝结在草叶上的一滴露珠。细腻而直觉敏锐，拥有感知无形之物的灵感。",
+      "direction": "Psychology, divination, art, research, healing — where intuition and sensitivity are assets",
+      "relationship": "A deep partner who understands without words — sometimes expressing your own feelings aloud helps even more"
     }
   },
   "waka": {
@@ -462,5 +576,151 @@
     "harmony": "{{stem}}{{branch}}的气运与你的四柱和谐相处。内在之木遇到阳光，绽放花朵的时期。",
     "clash": "{{stem}}{{branch}}的气运与你的四柱冲突。火遇水沸腾的时期。激烈但是变化的动力。",
     "neutral": "{{stem}}{{branch}}的气运平静流淌。没有大波澜，修炼内心的时期。"
+  },
+  "personalDaily": {
+    "elementName": {
+      "木": "木",
+      "火": "火",
+      "土": "土",
+      "金": "金",
+      "水": "水"
+    },
+    "elementLabel": "今日能量",
+    "fallbackPrefix": "来自星辰的低语",
+    "generate": {
+      "new": "{{name}}，今天{{element}}的气为你打开新的流向。安静地播下种子吧。",
+      "waxing": "{{name}}，{{element}}的力量正在培养你今天的可能性。顺势而行吧。",
+      "full": "{{name}}，{{element}}的能量达到了顶峰。今天尝试的事情将会闪耀。",
+      "waning": "{{name}}，{{element}}的气温柔地环绕着你。回顾一下你已取得的成就吧。"
+    },
+    "generated": {
+      "new": "{{name}}，今天是{{element}}的气悄然充盈的日子。花些时间照顾自己吧。",
+      "waxing": "{{name}}，{{element}}的能量正在缓缓上升。接纳的姿态将带来好运。",
+      "full": "{{name}}，{{element}}的气充沛满溢。也许今天会有人的善意降临到你身上。",
+      "waning": "{{name}}，{{element}}温暖的气息仍在停留。想想那些让你感恩的事物吧。"
+    },
+    "same": {
+      "new": "{{name}}，今天{{element}}的气与你连为一体。相信你的直觉吧。",
+      "waxing": "{{name}}，{{element}}的共鸣越来越强。不要错过脑海中浮现的想法。",
+      "full": "{{name}}，今天{{element}}的气最为鲜明。最像你的选择就是最好的选择。",
+      "waning": "{{name}}，你的节奏与{{element}}的节奏今天很合拍。舒适地随波逐流吧。"
+    },
+    "restrain": {
+      "new": "{{name}}，今天是{{element}}的气受到考验的日子。休息一拍也没关系。",
+      "waxing": "{{name}}，有股力量在对抗{{element}}，但你可以在其中变得更强。",
+      "full": "{{name}}，如果感到紧张，就调整{{element}}的力量吧。坚守也是一种勇气。",
+      "waning": "{{name}}，今天的摩擦是为明天的成长做准备。相信{{element}}的根基吧。"
+    },
+    "restrained": {
+      "new": "{{name}}，今天是{{element}}的气略微收缩的日子。不必勉强自己。",
+      "waxing": "{{name}}，{{element}}可能感觉有些受压，但从小事开始就能打开道路。",
+      "full": "{{name}}，今天就积蓄{{element}}的力量吧。等待时机也是一种策略。",
+      "waning": "{{name}}，{{element}}的气正在休息。为明天腾空你的心吧。"
+    }
+  },
+  "signContext": {
+    "aries": {
+      "element": "火",
+      "trait": "Pioneer energy. Quick to act and fearless. You blaze trails where no one else dares. Your starting power is the strongest of all twelve signs, but patience is your challenge. Your spark is the first flame that moves the world."
+    },
+    "taurus": {
+      "element": "土",
+      "trait": "The star of senses. You love stability and are drawn to beauty. Slow to change, but once decided, unbreakable as steel. A flower that blooms slowly but lasts the longest."
+    },
+    "gemini": {
+      "element": "风",
+      "trait": "The star of curiosity. Versatile and brilliant at communication. Your talent lies in crossing between worlds. Free as the wind — wherever you pass, something changes."
+    },
+    "cancer": {
+      "element": "水",
+      "trait": "Guardian of emotions. You place deep meaning in family and bonds. Hard shell outside, softer than anyone within. Your embrace is someone's safest harbor."
+    },
+    "leo": {
+      "element": "火",
+      "trait": "A luminous being. Most alive on stage, most powerful when loved. A sun-like sign with innate charisma. When you shine, everything around you shines too."
+    },
+    "virgo": {
+      "element": "土",
+      "trait": "The artisan of perfection. You catch details others miss. You find fulfillment in helping others. Your weakness is being too hard on yourself."
+    },
+    "libra": {
+      "element": "风",
+      "trait": "Seeker of harmony. You love balance and beauty. Decisions are hard, but that depth is your fairness. Where you are, harmony dwells."
+    },
+    "scorpio": {
+      "element": "水",
+      "trait": "Explorer of depths. Eyes that see beneath the surface. Once you give your heart, its depth is oceanic. Your courage to face darkness is your greatest power."
+    },
+    "sagittarius": {
+      "element": "火",
+      "trait": "Explorer of freedom. You love the wide world and grand questions. Your honesty sometimes stings, but it's always real."
+    },
+    "capricorn": {
+      "element": "土",
+      "trait": "The climber toward the summit. Once you set a goal, you climb surely. Serious in youth, uniquely younger with age. Time is always on your side."
+    },
+    "aquarius": {
+      "element": "风",
+      "trait": "Pioneer of the future. You see the world differently. Independent yet harboring love for all humanity. Those ahead of their time walk alone at first."
+    },
+    "pisces": {
+      "element": "水",
+      "trait": "The boundless dreamer. You move between reality and dreams, with empathy deeper than anyone. Your gentleness is the very strength this world needs most."
+    },
+    "resonanceDeep": {
+      "aligned": "太阳和月亮在同一频率上。今天直觉与行动自然合一。",
+      "approaching": "太阳和月亮正在彼此靠近。新的灵感或际遇可能到来的一天。",
+      "neutral": "太阳和月亮各走各的路。今天专注于内心而非外在。",
+      "distant": "今天感受到太阳与月亮之间的张力。试着在情感与理性之间找到平衡。"
+    },
+    "title": "你的星座"
+  },
+  "elementDeep": {
+    "excess": {
+      "木": "木过旺时计划增多但行动模糊。金的果断帮助修剪枝叶。",
+      "火": "火过旺时热情可能灼伤自己。水的宁静恢复你的中心。",
+      "土": "土过旺时会害怕改变。木的生长能量破土而出带来新生。",
+      "金": "金过旺时完美主义可能使关系冰冷。火的温暖融化冰冷的金属。",
+      "水": "水过旺时沉溺于思考而无法行动。土的稳定给流水以方向。"
+    },
+    "deficient": {
+      "木": "木不足时开始新事物的勇气减弱。绿色空间、散步、养植物有帮助。",
+      "火": "火不足时热情和信心减弱。暖色调、积极运动、社交活动重燃火焰。",
+      "土": "土不足时中心动摇、焦虑增加。规律生活、烹饪、自然散步带来稳定。",
+      "金": "金不足时难以做决定。整理、演奏乐器、设定明确目标有帮助。",
+      "水": "水不足时直觉和灵活性降低。水边散步、冥想、阅读补充智慧。"
+    },
+    "balanceTitle": "你的五行揭示了什么"
+  },
+  "rankGuide": {
+    "title": "这个运势意味着什么",
+    "daikichi": {
+      "meaning": "最上吉运。万事如顺风扬帆。",
+      "advice": "分享这份好运。好的能量分享越多停留越久。"
+    },
+    "kichi": {
+      "meaning": "吉运。踏实前行会有好结果。",
+      "advice": "不必急躁——顺势而为。最好的果实自然成熟。"
+    },
+    "chukichi": {
+      "meaning": "中吉。超出期待的小喜悦会找到你。",
+      "advice": "留意看不见的祝福。真正的幸福藏在小事里。"
+    },
+    "shokichi": {
+      "meaning": "小吉。温和暖意的运气围绕着你。",
+      "advice": "现在小行动比大抱负更闪耀。一步一步，运气跟随。"
+    },
+    "suekichi": {
+      "meaning": "末吉。现在虽慢但好结局在等待。",
+      "advice": "等待本身也是运势的一部分。花会在意想不到的时刻绽放。"
+    },
+    "kyo": {
+      "meaning": "凶。需要谨慎但可以避免的厄运。",
+      "advice": "避免冲动行为，推迟重要决定。"
+    },
+    "daikyo": {
+      "meaning": "大凶。最深的谷底——但没有更低的地方了。",
+      "advice": "触底之后只有上升。谦逊度过这一天。"
+    }
   }
 }

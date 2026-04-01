@@ -1,15 +1,91 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { getHistory, clearHistory } from '../logic/historyEngine';
+import { getHistory, clearHistory, updateMemo } from '../logic/historyEngine';
 import type { HistoryEntry } from '../logic/historyEngine';
 import { sfxButtonClick } from '../logic/soundEngine';
-import { tarotSymbols } from '@fate0/shared';
+import { tarotSymbols, elementEmojis } from '@fate0/shared';
 import ShareButton from '../components/layout/ShareButton';
 
 const typeIcons: Record<string, string> = { tarot: '🃏', horoscope: '⭐', saju: '🏮', omikuji: '🎋' };
 const typeColors: Record<string, string> = { tarot: '#9b59b6', horoscope: '#9b59b6', saju: '#e74c3c', omikuji: '#e74c3c' };
+
+function getDateGroup(isoDate: string, t: (key: string, opts?: Record<string, unknown>) => string): string {
+  const date = new Date(isoDate);
+  const today = new Date();
+  const todayStr = today.toISOString().slice(0, 10);
+  const dateStr = date.toISOString().slice(0, 10);
+
+  const yesterday = new Date(today);
+  yesterday.setDate(yesterday.getDate() - 1);
+  const yesterdayStr = yesterday.toISOString().slice(0, 10);
+
+  const weekAgo = new Date(today);
+  weekAgo.setDate(weekAgo.getDate() - 7);
+  const weekAgoStr = weekAgo.toISOString().slice(0, 10);
+
+  if (dateStr === todayStr) return t('history.today', { defaultValue: '오늘' });
+  if (dateStr === yesterdayStr) return t('history.yesterday', { defaultValue: '어제' });
+  if (dateStr >= weekAgoStr) return t('history.thisWeek', { defaultValue: '이번 주' });
+  return t('history.earlier', { defaultValue: '이전' });
+}
+
+function getWeeklySummary(entries: HistoryEntry[], t: (key: string, opts?: Record<string, unknown>) => string): { show: boolean; totalCount: number; typeCounts: Record<string, number>; elementFlow: string; mood: string } | null {
+  const today = new Date();
+  const weekAgo = new Date(today);
+  weekAgo.setDate(weekAgo.getDate() - 7);
+  const weekAgoStr = weekAgo.toISOString().slice(0, 10);
+
+  const weekEntries = entries.filter(e => e.date.slice(0, 10) >= weekAgoStr);
+  if (weekEntries.length < 3) return null;
+
+  const typeCounts: Record<string, number> = { tarot: 0, horoscope: 0, saju: 0, omikuji: 0 };
+  const elementCounts: Record<string, number> = {};
+
+  for (const entry of weekEntries) {
+    typeCounts[entry.type]++;
+    if (entry.type === 'saju' && entry.data?.dailyElement) {
+      const el = entry.data.dailyElement as string;
+      elementCounts[el] = (elementCounts[el] || 0) + 1;
+    }
+  }
+
+  const dominantElement = Object.entries(elementCounts).sort((a, b) => b[1] - a[1])[0];
+
+  const elementFlow = dominantElement
+    ? `${(elementEmojis as Record<string, string>)[dominantElement[0]] || ''} ${t(`saju.element.${dominantElement[0]}`, { defaultValue: dominantElement[0] })}`
+    : '';
+
+  const daysWithEntries = new Set(weekEntries.map(e => e.date.slice(0, 10))).size;
+  let mood: string;
+  if (daysWithEntries >= 6) mood = t('weekly.moodDedicated', { defaultValue: '꾸준히 운명과 대화한 한 주' });
+  else if (daysWithEntries >= 4) mood = t('weekly.moodActive', { defaultValue: '적극적으로 흐름을 읽은 한 주' });
+  else mood = t('weekly.moodCurious', { defaultValue: '조용히 별을 바라본 한 주' });
+
+  return {
+    show: true,
+    totalCount: weekEntries.length,
+    typeCounts,
+    elementFlow,
+    mood,
+  };
+}
+
+function groupEntries(entries: HistoryEntry[], t: (key: string, opts?: Record<string, unknown>) => string): { label: string; entries: HistoryEntry[] }[] {
+  const groups: { label: string; entries: HistoryEntry[] }[] = [];
+  let currentLabel = '';
+  for (const entry of entries) {
+    const label = getDateGroup(entry.date, t);
+    if (label !== currentLabel) {
+      groups.push({ label, entries: [entry] });
+      currentLabel = label;
+    } else {
+      groups[groups.length - 1].entries.push(entry);
+    }
+  }
+  return groups;
+}
 
 function renderSummary(entry: HistoryEntry, t: (key: string) => string): string {
   switch (entry.type) {
@@ -49,6 +125,11 @@ export default function HistoryPage() {
   const [selectMode, setSelectMode] = useState(false);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [detailEntry, setDetailEntry] = useState<HistoryEntry | null>(null);
+  const [editingMemo, setEditingMemo] = useState(false);
+  const [memoText, setMemoText] = useState('');
+
+  const weeklySummary = useMemo(() => getWeeklySummary(entries, t), [entries]);
+  const groupedEntries = useMemo(() => groupEntries(entries, t), [entries]);
 
   const toggleSelect = (id: string) => {
     setSelected(prev => {
@@ -139,6 +220,42 @@ export default function HistoryPage() {
           </div>
         ) : (
           <div style={{ flex: 1, overflowY: 'auto', minHeight: 0 }}>
+            {/* Weekly summary card */}
+            {weeklySummary && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(212,175,55,0.08), rgba(155,89,182,0.08))',
+                    border: '1px solid rgba(212,175,55,0.2)',
+                    borderRadius: '14px', padding: '16px', marginBottom: '16px',
+                  }}
+                >
+                  <div style={{ fontSize: '12px', color: 'rgba(212,175,55,0.7)', letterSpacing: '2px', fontWeight: 700, marginBottom: '10px', textAlign: 'center' }}>
+                    ✦ {t('weekly.title', { defaultValue: '이번 주 당신의 흐름' })} ✦
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '10px', flexWrap: 'wrap' }}>
+                    {Object.entries(weeklySummary.typeCounts).filter(([, c]) => c > 0).map(([type, count]) => (
+                      <div key={type} style={{
+                        padding: '4px 10px', background: `${typeColors[type]}15`,
+                        borderRadius: '12px', fontSize: '12px', color: typeColors[type],
+                        border: `1px solid ${typeColors[type]}30`,
+                      }}>
+                        {typeIcons[type]} {count}
+                      </div>
+                    ))}
+                  </div>
+                  {weeklySummary.elementFlow && (
+                    <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.45)', textAlign: 'center', marginBottom: '6px' }}>
+                      {t('weekly.elementFlow')}: {weeklySummary.elementFlow}
+                    </div>
+                  )}
+                  <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)', textAlign: 'center', fontStyle: 'italic' }}>
+                    "{weeklySummary.mood}"
+                  </div>
+                </motion.div>
+            )}
+
             {/* Select mode toolbar */}
             {selectMode && (
               <div style={{ display: 'flex', gap: '8px', marginBottom: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -158,54 +275,68 @@ export default function HistoryPage() {
               </div>
             )}
 
-            {entries.map((entry, i) => (
-              <motion.div key={entry.id}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
-                onClick={() => selectMode ? toggleSelect(entry.id) : setDetailEntry(entry)}
-                style={{
-                  display: 'flex', alignItems: 'center', gap: '12px',
-                  background: selected.has(entry.id) ? 'rgba(231,76,60,0.1)' : 'rgba(255,255,255,0.05)',
-                  border: `1px solid ${selected.has(entry.id) ? 'rgba(231,76,60,0.4)' : `${typeColors[entry.type]}30`}`,
-                  borderRadius: '12px',
-                  padding: '14px 16px',
-                  marginBottom: '8px',
-                  cursor: 'pointer',
-                  transition: '0.2s',
-                }}
-              >
-                {selectMode && (
-                  <div style={{
-                    width: '44px', height: '44px', flexShrink: 0,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  }}>
-                    <div style={{
-                      width: '20px', height: '20px', borderRadius: '4px',
-                      border: `2px solid ${selected.has(entry.id) ? '#e74c3c' : 'rgba(255,255,255,0.2)'}`,
-                      background: selected.has(entry.id) ? '#e74c3c' : 'transparent',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: '12px', color: '#fff', transition: '0.2s',
-                    }}>
-                      {selected.has(entry.id) && '✓'}
-                    </div>
-                  </div>
-                )}
-                <div style={{ fontSize: '24px' }}>{typeIcons[entry.type]}</div>
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: '14px', fontWeight: 700 }}>{renderSummary(entry, t)}</div>
-                  <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', marginTop: '2px' }}>{formatDate(entry.date)}</div>
-                </div>
+            {groupedEntries.map(group => (
+              <div key={group.label}>
                 <div style={{
-                  fontSize: '11px', padding: '2px 8px',
-                  background: `${typeColors[entry.type]}20`,
-                  color: typeColors[entry.type],
-                  borderRadius: '8px',
-                  border: `1px solid ${typeColors[entry.type]}40`,
+                  fontSize: '11px', color: 'rgba(212,175,55,0.5)', letterSpacing: '2px',
+                  padding: '8px 4px 6px', fontWeight: 700,
                 }}>
-                  {t(`home.${entry.type}`)}
+                  ✦ {group.label}
                 </div>
-              </motion.div>
+                {group.entries.map((entry) => (
+                  <motion.div key={entry.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    onClick={() => { if (selectMode) { toggleSelect(entry.id); } else { setDetailEntry(entry); setEditingMemo(false); } }}
+                    style={{
+                      display: 'flex', alignItems: 'center', gap: '12px',
+                      background: selected.has(entry.id) ? 'rgba(231,76,60,0.1)' : 'rgba(255,255,255,0.05)',
+                      border: `1px solid ${selected.has(entry.id) ? 'rgba(231,76,60,0.4)' : `${typeColors[entry.type]}30`}`,
+                      borderRadius: '12px',
+                      padding: '14px 16px',
+                      marginBottom: '8px',
+                      cursor: 'pointer',
+                      transition: '0.2s',
+                    }}
+                  >
+                    {selectMode && (
+                      <div style={{
+                        width: '44px', height: '44px', flexShrink: 0,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      }}>
+                        <div style={{
+                          width: '20px', height: '20px', borderRadius: '4px',
+                          border: `2px solid ${selected.has(entry.id) ? '#e74c3c' : 'rgba(255,255,255,0.2)'}`,
+                          background: selected.has(entry.id) ? '#e74c3c' : 'transparent',
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          fontSize: '12px', color: '#fff', transition: '0.2s',
+                        }}>
+                          {selected.has(entry.id) && '✓'}
+                        </div>
+                      </div>
+                    )}
+                    <div style={{ fontSize: '24px' }}>{typeIcons[entry.type]}</div>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontSize: '14px', fontWeight: 700 }}>{renderSummary(entry, t)}</div>
+                      <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', marginTop: '2px' }}>{formatDate(entry.date)}</div>
+                      {entry.memo && (
+                        <div style={{ fontSize: '11px', color: 'rgba(212,175,55,0.5)', marginTop: '3px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                          💬 {entry.memo}
+                        </div>
+                      )}
+                    </div>
+                    <div style={{
+                      fontSize: '11px', padding: '2px 8px',
+                      background: `${typeColors[entry.type]}20`,
+                      color: typeColors[entry.type],
+                      borderRadius: '8px',
+                      border: `1px solid ${typeColors[entry.type]}40`,
+                    }}>
+                      {t(`home.${entry.type}`)}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             ))}
 
             {/* Entry count & limit indicator */}
@@ -280,6 +411,66 @@ export default function HistoryPage() {
 
               <div style={{ fontSize: '14px', lineHeight: '1.8', color: 'rgba(255,255,255,0.7)', padding: '8px 0' }}>
                 <DetailContent entry={detailEntry} t={t} />
+              </div>
+
+              {/* Memo section */}
+              <div style={{ padding: '10px 0' }}>
+                {editingMemo ? (
+                  <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                    <input
+                      type="text" value={memoText}
+                      onChange={e => setMemoText(e.target.value.slice(0, 100))}
+                      maxLength={100} autoFocus
+                      placeholder={t('memo.placeholder', { defaultValue: '오늘의 운세를 보며 느낀 것...' })}
+                      style={{
+                        flex: 1, padding: '8px 12px', background: 'rgba(255,255,255,0.05)',
+                        border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px',
+                        color: 'rgba(255,255,255,0.7)', fontSize: '13px',
+                        fontFamily: "'Noto Serif KR', serif",
+                      }}
+                    />
+                    <motion.button whileTap={{ scale: 0.9 }}
+                      onClick={() => {
+                        updateMemo(detailEntry.id, memoText.trim());
+                        const updated = getHistory();
+                        setEntries(updated);
+                        const updatedEntry = updated.find(e => e.id === detailEntry.id);
+                        if (updatedEntry) setDetailEntry(updatedEntry);
+                        setEditingMemo(false);
+                      }}
+                      style={{
+                        padding: '8px 14px', borderRadius: '8px',
+                        background: 'rgba(212,175,55,0.15)', border: '1px solid rgba(212,175,55,0.3)',
+                        color: '#ffd700', fontSize: '12px', flexShrink: 0,
+                      }}
+                    >
+                      {t('memo.save', { defaultValue: '저장' })}
+                    </motion.button>
+                  </div>
+                ) : (
+                  <motion.div
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => { setMemoText(detailEntry.memo || ''); setEditingMemo(true); }}
+                    style={{
+                      padding: '10px 14px', background: 'rgba(212,175,55,0.05)',
+                      border: '1px dashed rgba(212,175,55,0.15)', borderRadius: '10px',
+                      cursor: 'pointer', textAlign: 'center',
+                    }}
+                  >
+                    {detailEntry.memo ? (
+                      <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)', fontStyle: 'italic' }}>
+                        💬 {detailEntry.memo}
+                        <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.25)', marginTop: '4px' }}>
+                          {t('memo.tapToEdit', { defaultValue: '탭하여 수정' })}
+                        </div>
+                      </div>
+                    ) : (
+                      <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.25)' }}>
+                        💬 {t('memo.addNote', { defaultValue: '메모를 남겨보세요' })}
+                      </div>
+                    )}
+                  </motion.div>
+                )}
               </div>
 
               <Divider color={typeColors[detailEntry.type]} />
@@ -500,8 +691,10 @@ function DetailContent({ entry, t }: { entry: HistoryEntry; t: (key: string, opt
       // Re-derive from i18n keys instead of using stored pre-translated text
       const wakaTranslation = rank ? t(`waka.${rank}.translation`) : '';
       const meaning = rank ? t(`waka.${rank}.meaning`) : '';
+      const general = rank ? t(`omikujiData.${rank}.0.general`) : '';
       const wish = rank ? t(`omikujiData.${rank}.0.wish`) : '';
       const love = rank ? t(`omikujiData.${rank}.0.relationship`) : '';
+      const travel = rank ? t(`omikujiData.${rank}.0.travel`) : '';
       const health = rank ? t(`omikujiData.${rank}.0.health`) : '';
 
       return (
@@ -530,10 +723,19 @@ function DetailContent({ entry, t }: { entry: HistoryEntry; t: (key: string, opt
             </SectionBox>
           )}
 
-          {(wish || love || health) && (
+          {general && (
+            <SectionBox color="rgba(231,76,60,0.06)">
+              <div style={{ fontSize: '12px', lineHeight: '1.7', color: 'rgba(255,255,255,0.5)', textAlign: 'center' }}>
+                {general}
+              </div>
+            </SectionBox>
+          )}
+
+          {(wish || love || travel || health) && (
             <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginTop: '14px', fontSize: '12px', color: 'rgba(255,255,255,0.4)', flexWrap: 'wrap' }}>
               {wish && <div>🙏 {wish}</div>}
               {love && <div>💕 {love}</div>}
+              {travel && <div>✈️ {travel}</div>}
               {health && <div>💪 {health}</div>}
             </div>
           )}

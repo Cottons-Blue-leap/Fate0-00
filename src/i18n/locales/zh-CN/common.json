@@ -284,7 +284,11 @@
     "deleteAll": "全部删除",
     "cancel": "取消",
     "entryCount": "{{count}} / {{max}}",
-    "limitReached": "* 最旧的记录将被新记录替换"
+    "limitReached": "* 最旧的记录将被新记录替换",
+    "today": "今天",
+    "yesterday": "昨天",
+    "thisWeek": "本周",
+    "earlier": "更早"
   },
   "dailyLimit": {
     "used": "今天的运势已经查看过了",
@@ -304,5 +308,20 @@
     "adNotice": "ⓘ 包含广告",
     "adArea": "广告区域",
     "complete": "命运已被改写"
+  },
+  "memo": {
+    "prompt": "这个运势让你感觉如何？",
+    "placeholder": "写一条简短笔记...",
+    "save": "保存",
+    "saved": "已保存",
+    "addNote": "添加笔记",
+    "tapToEdit": "点击编辑"
+  },
+  "weekly": {
+    "title": "你这周的流向",
+    "elementFlow": "本周核心能量",
+    "moodDedicated": "与命运稳定对话的一周",
+    "moodActive": "积极阅读流向的一周",
+    "moodCurious": "静静注视星星的一周"
   }
 }

@@ -148,7 +148,101 @@
       }
     },
     "summary1": "Выпала карта {{name}}.",
-    "summary3": "Прочтите поток прошлого, настоящего и будущего и действуйте мудро."
+    "summary3": "Прочтите поток прошлого, настоящего и будущего и действуйте мудро.",
+    "deep": {
+      "0": {
+        "archetype": "The Pure Adventurer",
+        "context": "This card awakens the fearless child within you. If there's something you want to start anew, that's exactly why this card appeared."
+      },
+      "1": {
+        "archetype": "The Alchemist of Will",
+        "context": "Everything you need is already within reach. Gather what's scattered and focus."
+      },
+      "2": {
+        "archetype": "The Inner Guide",
+        "context": "Now is the time to follow intuition over reason. This card tells you there's a knowing within you that words cannot explain."
+      },
+      "3": {
+        "archetype": "The Mother of Abundance",
+        "context": "The energy of nurturing and creation is calling you. It's time to cultivate or create something."
+      },
+      "4": {
+        "archetype": "The Guardian of Order",
+        "context": "Bring structure to what's wavering. This card says it's time for you to become the pillar."
+      },
+      "5": {
+        "archetype": "The Messenger of Wisdom",
+        "context": "Someone's advice or teaching may be what you need right now. Or perhaps you are meant to be that guide."
+      },
+      "6": {
+        "archetype": "The Chooser at the Crossroads",
+        "context": "Your heart knows the answer, not your head. This card asks what truly matters to you."
+      },
+      "7": {
+        "archetype": "The Warrior Who Breaks Through",
+        "context": "Unite opposing forces and charge forward. This card says if there's a will, the way will open."
+      },
+      "8": {
+        "archetype": "The Gentle Sovereign",
+        "context": "True strength is not about suppression, but acceptance. This card awakens the value of patience."
+      },
+      "9": {
+        "archetype": "The Sage on the Path",
+        "context": "Now is a time for solitude. This card tells you there are answers to be found in being alone."
+      },
+      "10": {
+        "archetype": "The Turner of Fate",
+        "context": "The wheel always turns. Remember that nothing lasts forever — and that is hope."
+      },
+      "11": {
+        "archetype": "The Judge of Truth",
+        "context": "You need impartial eyes right now. This card asks you to set aside bias and see things as they are."
+      },
+      "12": {
+        "archetype": "The Willing Sacrifice",
+        "context": "Pausing is not retreating. This card says that changing your perspective reveals what was hidden."
+      },
+      "13": {
+        "archetype": "The Gatekeeper of Transformation",
+        "context": "You must let go of something for something new to enter. This card heralds not an ending, but the start of transformation."
+      },
+      "14": {
+        "archetype": "The Alchemist of Harmony",
+        "context": "Find your center between extremes. This card says to blend slowly but steadily, without haste."
+      },
+      "15": {
+        "archetype": "The Mirror of Shadows",
+        "context": "What you fear is not outside but within. This card says you must confront it to be free."
+      },
+      "16": {
+        "archetype": "The Lightning of Liberation",
+        "context": "What crumbles was built on the wrong foundation. This card heralds a painful but necessary dismantling."
+      },
+      "17": {
+        "archetype": "The Guardian of Hope",
+        "context": "Even in darkness, the light has not disappeared. This card says the brightest star rises in the darkest hour."
+      },
+      "18": {
+        "archetype": "The Guide of the Unconscious",
+        "context": "What you see is not the whole picture. This card carries the message of intuition hidden behind anxiety."
+      },
+      "19": {
+        "archetype": "The Inner Light",
+        "context": "You already know the answer. This card asks you to restore confidence and shine as you are."
+      },
+      "20": {
+        "archetype": "The Trumpet of Awakening",
+        "context": "Look back at the past — not with regret but with insight. This card tells you to rise as your true self."
+      },
+      "21": {
+        "archetype": "The Dancer of Completion",
+        "context": "A journey is coming to its conclusion. This card celebrates your achievement and invites you to prepare for the next door."
+      }
+    },
+    "deepLabel": "Почему эта карта пришла к вам сейчас",
+    "flowLabel": "Поток, который несут карты",
+    "flowPastToFuture": "Из прошлого {{past}}, через настоящее {{present}}, будущее движется к {{future}}. Доверьтесь потоку.",
+    "flowSingle": "В этот самый момент энергия {{card}} окружает вас."
   },
   "horoscopeData": {
     "overall": [
@@ -212,43 +306,63 @@
   "dayMaster": {
     "甲": {
       "title": "Великое древо, касающееся небес",
-      "desc": "甲Дерево — Вы — великое древо, устремлённое прямо к небу. Сильное чувство справедливости и лидерство; выбрав направление, вы редко сворачиваете."
+      "desc": "甲Дерево — Вы — великое древо, устремлённое прямо к небу. Сильное чувство справедливости и лидерство; выбрав направление, вы редко сворачиваете.",
+      "direction": "You shine when leading organizations or pioneering new paths",
+      "relationship": "A dependable, responsible partner — though sometimes insistent on your own way"
     },
     "乙": {
       "title": "Гибкая лоза",
-      "desc": "乙Дерево — Вы — лоза, которая гнётся на ветру, но никогда не ломается. Мягкий и адаптивный, вы обладаете артистической чувствительностью и тонкостью."
+      "desc": "乙Дерево — Вы — лоза, которая гнётся на ветру, но никогда не ломается. Мягкий и адаптивный, вы обладаете артистической чувствительностью и тонкостью.",
+      "direction": "Arts, design, diplomacy, counseling — paths that engage people and emotion suit you",
+      "relationship": "A warm partner who reads hearts well — sometimes it's okay to express your own feelings more"
     },
     "丙": {
       "title": "Солнце, озаряющее всё",
-      "desc": "丙Огонь — Вы — солнце, освещающее мир. Страстный и харизматичный, вы согреваете всех вокруг."
+      "desc": "丙Огонь — Вы — солнце, освещающее мир. Страстный и харизматичный, вы согреваете всех вокруг.",
+      "direction": "On stage, in leadership, as an educator — you shine brightest in front of people",
+      "relationship": "A joyful, warm partner — but be careful not to burn yourself giving everything away"
     },
     "丁": {
       "title": "Свеча во тьме",
-      "desc": "丁Огонь — Вы — свеча, освещающая путь во тьме. Мягкий, но верный свет; интеллектуальный и глубоко проницательный."
+      "desc": "丁Огонь — Вы — свеча, освещающая путь во тьме. Мягкий, но верный свет; интеллектуальный и глубоко проницательный.",
+      "direction": "Research, strategy, writing, consulting — paths requiring deep thought suit you",
+      "relationship": "A partner of genuine devotion — quiet on the surface but deeper than anyone within"
     },
     "戊": {
       "title": "Несокрушимая гора",
-      "desc": "戊Земля — Вы — гора, которая стоит непоколебимо даже в бурю. Надёжный и великодушный, вы тот, на кого опираются другие."
+      "desc": "戊Земля — Вы — гора, которая стоит непоколебимо даже в бурю. Надёжный и великодушный, вы тот, на кого опираются другие.",
+      "direction": "Management, administration, real estate, education — roles that build stable foundations",
+      "relationship": "A pillar of trust — clumsy with words but shows everything through action"
     },
     "己": {
       "title": "Плодородная земля",
-      "desc": "己Земля — Вы — плодородная земля, взращивающая жизнь. Скромный и преданный, вы обладаете даром заботы о других."
+      "desc": "己Земля — Вы — плодородная земля, взращивающая жизнь. Скромный и преданный, вы обладаете даром заботы о других.",
+      "direction": "Caregiving, education, cooking, HR — paths that nurture and grow people bring you happiness",
+      "relationship": "A partner who silently devotes — it's okay to put yourself first sometimes"
     },
     "庚": {
       "title": "Клинок из необработанной руды",
-      "desc": "庚Металл — Вы — холодная руда, ещё не выплавленная. Решительный и целеустремлённый, испытания лишь оттачивают вашу остроту."
+      "desc": "庚Металл — Вы — холодная руда, ещё не выплавленная. Решительный и целеустремлённый, испытания лишь оттачивают вашу остроту.",
+      "direction": "Law, military, competitive business, surgery — where decisiveness is needed, you prove your worth",
+      "relationship": "A deeply loyal partner — behind the sharp words hides a warm heart"
     },
     "辛": {
       "title": "Драгоценность в лунном свете",
-      "desc": "辛Металл — Вы — изысканная драгоценность, сияющая в лунном свете. Утончённый и перфекционист, вы стремитесь к красоте и чистоте."
+      "desc": "辛Металл — Вы — изысканная драгоценность, сияющая в лунном свете. Утончённый и перфекционист, вы стремитесь к красоте и чистоте.",
+      "direction": "Jewelry, fashion, finance, artisanship — where precision and aesthetic sense are needed",
+      "relationship": "A pure partner who loves with all their heart — just needs a bit of time to open up"
     },
     "壬": {
       "title": "Неудержимая великая река",
-      "desc": "壬Вода — Вы — могучая река, прорезающая горы на пути к морю. Мудрый и великодушный, вы любите свободу."
+      "desc": "壬Вода — Вы — могучая река, прорезающая горы на пути к морю. Мудрый и великодушный, вы любите свободу.",
+      "direction": "Travel, trade, philosophy, media, freelance — paths that meet the wide world suit you",
+      "relationship": "A free and open partner — hold too tight and they drift away, but trust and they always return"
     },
     "癸": {
       "title": "Утренняя капля росы",
-      "desc": "癸Вода — Вы — капля росы на травинке на рассвете. Утончённый и интуитивный, вы обладаете даром чувствовать невидимое."
+      "desc": "癸Вода — Вы — капля росы на травинке на рассвете. Утончённый и интуитивный, вы обладаете даром чувствовать невидимое.",
+      "direction": "Psychology, divination, art, research, healing — where intuition and sensitivity are assets",
+      "relationship": "A deep partner who understands without words — sometimes expressing your own feelings aloud helps even more"
     }
   },
   "waka": {
@@ -462,5 +576,151 @@
     "harmony": "Энергия {{stem}}{{branch}} гармонирует с вашей судьбой. Внутреннее дерево встречает солнце и расцветает.",
     "clash": "Энергия {{stem}}{{branch}} сталкивается с вашей судьбой. Огонь встречает воду и кипит. Интенсивно, но двигатель перемен.",
     "neutral": "Энергия {{stem}}{{branch}} течёт спокойно. Время внутреннего укрепления."
+  },
+  "personalDaily": {
+    "elementName": {
+      "木": "Дерево",
+      "火": "Огонь",
+      "土": "Земля",
+      "金": "Металл",
+      "水": "Вода"
+    },
+    "elementLabel": "Энергия дня",
+    "fallbackPrefix": "Шёпот звёзд",
+    "generate": {
+      "new": "{{name}}, сегодня энергия {{element}} открывает новый поток. Посейте семя в тишине.",
+      "waxing": "{{name}}, энергия {{element}} питает ваши возможности сегодня. Плывите по течению.",
+      "full": "{{name}}, энергия {{element}} достигла пика. То, что вы попробуете сегодня, засияет.",
+      "waning": "{{name}}, энергия {{element}} мягко обволакивает вас сегодня. Оглянитесь на достигнутое."
+    },
+    "generated": {
+      "new": "{{name}}, сегодня энергия {{element}} тихо восполняется. Уделите время заботе о себе.",
+      "waxing": "{{name}}, энергия {{element}} медленно растёт. Открытость привлечёт удачу.",
+      "full": "{{name}}, энергия {{element}} переполняет. Чья-то доброта может найти вас сегодня.",
+      "waning": "{{name}}, тёплая энергия {{element}} ещё здесь. Подумайте о том, за что благодарны."
+    },
+    "same": {
+      "new": "{{name}}, сегодня энергия {{element}} и вы — одно целое. Доверьтесь интуиции.",
+      "waxing": "{{name}}, резонанс {{element}} усиливается. Не упускайте приходящие идеи.",
+      "full": "{{name}}, энергия {{element}} сегодня яснее всего. Самый искренний выбор — лучший.",
+      "waning": "{{name}}, ваш ритм и ритм {{element}} сегодня совпадают. Плывите с комфортом."
+    },
+    "restrain": {
+      "new": "{{name}}, сегодня энергия {{element}} проходит испытание. Можно сделать паузу.",
+      "waxing": "{{name}}, есть сопротивление {{element}}, но вы можете стать сильнее через него.",
+      "full": "{{name}}, если чувствуете напряжение, соберите силу {{element}}. Стойкость — тоже мужество.",
+      "waning": "{{name}}, сегодняшнее трение готовит завтрашний рост. Доверьтесь корням {{element}}."
+    },
+    "restrained": {
+      "new": "{{name}}, сегодня энергия {{element}} уходит вглубь. Не нужно себя заставлять.",
+      "waxing": "{{name}}, {{element}} может казаться подавленным, но начать с малого — это путь.",
+      "full": "{{name}}, сберегите силу {{element}} сегодня. Ждать подходящий момент — тоже стратегия.",
+      "waning": "{{name}}, энергия {{element}} отдыхает. Освободите сердце для завтра."
+    }
+  },
+  "signContext": {
+    "aries": {
+      "element": "Огонь",
+      "trait": "Pioneer energy. Quick to act and fearless. You blaze trails where no one else dares. Your starting power is the strongest of all twelve signs, but patience is your challenge. Your spark is the first flame that moves the world."
+    },
+    "taurus": {
+      "element": "Земля",
+      "trait": "The star of senses. You love stability and are drawn to beauty. Slow to change, but once decided, unbreakable as steel. A flower that blooms slowly but lasts the longest."
+    },
+    "gemini": {
+      "element": "Воздух",
+      "trait": "The star of curiosity. Versatile and brilliant at communication. Your talent lies in crossing between worlds. Free as the wind — wherever you pass, something changes."
+    },
+    "cancer": {
+      "element": "Вода",
+      "trait": "Guardian of emotions. You place deep meaning in family and bonds. Hard shell outside, softer than anyone within. Your embrace is someone's safest harbor."
+    },
+    "leo": {
+      "element": "Огонь",
+      "trait": "A luminous being. Most alive on stage, most powerful when loved. A sun-like sign with innate charisma. When you shine, everything around you shines too."
+    },
+    "virgo": {
+      "element": "Земля",
+      "trait": "The artisan of perfection. You catch details others miss. You find fulfillment in helping others. Your weakness is being too hard on yourself."
+    },
+    "libra": {
+      "element": "Воздух",
+      "trait": "Seeker of harmony. You love balance and beauty. Decisions are hard, but that depth is your fairness. Where you are, harmony dwells."
+    },
+    "scorpio": {
+      "element": "Вода",
+      "trait": "Explorer of depths. Eyes that see beneath the surface. Once you give your heart, its depth is oceanic. Your courage to face darkness is your greatest power."
+    },
+    "sagittarius": {
+      "element": "Огонь",
+      "trait": "Explorer of freedom. You love the wide world and grand questions. Your honesty sometimes stings, but it's always real."
+    },
+    "capricorn": {
+      "element": "Земля",
+      "trait": "The climber toward the summit. Once you set a goal, you climb surely. Serious in youth, uniquely younger with age. Time is always on your side."
+    },
+    "aquarius": {
+      "element": "Воздух",
+      "trait": "Pioneer of the future. You see the world differently. Independent yet harboring love for all humanity. Those ahead of their time walk alone at first."
+    },
+    "pisces": {
+      "element": "Вода",
+      "trait": "The boundless dreamer. You move between reality and dreams, with empathy deeper than anyone. Your gentleness is the very strength this world needs most."
+    },
+    "resonanceDeep": {
+      "aligned": "Солнце и Луна на одной волне. Сегодня интуиция и действие естественно сливаются.",
+      "approaching": "Солнце и Луна притягиваются друг к другу. День, когда может прийти новое вдохновение или встреча.",
+      "neutral": "Солнце и Луна идут своими путями. Сегодня сосредоточьтесь на внутреннем.",
+      "distant": "Сегодня чувствуется напряжение между Солнцем и Луной. Постарайтесь найти баланс между чувством и разумом."
+    },
+    "title": "Ваш знак зодиака"
+  },
+  "elementDeep": {
+    "excess": {
+      "木": "Когда Дерево в избытке, планы множатся, но действия размываются. Решительность Металла помогает подрезать ветви.",
+      "火": "Когда Огонь в избытке, страсть может сжечь вас. Покой Воды восстанавливает центр.",
+      "土": "Когда Земля в избытке, вы боитесь перемен. Энергия роста Дерева прорывается и обновляет.",
+      "金": "Когда Металл в избытке, перфекционизм охлаждает отношения. Тепло Огня плавит холодную сталь.",
+      "水": "Когда Вода в избытке, вы тонете в мыслях. Стабильность Земли даёт направление."
+    },
+    "deficient": {
+      "木": "Когда Дерева недостаёт, убывает смелость для нового. Зелёные пространства и прогулки помогают.",
+      "火": "Когда Огня недостаёт, слабеют страсть и уверенность. Тёплые цвета и движение разжигают пламя.",
+      "土": "Когда Земли недостаёт, центр шатается. Регулярный распорядок приносит стабильность.",
+      "金": "Когда Металла недостаёт, решения даются трудно. Порядок и ясные цели помогают.",
+      "水": "Когда Воды недостаёт, интуиция убывает. Прогулки у воды и медитация восполняют мудрость."
+    },
+    "balanceTitle": "Что открывают ваши Пять Стихий"
+  },
+  "rankGuide": {
+    "title": "Что означает это предсказание",
+    "daikichi": {
+      "meaning": "Высшая удача. Всё течёт как ветер в ваших парусах.",
+      "advice": "Поделитесь этой удачей. Разделённая энергия сохраняется дольше."
+    },
+    "kichi": {
+      "meaning": "Хорошая удача. Упорный труд приведёт к хорошим результатам.",
+      "advice": "Не переусердствуйте — следуйте потоку."
+    },
+    "chukichi": {
+      "meaning": "Умеренная удача. Неожиданные маленькие радости найдут вас.",
+      "advice": "Обратите внимание на невидимые благословения."
+    },
+    "shokichi": {
+      "meaning": "Малая удача. Мягкая, тёплая удача окружает вас.",
+      "advice": "Сейчас малые действия сияют ярче больших амбиций."
+    },
+    "suekichi": {
+      "meaning": "Поздняя удача. Медленно сейчас, но хороший конец ждёт.",
+      "advice": "Само ожидание — часть удачи."
+    },
+    "kyo": {
+      "meaning": "Неудача. Время осторожности, но избежимое.",
+      "advice": "Избегайте поспешных действий и отложите важные решения."
+    },
+    "daikyo": {
+      "meaning": "Великая неудача. Самое дно — но ниже падать некуда.",
+      "advice": "Со дна можно только подняться. Проведите день скромно."
+    }
   }
 }

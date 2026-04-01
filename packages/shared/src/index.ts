@@ -26,7 +26,10 @@ export {
   heavenlyStems,
   earthlyBranches,
   elementFortunes,
+  getSexagenaryCycle,
+  toSexagenaryIndex,
 } from './data/saju';
+export type { StemData, BranchData } from './data/saju';
 
 // === Data: Omikuji ===
 export { omikujiData } from './data/omikuji';
@@ -38,7 +41,14 @@ export { getReading } from './logic/tarotEngine';
 export { getDailyHoroscope } from './logic/horoscopeEngine';
 
 // === Logic: Saju ===
-export { getSajuReading } from './logic/sajuEngine';
+export { getSajuReading, countElements, setUseKoreanManseryeok } from './logic/sajuEngine';
+
+// === Logic: Solar Terms ===
+export { getSajuMonthAndYear, getLichunDate, getSolarTermDates, getAdjacentTerm } from './logic/solarTerms';
+export type { SajuMonthInfo, SolarTermDate } from './logic/solarTerms';
+
+// === Logic: Lunar Converter ===
+export { lunarToSolar, lunarToSolarAsync, solarToLunar } from './logic/lunarConverter';
 
 // === Logic: Saju Deep Analysis ===
 export type {
@@ -83,3 +93,14 @@ export type {
   DailyFortune,
 } from './logic/dailySajuEngine';
 export { getTodayPillar, getDailyFortune } from './logic/dailySajuEngine';
+
+// === Logic: Five Elements ===
+export type { Interaction } from './logic/fiveElements';
+export { getInteraction, getElementInteraction, generationCycle, restraintCycle, hashString } from './logic/fiveElements';
+
+// === Logic: Personal Message ===
+export type {
+  PersonalMessageResult,
+  PersonalMessageInput,
+} from './logic/personalMessageEngine';
+export { getPersonalMessage } from './logic/personalMessageEngine';

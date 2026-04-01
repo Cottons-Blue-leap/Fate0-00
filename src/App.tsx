@@ -8,10 +8,12 @@ import SplashScreen from './components/layout/SplashScreen';
 import { ProfileProvider, useProfile } from './context/ProfileContext';
 import { AuthProvider } from './context/AuthContext';
 
-class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
-  state = { hasError: false };
-  static getDerivedStateFromError() { return { hasError: true }; }
-  componentDidCatch(_error: Error, _info: ErrorInfo) { /* could log to analytics */ }
+class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean; errorMessage: string }> {
+  state = { hasError: false, errorMessage: '' };
+  static getDerivedStateFromError(error: Error) { return { hasError: true, errorMessage: error.message || 'Unknown error' }; }
+  componentDidCatch(error: Error, info: ErrorInfo) {
+    console.error('[ErrorBoundary]', error.message, '\n', info.componentStack);
+  }
   render() {
     if (this.state.hasError) {
       return (

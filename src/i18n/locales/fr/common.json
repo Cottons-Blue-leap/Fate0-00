@@ -284,7 +284,11 @@
     "deleteAll": "Tout supprimer",
     "cancel": "Annuler",
     "entryCount": "{{count}} / {{max}}",
-    "limitReached": "* Les plus anciennes entrées seront remplacées"
+    "limitReached": "* Les plus anciennes entrées seront remplacées",
+    "today": "Aujourd'hui",
+    "yesterday": "Hier",
+    "thisWeek": "Cette semaine",
+    "earlier": "Plus tôt"
   },
   "dailyLimit": {
     "used": "Vous avez déjà consulté la fortune d'aujourd'hui",
@@ -304,5 +308,20 @@
     "adNotice": "ⓘ Contient de la publicité",
     "adArea": "Espace publicitaire",
     "complete": "Votre destin a été réécrit"
+  },
+  "memo": {
+    "prompt": "Qu'avez-vous ressenti face à cette fortune ?",
+    "placeholder": "Écrivez une courte note...",
+    "save": "Sauvegarder",
+    "saved": "Sauvegardé",
+    "addNote": "Ajouter une note",
+    "tapToEdit": "Toucher pour modifier"
+  },
+  "weekly": {
+    "title": "Votre flux cette semaine",
+    "elementFlow": "Énergie clé cette semaine",
+    "moodDedicated": "Une semaine de dialogue constant avec le destin",
+    "moodActive": "Une semaine de lecture active du flux",
+    "moodCurious": "Une semaine à contempler les étoiles en silence"
   }
 }

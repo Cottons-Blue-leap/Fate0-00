@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Capacitor } from '@capacitor/core';
+import html2canvas from 'html2canvas';
 import type { HistoryEntry } from '../../logic/historyEngine';
 import SharePreview from './SharePreview';
 
@@ -12,7 +13,6 @@ interface Props {
 }
 
 async function captureImage(el: HTMLDivElement, bg: string): Promise<{ blob: Blob; dataUrl: string }> {
-  const { default: html2canvas } = await import('html2canvas');
   const canvas = await html2canvas(el, { backgroundColor: bg, scale: 2, useCORS: true });
   const dataUrl = canvas.toDataURL('image/png');
   const blob = await new Promise<Blob>((resolve) => {

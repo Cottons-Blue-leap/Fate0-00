@@ -148,7 +148,101 @@
       }
     },
     "summary1": "{{name}} कार्ड निकला है।",
-    "summary3": "अतीत-वर्तमान-भविष्य के प्रवाह को पढ़ें और बुद्धिमानी से सामना करें।"
+    "summary3": "अतीत-वर्तमान-भविष्य के प्रवाह को पढ़ें और बुद्धिमानी से सामना करें।",
+    "deep": {
+      "0": {
+        "archetype": "The Pure Adventurer",
+        "context": "This card awakens the fearless child within you. If there's something you want to start anew, that's exactly why this card appeared."
+      },
+      "1": {
+        "archetype": "The Alchemist of Will",
+        "context": "Everything you need is already within reach. Gather what's scattered and focus."
+      },
+      "2": {
+        "archetype": "The Inner Guide",
+        "context": "Now is the time to follow intuition over reason. This card tells you there's a knowing within you that words cannot explain."
+      },
+      "3": {
+        "archetype": "The Mother of Abundance",
+        "context": "The energy of nurturing and creation is calling you. It's time to cultivate or create something."
+      },
+      "4": {
+        "archetype": "The Guardian of Order",
+        "context": "Bring structure to what's wavering. This card says it's time for you to become the pillar."
+      },
+      "5": {
+        "archetype": "The Messenger of Wisdom",
+        "context": "Someone's advice or teaching may be what you need right now. Or perhaps you are meant to be that guide."
+      },
+      "6": {
+        "archetype": "The Chooser at the Crossroads",
+        "context": "Your heart knows the answer, not your head. This card asks what truly matters to you."
+      },
+      "7": {
+        "archetype": "The Warrior Who Breaks Through",
+        "context": "Unite opposing forces and charge forward. This card says if there's a will, the way will open."
+      },
+      "8": {
+        "archetype": "The Gentle Sovereign",
+        "context": "True strength is not about suppression, but acceptance. This card awakens the value of patience."
+      },
+      "9": {
+        "archetype": "The Sage on the Path",
+        "context": "Now is a time for solitude. This card tells you there are answers to be found in being alone."
+      },
+      "10": {
+        "archetype": "The Turner of Fate",
+        "context": "The wheel always turns. Remember that nothing lasts forever — and that is hope."
+      },
+      "11": {
+        "archetype": "The Judge of Truth",
+        "context": "You need impartial eyes right now. This card asks you to set aside bias and see things as they are."
+      },
+      "12": {
+        "archetype": "The Willing Sacrifice",
+        "context": "Pausing is not retreating. This card says that changing your perspective reveals what was hidden."
+      },
+      "13": {
+        "archetype": "The Gatekeeper of Transformation",
+        "context": "You must let go of something for something new to enter. This card heralds not an ending, but the start of transformation."
+      },
+      "14": {
+        "archetype": "The Alchemist of Harmony",
+        "context": "Find your center between extremes. This card says to blend slowly but steadily, without haste."
+      },
+      "15": {
+        "archetype": "The Mirror of Shadows",
+        "context": "What you fear is not outside but within. This card says you must confront it to be free."
+      },
+      "16": {
+        "archetype": "The Lightning of Liberation",
+        "context": "What crumbles was built on the wrong foundation. This card heralds a painful but necessary dismantling."
+      },
+      "17": {
+        "archetype": "The Guardian of Hope",
+        "context": "Even in darkness, the light has not disappeared. This card says the brightest star rises in the darkest hour."
+      },
+      "18": {
+        "archetype": "The Guide of the Unconscious",
+        "context": "What you see is not the whole picture. This card carries the message of intuition hidden behind anxiety."
+      },
+      "19": {
+        "archetype": "The Inner Light",
+        "context": "You already know the answer. This card asks you to restore confidence and shine as you are."
+      },
+      "20": {
+        "archetype": "The Trumpet of Awakening",
+        "context": "Look back at the past — not with regret but with insight. This card tells you to rise as your true self."
+      },
+      "21": {
+        "archetype": "The Dancer of Completion",
+        "context": "A journey is coming to its conclusion. This card celebrates your achievement and invites you to prepare for the next door."
+      }
+    },
+    "deepLabel": "यह कार्ड अभी आपके पास क्यों आया",
+    "flowLabel": "कार्ड जो प्रवाह बताते हैं",
+    "flowPastToFuture": "अतीत {{past}} से, वर्तमान {{present}} के माध्यम से, भविष्य {{future}} की ओर बढ़ रहा है। प्रवाह पर भरोसा करें।",
+    "flowSingle": "इस क्षण, {{card}} की ऊर्जा आपको घेरे हुए है।"
   },
   "horoscopeData": {
     "overall": [
@@ -212,43 +306,63 @@
   "dayMaster": {
     "甲": {
       "title": "आकाश छूता विशाल वृक्ष",
-      "desc": "甲काष्ठ — आप आकाश की ओर सीधे बढ़ता हुआ एक विशाल वृक्ष हैं। न्याय की प्रबल भावना और नेतृत्व क्षमता; एक बार दिशा तय कर लें तो शायद ही बदलते हैं।"
+      "desc": "甲काष्ठ — आप आकाश की ओर सीधे बढ़ता हुआ एक विशाल वृक्ष हैं। न्याय की प्रबल भावना और नेतृत्व क्षमता; एक बार दिशा तय कर लें तो शायद ही बदलते हैं।",
+      "direction": "You shine when leading organizations or pioneering new paths",
+      "relationship": "A dependable, responsible partner — though sometimes insistent on your own way"
     },
     "乙": {
       "title": "लचीली बेल",
-      "desc": "乙काष्ठ — आप हवा में झुकने वाली पर कभी न टूटने वाली बेल हैं। कोमल और अनुकूलनशील, कलात्मक संवेदनशीलता और सूक्ष्मता रखते हैं।"
+      "desc": "乙काष्ठ — आप हवा में झुकने वाली पर कभी न टूटने वाली बेल हैं। कोमल और अनुकूलनशील, कलात्मक संवेदनशीलता और सूक्ष्मता रखते हैं।",
+      "direction": "Arts, design, diplomacy, counseling — paths that engage people and emotion suit you",
+      "relationship": "A warm partner who reads hearts well — sometimes it's okay to express your own feelings more"
     },
     "丙": {
       "title": "सब कुछ प्रकाशित करता सूर्य",
-      "desc": "丙अग्नि — आप दुनिया को रोशन करने वाले सूर्य हैं। उत्साही और करिश्माई, अपने आस-पास के सभी लोगों को गर्मजोशी देते हैं।"
+      "desc": "丙अग्नि — आप दुनिया को रोशन करने वाले सूर्य हैं। उत्साही और करिश्माई, अपने आस-पास के सभी लोगों को गर्मजोशी देते हैं।",
+      "direction": "On stage, in leadership, as an educator — you shine brightest in front of people",
+      "relationship": "A joyful, warm partner — but be careful not to burn yourself giving everything away"
     },
     "丁": {
       "title": "अंधेरे में जलती मोमबत्ती",
-      "desc": "丁अग्नि — आप अंधेरे में राह दिखाती मोमबत्ती हैं। मंद किंतु निश्चित रोशनी; बौद्धिक और गहरी अंतर्दृष्टि वाले।"
+      "desc": "丁अग्नि — आप अंधेरे में राह दिखाती मोमबत्ती हैं। मंद किंतु निश्चित रोशनी; बौद्धिक और गहरी अंतर्दृष्टि वाले।",
+      "direction": "Research, strategy, writing, consulting — paths requiring deep thought suit you",
+      "relationship": "A partner of genuine devotion — quiet on the surface but deeper than anyone within"
     },
     "戊": {
       "title": "अडिग पर्वत",
-      "desc": "戊मिट्टी — आप तूफ़ान में भी अडिग रहने वाले पर्वत हैं। भरोसेमंद और समावेशी, लोग आप पर निर्भर रहते हैं।"
+      "desc": "戊मिट्टी — आप तूफ़ान में भी अडिग रहने वाले पर्वत हैं। भरोसेमंद और समावेशी, लोग आप पर निर्भर रहते हैं।",
+      "direction": "Management, administration, real estate, education — roles that build stable foundations",
+      "relationship": "A pillar of trust — clumsy with words but shows everything through action"
     },
     "己": {
       "title": "उपजाऊ धरती",
-      "desc": "己मिट्टी — आप जीवन पोषित करने वाली उपजाऊ धरती हैं। विनम्र और समर्पित, दूसरों की देखभाल करने में प्रतिभाशाली।"
+      "desc": "己मिट्टी — आप जीवन पोषित करने वाली उपजाऊ धरती हैं। विनम्र और समर्पित, दूसरों की देखभाल करने में प्रतिभाशाली।",
+      "direction": "Caregiving, education, cooking, HR — paths that nurture and grow people bring you happiness",
+      "relationship": "A partner who silently devotes — it's okay to put yourself first sometimes"
     },
     "庚": {
       "title": "कच्चे अयस्क की धार",
-      "desc": "庚धातु — आप अभी तक गलाया न गया ठंडा अयस्क हैं। निर्णय क्षमता और प्रेरणा शक्ति उत्कृष्ट; कठिनाइयाँ आपको और धारदार बनाती हैं।"
+      "desc": "庚धातु — आप अभी तक गलाया न गया ठंडा अयस्क हैं। निर्णय क्षमता और प्रेरणा शक्ति उत्कृष्ट; कठिनाइयाँ आपको और धारदार बनाती हैं।",
+      "direction": "Law, military, competitive business, surgery — where decisiveness is needed, you prove your worth",
+      "relationship": "A deeply loyal partner — behind the sharp words hides a warm heart"
     },
     "辛": {
       "title": "चाँदनी में चमकता रत्न",
-      "desc": "辛धातु — आप चाँदनी में चमकता एक सुंदर रत्न हैं। सूक्ष्म और पूर्णतावादी, सौंदर्य और शुद्धता की खोज में रहते हैं।"
+      "desc": "辛धातु — आप चाँदनी में चमकता एक सुंदर रत्न हैं। सूक्ष्म और पूर्णतावादी, सौंदर्य और शुद्धता की खोज में रहते हैं।",
+      "direction": "Jewelry, fashion, finance, artisanship — where precision and aesthetic sense are needed",
+      "relationship": "A pure partner who loves with all their heart — just needs a bit of time to open up"
     },
     "壬": {
       "title": "अविरल बहती महानदी",
-      "desc": "壬जल — आप पहाड़ों को काटती हुई समुद्र की ओर बहने वाली विशाल नदी हैं। बुद्धिमान और समावेशी, स्वतंत्रता से प्रेम करते हैं।"
+      "desc": "壬जल — आप पहाड़ों को काटती हुई समुद्र की ओर बहने वाली विशाल नदी हैं। बुद्धिमान और समावेशी, स्वतंत्रता से प्रेम करते हैं।",
+      "direction": "Travel, trade, philosophy, media, freelance — paths that meet the wide world suit you",
+      "relationship": "A free and open partner — hold too tight and they drift away, but trust and they always return"
     },
     "癸": {
       "title": "भोर की ओस की बूँद",
-      "desc": "癸जल — आप भोर में घास की पत्ती पर टिकी एक ओस की बूँद हैं। सूक्ष्म और सहज ज्ञानी, अदृश्य को महसूस करने की प्रेरणा रखते हैं।"
+      "desc": "癸जल — आप भोर में घास की पत्ती पर टिकी एक ओस की बूँद हैं। सूक्ष्म और सहज ज्ञानी, अदृश्य को महसूस करने की प्रेरणा रखते हैं।",
+      "direction": "Psychology, divination, art, research, healing — where intuition and sensitivity are assets",
+      "relationship": "A deep partner who understands without words — sometimes expressing your own feelings aloud helps even more"
     }
   },
   "waka": {
@@ -462,5 +576,151 @@
     "harmony": "{{stem}}{{branch}} की ऊर्जा आपके भाग्य से सामंजस्य करती है।",
     "clash": "{{stem}}{{branch}} की ऊर्जा आपके भाग्य से टकराती है। तीव्र, पर परिवर्तन का इंजन।",
     "neutral": "{{stem}}{{branch}} की ऊर्जा शांति से बहती है। आंतरिक विकास का समय।"
+  },
+  "personalDaily": {
+    "elementName": {
+      "木": "लकड़ी",
+      "火": "अग्नि",
+      "土": "पृथ्वी",
+      "金": "धातु",
+      "水": "जल"
+    },
+    "elementLabel": "आज की ऊर्जा",
+    "fallbackPrefix": "सितारों की फुसफुसाहट",
+    "generate": {
+      "new": "{{name}}, आज {{element}} की ऊर्जा एक नया प्रवाह खोलती है। चुपचाप एक बीज बोइए।",
+      "waxing": "{{name}}, {{element}} की शक्ति आज आपकी संभावनाओं को पोषित कर रही है। प्रवाह में बहिए।",
+      "full": "{{name}}, {{element}} की ऊर्जा अपने चरम पर है। आज जो भी प्रयास करेंगे वह चमकेगा।",
+      "waning": "{{name}}, {{element}} की ऊर्जा आज आपको कोमलता से लपेट रही है। अपनी उपलब्धियों पर चिंतन करें।"
+    },
+    "generated": {
+      "new": "{{name}}, आज {{element}} की ऊर्जा शांति से भर रही है। अपना ख्याल रखने का समय निकालें।",
+      "waxing": "{{name}}, {{element}} की ऊर्जा धीरे-धीरे बढ़ रही है। ग्रहणशील रवैया सौभाग्य लाएगा।",
+      "full": "{{name}}, {{element}} की ऊर्जा भरपूर है। किसी की दयालुता आज आप तक पहुंच सकती है।",
+      "waning": "{{name}}, {{element}} की गर्म ऊर्जा बनी हुई है। जिन चीज़ों के लिए आभारी हैं उन पर विचार करें।"
+    },
+    "same": {
+      "new": "{{name}}, आज {{element}} की ऊर्जा और आप एक हैं। अपनी अंतर्ज्ञान पर भरोसा करें।",
+      "waxing": "{{name}}, {{element}} का अनुनाद मज़बूत हो रहा है। आने वाले विचारों को जाने न दें।",
+      "full": "{{name}}, आज {{element}} की ऊर्जा सबसे स्पष्ट है। सबसे सच्चा चुनाव सबसे अच्छा है।",
+      "waning": "{{name}}, आपकी लय और {{element}} की लय आज मेल खा रही है। आराम से बहें।"
+    },
+    "restrain": {
+      "new": "{{name}}, आज {{element}} की ऊर्जा परीक्षा का सामना कर रही है। रुकना भी ठीक है।",
+      "waxing": "{{name}}, {{element}} के विरुद्ध ऊर्जा है, लेकिन आप इसमें मज़बूत हो सकते हैं।",
+      "full": "{{name}}, तनाव महसूस हो तो {{element}} की शक्ति एकत्र करें। डटे रहना भी साहस है।",
+      "waning": "{{name}}, आज का घर्षण कल की वृद्धि की तैयारी है। {{element}} की जड़ों पर भरोसा करें।"
+    },
+    "restrained": {
+      "new": "{{name}}, आज {{element}} की ऊर्जा भीतर की ओर मुड़ रही है। ज़बरदस्ती की ज़रूरत नहीं।",
+      "waxing": "{{name}}, {{element}} थोड़ा दबा हुआ लग सकता है, लेकिन छोटी शुरुआत रास्ता खोलती है।",
+      "full": "{{name}}, आज {{element}} की शक्ति बचाकर रखें। सही समय की प्रतीक्षा भी रणनीति है।",
+      "waning": "{{name}}, {{element}} की ऊर्जा अभी विश्राम कर रही है। कल के लिए हृदय खाली करें।"
+    }
+  },
+  "signContext": {
+    "aries": {
+      "element": "अग्नि",
+      "trait": "Pioneer energy. Quick to act and fearless. You blaze trails where no one else dares. Your starting power is the strongest of all twelve signs, but patience is your challenge. Your spark is the first flame that moves the world."
+    },
+    "taurus": {
+      "element": "पृथ्वी",
+      "trait": "The star of senses. You love stability and are drawn to beauty. Slow to change, but once decided, unbreakable as steel. A flower that blooms slowly but lasts the longest."
+    },
+    "gemini": {
+      "element": "वायु",
+      "trait": "The star of curiosity. Versatile and brilliant at communication. Your talent lies in crossing between worlds. Free as the wind — wherever you pass, something changes."
+    },
+    "cancer": {
+      "element": "जल",
+      "trait": "Guardian of emotions. You place deep meaning in family and bonds. Hard shell outside, softer than anyone within. Your embrace is someone's safest harbor."
+    },
+    "leo": {
+      "element": "अग्नि",
+      "trait": "A luminous being. Most alive on stage, most powerful when loved. A sun-like sign with innate charisma. When you shine, everything around you shines too."
+    },
+    "virgo": {
+      "element": "पृथ्वी",
+      "trait": "The artisan of perfection. You catch details others miss. You find fulfillment in helping others. Your weakness is being too hard on yourself."
+    },
+    "libra": {
+      "element": "वायु",
+      "trait": "Seeker of harmony. You love balance and beauty. Decisions are hard, but that depth is your fairness. Where you are, harmony dwells."
+    },
+    "scorpio": {
+      "element": "जल",
+      "trait": "Explorer of depths. Eyes that see beneath the surface. Once you give your heart, its depth is oceanic. Your courage to face darkness is your greatest power."
+    },
+    "sagittarius": {
+      "element": "अग्नि",
+      "trait": "Explorer of freedom. You love the wide world and grand questions. Your honesty sometimes stings, but it's always real."
+    },
+    "capricorn": {
+      "element": "पृथ्वी",
+      "trait": "The climber toward the summit. Once you set a goal, you climb surely. Serious in youth, uniquely younger with age. Time is always on your side."
+    },
+    "aquarius": {
+      "element": "वायु",
+      "trait": "Pioneer of the future. You see the world differently. Independent yet harboring love for all humanity. Those ahead of their time walk alone at first."
+    },
+    "pisces": {
+      "element": "जल",
+      "trait": "The boundless dreamer. You move between reality and dreams, with empathy deeper than anyone. Your gentleness is the very strength this world needs most."
+    },
+    "resonanceDeep": {
+      "aligned": "सूर्य और चंद्रमा एक ही तरंगदैर्ध्य पर हैं। आज अंतर्ज्ञान और क्रिया स्वाभाविक रूप से एक हो जाते हैं।",
+      "approaching": "सूर्य और चंद्रमा एक-दूसरे की ओर खिंच रहे हैं। नई प्रेरणा या मुलाकात आ सकती है।",
+      "neutral": "सूर्य और चंद्रमा अपने-अपने रास्ते चल रहे हैं। आज बाहर की बजाय भीतर ध्यान दें।",
+      "distant": "आज सूर्य और चंद्रमा के बीच तनाव महसूस हो रहा है। भावना और तर्क के बीच संतुलन खोजें।"
+    },
+    "title": "आपकी राशि"
+  },
+  "elementDeep": {
+    "excess": {
+      "木": "जब लकड़ी अधिक हो, योजनाएं बढ़ती हैं लेकिन क्रिया धुंधली होती है। धातु का निर्णय शाखाओं की छंटनी करता है।",
+      "火": "जब अग्नि अधिक हो, जुनून आपको जला सकता है। जल की शांति आपका केंद्र बहाल करती है।",
+      "土": "जब पृथ्वी अधिक हो, आप बदलाव से डरते हैं। लकड़ी की ऊर्जा तोड़कर नवीनता लाती है।",
+      "金": "जब धातु अधिक हो, पूर्णतावाद संबंधों को ठंडा करता है। अग्नि की गर्मी ठंडे इस्पात को पिघलाती है।",
+      "水": "जब जल अधिक हो, विचारों में डूब जाते हैं। पृथ्वी की स्थिरता दिशा देती है।"
+    },
+    "deficient": {
+      "木": "जब लकड़ी कम हो, नई शुरुआत का साहस घटता है। हरे स्थान और सैर मदद करते हैं।",
+      "火": "जब अग्नि कम हो, जुनून कमजोर होता है। गर्म रंग और व्यायाम लौ जलाते हैं।",
+      "土": "जब पृथ्वी कम हो, केंद्र डगमगाता है। नियमित दिनचर्या स्थिरता लाती है।",
+      "金": "जब धातु कम हो, निर्णय कठिन होते हैं। व्यवस्थित करना और लक्ष्य निर्धारित करना मदद करता है।",
+      "水": "जब जल कम हो, अंतर्ज्ञान घटता है। जल के पास टहलना और ध्यान ज्ञान भरते हैं।"
+    },
+    "balanceTitle": "आपके पंचतत्व क्या बताते हैं"
+  },
+  "rankGuide": {
+    "title": "इस भाग्य का अर्थ",
+    "daikichi": {
+      "meaning": "सर्वोच्च भाग्य। सब कुछ पाल में हवा की तरह बहता है।",
+      "advice": "इस शुभ भाग्य को बांटें। बांटी हुई ऊर्जा लंबे समय तक रहती है।"
+    },
+    "kichi": {
+      "meaning": "शुभ भाग्य। निरंतर प्रयास अच्छे परिणाम लाएगा।",
+      "advice": "ज़्यादा न करें — प्रवाह का अनुसरण करें।"
+    },
+    "chukichi": {
+      "meaning": "मध्यम भाग्य। अप्रत्याशित छोटी खुशियां आपको मिलेंगी।",
+      "advice": "अदृश्य आशीर्वादों पर ध्यान दें।"
+    },
+    "shokichi": {
+      "meaning": "छोटा भाग्य। हल्का, गर्म सौभाग्य आपको घेरता है।",
+      "advice": "अभी छोटे कार्य बड़ी महत्वाकांक्षाओं से अधिक चमकते हैं।"
+    },
+    "suekichi": {
+      "meaning": "देर से आने वाला भाग्य। अभी धीमा, लेकिन अच्छा अंत प्रतीक्षा करता है।",
+      "advice": "प्रतीक्षा स्वयं भाग्य का हिस्सा है।"
+    },
+    "kyo": {
+      "meaning": "दुर्भाग्य। सावधानी का समय, लेकिन टाला जा सकता है।",
+      "advice": "जल्दबाज़ी से बचें और महत्वपूर्ण निर्णय स्थगित करें।"
+    },
+    "daikyo": {
+      "meaning": "महा दुर्भाग्य। सबसे गहरा तल — लेकिन और नीचे गिरने की जगह नहीं।",
+      "advice": "तल से केवल ऊपर जाया जा सकता है। विनम्रता से दिन बिताएं।"
+    }
   }
 }

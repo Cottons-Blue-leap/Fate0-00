@@ -284,7 +284,11 @@
     "deleteAll": "Tümünü sil",
     "cancel": "İptal",
     "entryCount": "{{count}} / {{max}}",
-    "limitReached": "* En eski kayıtlar yenileriyle değiştirilecek"
+    "limitReached": "* En eski kayıtlar yenileriyle değiştirilecek",
+    "today": "Bugün",
+    "yesterday": "Dün",
+    "thisWeek": "Bu hafta",
+    "earlier": "Daha önce"
   },
   "dailyLimit": {
     "used": "Bugünün falına zaten baktınız",
@@ -304,5 +308,20 @@
     "adNotice": "ⓘ Reklam içerir",
     "adArea": "Reklam alanı",
     "complete": "Kaderiniz yeniden yazıldı"
+  },
+  "memo": {
+    "prompt": "Bu talih seni nasıl hissettirdi?",
+    "placeholder": "Kısa bir not yaz...",
+    "save": "Kaydet",
+    "saved": "Kaydedildi",
+    "addNote": "Not ekle",
+    "tapToEdit": "Düzenlemek için dokun"
+  },
+  "weekly": {
+    "title": "Bu haftaki akışın",
+    "elementFlow": "Bu haftanın anahtar enerjisi",
+    "moodDedicated": "Kaderle istikrarlı bir diyalog haftası",
+    "moodActive": "Akışı aktif olarak okuyan bir hafta",
+    "moodCurious": "Sessizce yıldızları seyreden bir hafta"
   }
 }

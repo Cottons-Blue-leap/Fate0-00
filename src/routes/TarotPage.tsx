@@ -15,6 +15,7 @@ import { canReverse, getReverseRemaining } from '../logic/reverseEngine';
 import { useSessionState } from '../hooks/useSessionState';
 import { getLatestEntry } from '../hooks/useLatestEntry';
 import ProfileSuggestion from '../components/layout/ProfileSuggestion';
+import FortuneMemo from '../components/layout/FortuneMemo';
 
 type Spread = '1-card' | '3-card' | 'celtic';
 type Step = 'prepare' | 'question' | 'shuffle' | 'cut' | 'spread' | 'flip' | 'reading' | 'advice';
@@ -471,23 +472,42 @@ export default function TarotPage() {
                   <div>
                     <div style={{ fontSize: '16px', fontWeight: 700 }}>{t(`tarot.cards.${c.id}.name`)}</div>
                     <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-                      {c.position} {c.isReversed ? t('tarot.reversed') : ''}
+                      {c.position} {c.isReversed ? t('tarot.reversed') : ''} · {t(`tarot.deep.${c.id}.archetype`)}
                     </div>
                   </div>
                 </div>
-                <div style={{ fontSize: '14px', lineHeight: '1.8' }}>
+                <div style={{ fontSize: '14px', lineHeight: '1.8', marginBottom: '10px' }}>
                   {c.isReversed ? t(`tarot.cards.${c.id}.reversed`) : t(`tarot.cards.${c.id}.upright`)}
+                </div>
+                <div style={{
+                  background: 'rgba(212,175,55,0.06)', border: '1px solid rgba(212,175,55,0.15)',
+                  borderRadius: '8px', padding: '10px 12px',
+                }}>
+                  <div style={{ fontSize: '11px', color: 'rgba(212,175,55,0.7)', marginBottom: '4px', fontWeight: 700 }}>
+                    ✦ {t('tarot.deepLabel')}
+                  </div>
+                  <div style={{ fontSize: '13px', lineHeight: '1.7', color: 'rgba(255,255,255,0.6)', fontStyle: 'italic' }}>
+                    {t(`tarot.deep.${c.id}.context`)}
+                  </div>
                 </div>
               </motion.div>
             ))}
 
-            {/* Summary / storytelling */}
+            {/* Spread flow narrative */}
             <div style={{ background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '12px', padding: '20px', marginBottom: '20px' }}>
-              <div style={{ fontSize: '13px', color: 'rgba(212,175,55,0.8)', marginBottom: '8px', fontWeight: 700 }}>{t('tarot.storyTitle')}</div>
+              <div style={{ fontSize: '13px', color: 'rgba(212,175,55,0.8)', marginBottom: '8px', fontWeight: 700 }}>
+                ✦ {t('tarot.flowLabel')}
+              </div>
               <div style={{ fontSize: '15px', lineHeight: '1.8' }}>
                 {cards.length === 1
-                  ? t('tarot.summary1', { name: t(`tarot.cards.${cards[0].id}.name`) })
-                  : t('tarot.summary3')}
+                  ? t('tarot.flowSingle', { card: t(`tarot.cards.${cards[0].id}.name`) })
+                  : cards.length === 3
+                    ? t('tarot.flowPastToFuture', {
+                        past: t(`tarot.cards.${cards[0].id}.name`),
+                        present: t(`tarot.cards.${cards[1].id}.name`),
+                        future: t(`tarot.cards.${cards[2].id}.name`),
+                      })
+                    : t('tarot.summary3')}
               </div>
             </div>
             <Watermark />
@@ -528,6 +548,7 @@ export default function TarotPage() {
                 {t('tarot.newReading')}
               </motion.button>
             </div>
+            <FortuneMemo fortuneType="tarot" />
             <ProfileSuggestion />
           </motion.div>
         )}

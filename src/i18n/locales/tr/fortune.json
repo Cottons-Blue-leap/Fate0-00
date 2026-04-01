@@ -148,7 +148,101 @@
       }
     },
     "summary1": "{{name}} kartı çıktı.",
-    "summary3": "Geçmiş-şimdi-gelecek akışını okuyun ve bilgece hareket edin."
+    "summary3": "Geçmiş-şimdi-gelecek akışını okuyun ve bilgece hareket edin.",
+    "deep": {
+      "0": {
+        "archetype": "The Pure Adventurer",
+        "context": "This card awakens the fearless child within you. If there's something you want to start anew, that's exactly why this card appeared."
+      },
+      "1": {
+        "archetype": "The Alchemist of Will",
+        "context": "Everything you need is already within reach. Gather what's scattered and focus."
+      },
+      "2": {
+        "archetype": "The Inner Guide",
+        "context": "Now is the time to follow intuition over reason. This card tells you there's a knowing within you that words cannot explain."
+      },
+      "3": {
+        "archetype": "The Mother of Abundance",
+        "context": "The energy of nurturing and creation is calling you. It's time to cultivate or create something."
+      },
+      "4": {
+        "archetype": "The Guardian of Order",
+        "context": "Bring structure to what's wavering. This card says it's time for you to become the pillar."
+      },
+      "5": {
+        "archetype": "The Messenger of Wisdom",
+        "context": "Someone's advice or teaching may be what you need right now. Or perhaps you are meant to be that guide."
+      },
+      "6": {
+        "archetype": "The Chooser at the Crossroads",
+        "context": "Your heart knows the answer, not your head. This card asks what truly matters to you."
+      },
+      "7": {
+        "archetype": "The Warrior Who Breaks Through",
+        "context": "Unite opposing forces and charge forward. This card says if there's a will, the way will open."
+      },
+      "8": {
+        "archetype": "The Gentle Sovereign",
+        "context": "True strength is not about suppression, but acceptance. This card awakens the value of patience."
+      },
+      "9": {
+        "archetype": "The Sage on the Path",
+        "context": "Now is a time for solitude. This card tells you there are answers to be found in being alone."
+      },
+      "10": {
+        "archetype": "The Turner of Fate",
+        "context": "The wheel always turns. Remember that nothing lasts forever — and that is hope."
+      },
+      "11": {
+        "archetype": "The Judge of Truth",
+        "context": "You need impartial eyes right now. This card asks you to set aside bias and see things as they are."
+      },
+      "12": {
+        "archetype": "The Willing Sacrifice",
+        "context": "Pausing is not retreating. This card says that changing your perspective reveals what was hidden."
+      },
+      "13": {
+        "archetype": "The Gatekeeper of Transformation",
+        "context": "You must let go of something for something new to enter. This card heralds not an ending, but the start of transformation."
+      },
+      "14": {
+        "archetype": "The Alchemist of Harmony",
+        "context": "Find your center between extremes. This card says to blend slowly but steadily, without haste."
+      },
+      "15": {
+        "archetype": "The Mirror of Shadows",
+        "context": "What you fear is not outside but within. This card says you must confront it to be free."
+      },
+      "16": {
+        "archetype": "The Lightning of Liberation",
+        "context": "What crumbles was built on the wrong foundation. This card heralds a painful but necessary dismantling."
+      },
+      "17": {
+        "archetype": "The Guardian of Hope",
+        "context": "Even in darkness, the light has not disappeared. This card says the brightest star rises in the darkest hour."
+      },
+      "18": {
+        "archetype": "The Guide of the Unconscious",
+        "context": "What you see is not the whole picture. This card carries the message of intuition hidden behind anxiety."
+      },
+      "19": {
+        "archetype": "The Inner Light",
+        "context": "You already know the answer. This card asks you to restore confidence and shine as you are."
+      },
+      "20": {
+        "archetype": "The Trumpet of Awakening",
+        "context": "Look back at the past — not with regret but with insight. This card tells you to rise as your true self."
+      },
+      "21": {
+        "archetype": "The Dancer of Completion",
+        "context": "A journey is coming to its conclusion. This card celebrates your achievement and invites you to prepare for the next door."
+      }
+    },
+    "deepLabel": "Bu kart neden şimdi sana geldi",
+    "flowLabel": "Kartların aktardığı akış",
+    "flowPastToFuture": "Geçmişteki {{past}}'den, şimdiki {{present}} aracılığıyla, gelecek {{future}}'e doğru ilerliyor. Akışa güven.",
+    "flowSingle": "Tam bu anda, {{card}} enerjisi seni sarıyor."
   },
   "horoscopeData": {
     "overall": [
@@ -212,43 +306,63 @@
   "dayMaster": {
     "甲": {
       "title": "Göğe uzanan ulu ağaç",
-      "desc": "甲Ağaç — Göğe doğru dimdik uzanan devasa bir ağaçsınız. Güçlü adalet duygusu ve liderlik; bir kez yön belirlediniz mi nadiren değiştirirsiniz."
+      "desc": "甲Ağaç — Göğe doğru dimdik uzanan devasa bir ağaçsınız. Güçlü adalet duygusu ve liderlik; bir kez yön belirlediniz mi nadiren değiştirirsiniz.",
+      "direction": "You shine when leading organizations or pioneering new paths",
+      "relationship": "A dependable, responsible partner — though sometimes insistent on your own way"
     },
     "乙": {
       "title": "Esnek sarmaşık",
-      "desc": "乙Ağaç — Rüzgârda eğilen ama asla kırılmayan bir sarmaşıksınız. Yumuşak ve uyum yeteneği yüksek, sanatsal duyarlılık ve incelik taşırsınız."
+      "desc": "乙Ağaç — Rüzgârda eğilen ama asla kırılmayan bir sarmaşıksınız. Yumuşak ve uyum yeteneği yüksek, sanatsal duyarlılık ve incelik taşırsınız.",
+      "direction": "Arts, design, diplomacy, counseling — paths that engage people and emotion suit you",
+      "relationship": "A warm partner who reads hearts well — sometimes it's okay to express your own feelings more"
     },
     "丙": {
       "title": "Her şeyi aydınlatan güneş",
-      "desc": "丙Ateş — Dünyayı aydınlatan güneşsiniz. Tutkulu ve karizmatik, çevrenizdekileri ısıtırsınız."
+      "desc": "丙Ateş — Dünyayı aydınlatan güneşsiniz. Tutkulu ve karizmatik, çevrenizdekileri ısıtırsınız.",
+      "direction": "On stage, in leadership, as an educator — you shine brightest in front of people",
+      "relationship": "A joyful, warm partner — but be careful not to burn yourself giving everything away"
     },
     "丁": {
       "title": "Karanlıkta bir mum",
-      "desc": "丁Ateş — Karanlıkta yol gösteren bir mumsunuz. Hafif ama kesin bir ışık; entelektüel ve derin kavrayışa sahipsiniz."
+      "desc": "丁Ateş — Karanlıkta yol gösteren bir mumsunuz. Hafif ama kesin bir ışık; entelektüel ve derin kavrayışa sahipsiniz.",
+      "direction": "Research, strategy, writing, consulting — paths requiring deep thought suit you",
+      "relationship": "A partner of genuine devotion — quiet on the surface but deeper than anyone within"
     },
     "戊": {
       "title": "Sarsılmaz dağ",
-      "desc": "戊Toprak — Fırtınada bile sarsılmayan bir dağsınız. Güvenilir ve kucaklayıcı, başkalarının dayandığı kişisiniz."
+      "desc": "戊Toprak — Fırtınada bile sarsılmayan bir dağsınız. Güvenilir ve kucaklayıcı, başkalarının dayandığı kişisiniz.",
+      "direction": "Management, administration, real estate, education — roles that build stable foundations",
+      "relationship": "A pillar of trust — clumsy with words but shows everything through action"
     },
     "己": {
       "title": "Verimli toprak",
-      "desc": "己Toprak — Hayat besleyen verimli topraksınız. Alçakgönüllü ve fedakâr, başkalarına bakmakta yeteneklisiniz."
+      "desc": "己Toprak — Hayat besleyen verimli topraksınız. Alçakgönüllü ve fedakâr, başkalarına bakmakta yeteneklisiniz.",
+      "direction": "Caregiving, education, cooking, HR — paths that nurture and grow people bring you happiness",
+      "relationship": "A partner who silently devotes — it's okay to put yourself first sometimes"
     },
     "庚": {
       "title": "İşlenmemiş cevherin bıçağı",
-      "desc": "庚Metal — Henüz eritilmemiş soğuk bir cevhersiniz. Kararlı ve atılgan, zorluklar sizi yalnızca daha keskin kılar."
+      "desc": "庚Metal — Henüz eritilmemiş soğuk bir cevhersiniz. Kararlı ve atılgan, zorluklar sizi yalnızca daha keskin kılar.",
+      "direction": "Law, military, competitive business, surgery — where decisiveness is needed, you prove your worth",
+      "relationship": "A deeply loyal partner — behind the sharp words hides a warm heart"
     },
     "辛": {
       "title": "Ay ışığında bir mücevher",
-      "desc": "辛Metal — Ay ışığında parlayan zarif bir mücevhersiniz. İnce ve mükemmeliyetçi, güzellik ve saflık peşindesiniz."
+      "desc": "辛Metal — Ay ışığında parlayan zarif bir mücevhersiniz. İnce ve mükemmeliyetçi, güzellik ve saflık peşindesiniz.",
+      "direction": "Jewelry, fashion, finance, artisanship — where precision and aesthetic sense are needed",
+      "relationship": "A pure partner who loves with all their heart — just needs a bit of time to open up"
     },
     "壬": {
       "title": "Durdurulamaz büyük nehir",
-      "desc": "壬Su — Dağları yararak denize akan kudretli bir nehirsiniz. Bilge ve kucaklayıcı, özgürlüğü seversiniz."
+      "desc": "壬Su — Dağları yararak denize akan kudretli bir nehirsiniz. Bilge ve kucaklayıcı, özgürlüğü seversiniz.",
+      "direction": "Travel, trade, philosophy, media, freelance — paths that meet the wide world suit you",
+      "relationship": "A free and open partner — hold too tight and they drift away, but trust and they always return"
     },
     "癸": {
       "title": "Şafaktaki çiy damlası",
-      "desc": "癸Su — Şafakta bir çimen yaprağının üzerindeki tek bir çiy damlasısınız. İnce ve sezgisel, görünmeyeni hisseden bir ilhama sahipsiniz."
+      "desc": "癸Su — Şafakta bir çimen yaprağının üzerindeki tek bir çiy damlasısınız. İnce ve sezgisel, görünmeyeni hisseden bir ilhama sahipsiniz.",
+      "direction": "Psychology, divination, art, research, healing — where intuition and sensitivity are assets",
+      "relationship": "A deep partner who understands without words — sometimes expressing your own feelings aloud helps even more"
     }
   },
   "waka": {
@@ -462,5 +576,151 @@
     "harmony": "{{stem}}{{branch}} enerjisi kaderinizle uyum içinde. İç ağaç güneşle buluşup çiçek açıyor.",
     "clash": "{{stem}}{{branch}} enerjisi kaderinizle çatışıyor. Yoğun ama değişimin motoru.",
     "neutral": "{{stem}}{{branch}} enerjisi sessizce akıyor. İç gelişim zamanı."
+  },
+  "personalDaily": {
+    "elementName": {
+      "木": "Ağaç",
+      "火": "Ateş",
+      "土": "Toprak",
+      "金": "Metal",
+      "水": "Su"
+    },
+    "elementLabel": "Bugünün Enerjisi",
+    "fallbackPrefix": "Yıldızlardan bir fısıltı",
+    "generate": {
+      "new": "{{name}}, bugün {{element}} enerjisi yeni bir akış açıyor. Sessizce bir tohum ek.",
+      "waxing": "{{name}}, {{element}} enerjisi bugün olanaklarını besliyor. Akışa kapıl.",
+      "full": "{{name}}, {{element}} enerjisi zirveye ulaştı. Bugün denediğin şey parlayacak.",
+      "waning": "{{name}}, {{element}} enerjisi bugün seni yumuşakça sarıyor. Başardıklarını düşün."
+    },
+    "generated": {
+      "new": "{{name}}, bugün {{element}} enerjisi sessizce doluyor. Kendine zaman ayır.",
+      "waxing": "{{name}}, {{element}} enerjisi yavaşça yükseliyor. Alıcı bir tutum şans getirir.",
+      "full": "{{name}}, {{element}} enerjisi taşıyor. Birinin iyiliği bugün sana ulaşabilir.",
+      "waning": "{{name}}, {{element}} sıcaklığı hâlâ burada. Minnet duyduğun şeyleri düşün."
+    },
+    "same": {
+      "new": "{{name}}, bugün {{element}} enerjisi ve sen birsiniz. Sezgilerine güven.",
+      "waxing": "{{name}}, {{element}} rezonansı güçleniyor. Aklına gelen fikirleri kaçırma.",
+      "full": "{{name}}, {{element}} enerjisi bugün en berrak haliyle. En 'sen' olan seçim en iyisidir.",
+      "waning": "{{name}}, senin ritmin ve {{element}} ritmi bugün uyumlu. Rahatça ak."
+    },
+    "restrain": {
+      "new": "{{name}}, bugün {{element}} enerjisi sınanıyor. Bir nefes almak sorun değil.",
+      "waxing": "{{name}}, {{element}}'e karşı bir enerji var ama onun içinde güçlenebilirsin.",
+      "full": "{{name}}, gerginlik hissedersen {{element}} gücünü topla. Direnmek de cesarettir.",
+      "waning": "{{name}}, bugünkü sürtünme yarının büyümesine hazırlık. {{element}} köklerine güven."
+    },
+    "restrained": {
+      "new": "{{name}}, bugün {{element}} enerjisi içe çekiliyor. Kendini zorlamana gerek yok.",
+      "waxing": "{{name}}, {{element}} biraz bastırılmış hissedebilir ama küçük başlangıçlar yol açar.",
+      "full": "{{name}}, bugün {{element}} gücünü biriktir. Doğru anı beklemek de stratejidir.",
+      "waning": "{{name}}, {{element}} enerjisi şimdi dinleniyor. Yarın için kalbini boşalt."
+    }
+  },
+  "signContext": {
+    "aries": {
+      "element": "Ateş",
+      "trait": "Pioneer energy. Quick to act and fearless. You blaze trails where no one else dares. Your starting power is the strongest of all twelve signs, but patience is your challenge. Your spark is the first flame that moves the world."
+    },
+    "taurus": {
+      "element": "Toprak",
+      "trait": "The star of senses. You love stability and are drawn to beauty. Slow to change, but once decided, unbreakable as steel. A flower that blooms slowly but lasts the longest."
+    },
+    "gemini": {
+      "element": "Hava",
+      "trait": "The star of curiosity. Versatile and brilliant at communication. Your talent lies in crossing between worlds. Free as the wind — wherever you pass, something changes."
+    },
+    "cancer": {
+      "element": "Su",
+      "trait": "Guardian of emotions. You place deep meaning in family and bonds. Hard shell outside, softer than anyone within. Your embrace is someone's safest harbor."
+    },
+    "leo": {
+      "element": "Ateş",
+      "trait": "A luminous being. Most alive on stage, most powerful when loved. A sun-like sign with innate charisma. When you shine, everything around you shines too."
+    },
+    "virgo": {
+      "element": "Toprak",
+      "trait": "The artisan of perfection. You catch details others miss. You find fulfillment in helping others. Your weakness is being too hard on yourself."
+    },
+    "libra": {
+      "element": "Hava",
+      "trait": "Seeker of harmony. You love balance and beauty. Decisions are hard, but that depth is your fairness. Where you are, harmony dwells."
+    },
+    "scorpio": {
+      "element": "Su",
+      "trait": "Explorer of depths. Eyes that see beneath the surface. Once you give your heart, its depth is oceanic. Your courage to face darkness is your greatest power."
+    },
+    "sagittarius": {
+      "element": "Ateş",
+      "trait": "Explorer of freedom. You love the wide world and grand questions. Your honesty sometimes stings, but it's always real."
+    },
+    "capricorn": {
+      "element": "Toprak",
+      "trait": "The climber toward the summit. Once you set a goal, you climb surely. Serious in youth, uniquely younger with age. Time is always on your side."
+    },
+    "aquarius": {
+      "element": "Hava",
+      "trait": "Pioneer of the future. You see the world differently. Independent yet harboring love for all humanity. Those ahead of their time walk alone at first."
+    },
+    "pisces": {
+      "element": "Su",
+      "trait": "The boundless dreamer. You move between reality and dreams, with empathy deeper than anyone. Your gentleness is the very strength this world needs most."
+    },
+    "resonanceDeep": {
+      "aligned": "Güneş ve Ay aynı dalga boyundalar. Bugün sezgi ve eylem doğal olarak birleşiyor.",
+      "approaching": "Güneş ve Ay birbirine yaklaşıyor. Yeni ilham veya karşılaşmalar gelebilecek bir gün.",
+      "neutral": "Güneş ve Ay kendi yollarında yürüyor. Bugün dışarıya değil içeriye odaklan.",
+      "distant": "Bugün Güneş ve Ay arasında gerilim hissediliyor. Duygu ve akıl arasında denge bulmaya çalış."
+    },
+    "title": "Burcun"
+  },
+  "elementDeep": {
+    "excess": {
+      "木": "Ağaç fazla olduğunda planlar artar ama eylem bulanıklaşır. Metalin kararlılığı dalları budar.",
+      "火": "Ateş fazla olduğunda tutku seni yakabilir. Suyun dinginliği merkezini geri getirir.",
+      "土": "Toprak fazla olduğunda değişimden korkarsın. Ağacın büyüme enerjisi toprağı yarıp yenilenme yaratır.",
+      "金": "Metal fazla olduğunda mükemmeliyetçilik ilişkileri soğutur. Ateşin sıcaklığı soğuk çeliği eritir.",
+      "水": "Su fazla olduğunda düşüncelere boğulursun. Toprağın istikrarı akan suya yön verir."
+    },
+    "deficient": {
+      "木": "Ağaç eksik olduğunda yeni başlangıçlara cesaret azalır. Yeşil alanlar ve yürüyüşler yardımcı olur.",
+      "火": "Ateş eksik olduğunda tutku zayıflar. Sıcak renkler ve egzersiz alevi canlandırır.",
+      "土": "Toprak eksik olduğunda merkez sallanır. Düzenli rutinler istikrar getirir.",
+      "金": "Metal eksik olduğunda kararlar zorlaşır. Düzen ve net hedefler yardımcı olur.",
+      "水": "Su eksik olduğunda sezgi azalır. Su kenarı yürüyüşleri ve meditasyon bilgeliği doldurur."
+    },
+    "balanceTitle": "Beş Elementin ne diyor"
+  },
+  "rankGuide": {
+    "title": "Bu talihin anlamı",
+    "daikichi": {
+      "meaning": "En yüksek talih. Her şey yelkenlerindeki rüzgâr gibi akıyor.",
+      "advice": "Bu iyi talihi paylaş. Paylaşılan enerji daha uzun kalır."
+    },
+    "kichi": {
+      "meaning": "İyi talih. İstikrarlı çaba güzel sonuçlar getirecek.",
+      "advice": "Abartma — akışı takip et."
+    },
+    "chukichi": {
+      "meaning": "Orta talih. Beklenmedik küçük sevinçler seni bulacak.",
+      "advice": "Görünmez bereketlere dikkat et."
+    },
+    "shokichi": {
+      "meaning": "Küçük talih. Nazik, sıcak bir şans seni sarıyor.",
+      "advice": "Şu an küçük eylemler büyük hırslardan daha parlak."
+    },
+    "suekichi": {
+      "meaning": "Geç gelen talih. Şimdi yavaş ama güzel bir son bekliyor.",
+      "advice": "Beklemenin kendisi talihin bir parçası."
+    },
+    "kyo": {
+      "meaning": "Talihsizlik. Dikkat gerektiren ama kaçınılabilir bir zaman.",
+      "advice": "Acele eylemlerden kaçın ve önemli kararları ertele."
+    },
+    "daikyo": {
+      "meaning": "Büyük talihsizlik. En derin dip — ama daha aşağısı yok.",
+      "advice": "Dipten sonra sadece yukarı çıkılır. Günü alçakgönüllülükle geçir."
+    }
   }
 }

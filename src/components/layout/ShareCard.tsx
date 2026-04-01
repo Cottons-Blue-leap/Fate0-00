@@ -5,7 +5,7 @@ import type { HistoryEntry } from '../../logic/historyEngine';
 import { tarotSymbols } from '@fate0/shared';
 
 const CARD_WIDTH = 540;
-const CARD_HEIGHT = 760;
+const CARD_HEIGHT = 900;
 
 interface Props {
   entry: HistoryEntry;
@@ -51,7 +51,7 @@ const ShareCard = forwardRef<HTMLDivElement, Props>(({ entry }, ref) => {
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
         {entry.type === 'tarot' && <TarotContent data={data} t={t} />}
         {entry.type === 'horoscope' && <HoroscopeContent data={data} t={t} />}
-        {entry.type === 'saju' && <SajuContent data={data} />}
+        {entry.type === 'saju' && <SajuContent data={data} t={t} />}
         {entry.type === 'omikuji' && <OmikujiContent data={data} t={t} />}
       </div>
 
@@ -107,18 +107,26 @@ function TarotContent({ data, t }: { data: Record<string, unknown>; t: (k: strin
       )}
 
       {displayCards.map((id, i) => (
-        <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '10px', padding: '8px 10px', background: 'rgba(155,89,182,0.06)', borderRadius: '8px' }}>
-          <div style={{ fontSize: '24px', flexShrink: 0, width: '30px', textAlign: 'center', transform: reversed[i] ? 'rotate(180deg)' : 'none' }}>
-            {tarotSymbols[id] || '🃏'}
+        <div key={i} style={{ marginBottom: '10px', padding: '10px 12px', background: 'rgba(155,89,182,0.06)', borderRadius: '8px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
+            <div style={{ fontSize: '24px', flexShrink: 0, width: '30px', textAlign: 'center', transform: reversed[i] ? 'rotate(180deg)' : 'none' }}>
+              {tarotSymbols[id] || '🃏'}
+            </div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ fontSize: '12px', fontWeight: 700 }}>
+                {t(`tarot.cards.${id}.name`)}
+                {reversed[i] && <span style={{ color: '#e74c3c', fontSize: '9px', marginLeft: '4px' }}>{t('tarot.reversed')}</span>}
+              </div>
+              <div style={{ fontSize: '9px', color: 'rgba(212,175,55,0.6)', marginTop: '1px' }}>
+                ✦ {t(`tarot.deep.${id}.archetype`)}
+              </div>
+            </div>
           </div>
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: '12px', fontWeight: 700, marginBottom: '2px' }}>
-              {t(`tarot.cards.${id}.name`)}
-              {reversed[i] && <span style={{ color: '#e74c3c', fontSize: '9px', marginLeft: '4px' }}>{t('tarot.reversed')}</span>}
-            </div>
-            <div style={{ fontSize: '10px', lineHeight: '1.5', color: 'rgba(255,255,255,0.45)' }}>
-              {truncate(reversed[i] ? t(`tarot.cards.${id}.reversed`) : t(`tarot.cards.${id}.upright`), 120)}
-            </div>
+          <div style={{ fontSize: '10px', lineHeight: '1.5', color: 'rgba(255,255,255,0.45)', marginTop: '4px' }}>
+            {truncate(reversed[i] ? t(`tarot.cards.${id}.reversed`) : t(`tarot.cards.${id}.upright`), 100)}
+          </div>
+          <div style={{ fontSize: '9px', lineHeight: '1.5', color: 'rgba(212,175,55,0.45)', marginTop: '6px', fontStyle: 'italic', borderTop: '1px solid rgba(212,175,55,0.1)', paddingTop: '6px' }}>
+            {truncate(t(`tarot.deep.${id}.context`), 80)}
           </div>
         </div>
       ))}
@@ -127,9 +135,22 @@ function TarotContent({ data, t }: { data: Record<string, unknown>; t: (k: strin
         <div style={{ fontSize: '9px', color: 'rgba(255,255,255,0.2)', textAlign: 'center', marginBottom: '8px' }}>+{cardIds.length - 3} more cards</div>
       )}
 
+      {/* Flow narrative */}
       <SectionBox>
+        <div style={{ fontSize: '9px', color: 'rgba(212,175,55,0.5)', marginBottom: '4px', textAlign: 'center', letterSpacing: '1px' }}>
+          ✦ {t('tarot.flowLabel')}
+        </div>
         <div style={{ fontSize: '10px', lineHeight: '1.6', color: 'rgba(212,175,55,0.65)', fontStyle: 'italic', textAlign: 'center' }}>
-          {cardIds.length === 1 ? t('tarot.summary1', { name: t(`tarot.cards.${cardIds[0]}.name`) }) : t('tarot.summary3')}
+          {cardIds.length === 1
+            ? t('tarot.flowSingle', { card: t(`tarot.cards.${cardIds[0]}.name`) })
+            : cardIds.length >= 3
+              ? t('tarot.flowPastToFuture', {
+                  past: t(`tarot.cards.${cardIds[0]}.name`),
+                  present: t(`tarot.cards.${cardIds[1]}.name`),
+                  future: t(`tarot.cards.${cardIds[2]}.name`),
+                })
+              : t('tarot.summary3')
+          }
         </div>
       </SectionBox>
 
@@ -163,34 +184,47 @@ function HoroscopeContent({ data, t }: { data: Record<string, unknown>; t: (k: s
   const moonEmoji = data['moonEmoji'] as string || '🌙';
   const moonPhase = data['moonPhase'] as string || '';
   const oracle = data['oracle'] as string || '';
+  const resonance = data['resonance'] as string || 'neutral';
 
   const symbols: Record<string, string> = {
     aries: '♈', taurus: '♉', gemini: '♊', cancer: '♋', leo: '♌', virgo: '♍',
     libra: '♎', scorpio: '♏', sagittarius: '♐', capricorn: '♑', aquarius: '♒', pisces: '♓',
-  };
-  const elements: Record<string, string> = {
-    aries: '🔥 Fire', taurus: '🌍 Earth', gemini: '💨 Air', cancer: '💧 Water',
-    leo: '🔥 Fire', virgo: '🌍 Earth', libra: '💨 Air', scorpio: '💧 Water',
-    sagittarius: '🔥 Fire', capricorn: '🌍 Earth', aquarius: '💨 Air', pisces: '💧 Water',
   };
 
   return (
     <div style={{ textAlign: 'center', width: '100%' }}>
       <div style={{ fontSize: '44px', marginBottom: '4px' }}>{symbols[sign] || '⭐'}</div>
       <div style={{ fontSize: '17px', fontWeight: 700, color: '#c39bd3', marginBottom: '2px' }}>
-        {sign ? t(`horoscope.${sign}`) : ''}
-      </div>
-      <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', marginBottom: '4px' }}>
-        {elements[sign] || ''}
-      </div>
-      <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)', marginBottom: '16px' }}>
-        {moonEmoji} {moonPhase}
+        {sign ? t(`horoscope.${sign}`) : ''} · {sign ? t(`signContext.${sign}.element`) : ''}
       </div>
 
+      {/* Sign personality trait */}
+      {sign && (
+        <div style={{ margin: '10px 0', padding: '10px 14px', background: 'rgba(155,89,182,0.08)', borderRadius: '8px', textAlign: 'left' }}>
+          <div style={{ fontSize: '9px', color: '#c39bd3', marginBottom: '4px', fontWeight: 700, letterSpacing: '1px' }}>
+            {symbols[sign]} {t('signContext.title')}
+          </div>
+          <div style={{ fontSize: '10px', lineHeight: '1.6', color: 'rgba(255,255,255,0.55)' }}>
+            {truncate(t(`signContext.${sign}.trait`), 120)}
+          </div>
+        </div>
+      )}
+
+      {/* Moon phase + resonance */}
+      <div style={{ margin: '8px 0', padding: '8px 14px', background: resonance === 'aligned' ? 'rgba(255,215,0,0.06)' : 'rgba(155,89,182,0.06)', borderRadius: '8px' }}>
+        <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', marginBottom: '4px' }}>
+          {moonEmoji} {moonPhase}
+        </div>
+        <div style={{ fontSize: '9px', lineHeight: '1.5', color: 'rgba(255,255,255,0.4)', fontStyle: 'italic' }}>
+          {t(`signContext.resonanceDeep.${resonance}`)}
+        </div>
+      </div>
+
+      {/* Oracle message */}
       {oracle && (
         <SectionBox color="rgba(155,89,182,0.08)">
-          <div style={{ fontSize: '12px', lineHeight: '1.8', color: 'rgba(255,255,255,0.55)', fontStyle: 'italic', textAlign: 'center' }}>
-            "{oracle}"
+          <div style={{ fontSize: '11px', lineHeight: '1.7', color: 'rgba(255,255,255,0.55)', fontStyle: 'italic', textAlign: 'center' }}>
+            "{truncate(oracle, 100)}"
           </div>
         </SectionBox>
       )}
@@ -201,24 +235,25 @@ function HoroscopeContent({ data, t }: { data: Record<string, unknown>; t: (k: s
 // ========================
 // SAJU
 // ========================
-function SajuContent({ data }: { data: Record<string, unknown> }) {
+function SajuContent({ data, t }: { data: Record<string, unknown>; t: (k: string, o?: Record<string, unknown>) => string }) {
   const pillars = (data['pillars'] as string[]) || [];
   const dayMaster = data['dayMaster'] as string || '';
   const dayMasterEmoji = data['dayMasterEmoji'] as string || '';
-  const dayMasterDesc = data['dayMasterDesc'] as string || '';
   const birthInfo = data['birthInfo'] as string || '';
   const elements = data['elements'] as { dominant: string; deficient: string } | null;
   const dailyPillar = data['dailyPillar'] as string || '';
   const dailyAdvice = data['dailyAdvice'] as string || '';
   const labels = ['年', '月', '日', '時'];
+  // Extract day stem from pillar (e.g., "壬午" → "壬")
+  const dayStem = pillars[2]?.[0] || '';
 
   return (
     <div style={{ textAlign: 'center', width: '100%' }}>
       <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.25)', letterSpacing: '3px', marginBottom: '6px' }}>四柱八字</div>
 
-      {birthInfo && <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.25)', marginBottom: '12px' }}>{birthInfo}</div>}
+      {birthInfo && <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.25)', marginBottom: '10px' }}>{birthInfo}</div>}
 
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '14px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '12px' }}>
         {pillars.map((p, i) => (
           <div key={i} style={{
             padding: '8px 12px', background: 'rgba(231,76,60,0.06)',
@@ -231,31 +266,43 @@ function SajuContent({ data }: { data: Record<string, unknown> }) {
       </div>
 
       {dayMaster && (
-        <div style={{ marginBottom: '12px' }}>
+        <div style={{ marginBottom: '8px' }}>
           <div style={{ fontSize: '22px', marginBottom: '2px' }}>{dayMasterEmoji}</div>
           <div style={{ fontSize: '14px', fontWeight: 700, color: '#f1948a' }}>{dayMaster}</div>
         </div>
       )}
 
-      {dayMasterDesc && (
-        <SectionBox color="rgba(231,76,60,0.06)">
-          <div style={{ fontSize: '10px', lineHeight: '1.7', color: 'rgba(255,255,255,0.5)', textAlign: 'center' }}>
-            {truncate(dayMasterDesc, 150)}
+      {/* Day Master deep profile */}
+      {dayStem && (
+        <div style={{ margin: '8px 0', padding: '10px 14px', background: 'rgba(231,76,60,0.06)', borderRadius: '8px', textAlign: 'left' }}>
+          <div style={{ fontSize: '10px', lineHeight: '1.6', color: 'rgba(255,255,255,0.5)', marginBottom: '6px' }}>
+            {truncate(t(`dayMaster.${dayStem}.desc`), 100)}
           </div>
-        </SectionBox>
+          <div style={{ fontSize: '9px', color: 'rgba(255,255,255,0.35)', lineHeight: '1.5' }}>
+            ✦ {t(`dayMaster.${dayStem}.direction`)}
+          </div>
+        </div>
       )}
 
+      {/* Element balance deep interpretation */}
       {elements && (
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginTop: '10px', fontSize: '10px', color: 'rgba(255,255,255,0.35)' }}>
-          <div>주요 오행: <span style={{ color: '#f1948a' }}>{elements.dominant}</span></div>
-          <div>부족 오행: <span style={{ color: '#999' }}>{elements.deficient}</span></div>
+        <div style={{ margin: '8px 0', padding: '8px 14px', background: 'rgba(231,76,60,0.04)', borderRadius: '8px' }}>
+          <div style={{ fontSize: '9px', color: 'rgba(255,255,255,0.3)', marginBottom: '4px', letterSpacing: '1px' }}>
+            ✦ {t('elementDeep.balanceTitle')}
+          </div>
+          <div style={{ fontSize: '9px', lineHeight: '1.5', color: 'rgba(255,255,255,0.4)', marginBottom: '4px' }}>
+            {truncate(t(`elementDeep.excess.${elements.dominant}`), 80)}
+          </div>
+          <div style={{ fontSize: '9px', lineHeight: '1.5', color: 'rgba(255,255,255,0.4)' }}>
+            {truncate(t(`elementDeep.deficient.${elements.deficient}`), 80)}
+          </div>
         </div>
       )}
 
       {/* Daily fortune */}
       {dailyPillar && (
-        <div style={{ marginTop: '10px', padding: '8px 12px', background: 'rgba(212,175,55,0.06)', borderRadius: '8px' }}>
-          <div style={{ fontSize: '10px', color: 'rgba(212,175,55,0.5)', marginBottom: '4px' }}>오늘의 일진: {dailyPillar}</div>
+        <div style={{ marginTop: '6px', padding: '8px 12px', background: 'rgba(212,175,55,0.06)', borderRadius: '8px' }}>
+          <div style={{ fontSize: '10px', color: 'rgba(212,175,55,0.5)', marginBottom: '4px' }}>{t('sajuDaily.title')}: {dailyPillar}</div>
           {dailyAdvice && <div style={{ fontSize: '10px', lineHeight: '1.6', color: 'rgba(255,255,255,0.4)' }}>{truncate(dailyAdvice, 80)}</div>}
         </div>
       )}
@@ -273,14 +320,13 @@ function OmikujiContent({ data, t }: { data: Record<string, unknown>; t: (k: str
   const question = data['question'] as string || '';
   const wish = data['wish'] as string || '';
   const love = data['love'] as string || '';
+  const travel = data['travel'] as string || '';
   const health = data['health'] as string || '';
 
   const rankColors: Record<string, string> = {
     daikichi: '#ffd700', kichi: '#ffd700', chukichi: '#c39bd3', shokichi: '#c39bd3',
     suekichi: '#999', kyo: '#666', daikyo: '#444',
   };
-
-  const meaning = rank ? t(`waka.${rank}.meaning`) : '';
 
   return (
     <div style={{ textAlign: 'center', width: '100%' }}>
@@ -290,7 +336,7 @@ function OmikujiContent({ data, t }: { data: Record<string, unknown>; t: (k: str
 
       {question && (
         <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', marginBottom: '10px', fontStyle: 'italic' }}>
-          소원: "{truncate(question, 35)}"
+          {t('omikuji.questionLabel')}: "{truncate(question, 35)}"
         </div>
       )}
 
@@ -300,20 +346,28 @@ function OmikujiContent({ data, t }: { data: Record<string, unknown>; t: (k: str
         </div>
       )}
 
-      {meaning && (
-        <SectionBox color="rgba(231,76,60,0.06)">
-          <div style={{ fontSize: '10px', lineHeight: '1.6', color: 'rgba(255,255,255,0.5)', textAlign: 'center' }}>
-            {meaning}
+      {/* Rank guide — meaning + advice */}
+      {rank && (
+        <div style={{ margin: '8px 0', padding: '10px 14px', background: 'rgba(231,76,60,0.06)', borderRadius: '8px' }}>
+          <div style={{ fontSize: '9px', color: rankColors[rank] || '#c39bd3', marginBottom: '4px', fontWeight: 700, letterSpacing: '1px' }}>
+            ✦ {t('rankGuide.title')}
           </div>
-        </SectionBox>
+          <div style={{ fontSize: '10px', lineHeight: '1.6', color: 'rgba(255,255,255,0.5)', marginBottom: '6px' }}>
+            {t(`rankGuide.${rank}.meaning`)}
+          </div>
+          <div style={{ fontSize: '9px', lineHeight: '1.5', color: 'rgba(255,255,255,0.4)', fontStyle: 'italic', borderTop: '1px solid rgba(231,76,60,0.1)', paddingTop: '6px' }}>
+            {truncate(t(`rankGuide.${rank}.advice`), 100)}
+          </div>
+        </div>
       )}
 
       {/* Detail items */}
-      {(wish || love || health) && (
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginTop: '10px', fontSize: '9px', color: 'rgba(255,255,255,0.35)' }}>
-          {wish && <div>🙏 {truncate(wish, 20)}</div>}
-          {love && <div>💕 {truncate(love, 20)}</div>}
-          {health && <div>💪 {truncate(health, 20)}</div>}
+      {(wish || love || travel || health) && (
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px 12px', marginTop: '8px', fontSize: '9px', color: 'rgba(255,255,255,0.35)', textAlign: 'left', padding: '0 8px' }}>
+          {wish && <div>🙏 {truncate(wish, 25)}</div>}
+          {love && <div>💕 {truncate(love, 25)}</div>}
+          {travel && <div>✈️ {truncate(travel, 25)}</div>}
+          {health && <div>💪 {truncate(health, 25)}</div>}
         </div>
       )}
     </div>

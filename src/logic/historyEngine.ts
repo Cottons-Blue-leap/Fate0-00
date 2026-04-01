@@ -10,6 +10,7 @@ export interface HistoryEntry {
   summary: string; // short description (legacy or i18n key)
   data: Record<string, unknown>; // fortune-specific data for i18n rendering
   language?: string; // language code at time of fortune generation
+  memo?: string; // user's personal reflection/note
 }
 
 const STORAGE_KEY = 'fate0_history';
@@ -58,6 +59,15 @@ export function updateLatestEntry(type: HistoryEntry['type'], data: Record<strin
   const idx = history.findIndex(e => e.type === type);
   if (idx >= 0) {
     history[idx].data = { ...history[idx].data, ...data };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
+  }
+}
+
+export function updateMemo(id: string, memo: string): void {
+  const history = getHistory();
+  const idx = history.findIndex(e => e.id === id);
+  if (idx >= 0) {
+    history[idx].memo = memo || undefined;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
   }
 }

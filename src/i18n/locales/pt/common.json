@@ -284,7 +284,11 @@
     "deleteAll": "Excluir tudo",
     "cancel": "Cancelar",
     "entryCount": "{{count}} / {{max}}",
-    "limitReached": "* As entradas mais antigas serão substituídas"
+    "limitReached": "* As entradas mais antigas serão substituídas",
+    "today": "Hoje",
+    "yesterday": "Ontem",
+    "thisWeek": "Esta semana",
+    "earlier": "Antes"
   },
   "dailyLimit": {
     "used": "Você já consultou a fortuna de hoje",
@@ -304,5 +308,20 @@
     "adNotice": "ⓘ Contém publicidade",
     "adArea": "Área de anúncio",
     "complete": "Seu destino foi reescrito"
+  },
+  "memo": {
+    "prompt": "Como esta fortuna fez você se sentir?",
+    "placeholder": "Escreva uma nota curta...",
+    "save": "Salvar",
+    "saved": "Salvo",
+    "addNote": "Adicionar nota",
+    "tapToEdit": "Toque para editar"
+  },
+  "weekly": {
+    "title": "Seu fluxo esta semana",
+    "elementFlow": "Energia-chave esta semana",
+    "moodDedicated": "Uma semana de diálogo constante com o destino",
+    "moodActive": "Uma semana lendo ativamente o fluxo",
+    "moodCurious": "Uma semana contemplando as estrelas em silêncio"
   }
 }

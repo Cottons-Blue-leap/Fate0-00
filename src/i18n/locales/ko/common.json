@@ -44,7 +44,26 @@
     "deleteAll": "모두 삭제",
     "cancel": "취소",
     "entryCount": "{{count}} / {{max}}",
-    "limitReached": "* 가장 오래된 기록이 새 기록으로 대체됩니다"
+    "limitReached": "* 가장 오래된 기록이 새 기록으로 대체됩니다",
+    "today": "오늘",
+    "yesterday": "어제",
+    "thisWeek": "이번 주",
+    "earlier": "이전"
+  },
+  "memo": {
+    "prompt": "지금 떠오르는 생각을 적어보세요",
+    "placeholder": "오늘의 운세를 보며 느낀 것...",
+    "save": "저장",
+    "saved": "메모가 저장되었어요",
+    "addNote": "메모를 남겨보세요",
+    "tapToEdit": "탭하여 수정"
+  },
+  "weekly": {
+    "title": "이번 주 당신의 흐름",
+    "elementFlow": "이번 주 주요 기운",
+    "moodDedicated": "꾸준히 운명과 대화한 한 주",
+    "moodActive": "적극적으로 흐름을 읽은 한 주",
+    "moodCurious": "조용히 별을 바라본 한 주"
   },
   "dailyLimit": {
     "used": "오늘의 운세는 이미 확인했습니다",

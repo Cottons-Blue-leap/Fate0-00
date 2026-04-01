@@ -284,7 +284,11 @@
     "deleteAll": "全部刪除",
     "cancel": "取消",
     "entryCount": "{{count}} / {{max}}",
-    "limitReached": "* 最舊的記錄將被新記錄替換"
+    "limitReached": "* 最舊的記錄將被新記錄替換",
+    "today": "今天",
+    "yesterday": "昨天",
+    "thisWeek": "本週",
+    "earlier": "更早"
   },
   "dailyLimit": {
     "used": "今天的運勢已經查看過了",
@@ -304,5 +308,20 @@
     "adNotice": "ⓘ 包含廣告",
     "adArea": "廣告區域",
     "complete": "命運已被改寫"
+  },
+  "memo": {
+    "prompt": "這個運勢讓你感覺如何？",
+    "placeholder": "寫一條簡短筆記...",
+    "save": "儲存",
+    "saved": "已儲存",
+    "addNote": "新增筆記",
+    "tapToEdit": "點擊編輯"
+  },
+  "weekly": {
+    "title": "你這週的流向",
+    "elementFlow": "本週核心能量",
+    "moodDedicated": "與命運穩定對話的一週",
+    "moodActive": "積極閱讀流向的一週",
+    "moodCurious": "靜靜注視星星的一週"
   }
 }

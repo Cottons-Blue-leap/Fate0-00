@@ -284,7 +284,11 @@
     "deleteAll": "すべて削除",
     "cancel": "キャンセル",
     "entryCount": "{{count}} / {{max}}",
-    "limitReached": "* 古い記録は新しい記録に置き換えられます"
+    "limitReached": "* 古い記録は新しい記録に置き換えられます",
+    "today": "今日",
+    "yesterday": "昨日",
+    "thisWeek": "今週",
+    "earlier": "以前"
   },
   "dailyLimit": {
     "used": "今日の占いはすでに確認済みです",
@@ -304,5 +308,20 @@
     "adNotice": "ⓘ 広告を含む",
     "adArea": "広告エリア",
     "complete": "運命が書き換えられました"
+  },
+  "memo": {
+    "prompt": "この運勢を見てどう感じましたか？",
+    "placeholder": "短いメモを書いてください...",
+    "save": "保存",
+    "saved": "保存しました",
+    "addNote": "メモを追加",
+    "tapToEdit": "タップして編集"
+  },
+  "weekly": {
+    "title": "今週のあなたの流れ",
+    "elementFlow": "今週の中心エネルギー",
+    "moodDedicated": "運命と着実に対話する一週間",
+    "moodActive": "流れを積極的に読み取る一週間",
+    "moodCurious": "静かに星を見つめる一週間"
   }
 }

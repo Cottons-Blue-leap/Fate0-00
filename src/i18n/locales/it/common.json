@@ -284,7 +284,11 @@
     "deleteAll": "Elimina tutto",
     "cancel": "Annulla",
     "entryCount": "{{count}} / {{max}}",
-    "limitReached": "* Le voci più vecchie saranno sostituite"
+    "limitReached": "* Le voci più vecchie saranno sostituite",
+    "today": "Oggi",
+    "yesterday": "Ieri",
+    "thisWeek": "Questa settimana",
+    "earlier": "Prima"
   },
   "dailyLimit": {
     "used": "Hai già consultato la fortuna di oggi",
@@ -304,5 +308,20 @@
     "adNotice": "ⓘ Contiene pubblicità",
     "adArea": "Area pubblicitaria",
     "complete": "Il tuo destino è stato riscritto"
+  },
+  "memo": {
+    "prompt": "Come ti ha fatto sentire questa fortuna?",
+    "placeholder": "Scrivi una breve nota...",
+    "save": "Salva",
+    "saved": "Salvato",
+    "addNote": "Aggiungi nota",
+    "tapToEdit": "Tocca per modificare"
+  },
+  "weekly": {
+    "title": "Il tuo flusso questa settimana",
+    "elementFlow": "Energia chiave questa settimana",
+    "moodDedicated": "Una settimana di dialogo costante col destino",
+    "moodActive": "Una settimana di lettura attiva del flusso",
+    "moodCurious": "Una settimana a contemplare le stelle in silenzio"
   }
 }

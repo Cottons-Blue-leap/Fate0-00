@@ -284,7 +284,11 @@
     "deleteAll": "Delete all",
     "cancel": "Cancel",
     "entryCount": "{{count}} / {{max}}",
-    "limitReached": "* Oldest entries will be replaced by new ones"
+    "limitReached": "* Oldest entries will be replaced by new ones",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "thisWeek": "This week",
+    "earlier": "Earlier"
   },
   "dailyLimit": {
     "used": "You've already read today's fortune",
@@ -304,5 +308,20 @@
     "adNotice": "ⓘ Contains advertisement",
     "adArea": "Ad area",
     "complete": "Your fate has been rewritten"
+  },
+  "memo": {
+    "prompt": "How did this fortune make you feel?",
+    "placeholder": "Write a short note...",
+    "save": "Save",
+    "saved": "Saved",
+    "addNote": "Add a note",
+    "tapToEdit": "Tap to edit"
+  },
+  "weekly": {
+    "title": "Your flow this week",
+    "elementFlow": "Key energy this week",
+    "moodDedicated": "A week of steady dialogue with fate",
+    "moodActive": "A week of actively reading the flow",
+    "moodCurious": "A week of quietly gazing at the stars"
   }
 }

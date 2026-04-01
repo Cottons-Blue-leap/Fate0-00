@@ -19,6 +19,7 @@ import { canReverse, getReverseRemaining } from '../logic/reverseEngine';
 import { useSessionState } from '../hooks/useSessionState';
 import { getLatestEntry } from '../hooks/useLatestEntry';
 import ProfileSuggestion from '../components/layout/ProfileSuggestion';
+import FortuneMemo from '../components/layout/FortuneMemo';
 
 type Step = 'input' | 'sync' | 'transit' | 'oracle';
 
@@ -252,6 +253,25 @@ export default function HoroscopePage() {
               </div>
             </div>
 
+            {/* Sign personality context */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              style={{
+                background: 'rgba(155,89,182,0.08)',
+                border: '1px solid rgba(155,89,182,0.2)',
+                borderRadius: '12px', padding: '16px', marginBottom: '12px', textAlign: 'left',
+              }}
+            >
+              <div style={{ fontSize: '12px', color: '#c39bd3', marginBottom: '6px', fontWeight: 700, letterSpacing: '1px' }}>
+                {symbols[sunSign]} {t('signContext.title')} · {t(`signContext.${sunSign}.element`)}
+              </div>
+              <div style={{ fontSize: '13px', lineHeight: '1.7', color: 'rgba(255,255,255,0.65)' }}>
+                {t(`signContext.${sunSign}.trait`)}
+              </div>
+            </motion.div>
+
             {/* Resonance message */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -260,7 +280,7 @@ export default function HoroscopePage() {
               style={{
                 background: resonance === 'aligned' ? 'rgba(255,215,0,0.1)' : 'rgba(155,89,182,0.1)',
                 border: `1px solid ${resonance === 'aligned' ? 'rgba(255,215,0,0.3)' : 'rgba(155,89,182,0.3)'}`,
-                borderRadius: '12px', padding: '16px', marginBottom: '24px',
+                borderRadius: '12px', padding: '16px', marginBottom: '8px',
                 fontSize: '15px', lineHeight: '1.7', fontStyle: 'italic',
               }}
             >
@@ -269,6 +289,14 @@ export default function HoroscopePage() {
               {resonance === 'neutral' && t('horoscope.resonanceNeutral')}
               {resonance === 'distant' && t('horoscope.resonanceDistant')}
             </motion.div>
+
+            {/* Deep resonance meaning */}
+            <div style={{
+              fontSize: '12px', lineHeight: '1.6', color: 'rgba(255,255,255,0.45)',
+              padding: '0 4px', marginBottom: '20px', fontStyle: 'italic',
+            }}>
+              {t(`signContext.resonanceDeep.${resonance}`)}
+            </div>
 
             {/* Daily fortune from existing data */}
             <div style={{ marginBottom: '20px' }}>
@@ -293,7 +321,7 @@ export default function HoroscopePage() {
             </div>
 
             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-              onClick={() => { sfxButtonClick(); addHistory({ type: 'horoscope', summary: '', data: { sign: sunSign, date: todayStr, oracle: oracleMessage, moonPhase: getMoonPhaseName(moonPhase), moonEmoji: getMoonEmoji(moonPhase) } }); markUsedToday('horoscope'); setLimitReached(true); setStep('oracle'); }}
+              onClick={() => { sfxButtonClick(); addHistory({ type: 'horoscope', summary: '', data: { sign: sunSign, date: todayStr, oracle: oracleMessage, moonPhase: getMoonPhaseName(moonPhase), moonEmoji: getMoonEmoji(moonPhase), resonance } }); markUsedToday('horoscope'); setLimitReached(true); setStep('oracle'); }}
               style={{ padding: '14px 40px', background: 'rgba(212,175,55,0.2)', border: '1px solid rgba(212,175,55,0.4)', borderRadius: '12px', fontSize: '16px', color: '#e8d5f5' }}>
               {t('horoscope.getOracle')}
             </motion.button>
@@ -387,6 +415,7 @@ export default function HoroscopePage() {
               </motion.button>
               <ShareButton entry={getLatestEntry('horoscope')} theme="west" />
             </div>
+            <FortuneMemo fortuneType="horoscope" />
             <ProfileSuggestion />
           </motion.div>
         )}

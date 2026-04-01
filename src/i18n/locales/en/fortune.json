@@ -34,6 +34,47 @@
     "The night sky is not an ending — it's a beginning.",
     "The smallest choice reaches the farthest place."
   ],
+  "personalDaily": {
+    "elementName": {
+      "木": "Wood",
+      "火": "Fire",
+      "土": "Earth",
+      "金": "Metal",
+      "水": "Water"
+    },
+    "elementLabel": "Today's Energy",
+    "generate": {
+      "new": "{{name}}, today {{element}} energy opens a new flow. Quietly plant a seed.",
+      "waxing": "{{name}}, {{element}} energy is nurturing your possibilities today. Ride the flow.",
+      "full": "{{name}}, {{element}} energy has reached its peak. What you attempt today will shine.",
+      "waning": "{{name}}, {{element}} energy gently wraps around you today. Take a moment to reflect on what you've achieved."
+    },
+    "generated": {
+      "new": "{{name}}, today is a day when {{element}} energy quietly replenishes. Take time to care for yourself.",
+      "waxing": "{{name}}, {{element}} energy is slowly rising. A receptive attitude will invite good fortune.",
+      "full": "{{name}}, {{element}} energy is overflowing. Someone's kindness may find its way to you today.",
+      "waning": "{{name}}, warm {{element}} energy lingers. Think of things you're grateful for."
+    },
+    "same": {
+      "new": "{{name}}, today {{element}} energy and you are connected as one. Trust your instincts.",
+      "waxing": "{{name}}, the resonance of {{element}} grows stronger. Don't let the ideas that come to you slip away.",
+      "full": "{{name}}, {{element}} energy is at its clearest today. The most 'you' choice is the best choice.",
+      "waning": "{{name}}, your rhythm and {{element}}'s rhythm align well today. Let yourself flow comfortably."
+    },
+    "restrain": {
+      "new": "{{name}}, today is a day when {{element}} energy faces a test. It's okay to take a beat.",
+      "waxing": "{{name}}, there's opposing energy against {{element}}, but you can grow stronger within it.",
+      "full": "{{name}}, if you feel tension, gather your {{element}} strength. Standing firm is also courage.",
+      "waning": "{{name}}, today's friction is preparation for tomorrow's growth. Trust in {{element}}'s roots."
+    },
+    "restrained": {
+      "new": "{{name}}, today is a day when {{element}} energy draws inward. No need to push yourself.",
+      "waxing": "{{name}}, {{element}} may feel a bit suppressed, but starting small opens the way.",
+      "full": "{{name}}, save your {{element}} strength today. Waiting for the right moment is also strategy.",
+      "waning": "{{name}}, {{element}} energy is resting now. Empty your heart for tomorrow."
+    },
+    "fallbackPrefix": "A whisper from the stars"
+  },
   "tarot": {
     "cards": {
       "0": {
@@ -148,7 +189,56 @@
       }
     },
     "summary1": "The {{name}} card has appeared.",
-    "summary3": "Read the flow connecting past, present, and future, and respond wisely."
+    "summary3": "Read the flow connecting past, present, and future, and respond wisely.",
+    "deep": {
+      "0": { "archetype": "The Pure Adventurer", "context": "This card awakens the fearless child within you. If there's something you want to start anew, that's exactly why this card appeared." },
+      "1": { "archetype": "The Alchemist of Will", "context": "Everything you need is already within reach. Gather what's scattered and focus." },
+      "2": { "archetype": "The Inner Guide", "context": "Now is the time to follow intuition over reason. This card tells you there's a knowing within you that words cannot explain." },
+      "3": { "archetype": "The Mother of Abundance", "context": "The energy of nurturing and creation is calling you. It's time to cultivate or create something." },
+      "4": { "archetype": "The Guardian of Order", "context": "Bring structure to what's wavering. This card says it's time for you to become the pillar." },
+      "5": { "archetype": "The Messenger of Wisdom", "context": "Someone's advice or teaching may be what you need right now. Or perhaps you are meant to be that guide." },
+      "6": { "archetype": "The Chooser at the Crossroads", "context": "Your heart knows the answer, not your head. This card asks what truly matters to you." },
+      "7": { "archetype": "The Warrior Who Breaks Through", "context": "Unite opposing forces and charge forward. This card says if there's a will, the way will open." },
+      "8": { "archetype": "The Gentle Sovereign", "context": "True strength is not about suppression, but acceptance. This card awakens the value of patience." },
+      "9": { "archetype": "The Sage on the Path", "context": "Now is a time for solitude. This card tells you there are answers to be found in being alone." },
+      "10": { "archetype": "The Turner of Fate", "context": "The wheel always turns. Remember that nothing lasts forever — and that is hope." },
+      "11": { "archetype": "The Judge of Truth", "context": "You need impartial eyes right now. This card asks you to set aside bias and see things as they are." },
+      "12": { "archetype": "The Willing Sacrifice", "context": "Pausing is not retreating. This card says that changing your perspective reveals what was hidden." },
+      "13": { "archetype": "The Gatekeeper of Transformation", "context": "You must let go of something for something new to enter. This card heralds not an ending, but the start of transformation." },
+      "14": { "archetype": "The Alchemist of Harmony", "context": "Find your center between extremes. This card says to blend slowly but steadily, without haste." },
+      "15": { "archetype": "The Mirror of Shadows", "context": "What you fear is not outside but within. This card says you must confront it to be free." },
+      "16": { "archetype": "The Lightning of Liberation", "context": "What crumbles was built on the wrong foundation. This card heralds a painful but necessary dismantling." },
+      "17": { "archetype": "The Guardian of Hope", "context": "Even in darkness, the light has not disappeared. This card says the brightest star rises in the darkest hour." },
+      "18": { "archetype": "The Guide of the Unconscious", "context": "What you see is not the whole picture. This card carries the message of intuition hidden behind anxiety." },
+      "19": { "archetype": "The Inner Light", "context": "You already know the answer. This card asks you to restore confidence and shine as you are." },
+      "20": { "archetype": "The Trumpet of Awakening", "context": "Look back at the past — not with regret but with insight. This card tells you to rise as your true self." },
+      "21": { "archetype": "The Dancer of Completion", "context": "A journey is coming to its conclusion. This card celebrates your achievement and invites you to prepare for the next door." }
+    },
+    "deepLabel": "Why this card came to you now",
+    "flowLabel": "The flow the cards convey",
+    "flowPastToFuture": "From the past {{past}}, through the present {{present}}, the future moves toward {{future}}. Trust the flow.",
+    "flowSingle": "In this very moment, the energy of {{card}} surrounds you."
+  },
+  "signContext": {
+    "aries": { "element": "Fire", "trait": "Pioneer energy. Quick to act and fearless. You blaze trails where no one else dares, diving headfirst into the impossible. Your starting power is the strongest of all twelve signs, but patience and looking back are your challenges. Your spark is the first flame that moves the world." },
+    "taurus": { "element": "Earth", "trait": "The star of possession and senses. You love stability and are instinctively drawn to beauty. Your five senses run deep — you find joy in music, food, and nature like no other. Slow to change, but once decided, unbreakable as steel. A flower that blooms slowly but lasts the longest." },
+    "gemini": { "element": "Air", "trait": "The star of curiosity. Versatile, brilliant at communication, and the one who lights up any room. Your talent lies in crossing between worlds rather than staying in one. Beneath the lightness hides astonishing speed of thought and the magic of words. Free as the wind — but wherever you pass, something always changes." },
+    "cancer": { "element": "Water", "trait": "Guardian of emotions. You place deep meaning in family and intimate bonds, becoming endlessly strong to protect those you love. Hard shell on the outside, but softer and warmer than anyone within. The sign most deeply touched by the Moon — intuition grows through the tides of emotion. Your embrace is someone's safest harbor in the world." },
+    "leo": { "element": "Fire", "trait": "A luminous being. Most alive on stage, most powerful when loved. A sun-like sign that draws people in with innate charisma and warm generosity. Your yearning for recognition is strong, but it comes not from vanity but from a genuine desire to share your light. When you shine, everything around you shines too." },
+    "virgo": { "element": "Earth", "trait": "The artisan of perfection. You catch details others miss and have a natural talent for creating order from chaos. You find genuine fulfillment in helping others, quietly making the world a better place. Your weakness is being too hard on yourself — learning that imperfection is okay will set you free." },
+    "libra": { "element": "Air", "trait": "Seeker of harmony. You love balance and beauty, instinctively sensing the world's imbalances. Before conflict, you try to understand both sides — making decisions hard, but that depth of thought is your fairness. You shine brighter together than alone, a sign that discovers itself through relationships. Where you are, harmony dwells." },
+    "scorpio": { "element": "Water", "trait": "Explorer of depths. You have eyes that see beneath the surface, and once you give your heart, its depth is oceanic. Your thirst for truth makes you intolerant of hypocrisy, and like a phoenix that destroys and rebuilds, you grow stronger through cycles of transformation. The courage to face darkness without fear is your greatest power." },
+    "sagittarius": { "element": "Fire", "trait": "Explorer of freedom. You love the wide world and grand questions, seeing life as one great adventure. Optimistic and candid, laughter never stops around you — though sometimes you run so far ahead you miss what's precious nearby. An arrow aimed at truth — your honesty sometimes stings, but it's always real." },
+    "capricorn": { "element": "Earth", "trait": "The climber toward the summit. Once you set a goal, you climb steadily — silently, but surely. Serious beyond your years in youth, you uniquely grow younger with age. Strong in responsibility and fearful of failure, but that fear is what made you tougher than anyone. Time is always on your side." },
+    "aquarius": { "element": "Air", "trait": "Pioneer of the future. You see the world through a lens different from everyone else, a genius at imagining tomorrow before it arrives. You value freedom and equality, independent yet harboring a love for all humanity deep within. It's okay to seem lonely — those ahead of their time always walk alone at first." },
+    "pisces": { "element": "Water", "trait": "The boundless dreamer. You move freely between reality and dreams, with empathy deeper than anyone. A soul so vast that you feel others' pain as your own, and the wellspring of artistic inspiration. The world may feel too harsh at times, but your gentleness is the very strength this world needs most." },
+    "resonanceDeep": {
+      "aligned": "The Sun and Moon are on the same wavelength. Today, intuition and action naturally become one.",
+      "approaching": "The Sun and Moon are drawing toward each other. A day when new inspiration or encounters may arrive.",
+      "neutral": "The Sun and Moon are walking their own paths. Today, focus inward rather than outward.",
+      "distant": "Tension between the Sun and Moon is felt today. Try to find balance between emotion and reason."
+    },
+    "title": "Your Zodiac Sign"
   },
   "horoscopeData": {
     "overall": [
@@ -212,43 +302,63 @@
   "dayMaster": {
     "甲": {
       "title": "The Great Tree Reaching the Sky",
-      "desc": "甲Wood — You are a great tree stretching straight toward the heavens. Strong in justice and leadership, once you set a direction, you rarely waver."
+      "desc": "甲Wood — You are a great tree stretching straight toward the heavens. Strong in justice and leadership, once you set a direction, you rarely waver.",
+      "direction": "You shine when leading organizations or pioneering new paths",
+      "relationship": "A dependable, responsible partner — though sometimes insistent on your own way"
     },
     "乙": {
       "title": "The Supple Vine",
-      "desc": "乙Wood — You are a vine that bends in the wind but never breaks. Soft and adaptable, you possess artistic sensibility and delicacy."
+      "desc": "乙Wood — You are a vine that bends in the wind but never breaks. Soft and adaptable, you possess artistic sensibility and delicacy.",
+      "direction": "Arts, design, diplomacy, counseling — paths that engage people and emotion suit you",
+      "relationship": "A warm partner who reads hearts well — sometimes it's okay to express your own feelings more"
     },
     "丙": {
       "title": "The Sun That Illuminates All",
-      "desc": "丙Fire — You are the sun that lights up the world. Passionate and charismatic, you warm everyone around you."
+      "desc": "丙Fire — You are the sun that lights up the world. Passionate and charismatic, you warm everyone around you.",
+      "direction": "On stage, in leadership, as an educator — you shine brightest in front of people",
+      "relationship": "A joyful, warm partner — but be careful not to burn yourself giving everything away"
     },
     "丁": {
       "title": "A Candle in the Darkness",
-      "desc": "丁Fire — You are a candle illuminating the path in the dark. Subtle yet certain light — intellectual and deeply insightful."
+      "desc": "丁Fire — You are a candle illuminating the path in the dark. Subtle yet certain light — intellectual and deeply insightful.",
+      "direction": "Research, strategy, writing, consulting — paths requiring deep thought suit you",
+      "relationship": "A partner of genuine devotion — quiet on the surface but deeper than anyone within"
     },
     "戊": {
       "title": "The Unshakable Mountain",
-      "desc": "戊Earth — You are a mountain that stands firm even in a typhoon. Dependable and embracing, you are the one others rely on."
+      "desc": "戊Earth — You are a mountain that stands firm even in a typhoon. Dependable and embracing, you are the one others rely on.",
+      "direction": "Management, administration, real estate, education — roles that build stable foundations",
+      "relationship": "A pillar of trust — clumsy with words but shows everything through action"
     },
     "己": {
       "title": "The Fertile Earth",
-      "desc": "己Earth — You are the fertile earth that nurtures life. Humble and devoted, you have a gift for caring for others."
+      "desc": "己Earth — You are the fertile earth that nurtures life. Humble and devoted, you have a gift for caring for others.",
+      "direction": "Caregiving, education, cooking, HR — paths that nurture and grow people bring you happiness",
+      "relationship": "A partner who silently devotes — it's okay to put yourself first sometimes"
     },
     "庚": {
       "title": "The Blade of Unrefined Ore",
-      "desc": "庚Metal — You are a cold, unrefined ore yet to be smelted. Decisive and driven, hardships only sharpen your edge."
+      "desc": "庚Metal — You are a cold, unrefined ore yet to be smelted. Decisive and driven, hardships only sharpen your edge.",
+      "direction": "Law, military, competitive business, surgery — where decisiveness is needed, you prove your worth",
+      "relationship": "A deeply loyal partner — behind the sharp words hides a warm heart"
     },
     "辛": {
       "title": "A Jewel in the Moonlight",
-      "desc": "辛Metal — You are a finely crafted jewel shining under moonlight. Delicate and perfectionist, you pursue beauty and purity."
+      "desc": "辛Metal — You are a finely crafted jewel shining under moonlight. Delicate and perfectionist, you pursue beauty and purity.",
+      "direction": "Jewelry, fashion, finance, artisanship — where precision and aesthetic sense are needed",
+      "relationship": "A pure partner who loves with all their heart — just needs a bit of time to open up"
     },
     "壬": {
       "title": "The Unstoppable Great River",
-      "desc": "壬Water — You are a mighty river carving through mountains on its way to the sea. Wise and embracing, you love freedom."
+      "desc": "壬Water — You are a mighty river carving through mountains on its way to the sea. Wise and embracing, you love freedom.",
+      "direction": "Travel, trade, philosophy, media, freelance — paths that meet the wide world suit you",
+      "relationship": "A free and open partner — hold too tight and they drift away, but trust and they always return"
     },
     "癸": {
       "title": "Morning Dewdrop at Dawn",
-      "desc": "癸Water — You are a single dewdrop resting on a blade of grass at dawn. Delicate and intuitive, you possess the inspiration to sense the unseen."
+      "desc": "癸Water — You are a single dewdrop resting on a blade of grass at dawn. Delicate and intuitive, you possess the inspiration to sense the unseen.",
+      "direction": "Psychology, divination, art, research, healing — where intuition and sensitivity are assets",
+      "relationship": "A deep partner who understands without words — sometimes expressing your own feelings aloud helps even more"
     }
   },
   "waka": {
@@ -462,5 +572,53 @@
     "harmony": "The energy of {{stem}}{{branch}} harmonizes with your destiny. Inner wood meets sunlight and blooms.",
     "clash": "The energy of {{stem}}{{branch}} clashes with your destiny. Fire meets water and boils. Intense, but the engine of change.",
     "neutral": "The energy of {{stem}}{{branch}} flows quietly. A time of inner cultivation without great waves."
+  },
+  "elementDeep": {
+    "excess": {
+      "木": "When Wood is excessive, plans multiply but action blurs. Metal's decisiveness helps prune the branches.",
+      "火": "When Fire is excessive, passion can consume you. Water's stillness restores your center.",
+      "土": "When Earth is excessive, you fear change. Wood's growth energy breaks through and creates renewal.",
+      "金": "When Metal is excessive, perfectionism can chill relationships. Fire's warmth melts the cold steel.",
+      "水": "When Water is excessive, you drown in thought and cannot move. Earth's stability gives direction to the flowing water."
+    },
+    "deficient": {
+      "木": "When Wood is lacking, courage for new beginnings fades. Green spaces, walks, and tending plants can help.",
+      "火": "When Fire is lacking, passion and confidence weaken. Warm colors, active exercise, and socializing rekindle the flame.",
+      "土": "When Earth is lacking, your center wavers and anxiety grows. Regular routines, cooking, and nature walks bring stability.",
+      "金": "When Metal is lacking, decisions become difficult. Organizing, playing instruments, and setting clear goals help.",
+      "水": "When Water is lacking, intuition and flexibility diminish. Walks by water, meditation, and reading replenish wisdom."
+    },
+    "balanceTitle": "What your Five Elements reveal"
+  },
+  "rankGuide": {
+    "daikichi": {
+      "meaning": "Supreme fortune. Everything flows like wind in your sails.",
+      "advice": "Share this good fortune. Good energy lingers longer when shared. Keep gratitude in your heart and the blessing deepens."
+    },
+    "kichi": {
+      "meaning": "Good fortune. Steady effort will lead to fine results.",
+      "advice": "Don't overreach — follow the flow. When you're not rushed, the best fruit ripens in its own time."
+    },
+    "chukichi": {
+      "meaning": "Moderate fortune. Quiet joys beyond your expectations will find you.",
+      "advice": "Pay attention to the unseen blessings. True happiness hides in the small things."
+    },
+    "shokichi": {
+      "meaning": "Small fortune. A gentle, warm luck surrounds you.",
+      "advice": "Small actions outshine big ambitions right now. Step by step, and fortune follows."
+    },
+    "suekichi": {
+      "meaning": "Late fortune. Slow now, but a good ending awaits.",
+      "advice": "The waiting itself is part of the fortune. Focus on what's in front of you without haste — flowers bloom in unexpected moments."
+    },
+    "kyo": {
+      "meaning": "Misfortune. A time that calls for caution, but avoidable.",
+      "advice": "Avoid rash actions and postpone important decisions. They say tying your fortune at a shrine wards off bad energy."
+    },
+    "daikyo": {
+      "meaning": "Great misfortune. The deepest bottom — but there is nowhere further to fall.",
+      "advice": "Once you hit the bottom, the only way is up. Spend the day humbly and avoid pushing too hard. Strongly recommend tying this fortune at a shrine."
+    },
+    "title": "What this fortune means"
   }
 }

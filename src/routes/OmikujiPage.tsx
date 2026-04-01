@@ -15,6 +15,7 @@ import { canReverse, getReverseRemaining } from '../logic/reverseEngine';
 import { useSessionState } from '../hooks/useSessionState';
 import { getLatestEntry } from '../hooks/useLatestEntry';
 import ProfileSuggestion from '../components/layout/ProfileSuggestion';
+import FortuneMemo from '../components/layout/FortuneMemo';
 
 type Step = 'purify' | 'pray' | 'shake' | 'waka' | 'reading' | 'fate';
 
@@ -151,6 +152,7 @@ export default function OmikujiPage() {
       addHistory({ type: 'omikuji', summary: '', data: {
         rank: ranks[rankIdx], rankKanji: rankKanji[rankIdx], number: stickNum, question,
         wakaJa: t(`waka.${ranks[rankIdx]}.japanese`), wakaKo: t(`waka.${ranks[rankIdx]}.translation`),
+        general: t(`omikujiData.${ranks[rankIdx]}.0.general`),
         wish: t(`omikujiData.${ranks[rankIdx]}.0.wish`), love: t(`omikujiData.${ranks[rankIdx]}.0.relationship`),
         health: t(`omikujiData.${ranks[rankIdx]}.0.health`), travel: t(`omikujiData.${ranks[rankIdx]}.0.travel`),
       } });
@@ -437,12 +439,34 @@ export default function OmikujiPage() {
             <motion.div
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              style={{ marginBottom: '24px' }}
+              style={{ marginBottom: '16px' }}
             >
               <div style={{ fontSize: '56px', fontWeight: 700, color: rankColor(rankIdx), fontFamily: "'Noto Serif KR', serif", textShadow: `0 0 20px ${rankColor(rankIdx)}40` }}>
                 {rankKanji[rankIdx]}
               </div>
               <div style={{ fontSize: '16px', color: 'var(--text-muted)' }}>{t(`omikuji.${ranks[rankIdx]}`)}</div>
+            </motion.div>
+
+            {/* Rank guidance */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              style={{
+                background: rankIdx <= 4 ? 'rgba(212,175,55,0.08)' : 'rgba(231,76,60,0.08)',
+                border: `1px solid ${rankIdx <= 4 ? 'rgba(212,175,55,0.2)' : 'rgba(231,76,60,0.2)'}`,
+                borderRadius: '12px', padding: '14px', marginBottom: '16px', textAlign: 'left',
+              }}
+            >
+              <div style={{ fontSize: '11px', color: rankIdx <= 4 ? 'rgba(212,175,55,0.7)' : 'rgba(231,76,60,0.7)', marginBottom: '6px', fontWeight: 700, letterSpacing: '1px' }}>
+                ✦ {t('rankGuide.title')}
+              </div>
+              <div style={{ fontSize: '13px', lineHeight: '1.7', color: 'rgba(255,255,255,0.6)', marginBottom: '8px' }}>
+                {t(`rankGuide.${ranks[rankIdx]}.meaning`)}
+              </div>
+              <div style={{ fontSize: '12px', lineHeight: '1.6', color: 'rgba(255,255,255,0.5)', fontStyle: 'italic' }}>
+                💡 {t(`rankGuide.${ranks[rankIdx]}.advice`)}
+              </div>
             </motion.div>
 
             {/* Question reminder */}
@@ -527,6 +551,7 @@ export default function OmikujiPage() {
                     {t('omikuji.newVisit')}
                   </motion.button>
                 </div>
+                <FortuneMemo fortuneType="omikuji" />
                 <ProfileSuggestion />
               </motion.div>
             ) : (
@@ -548,6 +573,7 @@ export default function OmikujiPage() {
                     {t('omikuji.newVisit')}
                   </motion.button>
                 </div>
+                <FortuneMemo fortuneType="omikuji" />
                 <ProfileSuggestion />
               </motion.div>
             )}

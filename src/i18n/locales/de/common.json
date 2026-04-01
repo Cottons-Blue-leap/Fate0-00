@@ -284,7 +284,11 @@
     "deleteAll": "Alle löschen",
     "cancel": "Abbrechen",
     "entryCount": "{{count}} / {{max}}",
-    "limitReached": "* Älteste Einträge werden durch neue ersetzt"
+    "limitReached": "* Älteste Einträge werden durch neue ersetzt",
+    "today": "Heute",
+    "yesterday": "Gestern",
+    "thisWeek": "Diese Woche",
+    "earlier": "Früher"
   },
   "dailyLimit": {
     "used": "Sie haben das heutige Horoskop bereits gelesen",
@@ -304,5 +308,20 @@
     "adNotice": "ⓘ Enthält Werbung",
     "adArea": "Werbebereich",
     "complete": "Ihr Schicksal wurde neu geschrieben"
+  },
+  "memo": {
+    "prompt": "Wie hat dich dieses Schicksal fühlen lassen?",
+    "placeholder": "Schreibe eine kurze Notiz...",
+    "save": "Speichern",
+    "saved": "Gespeichert",
+    "addNote": "Notiz hinzufügen",
+    "tapToEdit": "Zum Bearbeiten tippen"
+  },
+  "weekly": {
+    "title": "Dein Fluss diese Woche",
+    "elementFlow": "Schlüsselenergie diese Woche",
+    "moodDedicated": "Eine Woche des stetigen Dialogs mit dem Schicksal",
+    "moodActive": "Eine Woche des aktiven Lesens des Flusses",
+    "moodCurious": "Eine Woche des stillen Sternebetrachtens"
   }
 }

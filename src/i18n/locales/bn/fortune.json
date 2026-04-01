@@ -148,7 +148,101 @@
       }
     },
     "summary1": "{{name}} কার্ড বেরিয়েছে।",
-    "summary3": "অতীত-বর্তমান-ভবিষ্যতের প্রবাহ পড়ুন এবং বুদ্ধিমানের সাথে মোকাবেলা করুন।"
+    "summary3": "অতীত-বর্তমান-ভবিষ্যতের প্রবাহ পড়ুন এবং বুদ্ধিমানের সাথে মোকাবেলা করুন।",
+    "deep": {
+      "0": {
+        "archetype": "The Pure Adventurer",
+        "context": "This card awakens the fearless child within you. If there's something you want to start anew, that's exactly why this card appeared."
+      },
+      "1": {
+        "archetype": "The Alchemist of Will",
+        "context": "Everything you need is already within reach. Gather what's scattered and focus."
+      },
+      "2": {
+        "archetype": "The Inner Guide",
+        "context": "Now is the time to follow intuition over reason. This card tells you there's a knowing within you that words cannot explain."
+      },
+      "3": {
+        "archetype": "The Mother of Abundance",
+        "context": "The energy of nurturing and creation is calling you. It's time to cultivate or create something."
+      },
+      "4": {
+        "archetype": "The Guardian of Order",
+        "context": "Bring structure to what's wavering. This card says it's time for you to become the pillar."
+      },
+      "5": {
+        "archetype": "The Messenger of Wisdom",
+        "context": "Someone's advice or teaching may be what you need right now. Or perhaps you are meant to be that guide."
+      },
+      "6": {
+        "archetype": "The Chooser at the Crossroads",
+        "context": "Your heart knows the answer, not your head. This card asks what truly matters to you."
+      },
+      "7": {
+        "archetype": "The Warrior Who Breaks Through",
+        "context": "Unite opposing forces and charge forward. This card says if there's a will, the way will open."
+      },
+      "8": {
+        "archetype": "The Gentle Sovereign",
+        "context": "True strength is not about suppression, but acceptance. This card awakens the value of patience."
+      },
+      "9": {
+        "archetype": "The Sage on the Path",
+        "context": "Now is a time for solitude. This card tells you there are answers to be found in being alone."
+      },
+      "10": {
+        "archetype": "The Turner of Fate",
+        "context": "The wheel always turns. Remember that nothing lasts forever — and that is hope."
+      },
+      "11": {
+        "archetype": "The Judge of Truth",
+        "context": "You need impartial eyes right now. This card asks you to set aside bias and see things as they are."
+      },
+      "12": {
+        "archetype": "The Willing Sacrifice",
+        "context": "Pausing is not retreating. This card says that changing your perspective reveals what was hidden."
+      },
+      "13": {
+        "archetype": "The Gatekeeper of Transformation",
+        "context": "You must let go of something for something new to enter. This card heralds not an ending, but the start of transformation."
+      },
+      "14": {
+        "archetype": "The Alchemist of Harmony",
+        "context": "Find your center between extremes. This card says to blend slowly but steadily, without haste."
+      },
+      "15": {
+        "archetype": "The Mirror of Shadows",
+        "context": "What you fear is not outside but within. This card says you must confront it to be free."
+      },
+      "16": {
+        "archetype": "The Lightning of Liberation",
+        "context": "What crumbles was built on the wrong foundation. This card heralds a painful but necessary dismantling."
+      },
+      "17": {
+        "archetype": "The Guardian of Hope",
+        "context": "Even in darkness, the light has not disappeared. This card says the brightest star rises in the darkest hour."
+      },
+      "18": {
+        "archetype": "The Guide of the Unconscious",
+        "context": "What you see is not the whole picture. This card carries the message of intuition hidden behind anxiety."
+      },
+      "19": {
+        "archetype": "The Inner Light",
+        "context": "You already know the answer. This card asks you to restore confidence and shine as you are."
+      },
+      "20": {
+        "archetype": "The Trumpet of Awakening",
+        "context": "Look back at the past — not with regret but with insight. This card tells you to rise as your true self."
+      },
+      "21": {
+        "archetype": "The Dancer of Completion",
+        "context": "A journey is coming to its conclusion. This card celebrates your achievement and invites you to prepare for the next door."
+      }
+    },
+    "deepLabel": "এই কার্ড এখন আপনার কাছে কেন এসেছে",
+    "flowLabel": "কার্ডগুলো যে প্রবাহ বহন করে",
+    "flowPastToFuture": "অতীতের {{past}} থেকে, বর্তমানের {{present}} হয়ে, ভবিষ্যৎ {{future}}-এর দিকে এগিয়ে যাচ্ছে। প্রবাহে বিশ্বাস রাখুন।",
+    "flowSingle": "এই মুহূর্তে, {{card}}-এর শক্তি আপনাকে ঘিরে রেখেছে।"
   },
   "horoscopeData": {
     "overall": [
@@ -212,43 +306,63 @@
   "dayMaster": {
     "甲": {
       "title": "আকাশছোঁয়া মহীরুহ",
-      "desc": "甲কাঠ — আপনি আকাশের দিকে সোজা বেড়ে ওঠা এক বিশাল মহীরুহ। ন্যায়বোধ প্রবল ও নেতৃত্বগুণ সম্পন্ন; একবার দিক ঠিক করলে সহজে বদলান না।"
+      "desc": "甲কাঠ — আপনি আকাশের দিকে সোজা বেড়ে ওঠা এক বিশাল মহীরুহ। ন্যায়বোধ প্রবল ও নেতৃত্বগুণ সম্পন্ন; একবার দিক ঠিক করলে সহজে বদলান না।",
+      "direction": "You shine when leading organizations or pioneering new paths",
+      "relationship": "A dependable, responsible partner — though sometimes insistent on your own way"
     },
     "乙": {
       "title": "নমনীয় লতা",
-      "desc": "乙কাঠ — আপনি বাতাসে দুলে যান কিন্তু কখনো ভাঙেন না এমন একটি লতা। কোমল ও অভিযোজনে পারদর্শী, শিল্পসুলভ সংবেদনশীলতা ও সূক্ষ্মতা ধারণ করেন।"
+      "desc": "乙কাঠ — আপনি বাতাসে দুলে যান কিন্তু কখনো ভাঙেন না এমন একটি লতা। কোমল ও অভিযোজনে পারদর্শী, শিল্পসুলভ সংবেদনশীলতা ও সূক্ষ্মতা ধারণ করেন।",
+      "direction": "Arts, design, diplomacy, counseling — paths that engage people and emotion suit you",
+      "relationship": "A warm partner who reads hearts well — sometimes it's okay to express your own feelings more"
     },
     "丙": {
       "title": "সব কিছু আলোকিত করা সূর্য",
-      "desc": "丙আগুন — আপনি পৃথিবী আলোকিত করা সূর্য। আবেগপ্রবণ ও ক্যারিশম্যাটিক, চারপাশের সবাইকে উষ্ণ করেন।"
+      "desc": "丙আগুন — আপনি পৃথিবী আলোকিত করা সূর্য। আবেগপ্রবণ ও ক্যারিশম্যাটিক, চারপাশের সবাইকে উষ্ণ করেন।",
+      "direction": "On stage, in leadership, as an educator — you shine brightest in front of people",
+      "relationship": "A joyful, warm partner — but be careful not to burn yourself giving everything away"
     },
     "丁": {
       "title": "অন্ধকারে জ্বলা মোমবাতি",
-      "desc": "丁আগুন — আপনি অন্ধকারে পথ দেখানো মোমবাতি। মৃদু কিন্তু নিশ্চিত আলো; বুদ্ধিদীপ্ত ও গভীর অন্তর্দৃষ্টিসম্পন্ন।"
+      "desc": "丁আগুন — আপনি অন্ধকারে পথ দেখানো মোমবাতি। মৃদু কিন্তু নিশ্চিত আলো; বুদ্ধিদীপ্ত ও গভীর অন্তর্দৃষ্টিসম্পন্ন।",
+      "direction": "Research, strategy, writing, consulting — paths requiring deep thought suit you",
+      "relationship": "A partner of genuine devotion — quiet on the surface but deeper than anyone within"
     },
     "戊": {
       "title": "অটল পর্বত",
-      "desc": "戊মাটি — আপনি ঝড়েও অটল থাকা পর্বত। নির্ভরযোগ্য ও সহানুভূতিশীল, মানুষ আপনার ওপর ভরসা করে।"
+      "desc": "戊মাটি — আপনি ঝড়েও অটল থাকা পর্বত। নির্ভরযোগ্য ও সহানুভূতিশীল, মানুষ আপনার ওপর ভরসা করে।",
+      "direction": "Management, administration, real estate, education — roles that build stable foundations",
+      "relationship": "A pillar of trust — clumsy with words but shows everything through action"
     },
     "己": {
       "title": "উর্বর ভূমি",
-      "desc": "己মাটি — আপনি জীবন লালনকারী উর্বর ভূমি। বিনয়ী ও নিবেদিতপ্রাণ, অন্যদের যত্ন নেওয়ায় প্রতিভাবান।"
+      "desc": "己মাটি — আপনি জীবন লালনকারী উর্বর ভূমি। বিনয়ী ও নিবেদিতপ্রাণ, অন্যদের যত্ন নেওয়ায় প্রতিভাবান।",
+      "direction": "Caregiving, education, cooking, HR — paths that nurture and grow people bring you happiness",
+      "relationship": "A partner who silently devotes — it's okay to put yourself first sometimes"
     },
     "庚": {
       "title": "অমার্জিত আকরিকের ফলা",
-      "desc": "庚ধাতু — আপনি এখনো গলানো হয়নি এমন ঠান্ডা আকরিক। সিদ্ধান্ত ক্ষমতা ও চালিকাশক্তি অসাধারণ; কষ্ট আপনাকে আরও ধারালো করে।"
+      "desc": "庚ধাতু — আপনি এখনো গলানো হয়নি এমন ঠান্ডা আকরিক। সিদ্ধান্ত ক্ষমতা ও চালিকাশক্তি অসাধারণ; কষ্ট আপনাকে আরও ধারালো করে।",
+      "direction": "Law, military, competitive business, surgery — where decisiveness is needed, you prove your worth",
+      "relationship": "A deeply loyal partner — behind the sharp words hides a warm heart"
     },
     "辛": {
       "title": "জ্যোৎস্নায় রত্ন",
-      "desc": "辛ধাতু — আপনি চাঁদের আলোয় ঝলমলে একটি নিখুঁত রত্ন। সূক্ষ্ম ও পরিপূর্ণতাবাদী, সৌন্দর্য ও বিশুদ্ধতার অন্বেষণ করেন।"
+      "desc": "辛ধাতু — আপনি চাঁদের আলোয় ঝলমলে একটি নিখুঁত রত্ন। সূক্ষ্ম ও পরিপূর্ণতাবাদী, সৌন্দর্য ও বিশুদ্ধতার অন্বেষণ করেন।",
+      "direction": "Jewelry, fashion, finance, artisanship — where precision and aesthetic sense are needed",
+      "relationship": "A pure partner who loves with all their heart — just needs a bit of time to open up"
     },
     "壬": {
       "title": "থামতে না জানা মহানদী",
-      "desc": "壬জল — আপনি পাহাড় কেটে সাগরে মিশে যাওয়া এক বিশাল নদী। প্রজ্ঞাবান ও সহানুভূতিশীল, স্বাধীনতা ভালোবাসেন।"
+      "desc": "壬জল — আপনি পাহাড় কেটে সাগরে মিশে যাওয়া এক বিশাল নদী। প্রজ্ঞাবান ও সহানুভূতিশীল, স্বাধীনতা ভালোবাসেন।",
+      "direction": "Travel, trade, philosophy, media, freelance — paths that meet the wide world suit you",
+      "relationship": "A free and open partner — hold too tight and they drift away, but trust and they always return"
     },
     "癸": {
       "title": "ভোরের শিশির বিন্দু",
-      "desc": "癸জল — আপনি ভোরের ঘাসের পাতায় জমা এক ফোঁটা শিশির। সূক্ষ্ম ও স্বজ্ঞাত, অদৃশ্যকে অনুভব করার প্রেরণা ধারণ করেন।"
+      "desc": "癸জল — আপনি ভোরের ঘাসের পাতায় জমা এক ফোঁটা শিশির। সূক্ষ্ম ও স্বজ্ঞাত, অদৃশ্যকে অনুভব করার প্রেরণা ধারণ করেন।",
+      "direction": "Psychology, divination, art, research, healing — where intuition and sensitivity are assets",
+      "relationship": "A deep partner who understands without words — sometimes expressing your own feelings aloud helps even more"
     }
   },
   "waka": {
@@ -462,5 +576,151 @@
     "harmony": "{{stem}}{{branch}}-এর শক্তি আপনার ভাগ্যের সাথে সামঞ্জস্যপূর্ণ।",
     "clash": "{{stem}}{{branch}}-এর শক্তি আপনার ভাগ্যের সাথে সংঘর্ষ করে। তীব্র, কিন্তু পরিবর্তনের চালিকাশক্তি।",
     "neutral": "{{stem}}{{branch}}-এর শক্তি শান্তভাবে প্রবাহিত। অভ্যন্তরীণ বিকাশের সময়।"
+  },
+  "personalDaily": {
+    "elementName": {
+      "木": "কাঠ",
+      "火": "আগুন",
+      "土": "মাটি",
+      "金": "ধাতু",
+      "水": "জল"
+    },
+    "elementLabel": "আজকের শক্তি",
+    "fallbackPrefix": "তারাদের ফিসফিস",
+    "generate": {
+      "new": "{{name}}, আজ {{element}}-এর শক্তি নতুন প্রবাহ খুলে দিচ্ছে। নীরবে একটি বীজ বপন করুন।",
+      "waxing": "{{name}}, {{element}}-এর শক্তি আজ আপনার সম্ভাবনা লালন করছে। প্রবাহে ভেসে যান।",
+      "full": "{{name}}, {{element}}-এর শক্তি চরমে পৌঁছেছে। আজ যা চেষ্টা করবেন তা উজ্জ্বল হবে।",
+      "waning": "{{name}}, {{element}}-এর শক্তি আজ আপনাকে কোমলভাবে জড়িয়ে রাখছে। অর্জনগুলো ফিরে দেখুন।"
+    },
+    "generated": {
+      "new": "{{name}}, আজ {{element}}-এর শক্তি নীরবে পূর্ণ হচ্ছে। নিজের যত্ন নিন।",
+      "waxing": "{{name}}, {{element}}-এর শক্তি ধীরে উঠছে। গ্রহণশীল মনোভাব সৌভাগ্য আনবে।",
+      "full": "{{name}}, {{element}}-এর শক্তি উপচে পড়ছে। কারো দয়া আজ আপনার কাছে পৌঁছতে পারে।",
+      "waning": "{{name}}, {{element}}-এর উষ্ণতা রয়ে গেছে। কৃতজ্ঞতার বিষয়গুলো ভাবুন।"
+    },
+    "same": {
+      "new": "{{name}}, আজ {{element}}-এর শক্তি আর আপনি একাকার। প্রবৃত্তিতে বিশ্বাস রাখুন।",
+      "waxing": "{{name}}, {{element}}-এর অনুরণন শক্তিশালী হচ্ছে। মনে আসা ভাবনা হারাবেন না।",
+      "full": "{{name}}, আজ {{element}}-এর শক্তি সবচেয়ে স্পষ্ট। সবচেয়ে আপনার মতো পছন্দই সেরা।",
+      "waning": "{{name}}, আপনার ছন্দ আর {{element}}-এর ছন্দ আজ মিলে যাচ্ছে। স্বচ্ছন্দে ভাসুন।"
+    },
+    "restrain": {
+      "new": "{{name}}, আজ {{element}}-এর শক্তি পরীক্ষার মুখে। একটু থামা ঠিক আছে।",
+      "waxing": "{{name}}, {{element}}-এর বিরুদ্ধে শক্তি আছে, তবে এর মধ্যেই শক্তিশালী হতে পারেন।",
+      "full": "{{name}}, টান অনুভব করলে {{element}}-এর শক্তি সংগ্রহ করুন। দাঁড়িয়ে থাকাও সাহস।",
+      "waning": "{{name}}, আজকের ঘর্ষণ আগামীকালের বৃদ্ধির প্রস্তুতি। {{element}}-এর শিকড়ে বিশ্বাস রাখুন।"
+    },
+    "restrained": {
+      "new": "{{name}}, আজ {{element}}-এর শক্তি ভেতরে গুটিয়ে যাচ্ছে। জোর করার দরকার নেই।",
+      "waxing": "{{name}}, {{element}} একটু চাপা মনে হতে পারে, তবে ছোট শুরু পথ খোলে।",
+      "full": "{{name}}, আজ {{element}}-এর শক্তি সঞ্চয় করুন। সঠিক মুহূর্তের অপেক্ষাও কৌশল।",
+      "waning": "{{name}}, {{element}}-এর শক্তি এখন বিশ্রামে। আগামীর জন্য হৃদয় খালি করুন।"
+    }
+  },
+  "signContext": {
+    "aries": {
+      "element": "আগুন",
+      "trait": "Pioneer energy. Quick to act and fearless. You blaze trails where no one else dares. Your starting power is the strongest of all twelve signs, but patience is your challenge. Your spark is the first flame that moves the world."
+    },
+    "taurus": {
+      "element": "মাটি",
+      "trait": "The star of senses. You love stability and are drawn to beauty. Slow to change, but once decided, unbreakable as steel. A flower that blooms slowly but lasts the longest."
+    },
+    "gemini": {
+      "element": "বায়ু",
+      "trait": "The star of curiosity. Versatile and brilliant at communication. Your talent lies in crossing between worlds. Free as the wind — wherever you pass, something changes."
+    },
+    "cancer": {
+      "element": "জল",
+      "trait": "Guardian of emotions. You place deep meaning in family and bonds. Hard shell outside, softer than anyone within. Your embrace is someone's safest harbor."
+    },
+    "leo": {
+      "element": "আগুন",
+      "trait": "A luminous being. Most alive on stage, most powerful when loved. A sun-like sign with innate charisma. When you shine, everything around you shines too."
+    },
+    "virgo": {
+      "element": "মাটি",
+      "trait": "The artisan of perfection. You catch details others miss. You find fulfillment in helping others. Your weakness is being too hard on yourself."
+    },
+    "libra": {
+      "element": "বায়ু",
+      "trait": "Seeker of harmony. You love balance and beauty. Decisions are hard, but that depth is your fairness. Where you are, harmony dwells."
+    },
+    "scorpio": {
+      "element": "জল",
+      "trait": "Explorer of depths. Eyes that see beneath the surface. Once you give your heart, its depth is oceanic. Your courage to face darkness is your greatest power."
+    },
+    "sagittarius": {
+      "element": "আগুন",
+      "trait": "Explorer of freedom. You love the wide world and grand questions. Your honesty sometimes stings, but it's always real."
+    },
+    "capricorn": {
+      "element": "মাটি",
+      "trait": "The climber toward the summit. Once you set a goal, you climb surely. Serious in youth, uniquely younger with age. Time is always on your side."
+    },
+    "aquarius": {
+      "element": "বায়ু",
+      "trait": "Pioneer of the future. You see the world differently. Independent yet harboring love for all humanity. Those ahead of their time walk alone at first."
+    },
+    "pisces": {
+      "element": "জল",
+      "trait": "The boundless dreamer. You move between reality and dreams, with empathy deeper than anyone. Your gentleness is the very strength this world needs most."
+    },
+    "resonanceDeep": {
+      "aligned": "সূর্য ও চন্দ্র একই তরঙ্গদৈর্ঘ্যে আছে। আজ অন্তর্জ্ঞান ও কর্ম স্বাভাবিকভাবে একাকার হয়।",
+      "approaching": "সূর্য ও চন্দ্র পরস্পরের দিকে আসছে। নতুন অনুপ্রেরণা বা সাক্ষাৎ আসতে পারে।",
+      "neutral": "সূর্য ও চন্দ্র নিজ নিজ পথে চলছে। আজ বাইরের বদলে ভেতরে মনোযোগ দিন।",
+      "distant": "আজ সূর্য ও চন্দ্রের মধ্যে টানাপোড়েন অনুভূত হচ্ছে। আবেগ ও যুক্তির মধ্যে ভারসাম্য খুঁজুন।"
+    },
+    "title": "আপনার রাশি"
+  },
+  "elementDeep": {
+    "excess": {
+      "木": "কাঠ অতিরিক্ত হলে পরিকল্পনা বাড়ে কিন্তু কাজ ঝাপসা হয়। ধাতুর দৃঢ়তা শাখা ছাঁটাই করে।",
+      "火": "আগুন অতিরিক্ত হলে আবেগ পুড়িয়ে দিতে পারে। জলের স্থিরতা কেন্দ্র পুনরুদ্ধার করে।",
+      "土": "মাটি অতিরিক্ত হলে পরিবর্তনে ভয় পান। কাঠের শক্তি ভেদ করে নতুনত্ব আনে।",
+      "金": "ধাতু অতিরিক্ত হলে পরিপূর্ণতাবাদ সম্পর্ক ঠান্ডা করে। আগুনের উষ্ণতা গলায়।",
+      "水": "জল অতিরিক্ত হলে চিন্তায় ডুবে যান। মাটির স্থিরতা দিশা দেয়।"
+    },
+    "deficient": {
+      "木": "কাঠ কম হলে নতুন শুরুর সাহস কমে। সবুজ জায়গা ও হাঁটা সাহায্য করে।",
+      "火": "আগুন কম হলে আবেগ দুর্বল হয়। উষ্ণ রঙ ও ব্যায়াম শিখা জ্বালায়।",
+      "土": "মাটি কম হলে কেন্দ্র টলমল করে। নিয়মিত রুটিন স্থিরতা আনে।",
+      "金": "ধাতু কম হলে সিদ্ধান্ত কঠিন হয়। গোছানো ও লক্ষ্য নির্ধারণ সাহায্য করে।",
+      "水": "জল কম হলে অন্তর্জ্ঞান কমে। জলের ধারে হাঁটা ও ধ্যান জ্ঞান পূরণ করে।"
+    },
+    "balanceTitle": "আপনার পঞ্চভূত কী বলে"
+  },
+  "rankGuide": {
+    "title": "এই ভাগ্যের অর্থ",
+    "daikichi": {
+      "meaning": "সর্বোচ্চ ভাগ্য। সবকিছু পালে বাতাসের মতো বইছে।",
+      "advice": "এই শুভ ভাগ্য ভাগ করুন। ভাগ করা শক্তি দীর্ঘস্থায়ী হয়।"
+    },
+    "kichi": {
+      "meaning": "শুভ ভাগ্য। অবিচল প্রচেষ্টা ভালো ফল আনবে।",
+      "advice": "বেশি করবেন না — প্রবাহ অনুসরণ করুন।"
+    },
+    "chukichi": {
+      "meaning": "মাঝারি ভাগ্য। অপ্রত্যাশিত ছোট আনন্দ আপনাকে খুঁজে পাবে।",
+      "advice": "অদৃশ্য আশীর্বাদে মনোযোগ দিন।"
+    },
+    "shokichi": {
+      "meaning": "ছোট ভাগ্য। মৃদু, উষ্ণ সৌভাগ্য আপনাকে ঘিরে আছে।",
+      "advice": "এখন ছোট কাজ বড় উচ্চাকাঙ্ক্ষার চেয়ে উজ্জ্বল।"
+    },
+    "suekichi": {
+      "meaning": "দেরিতে আসা ভাগ্য। এখন ধীর, কিন্তু ভালো শেষ অপেক্ষা করছে।",
+      "advice": "অপেক্ষা নিজেই ভাগ্যের অংশ।"
+    },
+    "kyo": {
+      "meaning": "দুর্ভাগ্য। সতর্কতার সময়, কিন্তু এড়ানো যায়।",
+      "advice": "তাড়াহুড়ো করবেন না এবং গুরুত্বপূর্ণ সিদ্ধান্ত পিছিয়ে দিন।"
+    },
+    "daikyo": {
+      "meaning": "মহা দুর্ভাগ্য। সবচেয়ে গভীর তল — কিন্তু আর নিচে যাওয়ার জায়গা নেই।",
+      "advice": "তল থেকে শুধু উপরে ওঠা যায়। বিনম্রভাবে দিন কাটান।"
+    }
   }
 }

@@ -52,7 +52,10 @@ export type FiveElement = '木' | '火' | '土' | '金' | '水';
 export interface SajuPillar {
   stem: HeavenlyStem;
   branch: EarthlyBranch;
+  /** Stem's five element (천간 오행) */
   element: FiveElement;
+  /** Branch's five element (지지 오행) */
+  branchElement: FiveElement;
   label: string;
 }
 

@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Capacitor } from '@capacitor/core';
+import html2canvas from 'html2canvas';
 import ShareCard from './ShareCard';
 import type { HistoryEntry } from '../../logic/historyEngine';
 
@@ -13,7 +14,6 @@ interface Props {
 }
 
 async function captureCard(el: HTMLDivElement): Promise<Blob> {
-  const { default: html2canvas } = await import('html2canvas');
   const canvas = await html2canvas(el, {
     backgroundColor: null,
     scale: 2,
@@ -156,12 +156,12 @@ export default function SharePreview({ entry, isOpen, onClose }: Props) {
             style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxHeight: '90vh', overflowY: 'auto', paddingBottom: '8px' }}
           >
             {/* Visible preview (CSS-scaled, NOT used for capture) */}
-            <div style={{ transform: 'scale(0.5)', transformOrigin: 'top center', marginBottom: '-190px' }}>
+            <div style={{ transform: 'scale(0.5)', transformOrigin: 'top center', marginBottom: '-225px' }}>
               <ShareCard entry={entry} />
             </div>
 
-            {/* Hidden full-size card for html2canvas capture */}
-            <div style={{ position: 'fixed', left: '-9999px', top: 0 }}>
+            {/* Full-size card for html2canvas capture — must stay in DOM flow, not off-screen */}
+            <div style={{ position: 'absolute', top: 0, left: 0, opacity: 0, pointerEvents: 'none', zIndex: -1 }}>
               <ShareCard ref={captureRef} entry={entry} />
             </div>
 

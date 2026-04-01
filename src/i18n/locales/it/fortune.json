@@ -148,7 +148,101 @@
       }
     },
     "summary1": "È uscita la carta {{name}}.",
-    "summary3": "Leggi il flusso di passato, presente e futuro e agisci con saggezza."
+    "summary3": "Leggi il flusso di passato, presente e futuro e agisci con saggezza.",
+    "deep": {
+      "0": {
+        "archetype": "The Pure Adventurer",
+        "context": "This card awakens the fearless child within you. If there's something you want to start anew, that's exactly why this card appeared."
+      },
+      "1": {
+        "archetype": "The Alchemist of Will",
+        "context": "Everything you need is already within reach. Gather what's scattered and focus."
+      },
+      "2": {
+        "archetype": "The Inner Guide",
+        "context": "Now is the time to follow intuition over reason. This card tells you there's a knowing within you that words cannot explain."
+      },
+      "3": {
+        "archetype": "The Mother of Abundance",
+        "context": "The energy of nurturing and creation is calling you. It's time to cultivate or create something."
+      },
+      "4": {
+        "archetype": "The Guardian of Order",
+        "context": "Bring structure to what's wavering. This card says it's time for you to become the pillar."
+      },
+      "5": {
+        "archetype": "The Messenger of Wisdom",
+        "context": "Someone's advice or teaching may be what you need right now. Or perhaps you are meant to be that guide."
+      },
+      "6": {
+        "archetype": "The Chooser at the Crossroads",
+        "context": "Your heart knows the answer, not your head. This card asks what truly matters to you."
+      },
+      "7": {
+        "archetype": "The Warrior Who Breaks Through",
+        "context": "Unite opposing forces and charge forward. This card says if there's a will, the way will open."
+      },
+      "8": {
+        "archetype": "The Gentle Sovereign",
+        "context": "True strength is not about suppression, but acceptance. This card awakens the value of patience."
+      },
+      "9": {
+        "archetype": "The Sage on the Path",
+        "context": "Now is a time for solitude. This card tells you there are answers to be found in being alone."
+      },
+      "10": {
+        "archetype": "The Turner of Fate",
+        "context": "The wheel always turns. Remember that nothing lasts forever — and that is hope."
+      },
+      "11": {
+        "archetype": "The Judge of Truth",
+        "context": "You need impartial eyes right now. This card asks you to set aside bias and see things as they are."
+      },
+      "12": {
+        "archetype": "The Willing Sacrifice",
+        "context": "Pausing is not retreating. This card says that changing your perspective reveals what was hidden."
+      },
+      "13": {
+        "archetype": "The Gatekeeper of Transformation",
+        "context": "You must let go of something for something new to enter. This card heralds not an ending, but the start of transformation."
+      },
+      "14": {
+        "archetype": "The Alchemist of Harmony",
+        "context": "Find your center between extremes. This card says to blend slowly but steadily, without haste."
+      },
+      "15": {
+        "archetype": "The Mirror of Shadows",
+        "context": "What you fear is not outside but within. This card says you must confront it to be free."
+      },
+      "16": {
+        "archetype": "The Lightning of Liberation",
+        "context": "What crumbles was built on the wrong foundation. This card heralds a painful but necessary dismantling."
+      },
+      "17": {
+        "archetype": "The Guardian of Hope",
+        "context": "Even in darkness, the light has not disappeared. This card says the brightest star rises in the darkest hour."
+      },
+      "18": {
+        "archetype": "The Guide of the Unconscious",
+        "context": "What you see is not the whole picture. This card carries the message of intuition hidden behind anxiety."
+      },
+      "19": {
+        "archetype": "The Inner Light",
+        "context": "You already know the answer. This card asks you to restore confidence and shine as you are."
+      },
+      "20": {
+        "archetype": "The Trumpet of Awakening",
+        "context": "Look back at the past — not with regret but with insight. This card tells you to rise as your true self."
+      },
+      "21": {
+        "archetype": "The Dancer of Completion",
+        "context": "A journey is coming to its conclusion. This card celebrates your achievement and invites you to prepare for the next door."
+      }
+    },
+    "deepLabel": "Perché questa carta è venuta a te ora",
+    "flowLabel": "Il flusso che le carte trasmettono",
+    "flowPastToFuture": "Dal passato {{past}}, attraverso il presente {{present}}, il futuro si muove verso {{future}}. Fidati del flusso.",
+    "flowSingle": "In questo preciso momento, l'energia di {{card}} ti circonda."
   },
   "horoscopeData": {
     "overall": [
@@ -212,43 +306,63 @@
   "dayMaster": {
     "甲": {
       "title": "Il grande albero che tocca il cielo",
-      "desc": "甲Legno — Sei un grande albero che si protende dritto verso il cielo. Forte senso di giustizia e leadership; una volta scelta una direzione, raramente la cambi."
+      "desc": "甲Legno — Sei un grande albero che si protende dritto verso il cielo. Forte senso di giustizia e leadership; una volta scelta una direzione, raramente la cambi.",
+      "direction": "You shine when leading organizations or pioneering new paths",
+      "relationship": "A dependable, responsible partner — though sometimes insistent on your own way"
     },
     "乙": {
       "title": "Il rampicante flessibile",
-      "desc": "乙Legno — Sei un rampicante che si piega al vento ma non si spezza mai. Dolce e adattabile, possiedi sensibilità artistica e delicatezza."
+      "desc": "乙Legno — Sei un rampicante che si piega al vento ma non si spezza mai. Dolce e adattabile, possiedi sensibilità artistica e delicatezza.",
+      "direction": "Arts, design, diplomacy, counseling — paths that engage people and emotion suit you",
+      "relationship": "A warm partner who reads hearts well — sometimes it's okay to express your own feelings more"
     },
     "丙": {
       "title": "Il sole che illumina ogni cosa",
-      "desc": "丙Fuoco — Sei il sole che illumina il mondo. Appassionato e carismatico, riscaldi tutti intorno a te."
+      "desc": "丙Fuoco — Sei il sole che illumina il mondo. Appassionato e carismatico, riscaldi tutti intorno a te.",
+      "direction": "On stage, in leadership, as an educator — you shine brightest in front of people",
+      "relationship": "A joyful, warm partner — but be careful not to burn yourself giving everything away"
     },
     "丁": {
       "title": "Una candela nell'oscurità",
-      "desc": "丁Fuoco — Sei una candela che illumina il cammino nel buio. Luce tenue ma sicura; intellettuale e profondamente perspicace."
+      "desc": "丁Fuoco — Sei una candela che illumina il cammino nel buio. Luce tenue ma sicura; intellettuale e profondamente perspicace.",
+      "direction": "Research, strategy, writing, consulting — paths requiring deep thought suit you",
+      "relationship": "A partner of genuine devotion — quiet on the surface but deeper than anyone within"
     },
     "戊": {
       "title": "La montagna incrollabile",
-      "desc": "戊Terra — Sei una montagna che resta salda anche nel tifone. Affidabile e accogliente, sei colui su cui gli altri fanno affidamento."
+      "desc": "戊Terra — Sei una montagna che resta salda anche nel tifone. Affidabile e accogliente, sei colui su cui gli altri fanno affidamento.",
+      "direction": "Management, administration, real estate, education — roles that build stable foundations",
+      "relationship": "A pillar of trust — clumsy with words but shows everything through action"
     },
     "己": {
       "title": "La terra fertile",
-      "desc": "己Terra — Sei la terra fertile che nutre la vita. Umile e devoto, hai il dono di prenderti cura degli altri."
+      "desc": "己Terra — Sei la terra fertile che nutre la vita. Umile e devoto, hai il dono di prenderti cura degli altri.",
+      "direction": "Caregiving, education, cooking, HR — paths that nurture and grow people bring you happiness",
+      "relationship": "A partner who silently devotes — it's okay to put yourself first sometimes"
     },
     "庚": {
       "title": "La lama del minerale grezzo",
-      "desc": "庚Metallo — Sei un minerale freddo non ancora fuso. Deciso e determinato, le avversità affilano solo il tuo taglio."
+      "desc": "庚Metallo — Sei un minerale freddo non ancora fuso. Deciso e determinato, le avversità affilano solo il tuo taglio.",
+      "direction": "Law, military, competitive business, surgery — where decisiveness is needed, you prove your worth",
+      "relationship": "A deeply loyal partner — behind the sharp words hides a warm heart"
     },
     "辛": {
       "title": "Un gioiello al chiaro di luna",
-      "desc": "辛Metallo — Sei un gioiello finemente lavorato che brilla al chiaro di luna. Delicato e perfezionista, persegui bellezza e purezza."
+      "desc": "辛Metallo — Sei un gioiello finemente lavorato che brilla al chiaro di luna. Delicato e perfezionista, persegui bellezza e purezza.",
+      "direction": "Jewelry, fashion, finance, artisanship — where precision and aesthetic sense are needed",
+      "relationship": "A pure partner who loves with all their heart — just needs a bit of time to open up"
     },
     "壬": {
       "title": "Il grande fiume inarrestabile",
-      "desc": "壬Acqua — Sei un fiume possente che scolpisce le montagne verso il mare. Saggio e accogliente, ami la libertà."
+      "desc": "壬Acqua — Sei un fiume possente che scolpisce le montagne verso il mare. Saggio e accogliente, ami la libertà.",
+      "direction": "Travel, trade, philosophy, media, freelance — paths that meet the wide world suit you",
+      "relationship": "A free and open partner — hold too tight and they drift away, but trust and they always return"
     },
     "癸": {
       "title": "Goccia di rugiada all'alba",
-      "desc": "癸Acqua — Sei una goccia di rugiada posata su un filo d'erba all'alba. Delicato e intuitivo, possiedi l'ispirazione di percepire l'invisibile."
+      "desc": "癸Acqua — Sei una goccia di rugiada posata su un filo d'erba all'alba. Delicato e intuitivo, possiedi l'ispirazione di percepire l'invisibile.",
+      "direction": "Psychology, divination, art, research, healing — where intuition and sensitivity are assets",
+      "relationship": "A deep partner who understands without words — sometimes expressing your own feelings aloud helps even more"
     }
   },
   "waka": {
@@ -462,5 +576,151 @@
     "harmony": "L'energia di {{stem}}{{branch}} si armonizza con il tuo destino. L'albero interiore fiorisce al sole.",
     "clash": "L'energia di {{stem}}{{branch}} si scontra con il tuo destino. Intenso, ma motore del cambiamento.",
     "neutral": "L'energia di {{stem}}{{branch}} scorre in calma. Tempo di coltivazione interiore."
+  },
+  "personalDaily": {
+    "elementName": {
+      "木": "Legno",
+      "火": "Fuoco",
+      "土": "Terra",
+      "金": "Metallo",
+      "水": "Acqua"
+    },
+    "elementLabel": "Energia di oggi",
+    "fallbackPrefix": "Un sussurro dalle stelle",
+    "generate": {
+      "new": "{{name}}, oggi l'energia di {{element}} apre un nuovo flusso. Pianta un seme in silenzio.",
+      "waxing": "{{name}}, l'energia di {{element}} nutre le tue possibilità oggi. Cavalca il flusso.",
+      "full": "{{name}}, l'energia di {{element}} ha raggiunto il culmine. Ciò che tenti oggi brillerà.",
+      "waning": "{{name}}, l'energia di {{element}} ti avvolge dolcemente oggi. Rifletti su ciò che hai raggiunto."
+    },
+    "generated": {
+      "new": "{{name}}, oggi l'energia di {{element}} si rinnova in silenzio. Prenditi cura di te.",
+      "waxing": "{{name}}, l'energia di {{element}} sale lentamente. Un atteggiamento ricettivo attirerà fortuna.",
+      "full": "{{name}}, l'energia di {{element}} trabocca. La gentilezza di qualcuno potrebbe raggiungerti oggi.",
+      "waning": "{{name}}, il calore di {{element}} permane. Pensa alle cose di cui sei grato."
+    },
+    "same": {
+      "new": "{{name}}, oggi l'energia di {{element}} e tu siete connessi. Fidati del tuo istinto.",
+      "waxing": "{{name}}, la risonanza di {{element}} si rafforza. Non lasciar sfuggire le idee che emergono.",
+      "full": "{{name}}, l'energia di {{element}} è la più chiara oggi. La scelta più autentica è la migliore.",
+      "waning": "{{name}}, il tuo ritmo e quello di {{element}} sono in armonia oggi. Lasciati scorrere."
+    },
+    "restrain": {
+      "new": "{{name}}, oggi l'energia di {{element}} affronta una prova. Va bene prendersi una pausa.",
+      "waxing": "{{name}}, c'è energia contraria a {{element}}, ma puoi rafforzarti in essa.",
+      "full": "{{name}}, se senti tensione, raccogli la forza di {{element}}. Resistere è anche coraggio.",
+      "waning": "{{name}}, l'attrito di oggi prepara la crescita di domani. Fidati delle radici di {{element}}."
+    },
+    "restrained": {
+      "new": "{{name}}, oggi l'energia di {{element}} si ritira. Non c'è bisogno di forzarti.",
+      "waxing": "{{name}}, {{element}} può sembrare un po' soffocato, ma iniziare in piccolo apre la strada.",
+      "full": "{{name}}, conserva la forza di {{element}} oggi. Aspettare il momento giusto è anche strategia.",
+      "waning": "{{name}}, l'energia di {{element}} riposa ora. Svuota il cuore per domani."
+    }
+  },
+  "signContext": {
+    "aries": {
+      "element": "Fuoco",
+      "trait": "Pioneer energy. Quick to act and fearless. You blaze trails where no one else dares. Your starting power is the strongest of all twelve signs, but patience is your challenge. Your spark is the first flame that moves the world."
+    },
+    "taurus": {
+      "element": "Terra",
+      "trait": "The star of senses. You love stability and are drawn to beauty. Slow to change, but once decided, unbreakable as steel. A flower that blooms slowly but lasts the longest."
+    },
+    "gemini": {
+      "element": "Aria",
+      "trait": "The star of curiosity. Versatile and brilliant at communication. Your talent lies in crossing between worlds. Free as the wind — wherever you pass, something changes."
+    },
+    "cancer": {
+      "element": "Acqua",
+      "trait": "Guardian of emotions. You place deep meaning in family and bonds. Hard shell outside, softer than anyone within. Your embrace is someone's safest harbor."
+    },
+    "leo": {
+      "element": "Fuoco",
+      "trait": "A luminous being. Most alive on stage, most powerful when loved. A sun-like sign with innate charisma. When you shine, everything around you shines too."
+    },
+    "virgo": {
+      "element": "Terra",
+      "trait": "The artisan of perfection. You catch details others miss. You find fulfillment in helping others. Your weakness is being too hard on yourself."
+    },
+    "libra": {
+      "element": "Aria",
+      "trait": "Seeker of harmony. You love balance and beauty. Decisions are hard, but that depth is your fairness. Where you are, harmony dwells."
+    },
+    "scorpio": {
+      "element": "Acqua",
+      "trait": "Explorer of depths. Eyes that see beneath the surface. Once you give your heart, its depth is oceanic. Your courage to face darkness is your greatest power."
+    },
+    "sagittarius": {
+      "element": "Fuoco",
+      "trait": "Explorer of freedom. You love the wide world and grand questions. Your honesty sometimes stings, but it's always real."
+    },
+    "capricorn": {
+      "element": "Terra",
+      "trait": "The climber toward the summit. Once you set a goal, you climb surely. Serious in youth, uniquely younger with age. Time is always on your side."
+    },
+    "aquarius": {
+      "element": "Aria",
+      "trait": "Pioneer of the future. You see the world differently. Independent yet harboring love for all humanity. Those ahead of their time walk alone at first."
+    },
+    "pisces": {
+      "element": "Acqua",
+      "trait": "The boundless dreamer. You move between reality and dreams, with empathy deeper than anyone. Your gentleness is the very strength this world needs most."
+    },
+    "resonanceDeep": {
+      "aligned": "Sole e Luna sono sulla stessa lunghezza d'onda. Oggi intuizione e azione si fondono naturalmente.",
+      "approaching": "Sole e Luna si avvicinano. Un giorno in cui nuove ispirazioni o incontri possono arrivare.",
+      "neutral": "Sole e Luna camminano per i propri sentieri. Oggi, concentrati verso l'interno.",
+      "distant": "Tensione tra Sole e Luna si avverte oggi. Cerca l'equilibrio tra emozione e ragione."
+    },
+    "title": "Il tuo segno zodiacale"
+  },
+  "elementDeep": {
+    "excess": {
+      "木": "Quando il Legno è in eccesso, i piani si moltiplicano ma l'azione si offusca. La decisione del Metallo pota i rami.",
+      "火": "Quando il Fuoco è in eccesso, la passione può consumarti. La quiete dell'Acqua ripristina il centro.",
+      "土": "Quando la Terra è in eccesso, temi il cambiamento. L'energia del Legno rompe e rinnova.",
+      "金": "Quando il Metallo è in eccesso, il perfezionismo raffredda le relazioni. Il calore del Fuoco scioglie l'acciaio freddo.",
+      "水": "Quando l'Acqua è in eccesso, ti anneghi nei pensieri. La stabilità della Terra dà direzione."
+    },
+    "deficient": {
+      "木": "Quando manca il Legno, il coraggio di ricominciare svanisce. Spazi verdi e passeggiate aiutano.",
+      "火": "Quando manca il Fuoco, passione e fiducia si indeboliscono. Colori caldi e esercizio ravvivano la fiamma.",
+      "土": "Quando manca la Terra, il centro vacilla. Routine regolari e cucinare portano stabilità.",
+      "金": "Quando manca il Metallo, le decisioni diventano difficili. Organizzare e fissare obiettivi chiari aiuta.",
+      "水": "Quando manca l'Acqua, l'intuizione diminuisce. Passeggiate vicino all'acqua e meditazione ripristinano saggezza."
+    },
+    "balanceTitle": "Cosa rivelano i tuoi Cinque Elementi"
+  },
+  "rankGuide": {
+    "title": "Cosa significa questa fortuna",
+    "daikichi": {
+      "meaning": "Fortuna suprema. Tutto scorre come vento nelle tue vele.",
+      "advice": "Condividi questa buona fortuna. L'energia condivisa rimane più a lungo."
+    },
+    "kichi": {
+      "meaning": "Buona fortuna. Lo sforzo costante porterà buoni risultati.",
+      "advice": "Non esagerare — segui il flusso."
+    },
+    "chukichi": {
+      "meaning": "Fortuna moderata. Gioie inaspettate ti troveranno.",
+      "advice": "Presta attenzione alle benedizioni invisibili."
+    },
+    "shokichi": {
+      "meaning": "Piccola fortuna. Una fortuna dolce e calda ti circonda.",
+      "advice": "Le piccole azioni brillano più delle grandi ambizioni ora."
+    },
+    "suekichi": {
+      "meaning": "Fortuna tardiva. Lenta ora, ma un buon finale attende.",
+      "advice": "L'attesa stessa è parte della fortuna."
+    },
+    "kyo": {
+      "meaning": "Sfortuna. Un tempo di cautela, ma evitabile.",
+      "advice": "Evita azioni avventate e rimanda le decisioni importanti."
+    },
+    "daikyo": {
+      "meaning": "Grande sfortuna. Il fondo più profondo — ma non si può scendere oltre.",
+      "advice": "Dal fondo si può solo salire. Trascorri la giornata con umiltà."
+    }
   }
 }

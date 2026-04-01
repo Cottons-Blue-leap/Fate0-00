@@ -16,12 +16,7 @@ import { playBgm } from '../logic/bgmEngine';
 // import { hasServer } from '../services/api';
 // import AuthModal from '../components/layout/AuthModal';
 import FortuneReport from '../components/layout/FortuneReport';
-
-function hashDate(str: string): number {
-  let h = 0;
-  for (let i = 0; i < str.length; i++) { h = ((h << 5) - h) + str.charCodeAt(i); h |= 0; }
-  return Math.abs(h);
-}
+import PersonalMessage from '../components/layout/PersonalMessage';
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -62,11 +57,7 @@ export default function HomePage() {
       handle?.remove();
     };
   }, []);
-  const today = new Date();
-  const dateStr = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-  const quoteIndex = hashDate(dateStr) % 33;
   const allUsedToday = hasUsedToday('tarot') && hasUsedToday('horoscope') && hasUsedToday('saju') && hasUsedToday('omikuji');
-  const dailyQuote = allUsedToday ? t('home.starsResting') : t(`dailyQuote.${quoteIndex}`);
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} style={{ position: 'relative' }}>
@@ -125,19 +116,7 @@ export default function HomePage() {
               {t('app.title')}
             </h1>
             <MysticClock size={typeof window !== 'undefined' && window.innerWidth < 640 ? 110 : 140} />
-            <div style={{
-              fontSize: 'clamp(11px, 2.2vw, 13px)',
-              color: 'rgba(255,255,255,0.4)',
-              fontStyle: 'italic',
-              maxWidth: '280px',
-              lineHeight: '1.4',
-              pointerEvents: 'none',
-              padding: '0 8px',
-              maxHeight: '2.8em',
-              overflow: 'hidden',
-            }}>
-              "{dailyQuote}"
-            </div>
+            <PersonalMessage allUsedToday={allUsedToday} />
           </div>
         }
         west={

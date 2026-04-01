@@ -1,26 +1,2 @@
-import type { TarotCard } from '../types/fortune';
-
-export const majorArcana: TarotCard[] = [
-  { id: 0, name: 'The Fool', nameKo: '광대', image: '', upright: '새로운 시작이 다가오고 있습니다. 두려움 없이 첫 발을 내딛으세요. 순수한 마음으로 모험을 시작할 때입니다.', reversed: '무모한 행동을 경계하세요. 준비 없이 뛰어드는 것은 위험합니다. 한 번 더 생각해보세요.', keywords: ['새로운 시작', '모험', '순수'] },
-  { id: 1, name: 'The Magician', nameKo: '마법사', image: '', upright: '당신에게 필요한 모든 도구가 갖춰져 있습니다. 의지와 집중력으로 원하는 것을 현실로 만드세요.', reversed: '능력을 낭비하고 있지는 않나요? 집중력이 흩어져 있습니다. 방향을 재정립하세요.', keywords: ['창조', '의지', '집중'] },
-  { id: 2, name: 'The High Priestess', nameKo: '여사제', image: '', upright: '직감을 믿으세요. 표면 아래 숨겨진 진실이 있습니다. 조용히 내면의 목소리에 귀 기울이세요.', reversed: '직감을 무시하고 있습니다. 내면의 소리를 차단하지 마세요. 비밀이 드러날 수 있습니다.', keywords: ['직감', '신비', '내면'] },
-  { id: 3, name: 'The Empress', nameKo: '여황제', image: '', upright: '풍요와 창조의 에너지가 가득합니다. 사랑과 아름다움이 당신을 감싸고 있습니다.', reversed: '자신을 돌보는 것을 소홀히 하고 있습니다. 과도한 의존이나 집착을 경계하세요.', keywords: ['풍요', '모성', '자연'] },
-  { id: 4, name: 'The Emperor', nameKo: '황제', image: '', upright: '안정과 질서의 시기입니다. 리더십을 발휘하고 체계적으로 목표를 향해 나아가세요.', reversed: '지나친 통제욕을 내려놓으세요. 유연함이 필요한 시기입니다.', keywords: ['권위', '안정', '질서'] },
-  { id: 5, name: 'The Hierophant', nameKo: '교황', image: '', upright: '전통과 가르침에서 지혜를 찾으세요. 멘토나 스승의 조언이 도움이 될 것입니다.', reversed: '관습에 얽매이지 마세요. 자신만의 길을 찾을 때입니다.', keywords: ['전통', '가르침', '신앙'] },
-  { id: 6, name: 'The Lovers', nameKo: '연인', image: '', upright: '중요한 선택의 순간입니다. 마음이 이끄는 대로 따르세요. 진정한 결합과 조화가 찾아옵니다.', reversed: '관계에서 불균형이 느껴집니다. 가치관의 충돌을 직면해야 합니다.', keywords: ['사랑', '선택', '조화'] },
-  { id: 7, name: 'The Chariot', nameKo: '전차', image: '', upright: '강한 의지로 승리를 쟁취할 수 있습니다. 장애물을 극복하고 전진하세요.', reversed: '방향을 잃고 표류하고 있습니다. 통제력을 되찾아야 합니다.', keywords: ['승리', '의지', '전진'] },
-  { id: 8, name: 'Strength', nameKo: '힘', image: '', upright: '부드러운 힘이 진정한 강함입니다. 인내와 용기로 어려움을 극복하세요.', reversed: '자신감이 부족합니다. 내면의 힘을 믿으세요. 포기하지 마세요.', keywords: ['용기', '인내', '내면의 힘'] },
-  { id: 9, name: 'The Hermit', nameKo: '은둔자', image: '', upright: '홀로 있는 시간이 필요합니다. 내면을 들여다보고 진정한 답을 찾으세요.', reversed: '고립에서 벗어나세요. 지나친 은둔은 외로움을 낳습니다.', keywords: ['성찰', '고독', '지혜'] },
-  { id: 10, name: 'Wheel of Fortune', nameKo: '운명의 수레바퀴', image: '', upright: '운명의 전환점입니다. 행운이 찾아오고 있습니다. 변화의 흐름을 타세요.', reversed: '불운이 지나가는 시기입니다. 인내하면 곧 나아질 것입니다.', keywords: ['운명', '변화', '순환'] },
-  { id: 11, name: 'Justice', nameKo: '정의', image: '', upright: '공정한 결과가 찾아옵니다. 진실과 정의가 승리합니다. 균형을 유지하세요.', reversed: '불공정함을 느끼고 있나요? 편견을 버리고 객관적으로 바라보세요.', keywords: ['공정', '균형', '진실'] },
-  { id: 12, name: 'The Hanged Man', nameKo: '매달린 사람', image: '', upright: '멈춤이 필요한 때입니다. 다른 관점에서 바라보면 새로운 길이 보입니다.', reversed: '불필요한 희생을 멈추세요. 놓아줄 것을 놓아주세요.', keywords: ['희생', '새로운 관점', '멈춤'] },
-  { id: 13, name: 'Death', nameKo: '죽음', image: '', upright: '끝은 새로운 시작입니다. 낡은 것을 보내야 새것이 들어옵니다. 변화를 받아들이세요.', reversed: '변화를 두려워하고 있습니다. 과거에 집착하지 마세요.', keywords: ['변화', '끝과 시작', '탈바꿈'] },
-  { id: 14, name: 'Temperance', nameKo: '절제', image: '', upright: '균형과 조화의 시기입니다. 극단을 피하고 중용의 길을 걸으세요. 인내가 보상을 가져옵니다.', reversed: '균형이 무너졌습니다. 과도함을 줄이고 조화를 되찾으세요.', keywords: ['균형', '조화', '인내'] },
-  { id: 15, name: 'The Devil', nameKo: '악마', image: '', upright: '유혹과 집착에 주의하세요. 스스로를 가두는 사슬은 당신이 풀 수 있습니다.', reversed: '속박에서 벗어나고 있습니다. 자유를 향한 첫 걸음을 내딛었습니다.', keywords: ['유혹', '집착', '해방'] },
-  { id: 16, name: 'The Tower', nameKo: '탑', image: '', upright: '갑작스러운 변화가 찾아옵니다. 고통스럽지만, 무너져야 다시 세울 수 있습니다.', reversed: '파괴를 피하고 있지만, 변화는 불가피합니다. 서서히 준비하세요.', keywords: ['파괴', '각성', '급변'] },
-  { id: 17, name: 'The Star', nameKo: '별', image: '', upright: '희망의 빛이 보입니다. 어둠이 지나고 밝은 미래가 기다립니다. 꿈을 포기하지 마세요.', reversed: '희망을 잃고 있나요? 작은 빛이라도 찾으세요. 아직 끝이 아닙니다.', keywords: ['희망', '영감', '치유'] },
-  { id: 18, name: 'The Moon', nameKo: '달', image: '', upright: '불안과 혼란의 시기입니다. 환상과 현실을 구분하세요. 직감을 따르되 조심스럽게.', reversed: '두려움이 걷히고 있습니다. 진실이 서서히 드러나고 있습니다.', keywords: ['환상', '불안', '무의식'] },
-  { id: 19, name: 'The Sun', nameKo: '태양', image: '', upright: '성공과 기쁨의 시기입니다! 밝은 에너지가 당신을 감싸고 있습니다. 자신감을 가지세요.', reversed: '기쁨이 잠시 가려져 있습니다. 하지만 구름 뒤에 태양은 항상 있습니다.', keywords: ['성공', '기쁨', '활력'] },
-  { id: 20, name: 'Judgement', nameKo: '심판', image: '', upright: '각성의 시간입니다. 과거를 돌아보고 새로운 결심을 하세요. 부름에 응답할 때입니다.', reversed: '자기 반성을 피하고 있습니다. 과거의 실수에서 배우지 않으면 반복됩니다.', keywords: ['각성', '부활', '결단'] },
-  { id: 21, name: 'The World', nameKo: '세계', image: '', upright: '완성과 성취의 카드입니다. 하나의 순환이 끝나고 새로운 장이 열립니다. 축하합니다!', reversed: '완성이 지연되고 있습니다. 마지막 한 걸음이 남았습니다. 포기하지 마세요.', keywords: ['완성', '성취', '통합'] },
-];
+// Re-export from generated data (source of truth: data/csv/tarot_cards.csv)
+export { majorArcana } from './generated/tarot.gen';
