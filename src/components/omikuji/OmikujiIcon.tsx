@@ -1,26 +1,26 @@
-import toriiSvg from '../../assets/omikuji/torii.svg';
+import TablerIcon from '../common/TablerIcon';
+
+// Noto Emoji assets (kept for icons Tabler doesn't have)
 import tanabataSvg from '../../assets/omikuji/tanabata.svg';
 import palmsUpSvg from '../../assets/omikuji/palms_up.svg';
-import dropletSvg from '../../assets/omikuji/droplet.svg';
 import clapSvg from '../../assets/omikuji/clap.svg';
 import praySvg from '../../assets/omikuji/pray.svg';
-import purseSvg from '../../assets/omikuji/purse.svg';
-import treeSvg from '../../assets/omikuji/tree.svg';
-import bulbSvg from '../../assets/omikuji/bulb.svg';
 
-const iconMap: Record<string, string> = {
-  torii: toriiSvg,
+const notoMap: Record<string, string> = {
   tanabata: tanabataSvg,
   palms_up: palmsUpSvg,
-  droplet: dropletSvg,
   clap: clapSvg,
   pray: praySvg,
-  purse: purseSvg,
-  tree: treeSvg,
-  bulb: bulbSvg,
 };
 
-export type OmikujiIconName = keyof typeof iconMap;
+// Icons replaced by Tabler (MIT)
+const tablerMap: Record<string, string> = {
+  torii: 'torii',
+  droplet: 'droplet-half',
+  purse: 'wallet',
+  tree: 'tree',
+  bulb: 'bulb',
+};
 
 interface Props {
   name: string;
@@ -29,7 +29,14 @@ interface Props {
 }
 
 export default function OmikujiIcon({ name, size, style }: Props) {
-  const src = iconMap[name];
+  // Tabler icons
+  const tablerName = tablerMap[name];
+  if (tablerName) {
+    return <TablerIcon name={tablerName} size={size} color="#f1948a" style={style} />;
+  }
+
+  // Noto Emoji fallback
+  const src = notoMap[name];
   if (!src) return <span style={{ fontSize: `${size}px`, ...style }}>{name}</span>;
   return (
     <img
