@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home Card Icon Preview</title>
+<style>
+  body { background: #0a0515; color: #e8d5f5; font-family: 'Noto Serif KR', serif; padding: 40px; text-align: center; }
+  h1 { font-size: 20px; color: #c39bd3; margin-bottom: 30px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 600px; margin: 0 auto; }
+  .card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+  }
+  .card.west { border: 1px solid rgba(155,89,182,0.3); }
+  .card.east { border: 1px solid rgba(231,76,60,0.3); }
+  .card img { border-radius: 16px; margin-bottom: 12px; }
+  .label { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .west .label { color: #e8d5f5; }
+  .east .label { color: #f5d5d5; }
+  .sub { font-size: 12px; color: rgba(255,255,255,0.4); }
+  .source { font-size: 10px; color: rgba(255,255,255,0.2); margin-top: 8px; }
+  .sizes { display: flex; gap: 16px; align-items: flex-end; justify-content: center; margin-top: 10px; }
+  .divider { grid-column: 1 / -1; font-size: 13px; letter-spacing: 3px; margin: 8px 0; }
+  .west-divider { color: #c39bd3; }
+  .east-divider { color: #f1948a; }
+</style>
+</head>
+<body>
+<h1>Home FortuneCard Icon Preview</h1>
+
+<div class="grid">
+  <div class="divider west-divider">--- WESTERN ---</div>
+
+  <div class="card west">
+    <img src="tarot.png" width="160">
+    <div class="label">Tarot Card</div>
+    <div class="sub">RWS The Moon (XVIII)</div>
+    <div class="source">Public Domain (CC0)</div>
+    <div class="sizes">
+      <img src="tarot.png" width="120">
+      <img src="tarot.png" width="80">
+      <img src="tarot.png" width="40">
+    </div>
+  </div>
+
+  <div class="card west">
+    <img src="horoscope.png" width="160">
+    <div class="label">Horoscope</div>
+    <div class="sub">Cellarius Ptolemaic System (1660)</div>
+    <div class="source">Public Domain</div>
+    <div class="sizes">
+      <img src="horoscope.png" width="120">
+      <img src="horoscope.png" width="80">
+      <img src="horoscope.png" width="40">
+    </div>
+  </div>
+
+  <div class="divider east-divider">--- EASTERN ---</div>
+
+  <div class="card east">
+    <img src="saju.png" width="160">
+    <div class="label">Saju</div>
+    <div class="sub">Soochow Planisphere (Song Dynasty)</div>
+    <div class="source">Public Domain (CC0)</div>
+    <div class="sizes">
+      <img src="saju.png" width="120">
+      <img src="saju.png" width="80">
+      <img src="saju.png" width="40">
+    </div>
+  </div>
+
+  <div class="card east">
+    <img src="omikuji.png" width="160">
+    <div class="label">Omikuji</div>
+    <div class="sub">Hiroshige "Foxfires at Oji" (1857)</div>
+    <div class="source">Public Domain (LOC)</div>
+    <div class="sizes">
+      <img src="omikuji.png" width="120">
+      <img src="omikuji.png" width="80">
+      <img src="omikuji.png" width="40">
+    </div>
+  </div>
+</div>
+</body>
+</html>
