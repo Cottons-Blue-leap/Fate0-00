@@ -591,6 +591,7 @@ export default function SajuPage() {
               <Watermark />
               </div>
 
+              <FortuneMemo fortuneType="saju" />
               <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
                 <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                   onClick={() => { sfxButtonClick(); setStep('input'); setReading(null); }}
@@ -599,7 +600,6 @@ export default function SajuPage() {
                 </motion.button>
                 <ShareButton entry={getLatestEntry('saju')} theme="east" />
               </div>
-              <FortuneMemo fortuneType="saju" />
               <ProfileSuggestion />
             </motion.div>
         )}

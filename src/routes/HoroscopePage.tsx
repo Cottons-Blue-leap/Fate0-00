@@ -407,6 +407,7 @@ export default function HoroscopePage() {
             <Watermark />
             </div>
 
+            <FortuneMemo fortuneType="horoscope" />
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
               <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                 onClick={() => { sfxButtonClick(); setStep('input'); setSunSign(null); setName(''); }}
@@ -415,7 +416,6 @@ export default function HoroscopePage() {
               </motion.button>
               <ShareButton entry={getLatestEntry('horoscope')} theme="west" />
             </div>
-            <FortuneMemo fortuneType="horoscope" />
             <ProfileSuggestion />
           </motion.div>
         )}

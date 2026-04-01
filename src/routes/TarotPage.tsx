@@ -542,13 +542,13 @@ export default function TarotPage() {
             <div style={{ color: 'var(--text-muted)', fontSize: '14px', lineHeight: '1.8', marginBottom: '24px' }}>
               {t('tarot.adviceMessage')}
             </div>
+            <FortuneMemo fortuneType="tarot" />
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <ShareButton entry={getLatestEntry('tarot')} theme="west" />
               <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); if (hasUsedToday('tarot')) { setShowReverse(true); } else { reset(); } }} style={btn('dim')}>
                 {t('tarot.newReading')}
               </motion.button>
             </div>
-            <FortuneMemo fortuneType="tarot" />
             <ProfileSuggestion />
           </motion.div>
         )}

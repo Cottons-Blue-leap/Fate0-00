@@ -544,6 +544,7 @@ export default function OmikujiPage() {
                 <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '24px' }}>
                   {t('omikuji.keepMessage')}
                 </div>
+                <FortuneMemo fortuneType="omikuji" />
                 <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
                   <ShareButton entry={getLatestEntry('omikuji')} theme="east" />
                   <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); reset(); }}
@@ -551,7 +552,6 @@ export default function OmikujiPage() {
                     {t('omikuji.newVisit')}
                   </motion.button>
                 </div>
-                <FortuneMemo fortuneType="omikuji" />
                 <ProfileSuggestion />
               </motion.div>
             ) : (
@@ -566,6 +566,7 @@ export default function OmikujiPage() {
                 <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.8', marginBottom: '24px' }}>
                   {t('omikuji.tieMessage')}
                 </div>
+                <FortuneMemo fortuneType="omikuji" />
                 <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
                   <ShareButton entry={getLatestEntry('omikuji')} theme="east" />
                   <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => { sfxButtonClick(); reset(); }}
@@ -573,7 +574,6 @@ export default function OmikujiPage() {
                     {t('omikuji.newVisit')}
                   </motion.button>
                 </div>
-                <FortuneMemo fortuneType="omikuji" />
                 <ProfileSuggestion />
               </motion.div>
             )}
