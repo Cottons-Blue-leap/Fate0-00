@@ -235,13 +235,13 @@ button:active:not(:disabled), [role="button"]:active:not(:disabled) {
   padding-top: 4px;
 }
 .sticky-footer-fade {
-  height: 24px;
-  margin-top: -24px;
+  height: 20px;
+  margin-top: -20px;
   pointer-events: none;
-  background: linear-gradient(to bottom, transparent, var(--bg-primary, #1a0a2e));
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));
 }
 .sticky-footer-content {
-  background: var(--bg-primary, #1a0a2e);
+  background: transparent;
   padding: 8px 0 12px;
   display: flex;
   flex-direction: column;
