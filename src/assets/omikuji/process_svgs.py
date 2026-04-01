@@ -10,32 +10,32 @@ import os
 # Color matrix presets for different icon categories
 # Matrix format: R_from_R, R_from_G, R_from_B, R_from_A, R_offset (repeat for G, B, A rows)
 FILTERS = {
-    # Warm shrine red - for general icons
+    # Warm shrine red - HALF strength (closer to original)
     'shrine': """
-        0.75 0.25 0.10 0 0.05
-        0.10 0.45 0.05 0 0.00
-        0.05 0.05 0.35 0 0.02
+        0.88 0.12 0.05 0 0.02
+        0.05 0.73 0.03 0 0.00
+        0.03 0.03 0.68 0 0.01
         0    0    0    1 0
     """,
-    # Already red - just deepen/enrich
+    # Already red - subtle enhancement only
     'red_enhance': """
-        0.85 0.10 0.05 0 0.03
-        0.08 0.50 0.05 0 0.00
-        0.03 0.03 0.45 0 0.02
+        0.93 0.05 0.02 0 0.01
+        0.04 0.75 0.03 0 0.00
+        0.02 0.02 0.73 0 0.01
         0    0    0    1 0
     """,
-    # Gold/warm for spiritual items
+    # Gold/warm for spiritual items - half strength
     'gold_warm': """
-        0.70 0.25 0.10 0 0.08
-        0.15 0.55 0.10 0 0.03
-        0.05 0.05 0.30 0 0.00
+        0.85 0.12 0.05 0 0.04
+        0.08 0.78 0.05 0 0.01
+        0.03 0.03 0.65 0 0.00
         0    0    0    1 0
     """,
-    # Water/purification - keep cool but add warmth
+    # Water/purification - very subtle warmth
     'water_warm': """
-        0.50 0.15 0.20 0 0.05
-        0.10 0.45 0.20 0 0.02
-        0.15 0.15 0.60 0 0.05
+        0.75 0.08 0.10 0 0.02
+        0.05 0.73 0.10 0 0.01
+        0.08 0.08 0.80 0 0.02
         0    0    0    1 0
     """,
 }
@@ -65,9 +65,9 @@ def process_svg(input_path, output_path, filter_name):
     <filter id="omikuji-tone" color-interpolation-filters="sRGB">
       <feColorMatrix type="matrix" values="{matrix.strip()}"/>
       <feComponentTransfer>
-        <feFuncR type="linear" slope="0.9" intercept="0.02"/>
-        <feFuncG type="linear" slope="0.85" intercept="0.01"/>
-        <feFuncB type="linear" slope="0.8" intercept="0.01"/>
+        <feFuncR type="linear" slope="0.95" intercept="0.01"/>
+        <feFuncG type="linear" slope="0.93" intercept="0.005"/>
+        <feFuncB type="linear" slope="0.90" intercept="0.005"/>
       </feComponentTransfer>
     </filter>
   </defs>'''
