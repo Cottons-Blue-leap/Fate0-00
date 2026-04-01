@@ -93,11 +93,11 @@ def process_icon(input_path, output_path, overlay_color, **kwargs):
     # Apply tone
     img = apply_tone(img, overlay_color, **kwargs)
 
-    # Vignette
-    img = add_vignette(img, strength=0.6)
+    # Vignette — lighter
+    img = add_vignette(img, strength=0.4)
 
     # Border glow
-    img = add_border_glow(img, overlay_color, width=4)
+    img = add_border_glow(img, overlay_color, width=3)
 
     # Round corners
     img = round_corners(img, CORNER_RADIUS)
@@ -108,9 +108,9 @@ def process_icon(input_path, output_path, overlay_color, **kwargs):
     print(f"  → {output_path} ({size_kb:.0f}KB)")
 
 
-# Theme colors (RGBA)
-PURPLE = (90, 30, 120, 180)   # west theme — purple
-RED = (120, 30, 20, 180)      # east theme — deep red
+# Theme colors (RGBA) — v2: much lighter overlay
+PURPLE = (60, 20, 90, 100)    # west theme — subtle purple tint
+RED = (90, 20, 15, 100)       # east theme — subtle red tint
 
 
 def main():
@@ -123,40 +123,40 @@ def main():
             'input': '../tarot/rws-original/RWS_Tarot_18_Moon.jpg',
             'output': 'tarot.png',
             'color': PURPLE,
-            'brightness': 0.50,
-            'saturation': 0.40,
-            'contrast': 1.35,
-            'overlay_alpha': 0.50,
+            'brightness': 0.75,
+            'saturation': 0.65,
+            'contrast': 1.25,
+            'overlay_alpha': 0.25,
         },
         {
             'name': 'horoscope',
             'input': 'horoscope_original.jpg',
             'output': 'horoscope.png',
             'color': PURPLE,
-            'brightness': 0.50,
-            'saturation': 0.40,
-            'contrast': 1.35,
-            'overlay_alpha': 0.50,
+            'brightness': 0.70,
+            'saturation': 0.60,
+            'contrast': 1.30,
+            'overlay_alpha': 0.25,
         },
         {
             'name': 'saju',
             'input': 'saju_original.jpg',
             'output': 'saju.png',
             'color': RED,
-            'brightness': 0.45,
-            'saturation': 0.35,
-            'contrast': 1.40,
-            'overlay_alpha': 0.50,
+            'brightness': 0.65,
+            'saturation': 0.55,
+            'contrast': 1.35,
+            'overlay_alpha': 0.25,
         },
         {
             'name': 'omikuji',
             'input': 'omikuji_original.jpg',
             'output': 'omikuji.png',
             'color': RED,
-            'brightness': 0.50,
-            'saturation': 0.45,
-            'contrast': 1.30,
-            'overlay_alpha': 0.45,
+            'brightness': 0.70,
+            'saturation': 0.65,
+            'contrast': 1.25,
+            'overlay_alpha': 0.20,
         },
     ]
 

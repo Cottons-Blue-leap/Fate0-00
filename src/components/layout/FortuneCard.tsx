@@ -61,9 +61,9 @@ export default function FortuneCard({ title, subtitle, icon, to, theme, used = f
             opacity: used ? 0.6 : 1,
           }}
         >
-          <div style={{ fontSize: 'clamp(26px, 7vw, 48px)', marginBottom: '4px', position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{ fontSize: 'clamp(26px, 7vw, 48px)', marginBottom: '2px', position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             {icon}
-            <div style={{ marginTop: '4px' }}>
+            <div style={{ marginTop: '2px' }}>
               <MysticEye open={!used} theme={theme} size={28} />
             </div>
           </div>
