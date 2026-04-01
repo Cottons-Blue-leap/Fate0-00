@@ -30,7 +30,7 @@ export default function PageShell({ theme, title, children, pattern }: Props) {
       transition={{ duration: 0.3 }}
       style={{ position: 'relative', height: '100dvh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
     >
-      {pattern && <MysticBackground pattern={pattern} />}
+      {pattern && <MysticBackground pattern={pattern} theme={theme} />}
       <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column', maxWidth: '720px', width: '100%', margin: '0 auto', minHeight: 0 }}>
         {/* Header: back button + language switcher */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px', flexShrink: 0 }}>

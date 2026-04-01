@@ -1,9 +1,49 @@
 // SVG-based mystical background patterns for each fortune type
+// + Atmosphere layers: dust particles, candlelight, vignette
+
+// --- A1: Dust/stardust particles (CSS-only, GPU-accelerated) ---
+const PARTICLES = Array.from({ length: 18 }, (_, i) => ({
+  left: `${(i * 37 + 13) % 100}%`,
+  size: 1.5 + (i % 4) * 0.8,
+  duration: 12 + (i % 5) * 4,
+  delay: (i * 1.7) % 8,
+  opacity: 0.25 + (i % 3) * 0.15,
+}));
+
+function DustParticles({ theme }: { theme?: 'west' | 'east' }) {
+  const color = theme === 'east' ? 'rgba(255,215,0,VAR)' : 'rgba(200,200,255,VAR)';
+  return (
+    <>
+      {PARTICLES.map((p, i) => (
+        <div key={i} className="dust-particle" style={{
+          left: p.left,
+          bottom: '-10px',
+          width: `${p.size}px`,
+          height: `${p.size}px`,
+          background: color.replace('VAR', String(p.opacity)),
+          boxShadow: `0 0 ${p.size * 2}px ${color.replace('VAR', String(p.opacity * 0.5))}`,
+          animationDuration: `${p.duration}s`,
+          animationDelay: `${p.delay}s`,
+        }} />
+      ))}
+    </>
+  );
+}
+
+// --- A2: Candlelight breathing glow ---
+function CandleGlow() {
+  return <div className="candle-glow" />;
+}
+
+// --- A3: Global vignette ---
+function Vignette() {
+  return <div className="vignette-global" />;
+}
 
 function StarPattern() {
   // Scattered small stars with subtle twinkle
   return (
-    <svg width="100%" height="100%" style={{ position: 'absolute', inset: 0, opacity: 0.06, pointerEvents: 'none' }}>
+    <svg width="100%" height="100%" className="pattern-layer" style={{ position: 'absolute', inset: 0, opacity: 0.1, pointerEvents: 'none' }}>
       <defs>
         <pattern id="stars" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
           <circle cx="10" cy="15" r="0.8" fill="#fff" />
@@ -23,7 +63,7 @@ function StarPattern() {
 function TarotPattern() {
   // Pentagram / sacred geometry lines
   return (
-    <svg width="100%" height="100%" style={{ position: 'absolute', inset: 0, opacity: 0.04, pointerEvents: 'none' }}>
+    <svg width="100%" height="100%" className="pattern-layer" style={{ position: 'absolute', inset: 0, opacity: 0.08, pointerEvents: 'none' }}>
       <defs>
         <pattern id="tarot-geo" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
           <circle cx="100" cy="100" r="80" fill="none" stroke="#9b59b6" strokeWidth="0.5" />
@@ -54,7 +94,7 @@ function TarotPattern() {
 function HoroscopePattern() {
   // Constellation-like connected dots
   return (
-    <svg width="100%" height="100%" style={{ position: 'absolute', inset: 0, opacity: 0.05, pointerEvents: 'none' }}>
+    <svg width="100%" height="100%" className="pattern-layer" style={{ position: 'absolute', inset: 0, opacity: 0.09, pointerEvents: 'none' }}>
       <defs>
         <pattern id="constellation" x="0" y="0" width="150" height="150" patternUnits="userSpaceOnUse">
           {/* Constellation 1 */}
@@ -86,7 +126,7 @@ function HoroscopePattern() {
 function SajuPattern() {
   // Bagua / I-Ching trigram-like patterns
   return (
-    <svg width="100%" height="100%" style={{ position: 'absolute', inset: 0, opacity: 0.04, pointerEvents: 'none' }}>
+    <svg width="100%" height="100%" className="pattern-layer" style={{ position: 'absolute', inset: 0, opacity: 0.08, pointerEvents: 'none' }}>
       <defs>
         <pattern id="trigram" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
           {/* Trigram-like horizontal lines */}
@@ -111,7 +151,7 @@ function SajuPattern() {
 function OmikujiPattern() {
   // Torii gate / shrine-like patterns + cherry blossom hints
   return (
-    <svg width="100%" height="100%" style={{ position: 'absolute', inset: 0, opacity: 0.04, pointerEvents: 'none' }}>
+    <svg width="100%" height="100%" className="pattern-layer" style={{ position: 'absolute', inset: 0, opacity: 0.08, pointerEvents: 'none' }}>
       <defs>
         <pattern id="shrine" x="0" y="0" width="160" height="160" patternUnits="userSpaceOnUse">
           {/* Mini torii gate */}
@@ -171,18 +211,18 @@ function HomePattern() {
           ))}
         </div>
       </div>
-      {/* Vignette overlay */}
-      <div style={{
-        position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.4) 100%)',
-      }} />
     </>
   );
 }
 
 export type PatternType = 'home' | 'tarot' | 'horoscope' | 'saju' | 'omikuji';
 
-export default function MysticBackground({ pattern = 'home' }: { pattern?: PatternType }) {
+interface MysticBgProps {
+  pattern?: PatternType;
+  theme?: 'west' | 'east';
+}
+
+export default function MysticBackground({ pattern = 'home', theme }: MysticBgProps) {
   const patterns: Record<PatternType, React.ReactNode> = {
     home: <HomePattern />,
     tarot: <><StarPattern /><TarotPattern /></>,
@@ -190,5 +230,12 @@ export default function MysticBackground({ pattern = 'home' }: { pattern?: Patte
     saju: <><StarPattern /><SajuPattern /></>,
     omikuji: <><StarPattern /><OmikujiPattern /></>,
   };
-  return <>{patterns[pattern]}</>;
+  return (
+    <>
+      {patterns[pattern]}
+      <CandleGlow />
+      <DustParticles theme={theme} />
+      <Vignette />
+    </>
+  );
 }

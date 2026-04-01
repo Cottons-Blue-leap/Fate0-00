@@ -109,6 +109,83 @@ button:active:not(:disabled), [role="button"]:active:not(:disabled) {
   to { transform: rotate(360deg); }
 }
 
+/* === ATMOSPHERE: 점술사의 방 === */
+
+/* A1: Dust / stardust particles */
+@keyframes dustFloat {
+  0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(30px) scale(0.5); opacity: 0; }
+}
+
+.dust-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform, opacity;
+  animation: dustFloat linear infinite;
+}
+
+/* A2: Candlelight breathing — background glow pulse */
+@keyframes candleBreath {
+  0%, 100% { opacity: 0.12; }
+  40%      { opacity: 0.18; }
+  70%      { opacity: 0.10; }
+}
+
+.candle-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  width: 120%;
+  height: 60%;
+  left: -10%;
+  top: 30%;
+  filter: blur(80px);
+  will-change: opacity;
+  animation: candleBreath 10s ease-in-out infinite;
+}
+
+[data-theme="west"] .candle-glow {
+  background: radial-gradient(ellipse, rgba(155,89,182,0.3) 0%, transparent 70%);
+}
+[data-theme="east"] .candle-glow {
+  background: radial-gradient(ellipse, rgba(231,76,60,0.25) 0%, transparent 70%);
+}
+
+/* A3: Vignette — global dark edges */
+.vignette-global {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.5) 100%);
+  z-index: 0;
+}
+
+/* A4: SVG pattern slow drift */
+@keyframes patternDrift {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(4px, -6px); }
+}
+
+.pattern-layer {
+  animation: patternDrift 20s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* C2: Mystic keyword glow */
+@keyframes mysticGlowIn {
+  0%   { text-shadow: 0 0 0 transparent; }
+  50%  { text-shadow: 0 0 12px var(--glow), 0 0 24px var(--glow); }
+  100% { text-shadow: 0 0 6px var(--glow); }
+}
+
+.mystic-glow {
+  animation: mysticGlowIn 0.8s ease-out forwards;
+}
+
 /* === RESPONSIVE === */
 
 /* Side decorations: only visible on desktop */
