@@ -7,7 +7,7 @@ import MysticBackground, { type PatternType } from './MysticBackground';
 import LanguageSwitcher from './LanguageSwitcher';
 
 // Android WebView doesn't reliably report safe-area-inset-bottom for nav bar
-const NATIVE_BOTTOM_PAD = Capacitor.isNativePlatform() ? 48 : 16;
+const NATIVE_BOTTOM_PAD = Capacitor.isNativePlatform() ? 64 : 16;
 
 interface Props {
   theme: 'west' | 'east';

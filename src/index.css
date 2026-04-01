@@ -242,7 +242,7 @@ button:active:not(:disabled), [role="button"]:active:not(:disabled) {
 }
 .sticky-footer-content {
   background: transparent;
-  padding: 8px 0 12px;
+  padding: 8px 0 calc(12px + env(safe-area-inset-bottom, 0px));
   display: flex;
   flex-direction: column;
   align-items: center;
